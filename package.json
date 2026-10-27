@@ -8,7 +8,7 @@
   },
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "tsx scripts/mirror-media.ts --scope=first --soft && next build",
     "start": "npx serve out -l 3000",
     "typecheck": "tsc --noEmit",
     "lint": "eslint .",
@@ -17,7 +17,9 @@
     "sync": "tsx scripts/sync-kaspi.ts",
     "sync:prices": "tsx scripts/sync-kaspi.ts --mode=prices",
     "redirects": "tsx scripts/gen-redirects.ts",
-    "check": "tsx scripts/check-all.ts"
+    "check": "tsx scripts/check-all.ts",
+    "build:no-mirror": "MIRROR_MEDIA=0 next build",
+    "mirror": "tsx scripts/mirror-media.ts --scope=first"
   },
   "dependencies": {
     "next": "16.4.3",

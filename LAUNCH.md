@@ -26,7 +26,7 @@ Cloudflare Pages (решено, Р1), аккаунт Cloudflare на Эмме (�
 - [ ] `NEXT_PUBLIC_SITE_URL=https://slingoemma.kz`
 - [ ] `NEXT_PUBLIC_GA4_ID`, `NEXT_PUBLIC_YM_ID`, `NEXT_PUBLIC_META_PIXEL_ID`, `NEXT_PUBLIC_TIKTOK_PIXEL_ID` (Д5)
 - [ ] `NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION`, `NEXT_PUBLIC_YANDEX_VERIFICATION` (шаг 4)
-- [ ] Если решили зеркалить главные фото (Р2): `MIRROR_MEDIA=1`, build command `pnpm tsx scripts/mirror-media.ts --scope=first && pnpm build`.
+- [ ] Зеркало главных фото (Р2) включено по умолчанию: `pnpm build` сам скачивает и сжимает 48 фото (~30 с). В логе сборки - строка «Зеркало фото: ...». Выключить - `MIRROR_MEDIA=0`.
 - [ ] Флаги `FEATURE_*` не включать.
 
 - [ ] Открыть превью `https://<проект>.pages.dev`: главная, категория, карточка, подбор, гайд - на телефоне и десктопе. Эту ссылку можно отдать Эмме.

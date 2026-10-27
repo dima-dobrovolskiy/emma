@@ -6,20 +6,27 @@ import type { GalleryImage } from './media-types';
 /*
  * Фото по умолчанию отдаются с CDN Kaspi их собственными размерами (формат 3:4):
  * preview-medium 180w, preview-large 370w, gallery-medium 750w, gallery-large 1080w.
- * Если при сборке MIRROR_MEDIA=1 и фото есть в data/media-manifest.json (scripts/mirror-media.ts),
- * берём своё сжатое WebP из /media/. Меняется только сборка URL - компоненты не трогаем.
+ * Главные фото расцветок зеркалятся при сборке (scripts/mirror-media.ts, решение Р2): если фото есть
+ * в data/media-manifest.json и файл лежит в public/media, берём своё сжатое WebP из /media/.
+ * Выключить зеркало - MIRROR_MEDIA=0. Меняется только сборка URL - компоненты не трогаем.
  */
 
 type Manifest = Record<string, { file: string; widths: number[] }>;
 let manifest: Manifest | null = null;
 
+const fileChecked = new Map<string, boolean>();
+
 function mirrored(img: KaspiImage): { file: string; widths: number[] } | null {
-  if (process.env.MIRROR_MEDIA !== '1') return null;
+  if (process.env.MIRROR_MEDIA === '0') return null;
   if (!manifest) {
     const p = path.join(process.cwd(), 'data/media-manifest.json');
     manifest = existsSync(p) ? (JSON.parse(readFileSync(p, 'utf8')) as Manifest) : {};
   }
-  return manifest[new URL(img.large).pathname] ?? null;
+  const m = manifest[new URL(img.large).pathname];
+  if (!m) return null;
+  // Манифест без файлов (например, свежий клон без сборки) - не ссылаемся на несуществующие картинки.
+  if (!fileChecked.has(m.file)) fileChecked.set(m.file, existsSync(path.join(process.cwd(), 'public/media', `${m.file}-750.webp`)));
+  return fileChecked.get(m.file) ? m : null;
 }
 
 function withFormat(url: string, format: string): string {
