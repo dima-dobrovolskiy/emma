@@ -1,0 +1,7 @@
+# Сгенерировано scripts/gen-redirects.ts. Руками не править.
+/_next/static/*
+  Cache-Control: public, max-age=31536000, immutable
+/media/*
+  Cache-Control: public, max-age=2592000
+/data/*
+  Cache-Control: public, max-age=3600

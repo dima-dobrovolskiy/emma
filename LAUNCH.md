@@ -16,31 +16,27 @@
 - [ ] Создать репозиторий на GitHub (Д1), запушить `main`.
 - [ ] Settings → Actions → General → Workflow permissions: Read and write (синхронизация коммитит данные).
 - [ ] Запустить вручную workflow «Проба доступа к Kaspi с раннера». Если в логе 403/таймауты - синхронизация не с GitHub (см. Р3), workflow `sync.yml` отключить.
-- [ ] Подключить хостинг (Р1).
+Cloudflare Pages (решено, Р1), аккаунт Cloudflare на Эмме (Д2):
+- [ ] Workers & Pages → Create → Pages → Connect to Git → репозиторий Димы (дать приложению Cloudflare доступ к нему на GitHub).
+- [ ] Framework preset: None. Build command: `pnpm build`. Output directory: `out`. Root: пусто.
+- [ ] Переменная окружения `NODE_VERSION=22`. pnpm подхватится из поля `packageManager` в package.json [непроверено - если сборка не найдёт pnpm, build command: `npm i -g pnpm@11 && pnpm install && pnpm build`].
+- [ ] `out/_redirects` и `out/_headers` (из `public/`) подхватятся сами: 301 со старых адресов и кэш статики.
 
-Vercel Pro (аккаунт Эммы):
-- [ ] Import Project из GitHub, Framework: Next.js. Build command `pnpm build`, Output: `out` (static export).
-- [ ] `vercel.json` подхватится сам: редиректы, cleanUrls, кэш `/_next/static`.
-
-Cloudflare Pages:
-- [ ] Create project из GitHub. Build command `pnpm build`, Output directory `out`, переменная `NODE_VERSION=22`.
-- [ ] `out/_redirects` (из `public/_redirects`) подхватится сам.
-
-Переменные окружения (оба хостинга, Production):
+Переменные окружения (Production и Preview):
 - [ ] `NEXT_PUBLIC_SITE_URL=https://slingoemma.kz`
 - [ ] `NEXT_PUBLIC_GA4_ID`, `NEXT_PUBLIC_YM_ID`, `NEXT_PUBLIC_META_PIXEL_ID`, `NEXT_PUBLIC_TIKTOK_PIXEL_ID` (Д5)
 - [ ] `NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION`, `NEXT_PUBLIC_YANDEX_VERIFICATION` (шаг 4)
-- [ ] Если решили зеркалить фото (Р2): `MIRROR_MEDIA=1` и в build command `pnpm tsx scripts/mirror-media.ts --scope=first && pnpm build`.
+- [ ] Если решили зеркалить главные фото (Р2): `MIRROR_MEDIA=1`, build command `pnpm tsx scripts/mirror-media.ts --scope=first && pnpm build`.
 - [ ] Флаги `FEATURE_*` не включать.
 
-- [ ] Проверить превью-адрес хостинга: главная, категория, карточка, подбор, гайд, мобильный и десктоп.
-- [ ] `pnpm tsx scripts/check-redirects.ts --base=https://<превью-адрес>` - 36 из 36.
+- [ ] Открыть превью `https://<проект>.pages.dev`: главная, категория, карточка, подбор, гайд - на телефоне и десктопе. Эту ссылку можно отдать Эмме.
+- [ ] `pnpm tsx scripts/check-redirects.ts --base=https://<проект>.pages.dev` - 36 из 36.
 
 ## 2. DNS и переключение домена
 
 - [ ] Снизить TTL записей slingoemma.kz до 300 с за сутки до переключения (Д3).
-- [ ] В хостинге добавить домены `slingoemma.kz` и `www.slingoemma.kz`, основной - без www, www → 301 на основной.
-- [ ] У регистратора поменять записи по инструкции хостинга (Vercel: A `76.76.21.21` и CNAME `cname.vercel-dns.com`; Cloudflare Pages: CNAME на `<project>.pages.dev` или перенос NS - [непроверено], сверить с актуальной инструкцией в панели хостинга).
+- [ ] Pages → Custom domains: добавить `slingoemma.kz` и `www.slingoemma.kz`. Основной - без www; для www - правило редиректа 301 на основной (Rules → Redirect Rules).
+- [ ] Для корневого домена Cloudflare обычно просит перенести NS-серверы домена в Cloudflare; для www достаточно CNAME на `<проект>.pages.dev` [непроверено - делать по инструкции, которую покажет панель Pages]. NS меняются у регистратора .kz (Д3).
 - [ ] Дождаться выпуска SSL, открыть https://slingoemma.kz и https://www.slingoemma.kz.
 - [ ] Тильду не удалять минимум месяц: снять с публикации домен, оставить проект.
 

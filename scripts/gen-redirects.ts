@@ -1,6 +1,7 @@
 /*
  * Генерирует 301-редиректы со старого сайта под оба хостинга:
- *   vercel.json (Vercel) и public/_redirects (Cloudflare Pages), плюс serve.json для локальной проверки.
+ *   public/_redirects и public/_headers (Cloudflare Pages - выбранный хостинг), vercel.json (запасной вариант),
+ *   serve.json для локальной проверки.
  * Перед генерацией проверяет, что каждая цель существует: модель, категория, страница и расцветка ?color=.
  */
 import { writeFileSync } from 'node:fs';
@@ -72,13 +73,19 @@ function main() {
     `# Сгенерировано scripts/gen-redirects.ts из data/redirects-tilda.csv. Руками не править.\n${withSlash.map((r) => `${r.from} ${r.to} 301`).join('\n')}\n`,
   );
 
+  // Cloudflare Pages: кэш статики Next навсегда (имена с хэшем), JSON отзывов - на час.
+  writeFileSync(
+    path.join(ROOT, 'public/_headers'),
+    `# Сгенерировано scripts/gen-redirects.ts. Руками не править.\n/_next/static/*\n  Cache-Control: public, max-age=31536000, immutable\n/media/*\n  Cache-Control: public, max-age=2592000\n/data/*\n  Cache-Control: public, max-age=3600\n`,
+  );
+
   // Для локальной проверки: npx serve out -c ../serve.json
   writeFileSync(
     path.join(ROOT, 'serve.json'),
     `${JSON.stringify({ cleanUrls: true, trailingSlash: false, redirects: active.map((r) => ({ source: r.from, destination: r.to, type: 301 })) }, null, 2)}\n`,
   );
 
-  console.log(`Редиректов: ${active.length} (+ варианты со слешем для Cloudflare), строк в CSV: ${all.length}. Записаны vercel.json, public/_redirects, serve.json`);
+  console.log(`Редиректов: ${active.length} (+ варианты со слешем для Cloudflare), строк в CSV: ${all.length}. Записаны public/_redirects, public/_headers, vercel.json, serve.json`);
 }
 
 if (process.argv[1]?.endsWith('gen-redirects.ts')) main();
