@@ -13,7 +13,7 @@
 
 ## 1. Репозиторий и хостинг
 
-- [ ] Создать репозиторий на GitHub (Д1), запушить `main`.
+- [x] Репозиторий на GitHub: https://github.com/dima-dobrovolskiy/emma (приватный), `main` запушен.
 - [ ] Settings → Actions → General → Workflow permissions: Read and write (синхронизация коммитит данные).
 - [ ] Запустить вручную workflow «Проба доступа к Kaspi с раннера». Если в логе 403/таймауты - синхронизация не с GitHub (см. Р3), workflow `sync.yml` отключить.
 Cloudflare Pages (решено, Р1), аккаунт Cloudflare на Эмме (Д2):
