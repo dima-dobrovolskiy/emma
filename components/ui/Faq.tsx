@@ -5,20 +5,20 @@ import { JsonLd } from './JsonLd';
 export function Faq({ items, title = t('common.faq'), id = 'faq' }: { items: FaqItem[]; title?: string; id?: string }) {
   if (!items.length) return null;
   return (
-    <section aria-labelledby={`${id}-title`} className="py-10">
-      <h2 id={`${id}-title`} className="mb-5 text-2xl md:text-3xl">
+    <section aria-labelledby={`${id}-title`} className="py-12 md:py-20 lg:grid lg:grid-cols-12 lg:gap-10">
+      <h2 id={`${id}-title`} className="h-section mb-6 lg:sticky lg:top-24 lg:col-span-4 lg:mb-0 lg:self-start">
         {title}
       </h2>
-      <div className="divide-y divide-line rounded-[var(--radius-card)] border border-line bg-surface">
+      <div className="space-y-2 lg:col-span-8">
         {items.map((f) => (
-          <details key={f.q} className="group px-5">
-            <summary className="flex min-h-[56px] cursor-pointer list-none items-center justify-between gap-4 py-4 font-semibold [&::-webkit-details-marker]:hidden">
+          <details key={f.q} className="group rounded-[var(--radius-card)] bg-sand">
+            <summary className="flex min-h-14 cursor-pointer list-none items-center justify-between gap-4 px-5 py-4 font-semibold [&::-webkit-details-marker]:hidden">
               {f.q}
-              <span aria-hidden="true" className="shrink-0 text-xl text-ink-3 transition-transform group-open:rotate-45">
-                +
-              </span>
+              <svg aria-hidden="true" width="18" height="18" viewBox="0 0 20 20" className="shrink-0 text-ink-3 transition-transform duration-300 ease-out group-open:rotate-180">
+                <path d="M5 7.5l5 5 5-5" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
             </summary>
-            <p className="pb-5 text-ink-2">{f.a}</p>
+            <p className="max-w-[62ch] px-5 pb-5 text-ink-2">{f.a}</p>
           </details>
         ))}
       </div>

@@ -9,6 +9,24 @@ import { useSyncExternalStore } from 'react';
 
 const URL_EVENT = 'se:urlchange';
 
+// Next.js меняет адрес через history.pushState/replaceState, а это не вызывает popstate.
+// Оповещаем подписчиков сами, асинхронно: Next зовёт pushState внутри своих эффектов, где обновлять состояние нельзя.
+declare global {
+  interface Window {
+    __seHistoryPatched?: boolean;
+  }
+}
+if (typeof window !== 'undefined' && !window.__seHistoryPatched) {
+  window.__seHistoryPatched = true;
+  for (const method of ['pushState', 'replaceState'] as const) {
+    const original = window.history[method].bind(window.history);
+    window.history[method] = (...args: Parameters<History['pushState']>) => {
+      original(...args);
+      queueMicrotask(() => window.dispatchEvent(new Event(URL_EVENT)));
+    };
+  }
+}
+
 function subscribeUrl(cb: () => void) {
   window.addEventListener('popstate', cb);
   window.addEventListener(URL_EVENT, cb);
@@ -39,7 +57,6 @@ export function setUrlParams(params: Record<string, string | null>) {
     else url.searchParams.delete(k);
   }
   window.history.replaceState(window.history.state, '', url.toString());
-  window.dispatchEvent(new Event(URL_EVENT));
 }
 
 function subscribeLoad(cb: () => void) {

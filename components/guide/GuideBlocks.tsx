@@ -13,22 +13,24 @@ const KIND_KEY = { cheapest: 'guides.cheapest', popular: 'guides.popular', equip
 export function WhatToBuy({ models, guide }: { models: Model[]; guide: string }) {
   const picks = whatToBuy(models);
   return (
-    <section aria-labelledby="what-to-buy" className="not-prose my-10">
-      <h2 id="what-to-buy" className="mb-4 text-2xl md:text-3xl">
+    <section aria-labelledby="what-to-buy" className="not-prose my-14">
+      <h2 id="what-to-buy" className="h-section mb-6">
         {t('guides.whatToBuy')}
       </h2>
-      <ul className="grid gap-3 md:grid-cols-3">
+      <ul className="grid gap-6 md:grid-cols-3 md:gap-5">
         {picks.map((p) => {
           const img = p.model.defaultVariant.images[0];
           return (
-            <li key={p.kind} className="card relative flex gap-3 p-3 md:flex-col md:p-4">
+            <li key={p.kind} className="lift group relative flex gap-4 md:flex-col">
               {img && (
-                <img {...cardSrcSet(img)} sizes="(min-width: 768px) 240px, 96px" alt={p.model.name} width={370} height={493} loading="lazy" className="h-32 w-24 shrink-0 rounded-xl object-cover md:h-auto md:w-full md:aspect-[3/4]" />
+                <span className="skeleton block h-32 w-24 shrink-0 overflow-hidden rounded-[var(--radius-card)] md:aspect-[3/4] md:h-auto md:w-full">
+                  <img {...cardSrcSet(img)} sizes="(min-width: 768px) 240px, 96px" alt="" width={370} height={493} loading="lazy" className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]" />
+                </span>
               )}
               <div>
-                <p className="eyebrow">{t(KIND_KEY[p.kind])}</p>
+                <p className="text-[0.9375rem] font-semibold text-accent">{t(KIND_KEY[p.kind])}</p>
                 <p className="mt-1 font-semibold">
-                  <GuideModelLink guide={guide} model={p.model.slug} className="after:absolute after:inset-0 hover:text-accent">
+                  <GuideModelLink guide={guide} model={p.model.slug} className="after:absolute after:inset-0 group-hover:underline group-hover:underline-offset-4">
                     {p.model.name}
                   </GuideModelLink>
                 </p>
@@ -56,15 +58,15 @@ export function CompareTable({ models, guide, date }: { models: Model[]; guide: 
     weight: productWeight(m),
   }));
   return (
-    <section aria-labelledby="compare" className="not-prose my-10">
-      <h2 id="compare" className="mb-4 text-2xl md:text-3xl">
+    <section aria-labelledby="compare" className="not-prose my-14">
+      <h2 id="compare" className="h-section mb-6">
         {t('guides.compareTitle')}
       </h2>
-      <div className="overflow-x-auto rounded-[var(--radius-card)] border border-line bg-surface">
+      <div tabIndex={0} role="region" aria-labelledby="compare" className="-mx-4 overflow-x-auto px-4 md:mx-0 md:px-0">
         <table className="w-full min-w-[44rem] text-left text-sm">
-          <thead className="bg-sand text-ink-2">
+          <thead className="border-b border-ink/20 text-[0.8125rem] text-ink-3">
             <tr>
-              <th scope="col" className="px-4 py-3">{t('guides.colModel')}</th>
+              <th scope="col" className="sticky left-0 z-[1] bg-bg px-4 py-3 pl-0">{t('guides.colModel')}</th>
               <th scope="col" className="px-4 py-3">{t('guides.colPrice')}</th>
               <th scope="col" className="px-4 py-3">{t('guides.colCredit')}</th>
               <th scope="col" className="px-4 py-3">{t('guides.colRating')}</th>
@@ -78,8 +80,8 @@ export function CompareTable({ models, guide, date }: { models: Model[]; guide: 
           <tbody className="divide-y divide-line">
             {rows.map((r) => (
               <tr key={r.m.slug}>
-                <th scope="row" className="px-4 py-3 font-semibold">
-                  <GuideModelLink guide={guide} model={r.m.slug} className="hover:text-accent">
+                <th scope="row" className="sticky left-0 z-[1] bg-bg px-4 py-3 pl-0 font-semibold shadow-[1px_0_0_var(--color-line)]">
+                  <GuideModelLink guide={guide} model={r.m.slug} className="inline-flex min-h-11 items-center hover:text-accent">
                     {r.m.name}
                   </GuideModelLink>
                 </th>
@@ -98,7 +100,7 @@ export function CompareTable({ models, guide, date }: { models: Model[]; guide: 
           </tbody>
         </table>
       </div>
-      <p className="mt-2 text-xs text-ink-3">{t('guides.tableNote', { date: formatDate(date) })}</p>
+      <p className="mt-3 text-sm text-ink-3">{t('guides.tableNote', { date: formatDate(date) })}</p>
     </section>
   );
 }
@@ -107,17 +109,20 @@ export function ReviewQuotes({ models }: { models: Model[] }) {
   const quotes = reviewQuotes(models, 4);
   if (!quotes.length) return null;
   return (
-    <section aria-labelledby="quotes" className="not-prose my-10">
-      <h2 id="quotes" className="mb-4 text-2xl md:text-3xl">
+    <section aria-labelledby="quotes" className="not-prose my-14">
+      <h2 id="quotes" className="h-section mb-6">
         {t('guides.quotesTitle')}
       </h2>
-      <ul className="grid gap-3 md:grid-cols-2">
+      <ul className="grid gap-x-10 gap-y-6 md:grid-cols-2">
         {quotes.map((q) => (
-          <li key={q.id} className="rounded-[var(--radius-card)] bg-sand p-5">
+          <li key={q.id} className="border-t border-line pt-5">
             <blockquote>
               <p>«{q.text}»</p>
               <footer className="mt-3 text-sm text-ink-3">
-                {q.author} · {q.modelName}, {q.designName} · {'★'.repeat(q.rating)}
+                {q.author} · {q.modelName}, {q.designName} ·{' '}
+                <span role="img" aria-label={t('common.ratingOutOf', { rating: q.rating })} className="text-star">
+                  {'★'.repeat(q.rating)}
+                </span>
               </footer>
             </blockquote>
           </li>
@@ -129,15 +134,15 @@ export function ReviewQuotes({ models }: { models: Model[] }) {
 
 export function GuideModels({ models, guide }: { models: Model[]; guide: string }) {
   return (
-    <section aria-labelledby="guide-models" className="not-prose my-10">
-      <h2 id="guide-models" className="mb-4 text-2xl md:text-3xl">
+    <section aria-labelledby="guide-models" className="not-prose my-14">
+      <h2 id="guide-models" className="h-section mb-6">
         {t('guides.modelsTitle')}
       </h2>
-      <ul className="space-y-2">
+      <ul className="divide-y divide-line border-y border-line">
         {models.map((m) => (
           <li key={m.slug}>
-            <GuideModelLink guide={guide} model={m.slug} className="flex min-h-[56px] items-center justify-between gap-3 rounded-2xl border border-line bg-surface px-4 py-3 hover:border-ink-3">
-              <span className="font-semibold">{m.name}</span>
+            <GuideModelLink guide={guide} model={m.slug} className="group flex min-h-14 items-center justify-between gap-3 py-3">
+              <span className="font-semibold group-hover:underline group-hover:underline-offset-4">{m.name}</span>
               <span className="text-sm text-ink-2">
                 {t('common.from')} {formatPrice(m.minPrice)}
               </span>

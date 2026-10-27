@@ -1,6 +1,6 @@
 'use client';
 
-import { useMemo } from 'react';
+import { useMemo, useRef } from 'react';
 import { setUrlParams, useSearch } from '@/lib/hooks';
 import { t } from '@/lib/i18n';
 import { track } from '@/lib/analytics/events';
@@ -43,6 +43,7 @@ type Props = {
 export function CategoryListing({ page, items, cards, ages, weights, ageLabels }: Props) {
   // Фильтры и сортировка живут в адресе (такие адреса закрыты от индексации в robots.txt).
   const search = useSearch();
+  const panel = useRef<HTMLDetailsElement>(null);
   const { f, sort } = useMemo(() => {
     const q = new URLSearchParams(search);
     const filters = { ...EMPTY };
@@ -99,35 +100,35 @@ export function CategoryListing({ page, items, cards, ages, weights, ageLabels }
 
   return (
     <div>
-      {(visibleGroups.length > 0 || items.length > 2) && (
-        <details className="group mb-6 rounded-[var(--radius-card)] border border-line bg-surface md:open:pb-2" open={false}>
+      {items.length > 1 && (visibleGroups.length > 0 || items.length > 2) && (
+        <details ref={panel} className="group mb-6 rounded-[var(--radius-card)] bg-sand md:open:pb-2" open={false}>
           <summary className="flex min-h-[52px] cursor-pointer list-none items-center justify-between gap-3 px-4 font-semibold [&::-webkit-details-marker]:hidden">
             <span>
               {t('category.filtersShow')}
-              {active && <span className="ml-2 rounded-full bg-accent px-2 py-0.5 text-xs text-accent-ink">{Object.values(f).filter(Boolean).length}</span>}
+              {active && <span className="ml-2 rounded-full bg-accent px-2 py-0.5 text-[0.8125rem] text-accent-ink">{Object.values(f).filter(Boolean).length}</span>}
             </span>
-            <span aria-hidden="true" className="text-ink-3 transition group-open:rotate-180">
+            <span aria-hidden="true" className="text-ink-3 transition-transform duration-300 ease-out group-open:rotate-180">
               ▾
             </span>
           </summary>
           <div className="space-y-4 px-4 pb-4">
             {visibleGroups.map((g) => (
-              <fieldset key={g.key}>
+              <fieldset key={g.key} className="min-w-0">
                 <legend className="mb-2 text-sm font-semibold text-ink-2">{g.label}</legend>
-                <div className="flex flex-wrap gap-2">
+                <div className="no-scrollbar -mx-4 flex gap-2 overflow-x-auto px-4 py-1 md:mx-0 md:flex-wrap md:overflow-visible md:px-0">
                   {g.values.map((v) => (
-                    <button key={v.id} type="button" className="chip" aria-pressed={f[g.key] === v.id} onClick={() => update(g.key, f[g.key] === v.id ? '' : v.id)}>
+                    <button key={v.id} type="button" className="chip chip-light press shrink-0 whitespace-nowrap" aria-pressed={f[g.key] === v.id} onClick={() => update(g.key, f[g.key] === v.id ? '' : v.id)}>
                       {v.label}
                     </button>
                   ))}
                 </div>
               </fieldset>
             ))}
-            <fieldset>
+            <fieldset className="min-w-0">
               <legend className="mb-2 text-sm font-semibold text-ink-2">{t('category.sort')}</legend>
-              <div className="flex flex-wrap gap-2">
+              <div className="no-scrollbar -mx-4 flex gap-2 overflow-x-auto px-4 py-1 md:mx-0 md:flex-wrap md:overflow-visible md:px-0">
                 {SORTS.map((s) => (
-                  <button key={s.id} type="button" className="chip" aria-pressed={sort === s.id} onClick={() => update('sort', s.id === 'popular' ? '' : s.id)}>
+                  <button key={s.id} type="button" className="chip chip-light press shrink-0 whitespace-nowrap" aria-pressed={sort === s.id} onClick={() => update('sort', s.id === 'popular' ? '' : s.id)}>
                     {t(s.key)}
                   </button>
                 ))}
@@ -137,6 +138,8 @@ export function CategoryListing({ page, items, cards, ages, weights, ageLabels }
               <button type="button" className="btn btn-secondary min-h-[44px] text-sm" onClick={() => {
                   setUrlParams(Object.fromEntries(Object.keys(EMPTY).map((k) => [k, null])));
                   track('filter_use', { filter: 'all', value: 'reset', page });
+                  // Кнопка «Сбросить» исчезает - возвращаем фокус на заголовок фильтров.
+                  panel.current?.querySelector('summary')?.focus();
                 }}>
                 {t('category.filtersReset')}
               </button>
@@ -149,11 +152,14 @@ export function CategoryListing({ page, items, cards, ages, weights, ageLabels }
         {t('category.found', { count: shown.length })}
       </p>
       {shown.length === 0 ? (
-        <p className="rounded-[var(--radius-card)] bg-sand p-5">{t('category.empty')}</p>
+        <p className="enter rounded-[var(--radius-card)] bg-sand p-5">{t('category.empty')}</p>
       ) : (
-        <ul className="grid grid-cols-2 gap-3 md:grid-cols-3 md:gap-5 lg:grid-cols-4">
-          {shown.map((i) => (
-            <li key={i.slug}>{cards[i.slug]}</li>
+        // Ключ списка меняется вместе с фильтрами: карточки заново мягко появляются в новом порядке.
+        <ul key={search || 'all'} className="grid grid-cols-2 gap-x-3 gap-y-8 md:grid-cols-3 md:gap-x-5 lg:grid-cols-4">
+          {shown.map((i, n) => (
+            <li key={i.slug} className={search ? 'enter' : undefined} style={search ? ({ '--i': n } as React.CSSProperties) : undefined}>
+              {cards[i.slug]}
+            </li>
           ))}
         </ul>
       )}

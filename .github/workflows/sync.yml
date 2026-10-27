@@ -40,13 +40,16 @@ jobs:
           else echo "mode=prices" >> "$GITHUB_OUTPUT"; fi
       - name: Синхронизация
         run: pnpm tsx scripts/sync-kaspi.ts --mode=${{ steps.mode.outputs.mode }}
+      - name: Отпечатки новых фото (скрытие рекламных слайдов Kaspi)
+        if: steps.mode.outputs.mode == 'full'
+        run: pnpm tsx scripts/media-hashes.ts --soft
       - name: Проверка сборки с новыми данными
         run: pnpm test && pnpm build
       - name: Коммит, если данные изменились
         run: |
           git config user.name "kaspi-sync"
           git config user.email "kaspi-sync@users.noreply.github.com"
-          git add data/kaspi OPEN-QUESTIONS.md
+          git add data/kaspi data/media-hashes.json OPEN-QUESTIONS.md
           if git diff --cached --quiet; then echo "Изменений нет"; exit 0; fi
           git commit -m "Данные Kaspi: ${{ steps.mode.outputs.mode }}, $(TZ=Asia/Almaty date +'%Y-%m-%d %H:%M')"
           git push

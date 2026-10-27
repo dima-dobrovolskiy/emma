@@ -49,7 +49,7 @@ export default async function StaticPage({ params }: Params) {
         </a>
       ),
       Fraud: () => (
-        <div className="not-prose my-6 rounded-[var(--radius-card)] border border-line bg-surface p-5">
+        <div className="not-prose my-6 max-w-[44rem] rounded-[var(--radius-card)] bg-sand p-5">
           <p className="font-semibold">{t('footer.fraudTitle')}</p>
           <p className="mt-1 text-ink-2">{t('footer.fraudText')}</p>
         </div>

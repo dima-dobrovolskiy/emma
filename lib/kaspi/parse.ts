@@ -237,9 +237,9 @@ export function parseReview(raw: RawReviews['data'][number], kaspiCode: string):
     author: (raw.author ?? '').trim().split(/\s+/)[0] ?? '',
     date: parseKaspiDate(raw.date),
     rating: Math.min(5, Math.max(1, Math.round(raw.rating))),
-    text: decodeEntities(raw.comment?.text ?? '').trim(),
-    plus: decodeEntities(raw.comment?.plus ?? '').trim(),
-    minus: decodeEntities(raw.comment?.minus ?? '').trim(),
+    text: htmlToText(raw.comment?.text ?? ''),
+    plus: htmlToText(raw.comment?.plus ?? ''),
+    minus: htmlToText(raw.comment?.minus ?? ''),
     photos: (raw.galleryImages ?? []).map((i) => ({ small: i.small, medium: i.medium, large: i.large })),
     helpfulCount: Math.max(0, raw.feedback?.positive ?? 0),
   };

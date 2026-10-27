@@ -95,7 +95,11 @@
           "designSlug": "blue"
         }
       ],
-      "imageOrder": {},
+      "imageOrder": {
+        "106916682": [
+          12
+        ]
+      },
       "seasons": [
         "лето",
         "зима"
@@ -161,7 +165,11 @@
           "designSlug": "notre-dame"
         }
       ],
-      "imageOrder": {},
+      "imageOrder": {
+        "106533064": [
+          8
+        ]
+      },
       "seasons": []
     },
     {
@@ -239,7 +247,11 @@
           "designSlug": "blue"
         }
       ],
-      "imageOrder": {},
+      "imageOrder": {
+        "114174150": [
+          5
+        ]
+      },
       "seasons": [
         "зима"
       ]
@@ -260,7 +272,11 @@
           "designSlug": "silver"
         }
       ],
-      "imageOrder": {},
+      "imageOrder": {
+        "149603480": [
+          7
+        ]
+      },
       "seasons": [
         "зима"
       ]
@@ -277,7 +293,11 @@
           "designSlug": "beige"
         }
       ],
-      "imageOrder": {},
+      "imageOrder": {
+        "104765674": [
+          1
+        ]
+      },
       "seasons": [
         "лето"
       ]
@@ -328,7 +348,11 @@
           "designSlug": "beige"
         }
       ],
-      "imageOrder": {},
+      "imageOrder": {
+        "179623125": [
+          1
+        ]
+      },
       "seasons": [
         "зима"
       ]
@@ -345,7 +369,11 @@
           "designSlug": "white"
         }
       ],
-      "imageOrder": {},
+      "imageOrder": {
+        "179229608": [
+          3
+        ]
+      },
       "seasons": []
     },
     {
@@ -360,7 +388,11 @@
           "designSlug": "white"
         }
       ],
-      "imageOrder": {},
+      "imageOrder": {
+        "179226468": [
+          1
+        ]
+      },
       "seasons": []
     },
     {

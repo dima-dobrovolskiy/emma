@@ -5,3 +5,6 @@
   Cache-Control: public, max-age=2592000
 /data/*
   Cache-Control: public, max-age=3600
+# Превью-домен Cloudflare - полный дубль сайта, в поиск ему нельзя.
+https://:project.pages.dev/*
+  X-Robots-Tag: noindex

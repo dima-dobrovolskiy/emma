@@ -3,6 +3,7 @@ import { getCatalog, getModel } from '@/lib/catalog';
 import { alternatesFor } from '@/lib/seo';
 import { t } from '@/lib/i18n';
 import { cardSrcSet } from '@/lib/images';
+import { creditText, maxWeightKg } from '@/lib/summary';
 import type { PodborModel, Where } from '@/lib/podbor-rules';
 import { Quiz } from '@/components/podbor/Quiz';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
@@ -36,6 +37,9 @@ export default function PodborPage() {
       reviews: m.reviewsCount,
       rating: m.ratingAvg,
       minPrice: m.minPrice,
+      // Подбор отбирает по осторожному весу из content/lines.json, а показывает тот же максимум, что и карточка.
+      shownMaxKg: maxWeightKg(m),
+      credit: creditText(m),
     };
   };
   const models = lines.podbor.carrierModels.map(toPodbor).filter((x): x is PodborModel => Boolean(x));
@@ -50,9 +54,9 @@ export default function PodborPage() {
   return (
     <div className="container-page max-w-3xl pt-4">
       <Breadcrumbs items={[{ name: t('nav.podbor'), href: '/podbor' }]} />
-      <h1 className="mt-4 text-[2rem] leading-tight md:text-[2.75rem]">{t('podbor.h1')}</h1>
+      <h1 className="h-page mt-4">{t('podbor.h1')}</h1>
       <p className="mt-2 text-lg text-ink-2">{t('podbor.lead')}</p>
-      <div className="card mt-8 p-5 md:p-8">
+      <div className="mt-8 rounded-[var(--radius-card)] bg-sand p-5 md:p-8">
         <Quiz
           ages={lines.podbor.ages}
           weights={lines.podbor.weights}

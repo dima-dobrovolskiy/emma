@@ -63,6 +63,7 @@ async function main() {
     const first = p.images[firstIndex.get(p.kaspiCode) ?? 0] ?? p.images[0];
     return first ? [first] : [];
   });
+  // Обложка задаётся в content/catalog.json (imageOrder); рекламные слайды обложкой не бывают, отдельно их не фильтруем.
   let failed = 0;
   let done = 0;
   let bytesIn = 0;

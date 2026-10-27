@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { getCatalog, getTrustNumbers } from '@/lib/catalog';
+import { getCatalog, getTrustNumbers, hasReviewBody } from '@/lib/catalog';
 import { formatNumber, t } from '@/lib/i18n';
 import { alternatesFor } from '@/lib/seo';
 import { fmtRating } from '@/lib/summary';
@@ -27,7 +27,7 @@ export default function ReviewsPage() {
       <ReviewsBlock
         initial={all.slice(0, 12)}
         totalWithText={tr.reviews}
-        totalListed={all.length}
+        totalListed={all.filter(hasReviewBody).length}
         ratingCount={tr.ratingCount}
         ratingAvg={tr.rating}
         distribution={allDistribution()}

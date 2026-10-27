@@ -1,4 +1,4 @@
-import { getModel, getModelReviews, specValues, type Model } from './catalog';
+import { getModel, getModelReviews, isQuotable, specValues, type Model } from './catalog';
 import { checkConsistency, maxWeightKg } from './summary';
 import { formatPrice, t } from './i18n';
 import { fmtRatingClient } from './format';
@@ -25,27 +25,31 @@ export type WhatToBuyPick = { kind: 'cheapest' | 'popular' | 'equipped'; model: 
 
 /**
  * «Что брать»: дешевле всего, чаще всего берут, самая оснащённая.
- * Модели не повторяются: если отличной от уже выбранных нет, пункт не показываем.
+ * Модели не повторяются. Пункт показываем, только если модель лучше всех остальных строго:
+ * при равной цене или равной оснащённости писать «дешевле всего» про одну из них - неправда.
  */
 export function whatToBuy(models: Model[]): WhatToBuyPick[] {
   const inStock = models.filter((m) => m.inStockCount > 0);
   const pool = inStock.length ? inStock : models;
   const used = new Set<string>();
   const picks: WhatToBuyPick[] = [];
-  const take = (kind: WhatToBuyPick['kind'], sorted: Model[], reason: (m: Model) => string) => {
+  const take = (kind: WhatToBuyPick['kind'], sorted: Model[], reason: (m: Model) => string, value: (m: Model) => number) => {
     const m = sorted.find((x) => !used.has(x.slug));
-    if (!m) return;
+    if (!m || pool.some((x) => x !== m && value(x) === value(m))) return;
     used.add(m.slug);
     picks.push({ kind, model: m, reason: reason(m) });
   };
   take('popular', [...pool].sort((a, b) => b.reviewsCount - a.reviewsCount), (m) =>
     t('guides.whyPopular', { reviews: t('common.reviewsCount', { count: m.reviewsCount }), rating: m.ratingAvg !== null ? fmtRatingClient(m.ratingAvg) : '-' }),
+    (m) => m.reviewsCount,
   );
   take('cheapest', [...pool].sort((a, b) => a.minPrice - b.minPrice || b.reviewsCount - a.reviewsCount), (m) =>
     t('guides.whyCheapest', { price: formatPrice(m.minPrice) }),
+    (m) => -m.minPrice,
   );
   take('equipped', [...pool].sort((a, b) => equipmentScore(b) - equipmentScore(a) || (maxWeightKg(b) ?? 0) - (maxWeightKg(a) ?? 0)), (m) =>
     t('guides.whyEquipped', { features: [...specValues(m.variants, 'Особенности'), ...m.carryPositions].join(', ') }),
+    (m) => equipmentScore(m),
   );
   for (const p of picks) checkConsistency(p.reason, [p.model]);
   return picks;
@@ -55,7 +59,7 @@ export function whatToBuy(models: Model[]): WhatToBuyPick[] {
 export function reviewQuotes(models: Model[], count = 4) {
   const perModel = models.map((m) =>
     getModelReviews(m)
-      .filter((r) => r.rating >= 4 && r.text.length >= 60 && r.text.length <= 320)
+      .filter((r) => r.rating >= 4 && r.text.length >= 60 && r.text.length <= 320 && isQuotable(r))
       .slice(0, count)
       .map((r) => ({ ...r, modelName: m.name, modelSlug: m.slug })),
   );

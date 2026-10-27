@@ -1,4 +1,4 @@
-import type { Category, Model } from './catalog';
+import type { Category, Model, Variant } from './catalog';
 import { specValues } from './catalog';
 import { formatNumber, formatPrice, t } from './i18n';
 import { parseWeightKg, prettyAge, uniq } from './text';
@@ -34,8 +34,14 @@ export function productWeight(model: Model): string | null {
     : t('summary.kgRange', { from: String(ws[0]).replace('.', ','), to: String(ws.at(-1)).replace('.', ',') });
 }
 
+/** Самая дешёвая расцветка (из тех, что в наличии): её цена стоит в «от ...», значит и рассрочка рядом должна быть её. */
+export function cheapestVariant(model: Model): Variant {
+  const pool = model.variants.some((v) => v.inStock) ? model.variants.filter((v) => v.inStock) : model.variants;
+  return [...pool].sort((a, b) => a.price - b.price)[0] ?? model.defaultVariant;
+}
+
 export function creditText(model: Model): string | null {
-  const v = model.defaultVariant;
+  const v = cheapestVariant(model);
   if (!v.creditMonthlyPrice) return null;
   return v.creditMonths ? t('buy.creditShort', { amount: v.creditMonthlyPrice, months: v.creditMonths }) : v.creditMonthlyPrice;
 }
@@ -99,11 +105,13 @@ export function modelSummary(model: Model): string {
     );
   }
   const facts: string[] = [];
-  const age = mostCommon(specValues(model.variants, 'Рекомендуемый возраст ребенка'));
+  // Товары для дома (бортики, матрас, накладки) Kaspi заполняет характеристиками переноски - возраст и вес ребёнка к ним не относятся.
+  const isCarrier = model.category !== 'dlya-doma';
+  const age = isCarrier ? mostCommon(specValues(model.variants, 'Рекомендуемый возраст ребенка')) : null;
   if (age) facts.push(t('summary.factAge', { value: prettyAge(age).toLowerCase() }));
-  const maxW = maxWeightKg(model);
+  const maxW = isCarrier ? maxWeightKg(model) : null;
   if (maxW !== null) facts.push(t('summary.factWeight', { value: fmtKg(maxW) }));
-  if (model.carryPositions.length) facts.push(t('summary.factCarry', { value: carryText(model) }));
+  if (isCarrier && model.carryPositions.length) facts.push(t('summary.factCarry', { value: carryText(model) }));
   if (model.materials.length) facts.push(t('summary.factMaterial', { value: model.materials.join(', ') }));
   if (facts.length) parts.push(t('summary.facts', { facts: facts.join(t('summary.listSep')) }));
   if (model.variants.length > 1) {
@@ -121,7 +129,7 @@ export function fmtRating(r: number): string {
 }
 
 /** «Коротко» для категории или подборки. */
-export function categorySummary(cat: Pick<Category, 'name' | 'models'>): string {
+export function categorySummary(cat: Pick<Category, 'name' | 'models'>, kind: 'category' | 'guide' = 'category'): string {
   const ms = cat.models;
   if (!ms.length) return '';
   const min = Math.min(...ms.map((m) => m.minPrice));
@@ -132,11 +140,11 @@ export function categorySummary(cat: Pick<Category, 'name' | 'models'>): string 
   const inStock = ms.filter((m) => m.inStockCount > 0).length;
   const top = [...ms].sort((a, b) => b.reviewsCount - a.reviewsCount)[0];
   const parts = [
-    t('summary.category', {
+    t(kind === 'guide' ? 'summary.guide' : 'summary.category', {
       name: cat.name,
       models: t('common.modelsCount', { count: ms.length }),
       inStock,
-      prices: min === max ? t('summary.pricesFrom', { min: formatPrice(min) }) : t('summary.pricesRange', { min: formatPrice(min), max: formatPrice(max) }),
+      prices: min === max ? t('summary.priceOne', { price: formatPrice(min) }) : t('summary.pricesRange', { min: formatPrice(min), max: formatPrice(max) }),
     }),
   ];
   if (ratings && avg !== null) {

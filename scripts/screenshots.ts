@@ -18,7 +18,8 @@ const OUT = path.resolve(import.meta.dirname, '../reports/screenshots');
 const browser = await chromium.launch(process.env.PW_CHANNEL ? { channel: process.env.PW_CHANNEL } : {});
 const problems: string[] = [];
 for (const width of WIDTHS) {
-  const ctx = await browser.newContext({ viewport: { width, height: width < 768 ? 800 : 900 }, deviceScaleFactor: 1, isMobile: width < 768, hasTouch: width < 768 });
+  // reducedMotion: блоки, которые проявляются при прокрутке, на снимке всей страницы иначе остались бы прозрачными.
+  const ctx = await browser.newContext({ viewport: { width, height: width < 768 ? 800 : 900 }, deviceScaleFactor: 1, isMobile: width < 768, hasTouch: width < 768, reducedMotion: 'reduce' });
   const page = await ctx.newPage();
   page.on('pageerror', (e) => problems.push(`${width} ${page.url()}: JS error ${e.message}`));
   page.on('response', (r) => {

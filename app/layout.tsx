@@ -1,17 +1,22 @@
 import type { Metadata, Viewport } from 'next';
-import { Golos_Text } from 'next/font/google';
+import { Golos_Text, Spectral } from 'next/font/google';
 import './globals.css';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { Analytics } from '@/components/analytics/Analytics';
 import { JsonLd } from '@/components/ui/JsonLd';
+import { Motion, PageTransition } from '@/components/ui/Motion';
 import { t } from '@/lib/i18n';
-import { KASPI_SHOP_URL, SITE_URL, absUrl } from '@/lib/site';
+import { KASPI_SHOP_URL, SITE_URL, absUrl, siteContent } from '@/lib/site';
 import { KASPI_CDN } from '@/lib/images';
 
-// Golos Text проверен на казахские буквы ә ғ қ ң ө ұ ү һ і (docs/DECISIONS.md). Один шрифт на всё - ради скорости первого экрана.
-// subsets = что предзагружать; латиница подгрузится по unicode-range, когда понадобится.
+// Оба шрифта проверены на казахские буквы ә ғ қ ң ө ұ ү һ і (docs/DECISIONS.md).
+// Golos Text - текст, цены и интерфейс; Spectral 500 - заголовки и крупные цифры. Два файла начертаний на загрузке.
+// subsets = что предзагружать; остальные наборы знаков подгрузятся по unicode-range, когда понадобятся.
 const body = Golos_Text({ subsets: ['cyrillic'], variable: '--font-body', display: 'swap' });
+// Spectral без предзагрузки: с ней LCP главной в Lighthouse mobile рос до 3,8 с (шрифты делили канал с главным фото).
+// Заголовки на первом показе мелькают запасной антиквой Georgia; размеры подогнаны next/font, сдвига вёрстки нет.
+const display = Spectral({ subsets: ['cyrillic', 'latin'], weight: '500', variable: '--font-display-face', display: 'swap', preload: false });
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -28,21 +33,23 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: '#fbf8f4',
+  themeColor: '#ffffff',
   width: 'device-width',
   initialScale: 1,
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="ru" className={body.variable}>
+    <html lang="ru" className={`${body.variable} ${display.variable}`} data-scroll-behavior="smooth">
       <head>
         <link rel="preconnect" href={KASPI_CDN} />
         <link rel="dns-prefetch" href={KASPI_CDN} />
       </head>
       <body className="min-h-dvh">
         <Header />
-        <main id="main">{children}</main>
+        <main id="main">
+          <PageTransition>{children}</PageTransition>
+        </main>
         <Footer />
         <JsonLd
           data={[
@@ -51,6 +58,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               '@type': 'Organization',
               '@id': absUrl('/#org'),
               name: t('meta.siteName'),
+              alternateName: siteContent.alternateNames,
               url: SITE_URL,
               sameAs: [KASPI_SHOP_URL],
             },
@@ -65,6 +73,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             },
           ]}
         />
+        <Motion />
         <Analytics />
       </body>
     </html>

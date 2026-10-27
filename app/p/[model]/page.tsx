@@ -1,10 +1,10 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { getCatalog, getModel, modelDistribution, type Model } from '@/lib/catalog';
+import { getCatalog, getModel, getTrustNumbers, hasReviewBody, isQuotable, modelDistribution, type Model } from '@/lib/catalog';
 import { getCheckoutProvider } from '@/lib/commerce';
 import { flags } from '@/lib/flags';
-import { formatDate, formatPrice, t } from '@/lib/i18n';
+import { formatDate, formatNumber, formatPrice, t } from '@/lib/i18n';
 import { alternatesFor } from '@/lib/seo';
 import { absUrl } from '@/lib/site';
 import { maxWeightKg, modelSummary, renderTemplate, fmtRating } from '@/lib/summary';
@@ -12,6 +12,7 @@ import { modelReviewsDTO } from '@/lib/reviews-data';
 import { getGuideMeta } from '@/lib/guides';
 import { galleryImage } from '@/lib/images';
 import { ModelView, type ViewVariant } from '@/components/product/ModelView';
+import { ColorList } from '@/components/product/ColorList';
 import { ModelCard } from '@/components/product/ModelCard';
 import { LiteYouTube } from '@/components/product/LiteYouTube';
 import { Specs } from '@/components/product/Specs';
@@ -99,12 +100,23 @@ export default async function ModelPage({ params }: Params) {
   const care = model.care.map((x) => renderTemplate(x, model));
   const faq = model.faq.map((f) => ({ q: renderTemplate(f.q, model), a: renderTemplate(f.a, model) }));
 
+  const trust = getTrustNumbers();
+  const trustLine =
+    trust.years !== null && trust.ordersSegment !== null && trust.rating !== null
+      ? t('buy.shopTrust', {
+          years: t('common.yearsCount', { count: trust.years }),
+          orders: t('trust.orders', { value: formatNumber(trust.ordersSegment) }),
+          rating: fmtRating(trust.rating),
+        })
+      : undefined;
+
   return (
     <>
       <div className="container-page pb-24 pt-4 md:pb-10">
         <Breadcrumbs items={[...(category ? [{ name: category.nameShort, href: `/c/${category.slug}` }] : []), { name: model.name, href: `/p/${model.slug}` }]} />
         <div className="mt-3">
           <ModelView
+            key={model.slug}
             modelSlug={model.slug}
             modelName={model.name}
             lineLabel={model.lineLabel}
@@ -113,6 +125,7 @@ export default async function ModelPage({ params }: Params) {
             badge={badge}
             pricesDate={date}
             bonusPopup={flags.bonusPopup}
+            trustLine={trustLine}
             ratingSlot={
               model.ratingCount > 0 ? (
                 <a href="#reviews" className="inline-flex min-h-[44px] items-center hover:underline">
@@ -123,20 +136,19 @@ export default async function ModelPage({ params }: Params) {
           />
         </div>
 
-        <div className="mt-10 grid gap-10 lg:grid-cols-[minmax(0,1fr)_20rem]">
-          <div className="min-w-0 space-y-10">
+        <div className="mt-12 grid gap-12 md:mt-20 lg:grid-cols-[minmax(0,1fr)_20rem] lg:gap-16">
+          <div className="min-w-0 space-y-12 md:space-y-16">
             <Short text={summary} date={t('common.pricesActual', { date })} />
 
             {whoFor.length > 0 && (
               <section aria-labelledby="who">
-                <h2 id="who" className="mb-4 text-2xl md:text-3xl">
+                <h2 id="who" className="h-section mb-5">
                   {t('model.whoFor')}
                 </h2>
-                <ul className="space-y-2.5">
+                <ul className="divide-y divide-line border-y border-line">
                   {whoFor.map((x) => (
-                    <li key={x} className="flex gap-3">
-                      <span aria-hidden="true" className="mt-2 h-2 w-2 shrink-0 rounded-full bg-accent" />
-                      <span>{x}</span>
+                    <li key={x} className="py-3.5 text-ink-2">
+                      {x}
                     </li>
                   ))}
                 </ul>
@@ -147,7 +159,7 @@ export default async function ModelPage({ params }: Params) {
 
             {(model.videoIds.length > 0 || howToWear.length > 0) && (
               <section aria-labelledby="wear">
-                <h2 id="wear" className="mb-4 text-2xl md:text-3xl">
+                <h2 id="wear" className="h-section mb-5">
                   {t('model.howToWear')}
                 </h2>
                 {howToWear.map((x) => (
@@ -165,10 +177,10 @@ export default async function ModelPage({ params }: Params) {
 
             {care.length > 0 && (
               <section aria-labelledby="care">
-                <h2 id="care" className="mb-4 text-2xl md:text-3xl">
+                <h2 id="care" className="h-section mb-5">
                   {t('model.care')}
                 </h2>
-                <ul className="list-disc space-y-1.5 pl-5">
+                <ul className="list-disc space-y-1.5 pl-5 text-ink-2 marker:text-ink-3">
                   {care.map((x) => (
                     <li key={x}>{x}</li>
                   ))}
@@ -177,40 +189,38 @@ export default async function ModelPage({ params }: Params) {
             )}
           </div>
 
-          <aside className="space-y-4">
+          <aside className="space-y-8 lg:sticky lg:top-24 lg:self-start">
             {model.variants.length > 1 && (
-              <div className="rounded-[var(--radius-card)] border border-line bg-surface p-5">
+              <div>
                 <p className="font-semibold">{t('model.allColors')}</p>
                 <p className="text-sm text-ink-3">{t('model.colorsAvailable', { inStock: model.inStockCount, total: model.variants.length })}</p>
-                <ul className="mt-3 space-y-1 text-sm">
-                  {model.variants.map((v) => (
-                    <li key={v.kaspiCode}>
-                      <Link href={`/p/${model.slug}?color=${v.designSlug}`} prefetch={false} className="flex min-h-[44px] items-center justify-between gap-3 hover:text-accent">
-                        <span>{v.designName}</span>
-                        <span className={v.inStock ? 'text-ink-2' : 'text-ink-3'}>{v.inStock ? formatPrice(v.price) : t('common.outOfStock')}</span>
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
+                <ColorList
+                  modelSlug={model.slug}
+                  defaultSlug={model.defaultVariant.designSlug}
+                  items={model.variants.map((v) => ({ kaspiCode: v.kaspiCode, designSlug: v.designSlug, designName: v.designName, inStock: v.inStock, price: formatPrice(v.price) }))}
+                />
               </div>
             )}
             {guide && (
-              <Link href={`/k/${guide.slug}`} className="block rounded-[var(--radius-card)] bg-sage-soft p-5 hover:bg-sage-soft/70">
+              <Link href={`/k/${guide.slug}`} className="group block rounded-[var(--radius-card)] bg-sand p-5">
                 <p className="eyebrow">{t('model.compare')}</p>
-                <p className="mt-1 font-semibold text-sage">{guide.title}</p>
+                <p className="mt-1 font-display text-xl leading-snug group-hover:underline group-hover:underline-offset-4">{guide.title}</p>
+                <p className="mt-3 text-sm font-semibold text-accent">
+                  {t('guides.read')} <span aria-hidden="true">→</span>
+                </p>
               </Link>
             )}
           </aside>
         </div>
 
-        <section aria-labelledby="reviews-title" className="mt-14">
-          <h2 id="reviews-title" className="mb-6 text-2xl md:text-3xl">
+        <section aria-labelledby="reviews-title" className="mt-16 md:mt-24">
+          <h2 id="reviews-title" className="h-section mb-8">
             {t('reviews.title')}
           </h2>
           <ReviewsBlock
             initial={reviews.slice(0, 6)}
             totalWithText={model.reviewsCount}
-            totalListed={reviews.length}
+            totalListed={reviews.filter(hasReviewBody).length}
             ratingCount={model.ratingCount}
             ratingAvg={model.ratingAvg}
             distribution={distribution}
@@ -224,11 +234,11 @@ export default async function ModelPage({ params }: Params) {
         <Faq items={faq} />
 
         {similar.length > 0 && (
-          <section aria-labelledby="similar" className="pt-4">
-            <h2 id="similar" className="mb-5 text-2xl md:text-3xl">
+          <section aria-labelledby="similar" className="pb-6">
+            <h2 id="similar" className="h-section mb-6 md:mb-8">
               {t('model.similar')}
             </h2>
-            <ul className="grid grid-cols-2 gap-3 md:grid-cols-4 md:gap-5">
+            <ul className="grid grid-cols-2 gap-x-3 gap-y-8 md:grid-cols-4 md:gap-x-5">
               {similar.map((m) => (
                 <li key={m.slug}>
                   <ModelCard model={m} />
@@ -238,7 +248,7 @@ export default async function ModelPage({ params }: Params) {
           </section>
         )}
       </div>
-      <JsonLd data={productJsonLd(model, summary, reviews.slice(0, 5))} />
+      <JsonLd data={productJsonLd(model, summary, reviews.filter(isQuotable).slice(0, 5))} />
     </>
   );
 }

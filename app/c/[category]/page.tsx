@@ -34,7 +34,7 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
   if (!c) return {};
   const minPrice = Math.min(...c.models.map((m) => m.minPrice));
   const reviews = c.models.reduce((s, m) => s + m.reviewsCount, 0);
-  const title = c.seo.title ?? t('meta.categoryTitle', { name: c.name });
+  const title = c.seo.title ?? t('meta.categoryTitle', { name: c.name, price: formatPrice(minPrice), reviews: t('common.reviewsCount', { count: reviews }) });
   const description =
     c.seo.description ??
     t('meta.categoryDescription', {
@@ -97,14 +97,17 @@ export default async function CategoryPage({ params }: Params) {
 
       {guides.length > 0 && (
         <section aria-labelledby="cat-guides" className="pb-4">
-          <h2 id="cat-guides" className="mb-4 text-2xl md:text-3xl">
+          <h2 id="cat-guides" className="h-section mb-6">
             {t('category.guidesTitle')}
           </h2>
-          <ul className="grid gap-3 md:grid-cols-3">
+          <ul className="grid md:grid-cols-3 md:gap-x-8">
             {guides.map((g) => (
-              <li key={g.slug}>
-                <Link href={`/k/${g.slug}`} className="flex min-h-[72px] items-center rounded-[var(--radius-card)] bg-sage-soft p-5 font-semibold text-sage hover:bg-sage-soft/70">
-                  {g.h1}
+              <li key={g.slug} className="border-t border-line">
+                <Link href={`/k/${g.slug}`} className="group flex min-h-[72px] items-center justify-between gap-4 py-5">
+                  <span className="font-display text-xl leading-snug group-hover:underline group-hover:underline-offset-4">{g.h1}</span>
+                  <span aria-hidden="true" className="text-accent transition-transform duration-200 group-hover:translate-x-1">
+                    →
+                  </span>
                 </Link>
               </li>
             ))}
@@ -112,12 +115,12 @@ export default async function CategoryPage({ params }: Params) {
         </section>
       )}
 
-      <nav aria-label={t('category.otherCategories')} className="mt-8">
+      <nav aria-label={t('category.otherCategories')} className="mt-12">
         <p className="eyebrow mb-3">{t('category.otherCategories')}</p>
         <ul className="flex flex-wrap gap-2">
           {others.map((o) => (
             <li key={o.slug}>
-              <Link href={`/c/${o.slug}`} className="chip hover:border-ink">
+              <Link href={`/c/${o.slug}`} className="chip">
                 {o.nameShort}
               </Link>
             </li>

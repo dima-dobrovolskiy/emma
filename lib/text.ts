@@ -1,3 +1,5 @@
+import { t } from './i18n';
+
 /* Мелкие помощники для текста и разбора значений характеристик Kaspi. */
 
 export function uniq<T>(xs: T[]): T[] {
@@ -38,12 +40,28 @@ export function parseAgeRange(value: string): { from: number | null; to: number 
 }
 
 /** Чистит возраст из Kaspi для показа: «3мес +» → «3 мес+», «0&#43;» уже раскодирован в «0+». */
+/**
+ * Возраст из Kaspi к одному виду: «0+» → «с рождения», «3мес+» → «с 3 мес», «0-2 лет» → «с рождения до 2 лет»,
+ * «1.5лет» → «1,5 лет». Продавцы на Kaspi пишут возраст как угодно, на сайте он должен читаться одинаково.
+ */
 export function prettyAge(value: string): string {
-  return value
+  const v = value
     .replace(/(\d)(мес|год|лет)/gi, '$1 $2')
+    .replace(/(\d)\.(\d)/g, '$1,$2')
+    .replace(/(\d)х\b/gi, '$1')
     .replace(/\s+\+/g, '+')
     .replace(/\s+/g, ' ')
     .trim();
+  const plus = /^(\d+)\s*(мес)?\+$/i.exec(v);
+  if (plus) return Number(plus[1]) === 0 ? t('podbor.fromBirth') : t('podbor.fromMonths', { count: Number(plus[1]) });
+  const zeroRange = /^(?:с\s+)?0\s*(?:-|до)\s*(.+)$/i.exec(v);
+  if (zeroRange) return `${t('podbor.fromBirth')} ${t('podbor.toMonths', { value: zeroRange[1]! })}`;
+  return v;
+}
+
+/** Числа из характеристик Kaspi с десятичной точкой («0.5 кг») - с запятой, как принято в русском тексте. */
+export function prettySpecValue(value: string): string {
+  return value.replace(/(\d)\.(\d)/g, '$1,$2');
 }
 
 /** «18 кг» → 18 */

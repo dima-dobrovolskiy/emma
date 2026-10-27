@@ -14,6 +14,8 @@ export const guideFrontmatterSchema = z.object({
   title: z.string(),
   h1: z.string(),
   description: z.string(),
+  /** «Коротко» - ответ на вопрос гайда. Без цен: они меняются каждый час, а текст гайда - нет. */
+  short: z.string().optional(),
   locale: z.string(),
   order: z.number(),
   models: z.array(z.string()).min(1),

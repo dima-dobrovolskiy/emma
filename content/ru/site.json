@@ -18,5 +18,10 @@
   "todo": {
     "contacts": "TODO(Эмма): WhatsApp, Instagram, режим работы",
     "legal": "TODO(Эмма): ИП или ТОО, БИН, юридический адрес"
-  }
+  },
+  "alternateNames": [
+    "Слинго Эмма",
+    "СлингоЭмма",
+    "Slingo Emma"
+  ]
 }

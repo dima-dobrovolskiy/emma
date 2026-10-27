@@ -76,7 +76,7 @@ function main() {
   // Cloudflare Pages: кэш статики Next навсегда (имена с хэшем), JSON отзывов - на час.
   writeFileSync(
     path.join(ROOT, 'public/_headers'),
-    `# Сгенерировано scripts/gen-redirects.ts. Руками не править.\n/_next/static/*\n  Cache-Control: public, max-age=31536000, immutable\n/media/*\n  Cache-Control: public, max-age=2592000\n/data/*\n  Cache-Control: public, max-age=3600\n`,
+    `# Сгенерировано scripts/gen-redirects.ts. Руками не править.\n/_next/static/*\n  Cache-Control: public, max-age=31536000, immutable\n/media/*\n  Cache-Control: public, max-age=2592000\n/data/*\n  Cache-Control: public, max-age=3600\n# Превью-домен Cloudflare - полный дубль сайта, в поиск ему нельзя.\nhttps://:project.pages.dev/*\n  X-Robots-Tag: noindex\n`,
   );
 
   // Для локальной проверки: npx serve out -c ../serve.json

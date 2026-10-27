@@ -5,55 +5,113 @@
  * когда придут цвета и шрифты Эммы, меняются только значения ниже.
  */
 @theme {
-  --color-bg: #fbf8f4;
+  /* Белая страница, фото главные. Один «каменный» тон под студийный фон фото Kaspi - поля и подложки.
+     Один глубокий хвойный акцент - главная кнопка, «Купить на Kaspi», платёж в месяц. */
+  --color-bg: #ffffff;
   --color-surface: #ffffff;
-  --color-sand: #f3ece3;
-  --color-sand-2: #e9dfd3;
-  --color-line: #e3d8cc;
-  --color-ink: #2a2320;
-  --color-ink-2: #5a4f48;
-  --color-ink-3: #6f635b;
-  --color-accent: #9c4a26;
-  --color-accent-hover: #843d1e;
+  --color-sand: #f4f3f0;
+  --color-sand-2: #eae8e4;
+  --color-line: #e4e2dd;
+  --color-line-strong: #8c8983;
+  --color-ink: #1c1b19;
+  --color-ink-2: #45433f;
+  --color-ink-3: #64615c;
+  --color-accent: #1e5a55;
+  --color-accent-hover: #174843;
   --color-accent-ink: #ffffff;
-  --color-accent-soft: #f6e5da;
-  --color-sage: #4a6652;
-  --color-sage-soft: #e3ebe2;
-  --color-star: #d9952b;
-  --color-danger: #a12a2a;
-  --color-muted-swatch: #d8d0c8;
+  --color-accent-soft: #e8f0ee;
+  --color-sage: #1e5a55;
+  --color-sage-soft: #e8f0ee;
+  --color-star: #9a5f0a;
+  --color-danger: #a52a2a;
+  --color-muted-swatch: #d6d3ce;
 
+  /* Заголовки - спокойная антиква Spectral, текст, цены и интерфейс - гротеск Golos Text. Оба с казахскими буквами. */
   --font-sans: var(--font-body), 'Golos Text', system-ui, -apple-system, 'Segoe UI', sans-serif;
-  --font-display: var(--font-body), 'Golos Text', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-display: var(--font-display-face), 'Spectral', Georgia, 'Times New Roman', serif;
 
-  --radius-card: 1.25rem;
+  --radius-card: 0.375rem;
   --radius-pill: 999px;
-  --shadow-card: 0 1px 2px rgb(42 35 32 / 0.04), 0 8px 24px rgb(42 35 32 / 0.06);
-  --shadow-bar: 0 -6px 24px rgb(42 35 32 / 0.1);
+  --shadow-card: none;
+  --shadow-bar: 0 -8px 24px rgb(28 27 25 / 0.08);
+  --shadow-pop: 0 16px 40px rgb(28 27 25 / 0.12);
+
+  /* Движение: всё короткое и мягкое, без пружин и отскоков. */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+:root {
+  --dur-press: 120ms;
+  --dur-fast: 180ms;
+  --dur: 260ms;
+  --dur-slow: 320ms;
 }
 
 @layer base {
   html {
     -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
     scroll-behavior: smooth;
+    /* Фокус и якоря не прячутся под липкой шапкой и липкой панелью покупки. */
+    scroll-padding-top: 5rem;
+  }
+  @media (max-width: 767px) {
+    html:has([data-sticky-buy][aria-hidden='false']) {
+      scroll-padding-bottom: 6.5rem;
+    }
+  }
+  html {
+    scrollbar-gutter: stable;
+  }
+  html.scroll-locked {
+    overflow: hidden;
+  }
+  /* На тач-экранах подсветку тапа браузера мы выключили - ссылки отвечают лёгким затуханием. */
+  @media (hover: none) {
+    a:active {
+      opacity: 0.65;
+    }
+  }
+  /* Липкая панель покупки на мобильном не должна закрывать низ подвала. */
+  @media (max-width: 767px) {
+    body:has([data-sticky-buy]) footer {
+      padding-bottom: calc(5.5rem + env(safe-area-inset-bottom));
+    }
+  }
+  a,
+  button,
+  summary {
+    transition-property: color, background-color, border-color, box-shadow, opacity, transform;
+    transition-duration: var(--dur-fast);
+    transition-timing-function: var(--ease-out);
   }
   body {
     background: var(--color-bg);
     color: var(--color-ink);
     font-family: var(--font-sans);
     font-size: 1rem;
-    line-height: 1.55;
+    line-height: 1.6;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
   }
   h1,
-  h2,
-  h3 {
+  h2 {
     font-family: var(--font-display);
-    font-weight: 650;
+    font-weight: 500;
     line-height: 1.12;
-    letter-spacing: -0.02em;
+    letter-spacing: -0.015em;
     text-wrap: balance;
+  }
+  h3 {
+    font-weight: 600;
+    line-height: 1.25;
+    text-wrap: balance;
+  }
+  @media (min-width: 768px) {
+    body {
+      font-size: 1.0625rem;
+    }
   }
   p {
     text-wrap: pretty;
@@ -72,6 +130,7 @@
     *::after {
       transition-duration: 0.01ms !important;
       animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
     }
   }
 }
@@ -79,13 +138,13 @@
 @layer components {
   .container-page {
     width: 100%;
-    max-width: 76rem;
+    max-width: 78rem;
     margin-inline: auto;
     padding-inline: 1rem;
   }
   @media (min-width: 768px) {
     .container-page {
-      padding-inline: 1.5rem;
+      padding-inline: 2rem;
     }
   }
   .btn {
@@ -100,29 +159,42 @@
     line-height: 1.2;
     text-align: center;
     transition:
-      background-color 0.15s,
-      color 0.15s,
-      border-color 0.15s;
+      background-color var(--dur-fast) var(--ease-out),
+      color var(--dur-fast) var(--ease-out),
+      border-color var(--dur-fast) var(--ease-out),
+      box-shadow var(--dur-fast) var(--ease-out),
+      transform var(--dur-press) var(--ease-out);
+  }
+  .btn:active,
+  .chip:active,
+  .press:active {
+    transform: scale(0.97);
+  }
+  .btn:disabled {
+    cursor: default;
+    opacity: 0.7;
   }
   .btn-primary {
     background: var(--color-accent);
     color: var(--color-accent-ink);
   }
-  .btn-primary:hover {
-    background: var(--color-accent-hover);
+  @media (hover: hover) {
+    .btn-primary:hover {
+      background: var(--color-accent-hover);
+    }
   }
   .btn-secondary {
-    background: var(--color-surface);
+    background: var(--color-sand);
     color: var(--color-ink);
-    border: 1px solid var(--color-line);
   }
-  .btn-secondary:hover {
-    border-color: var(--color-ink-3);
+  @media (hover: hover) {
+    .btn-secondary:hover {
+      background: var(--color-sand-2);
+    }
   }
   .card {
     background: var(--color-surface);
     border-radius: var(--radius-card);
-    box-shadow: var(--shadow-card);
   }
   .chip {
     display: inline-flex;
@@ -131,10 +203,25 @@
     min-height: 44px;
     padding: 0.5rem 1rem;
     border-radius: var(--radius-pill);
-    border: 1px solid var(--color-line);
-    background: var(--color-surface);
+    border: 1px solid transparent;
+    background: var(--color-sand);
     font-size: 0.9375rem;
+    font-weight: 500;
     line-height: 1.2;
+    transition:
+      background-color var(--dur-fast) var(--ease-out),
+      color var(--dur-fast) var(--ease-out),
+      border-color var(--dur-fast) var(--ease-out),
+      transform var(--dur-press) var(--ease-out);
+  }
+  @media (hover: hover) {
+    .chip:hover {
+      background: var(--color-sand-2);
+    }
+  }
+  /* Чип на подложке sand - белый. Объявлен до активного состояния, чтобы активный оставался тёмным. */
+  .chip-light {
+    background: var(--color-surface);
   }
   .chip[aria-pressed='true'],
   .chip[aria-checked='true'],
@@ -143,20 +230,35 @@
     background: var(--color-ink);
     color: var(--color-bg);
   }
+  /* Подпись над блоком: обычный регистр, мелко и спокойно. */
   .eyebrow {
-    font-size: 0.8125rem;
+    font-size: 0.875rem;
     font-weight: 600;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
     color: var(--color-ink-3);
+  }
+  .h-page {
+    font-size: clamp(1.875rem, 1.45rem + 1.6vw, 2.75rem);
+    line-height: 1.08;
+  }
+  .h-section {
+    font-size: clamp(1.625rem, 1.35rem + 1.1vw, 2.25rem);
+    line-height: 1.12;
+  }
+  .section {
+    padding-block: 3.5rem;
+  }
+  @media (min-width: 768px) {
+    .section {
+      padding-block: 5.5rem;
+    }
   }
   /* Текст ограничен по ширине для чтения, блоки внутри (таблицы, карточки) - на всю ширину контейнера. */
   .prose-se > :where(p, ul, ol, h2, h3, blockquote) {
     max-width: 44rem;
   }
   .prose-se > h2 {
-    font-size: 1.5rem;
-    margin: 2rem 0 0.75rem;
+    font-size: clamp(1.5rem, 1.3rem + 0.8vw, 2rem);
+    margin: 2.5rem 0 0.75rem;
   }
   .prose-se > h3 {
     font-size: 1.2rem;
@@ -179,6 +281,11 @@
   .prose-se > ol > li {
     margin: 0.35rem 0;
   }
+  .prose-se > p,
+  .prose-se > ul,
+  .prose-se > ol {
+    color: var(--color-ink-2);
+  }
   .prose-se > p a,
   .prose-se > ul a,
   .prose-se > ol a {
@@ -194,5 +301,217 @@
   }
   .no-scrollbar::-webkit-scrollbar {
     display: none;
+  }
+}
+
+/* ---------- Движение ---------- */
+@layer components {
+  .press {
+    transition-property: color, background-color, border-color, box-shadow, opacity, transform;
+    transition-duration: var(--dur-fast), var(--dur-fast), var(--dur-fast), var(--dur-fast), var(--dur-fast), var(--dur-press);
+    transition-timing-function: var(--ease-out);
+  }
+
+  .lift {
+    transition: transform var(--dur-press) var(--ease-out);
+  }
+  /* Миниатюра расцветки: первое фото Kaspi - мама с рюкзаком, увеличиваем до ткани на груди. */
+  .swatch-crop {
+    transform: scale(2.4);
+    transform-origin: 50% 60%;
+  }
+  /* Карточка целиком - ссылка: нажатие и фокус видны на всей карточке, а не только на названии. */
+  .lift:has(a:active) {
+    transform: scale(0.985);
+  }
+  .lift:has(a:focus-visible) {
+    outline: 3px solid var(--color-accent);
+    outline-offset: 2px;
+  }
+  .lift a:focus-visible {
+    outline: none;
+  }
+
+  /* Появление: списки после фильтра, ответы подбора, новые отзывы. --i задаёт очередь. */
+  .enter {
+    animation: enter var(--dur-slow) var(--ease-out) backwards;
+    animation-delay: calc(min(var(--i, 0), 8) * 30ms);
+  }
+  .step-in {
+    animation: step-in var(--dur-slow) var(--ease-out) backwards;
+  }
+  .swap-in {
+    animation: swap-in var(--dur) var(--ease-out) backwards;
+  }
+
+  /* Скелет: мягкий отблеск, пока не загрузилась картинка или данные. Картинка ложится поверх. */
+  .skeleton {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    background-color: var(--color-sand);
+  }
+  .skeleton::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: linear-gradient(100deg, transparent 20%, rgb(255 255 255 / 0.6) 50%, transparent 80%);
+    transform: translateX(-100%);
+    animation: shimmer 1.5s var(--ease-in-out) 0.3s 8;
+  }
+
+  .spinner {
+    width: 1.1rem;
+    height: 1.1rem;
+    border-radius: 999px;
+    border: 2px solid currentColor;
+    border-right-color: transparent;
+    animation: spin 0.7s linear infinite;
+  }
+  .spinner-light {
+    color: var(--color-surface);
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .lightbox {
+    animation: fade-in var(--dur) var(--ease-out);
+  }
+  .lightbox-img {
+    animation: zoom-in var(--dur-slow) var(--ease-out);
+  }
+
+  /* Меню на мобильном. */
+  .menu-panel,
+  .menu-backdrop {
+    transition:
+      opacity var(--dur) var(--ease-out),
+      transform var(--dur) var(--ease-out),
+      visibility 0s linear var(--dur);
+  }
+  .menu-panel[data-open='false'] {
+    opacity: 0;
+    transform: translateY(-8px);
+    visibility: hidden;
+  }
+  .menu-backdrop[data-open='false'] {
+    opacity: 0;
+    visibility: hidden;
+  }
+  .menu-panel[data-open='true'],
+  .menu-backdrop[data-open='true'] {
+    transition-delay: 0s;
+  }
+  .menu-panel[data-open='true'] li {
+    animation: enter var(--dur-slow) var(--ease-out) backwards;
+  }
+  .menu-panel[data-open='true'] li:nth-child(2) { animation-delay: 25ms; }
+  .menu-panel[data-open='true'] li:nth-child(3) { animation-delay: 50ms; }
+  .menu-panel[data-open='true'] li:nth-child(4) { animation-delay: 75ms; }
+  .menu-panel[data-open='true'] li:nth-child(5) { animation-delay: 100ms; }
+  .menu-panel[data-open='true'] li:nth-child(6) { animation-delay: 125ms; }
+  .menu-panel[data-open='true'] li:nth-child(n + 7) { animation-delay: 150ms; }
+
+  .burger {
+    position: relative;
+    display: block;
+    width: 18px;
+    height: 12px;
+  }
+  .burger > span {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 1.75px;
+    border-radius: 2px;
+    background: currentColor;
+    transition:
+      transform var(--dur) var(--ease-out),
+      opacity var(--dur-fast) var(--ease-out),
+      top var(--dur) var(--ease-out);
+  }
+  .burger > span:nth-child(1) { top: 0; }
+  .burger > span:nth-child(2) { top: 5px; }
+  .burger > span:nth-child(3) { top: 10px; }
+  .burger[data-open='true'] > span:nth-child(1) { top: 5px; transform: rotate(45deg); }
+  .burger[data-open='true'] > span:nth-child(2) { opacity: 0; transform: scaleX(0.4); }
+  .burger[data-open='true'] > span:nth-child(3) { top: 5px; transform: rotate(-45deg); }
+
+  /* Полоска загрузки при переходе между страницами. */
+  .nav-progress {
+    position: fixed;
+    inset: 0 0 auto;
+    z-index: 60;
+    height: 2px;
+    background: var(--color-accent);
+    transform-origin: 0 50%;
+    transform: scaleX(0);
+    opacity: 0;
+    pointer-events: none;
+  }
+  .nav-progress[data-state='loading'] {
+    opacity: 1;
+    transform: scaleX(0.85);
+    transition:
+      transform 2.4s cubic-bezier(0.1, 0.7, 0.2, 1) 0.12s,
+      opacity 0.15s linear 0.12s;
+  }
+  .nav-progress[data-state='done'] {
+    opacity: 0;
+    transform: scaleX(1);
+    transition:
+      transform 0.2s var(--ease-out),
+      opacity 0.3s linear 0.15s;
+  }
+}
+
+/* Блоки главной и гайдов мягко проявляются при прокрутке. Только где браузер умеет это без JS. */
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .reveal {
+      animation: enter linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 35%;
+    }
+  }
+}
+
+@keyframes enter {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+}
+@keyframes step-in {
+  from {
+    opacity: 0;
+    transform: translateX(14px);
+  }
+}
+@keyframes swap-in {
+  from {
+    opacity: 0.35;
+  }
+}
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+}
+@keyframes zoom-in {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+}
+@keyframes shimmer {
+  to {
+    transform: translateX(100%);
+  }
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
   }
 }

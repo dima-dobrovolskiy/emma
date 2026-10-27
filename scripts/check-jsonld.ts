@@ -2,7 +2,7 @@
  * Проверка JSON-LD во всей статической сборке:
  * - каждый блок - валидный JSON с @context schema.org и @type;
  * - обязательные поля для расширенных результатов Google: Product, AggregateOffer, AggregateRating, Review,
- *   BreadcrumbList, FAQPage, ItemList, Organization, WebSite;
+ *   BreadcrumbList, FAQPage, ItemList, Article, Organization, WebSite;
  * - на ключевых страницах есть нужные типы.
  */
 import { htmlFiles, read, urlPathOf } from './lib-out';
@@ -75,6 +75,9 @@ function check(page: string, node: Node) {
       for (const it of items) req(page, it, 'ListItem', ['position', 'url']);
       break;
     }
+    case 'Article':
+      req(page, node, type, ['headline', 'dateModified', 'author', 'publisher']);
+      break;
     case 'Organization':
       req(page, node, type, ['name', 'url']);
       break;
@@ -112,7 +115,7 @@ const expect: Record<string, string[]> = {
   '/c/ergoryukzaki': ['BreadcrumbList', 'ItemList', 'FAQPage'],
   '/p/ergoryukzak-classic': ['BreadcrumbList', 'Product', 'FAQPage'],
   '/p/ergoryukzak-tiddly': ['BreadcrumbList', 'Product', 'FAQPage'],
-  '/k/kak-vybrat-ergoryukzak': ['BreadcrumbList', 'ItemList', 'FAQPage'],
+  '/k/kak-vybrat-ergoryukzak': ['BreadcrumbList', 'Article', 'ItemList', 'FAQPage'],
 };
 for (const [page, types] of Object.entries(expect)) {
   const got = typesByPage.get(page);

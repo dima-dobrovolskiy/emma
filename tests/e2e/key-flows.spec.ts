@@ -16,7 +16,8 @@ test('карточка: выбор расцветки меняет адрес и
   await expect(page).toHaveURL(/color=bunny-beige/);
   await expect(buy).toHaveAttribute('data-kaspi-code', '113973706');
   await expect(buy).toHaveAttribute('href', /113973706/);
-  await expect(page.locator('h1')).toContainText('Зайчата');
+  // Название расцветки - строкой под H1 (в самом H1 только модель: так чище для поиска).
+  await expect(page.locator('h1 + p')).toContainText('Зайчата');
 });
 
 test('карточка: ?color= из адреса выбирает расцветку, canonical на модель', async ({ page }) => {
@@ -39,7 +40,7 @@ test('подбор: 18-22 кг - только Classic; зимой добавля
   await page.getByRole('button', { name: '1-2 года' }).click();
   await page.getByRole('button', { name: '18-22 кг' }).click();
   await page.getByRole('button', { name: 'Зимой на улице' }).click();
-  const names = await page.locator('li.card p.text-lg').allInnerTexts();
+  const names = await page.locator('main li p.text-lg').allInnerTexts();
   expect(names[0]).toBe('Эргорюкзак Classic');
   expect(names.filter((n) => n.startsWith('Эргорюкзак'))).toHaveLength(1);
   expect(names.some((n) => /накидка/i.test(n))).toBe(true);
@@ -57,7 +58,7 @@ test('категория: фильтр по весу и сортировка', a
 
 test('отзывы: «Показать ещё» и фильтр «С фото»', async ({ page }) => {
   await page.goto('/p/ergoryukzak-classic');
-  const list = page.locator('#reviews ul.mt-5 > li');
+  const list = page.locator('#reviews ul[aria-busy] > li');
   await expect(list).toHaveCount(6);
   await page.getByRole('button', { name: 'Показать ещё' }).click();
   await expect(list).toHaveCount(18);

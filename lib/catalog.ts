@@ -19,6 +19,7 @@ import {
   type UnmappedItem,
 } from './kaspi/schema';
 import { DEFAULT_LOCALE, type Locale } from './i18n';
+import { htmlToText } from './kaspi/parse';
 import { capitalize, parseAgeRange, parseWeightKg, uniq } from './text';
 
 /*
@@ -229,11 +230,41 @@ function colorFromTitle(title: string): string {
   return tail.replace(/ё/g, 'е');
 }
 
-function orderImages(images: KaspiImage[], order: number[] | undefined): KaspiImage[] {
-  if (!order?.length) return images;
-  const picked = order.map((i) => images[i]).filter((x): x is KaspiImage => Boolean(x));
-  const rest = images.filter((_, i) => !order.includes(i));
-  return [...picked, ...rest];
+function orderImages(images: KaspiImage[], order: number[] | undefined, hidden: (img: KaspiImage) => boolean): KaspiImage[] {
+  const picked = (order ?? []).map((i) => images[i]).filter((x): x is KaspiImage => Boolean(x));
+  const rest = images.filter((_, i) => !order?.includes(i));
+  const all = [...picked, ...rest];
+  const visible = all.filter((img) => !hidden(img));
+  // Если правила скрыли всё (одно фото у товара), лучше показать как есть, чем пустую галерею.
+  return visible.length ? visible : all;
+}
+
+const mediaRulesSchema = z.object({
+  maxDistance: z.number(),
+  hide: z.array(z.object({ hash: z.string(), why: z.string() })),
+});
+
+function hamming(a: string, b: string): number {
+  let x = BigInt(`0x${a}`) ^ BigInt(`0x${b}`);
+  let n = 0;
+  while (x) {
+    n += Number(x & 1n);
+    x >>= 1n;
+  }
+  return n;
+}
+
+/** Рекламные слайды Kaspi (просьба об отзыве, переписки, врачи) - по отпечатку картинки, см. content/media-rules.json. */
+function hiddenImageTest(): (img: KaspiImage) => boolean {
+  const rulesPath = path.join(ROOT, 'content/media-rules.json');
+  const hashesPath = path.join(ROOT, 'data/media-hashes.json');
+  if (!existsSync(rulesPath) || !existsSync(hashesPath)) return () => false;
+  const rules = mediaRulesSchema.parse(JSON.parse(readFileSync(rulesPath, 'utf8')));
+  const hashes = z.record(z.string(), z.string()).parse(JSON.parse(readFileSync(hashesPath, 'utf8')));
+  return (img) => {
+    const h = hashes[new URL(img.large).pathname];
+    return Boolean(h && rules.hide.some((r) => hamming(h, r.hash) <= rules.maxDistance));
+  };
 }
 
 const UNMAPPED_CATEGORY_BY_KASPI: Array<[RegExp, string]> = [
@@ -248,6 +279,7 @@ export function getCatalog(locale: Locale = DEFAULT_LOCALE): Catalog {
   if (cache && cache.locale === locale) return cache;
 
   const catalog = catalogSchema.parse(JSON.parse(readFileSync(path.join(ROOT, 'content/catalog.json'), 'utf8')));
+  const isHiddenImage = hiddenImageTest();
   const modelTexts = modelsTextSchema.parse(JSON.parse(readFileSync(path.join(ROOT, `content/${locale}/models.json`), 'utf8')));
   const categoryTexts = categoriesTextSchema.parse(
     JSON.parse(readFileSync(path.join(ROOT, `content/${locale}/categories.json`), 'utf8')),
@@ -288,7 +320,7 @@ export function getCatalog(locale: Locale = DEFAULT_LOCALE): Catalog {
       rating: r?.ratingAvg ?? l?.rating ?? null,
       reviewsCount: r?.commentCount ?? l?.reviewsCount ?? s?.reviewsOnListingSnapshot ?? 0,
       ratingCount: r?.ratingCount ?? l?.reviewsCount ?? s?.reviewsOnListingSnapshot ?? 0,
-      images: orderImages(p?.images ?? [], imageOrder),
+      images: orderImages(p?.images ?? [], imageOrder, isHiddenImage),
       videoId: p?.videoId ?? null,
       specs: p?.specs ?? [],
       kaspiDescription: p?.description ?? '',
@@ -478,10 +510,25 @@ export function getModelReviews(model: Model): ModelReview[] {
   const out: ModelReview[] = [];
   for (const v of model.variants) {
     for (const r of readReviewsFile(v.kaspiCode)?.reviews ?? []) {
-      out.push({ ...r, designName: v.designName, designSlug: v.designSlug, modelSlug: model.slug });
+      // Срезы до исправления синхронизации хранят теги вроде <br> как текст - чистим при чтении.
+      const clean = { text: htmlToText(r.text), plus: htmlToText(r.plus), minus: htmlToText(r.minus) };
+      out.push({ ...r, ...clean, designName: v.designName, designSlug: v.designSlug, modelSlug: model.slug });
     }
   }
   return sortReviews(out);
+}
+
+/** У отзыва есть текст, достоинства или недостатки. Только такие Kaspi считает «отзывами с текстом». */
+export function hasReviewBody(r: Pick<Review, 'text' | 'plus' | 'minus'>): boolean {
+  return Boolean(r.text || r.plus || r.minus);
+}
+
+// Отзывы покупателей с медицинскими словами показываем в общем списке как есть,
+// но не выносим в продающие блоки, цитаты гайдов и микроразметку (ТЗ, раздел 10).
+const NOT_FOR_QUOTES = /дисплаз|ортопед|позвоноч|тазобедр|лечит|лечеб|гипертонус|недоношен|диагноз/i;
+
+export function isQuotable(r: Pick<Review, 'text' | 'plus' | 'minus'>): boolean {
+  return !NOT_FOR_QUOTES.test(`${r.text} ${r.plus} ${r.minus}`);
 }
 
 export function sortReviews<T extends Review>(list: T[]): T[] {

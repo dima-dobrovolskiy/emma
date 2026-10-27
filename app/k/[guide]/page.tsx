@@ -6,7 +6,7 @@ import { getGuides, getGuideSource } from '@/lib/guides';
 import { guideModels } from '@/lib/guide-data';
 import { formatDate, formatPrice, t } from '@/lib/i18n';
 import { alternatesFor } from '@/lib/seo';
-import { categorySummary, fmtRating } from '@/lib/summary';
+import { categorySummary, checkConsistency, fmtRating } from '@/lib/summary';
 import { absUrl } from '@/lib/site';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 import { Faq } from '@/components/ui/Faq';
@@ -43,7 +43,7 @@ export default async function GuidePage({ params }: Params) {
   const reviews = models.reduce((s, m) => s + m.reviewsCount, 0);
   const ratings = models.reduce((s, m) => s + m.ratingCount, 0);
   const avg = ratings ? models.reduce((s, m) => s + (m.ratingAvg ?? 0) * m.ratingCount, 0) / ratings : null;
-  const summary = categorySummary({ name: meta.h1, models });
+  const summary = meta.short ? (checkConsistency(meta.short, models), meta.short) : categorySummary({ name: meta.h1, models }, 'guide');
 
   const { content } = await compileMDX({
     source: body,
@@ -78,12 +78,26 @@ export default async function GuidePage({ params }: Params) {
         <Faq items={meta.faq} />
       </div>
       <JsonLd
-        data={{
-          '@context': 'https://schema.org',
-          '@type': 'ItemList',
-          name: meta.h1,
-          itemListElement: models.map((m, i) => ({ '@type': 'ListItem', position: i + 1, url: absUrl(`/p/${m.slug}`), name: m.name })),
-        }}
+        data={[
+          {
+            '@context': 'https://schema.org',
+            '@type': 'Article',
+            headline: meta.h1,
+            description: meta.description,
+            dateModified: meta.updated,
+            inLanguage: 'ru-KZ',
+            mainEntityOfPage: absUrl(`/k/${meta.slug}`),
+            author: { '@id': absUrl('/#org') },
+            publisher: { '@id': absUrl('/#org') },
+            ...(models[0]?.defaultVariant.images[0] ? { image: models[0].defaultVariant.images[0].large } : {}),
+          },
+          {
+            '@context': 'https://schema.org',
+            '@type': 'ItemList',
+            name: meta.h1,
+            itemListElement: models.map((m, i) => ({ '@type': 'ListItem', position: i + 1, url: absUrl(`/p/${m.slug}`), name: m.name })),
+          },
+        ]}
       />
     </article>
   );

@@ -85,11 +85,6 @@
         "id": "12-24",
         "fromMonths": 12,
         "toMonths": 24
-      },
-      {
-        "id": "24+",
-        "fromMonths": 24,
-        "toMonths": 48
       }
     ],
     "weights": [
@@ -130,6 +125,7 @@
       "nakidka-v-kurtku-do-18-kg",
       "slingonakidka-do-22-kg"
     ],
-    "maxResults": 3
+    "maxResults": 3,
+    "_agesNote": "Вариант «старше 2 лет» убран: у всех переносок в карточках Kaspi предел - 2 года, ответ всегда вёл в пустой результат. Вернуть, если Эмма подтвердит Classic после 2 лет (OPEN-QUESTIONS Э1)."
   }
 }

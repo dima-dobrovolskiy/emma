@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useUrlParam } from '@/lib/hooks';
 import { formatPrice, t } from '@/lib/i18n';
 import { fmtRatingClient } from '@/lib/format';
@@ -34,7 +34,16 @@ export function Quiz({ ages, weights, where, models, addons, maxResults, ageLabe
   const step = !age ? 0 : !weight ? 1 : 2;
   const result = age && weight && place ? podbor(models, addons, { age, weight, where: place }, maxResults) : null;
 
+  // После каждого ответа фокус - на новый вопрос или на заголовок результата, чтобы скринридер прочитал его.
+  const focusTarget = useRef<HTMLElement>(null);
+  const answered = useRef(false);
+  const view = result ? 'result' : `step-${step}`;
+  useEffect(() => {
+    if (answered.current) focusTarget.current?.focus({ preventScroll: true });
+  }, [view]);
+
   const start = () => {
+    answered.current = true;
     if (!started) {
       setStarted(true);
       track('quiz_start', {});
@@ -51,6 +60,7 @@ export function Quiz({ ages, weights, where, models, addons, maxResults, ageLabe
   };
 
   const back = () => {
+    answered.current = true;
     if (step === 2) setWeightId(null);
     else if (step === 1) {
       setAgeId(null);
@@ -59,6 +69,7 @@ export function Quiz({ ages, weights, where, models, addons, maxResults, ageLabe
   };
 
   const restart = () => {
+    answered.current = true;
     setAgeId(null);
     setWeightId(null);
     setPlace(null);
@@ -67,8 +78,10 @@ export function Quiz({ ages, weights, where, models, addons, maxResults, ageLabe
 
   if (result) {
     return (
-      <div aria-live="polite">
-        <h2 className="text-2xl md:text-3xl">{t('podbor.resultTitle')}</h2>
+      <div className="enter">
+        <h2 ref={focusTarget as React.RefObject<HTMLHeadingElement>} tabIndex={-1} className="text-2xl outline-none md:text-3xl">
+          {t('podbor.resultTitle')}
+        </h2>
         <p className="mt-2 text-sm text-ink-3">{t('podbor.resultLead')}</p>
         {result.main.length === 0 ? (
           <p className="mt-6 rounded-[var(--radius-card)] bg-sand p-5">{t('podbor.nothing')}</p>
@@ -80,22 +93,27 @@ export function Quiz({ ages, weights, where, models, addons, maxResults, ageLabe
                 ? [t('podbor.winterAddon')]
                 : [
                     ageRangeLabels[m.slug] && t('podbor.reasonAge', { range: ageRangeLabels[m.slug]! }),
-                    m.weightTo !== null && t('podbor.reasonWeight', { max: m.weightTo }),
+                    (m.shownMaxKg ?? m.weightTo) !== null && t('podbor.reasonWeight', { max: (m.shownMaxKg ?? m.weightTo)! }),
                     place && m.uses.includes(place) && t('podbor.reasonWhere', { text: t(`podbor.where-${place}`) }),
                     m.reviews > 0 && m.rating !== null && t('podbor.reasonPopular', { reviews: t('common.reviewsCount', { count: m.reviews }), rating: fmtRatingClient(m.rating) }),
                   ].filter((x): x is string => Boolean(x));
               return (
-                <li key={m.slug} className="card relative flex gap-4 p-4">
-                  {images[m.slug] && <img src={images[m.slug]} alt="" width={96} height={128} className="h-32 w-24 shrink-0 rounded-xl object-cover" />}
+                <li key={m.slug} className="lift group enter relative flex gap-4 rounded-[var(--radius-card)] bg-surface p-4" style={{ '--i': i + 1 } as React.CSSProperties}>
+                  {images[m.slug] && (
+                    <span className="skeleton block h-32 w-24 shrink-0 overflow-hidden rounded-[var(--radius-card)]">
+                      <img src={images[m.slug]} alt="" width={96} height={128} className="h-full w-full object-cover" />
+                    </span>
+                  )}
                   <div className="min-w-0">
                     {isAddon && <p className="eyebrow">{t('podbor.winterAddon')}</p>}
                     <p className="text-lg font-semibold">
-                      <Link href={`/p/${m.slug}`} prefetch={false} className="after:absolute after:inset-0 hover:text-accent">
+                      <Link href={`/p/${m.slug}`} prefetch={false} className="after:absolute after:inset-0 group-hover:underline group-hover:underline-offset-4">
                         {m.name}
                       </Link>
                     </p>
-                    <p className="font-semibold">
+                    <p className="font-semibold tabular-nums">
                       {t('common.from')} {formatPrice(m.minPrice)}
+                      {m.credit && <span className="ml-2 text-sm text-accent">{m.credit}</span>}
                     </p>
                     {!isAddon && (
                       <>
@@ -113,9 +131,14 @@ export function Quiz({ ages, weights, where, models, addons, maxResults, ageLabe
             })}
           </ul>
         )}
-        <button type="button" onClick={restart} className="btn btn-secondary mt-6">
-          {t('podbor.restart')}
-        </button>
+        <div className="mt-6 flex flex-wrap gap-3">
+          <button type="button" onClick={restart} className="btn btn-secondary press">
+            {t('podbor.restart')}
+          </button>
+          <button type="button" onClick={() => ((answered.current = true), setPlace(null))} className="inline-flex min-h-[44px] items-center px-2 text-ink-2 underline underline-offset-4">
+            {t('podbor.back')}
+          </button>
+        </div>
       </div>
     );
   }
@@ -139,13 +162,17 @@ export function Quiz({ ages, weights, where, models, addons, maxResults, ageLabe
     <div>
       <p className="eyebrow">{t('podbor.step', { current: step + 1, total: steps.length })}</p>
       <div className="mt-2 h-1.5 overflow-hidden rounded-full bg-sand-2">
-        <div className="h-full rounded-full bg-accent transition-all" style={{ width: `${((step + 1) / steps.length) * 100}%` }} />
+        <div className="h-full rounded-full bg-accent transition-[width] duration-500 ease-out" style={{ width: `${((step + 1) / steps.length) * 100}%` }} />
       </div>
-      <fieldset className="mt-6">
-        <legend className="text-2xl font-semibold md:text-3xl">{s.q}</legend>
+      <fieldset key={step} className={`mt-6 ${started || step > 0 ? 'step-in' : ''}`}>
+        <legend className="text-2xl font-semibold md:text-3xl">
+          <span ref={focusTarget as React.RefObject<HTMLSpanElement>} tabIndex={-1} className="outline-none">
+            {s.q}
+          </span>
+        </legend>
         <div className="mt-5 grid gap-2 sm:grid-cols-2">
           {s.options.map((o) => (
-            <button key={o.id} type="button" onClick={o.pick} aria-pressed={o.active} className="chip min-h-[56px] justify-start px-5 text-base font-semibold">
+            <button key={o.id} type="button" onClick={o.pick} data-active={o.active} className="chip chip-light press min-h-[56px] justify-start px-5 text-base font-semibold">
               {o.label}
             </button>
           ))}

@@ -34,6 +34,9 @@ export type PodborModel = RangeFacets & {
   reviews: number;
   rating: number | null;
   minPrice: number;
+  /** Максимальный вес для подписи - как на карточке модели. Для отбора используется weightTo. */
+  shownMaxKg?: number | null;
+  credit?: string | null;
 };
 
 export type PodborResult = {
