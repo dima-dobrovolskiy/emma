@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { getCatalog, getModel } from '@/lib/catalog';
-import { alternatesFor } from '@/lib/seo';
+import { alternatesFor, socialMeta } from '@/lib/seo';
 import { t } from '@/lib/i18n';
 import { cardSrcSet } from '@/lib/images';
 import { creditText, maxWeightKg } from '@/lib/summary';
@@ -12,6 +12,7 @@ export const metadata: Metadata = {
   title: { absolute: `${t('meta.podborTitle')}${t('meta.titleSuffix')}` },
   description: t('meta.podborDescription'),
   alternates: alternatesFor('/podbor'),
+  ...socialMeta({ title: `${t('meta.podborTitle')}${t('meta.titleSuffix')}`, description: t('meta.podborDescription'), path: '/podbor' }),
 };
 
 function ageRangeLabel(from: number | null, to: number | null): string {

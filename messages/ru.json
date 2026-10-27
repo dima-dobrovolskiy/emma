@@ -5,12 +5,12 @@
     "titleSuffix": " | SlingoEmma",
     "homeTitle": "SlingoEmma - эргорюкзаки и слинги для детей, покупка на Kaspi",
     "homeDescription": "Эргорюкзаки, слинги и зимние накидки SlingoEmma: {models, plural, one {# модель} few {# модели} many {# моделей} other {# модели}}, средняя оценка {rating} на Kaspi, отзывов: {reviews}. Рассрочка и доставка Kaspi по Казахстану.",
-    "modelTitle": "{name} - купить в Алматы и по Казахстану, от {price}, {reviews} | SlingoEmma",
-    "modelTitleNoReviews": "{name} - купить в Алматы и по Казахстану, от {price} | SlingoEmma",
+    "modelTitle": "{name} SlingoEmma - {price}, {reviews}, купить в Алматы и по Казахстану",
+    "modelTitleNoReviews": "{name} SlingoEmma - {price}, купить в Алматы и по Казахстану",
     "modelDescription": "{name}: от {price}, {credit}оценка {rating} из 5, {reviews} на Kaspi. {colors}. Покупка на Kaspi, доставка по Казахстану.",
     "modelDescriptionNoReviews": "{name}: от {price}, {credit}{colors}. Покупка на Kaspi, доставка по Казахстану.",
     "modelDescriptionCredit": "в рассрочку от {credit}/мес, ",
-    "categoryTitle": "{name} - купить в Алматы и по Казахстану, от {price}, {reviews}",
+    "categoryTitle": "{name} SlingoEmma - {price}, {reviews}, купить в Алматы и по Казахстану",
     "categoryDescription": "{name}: {models} в наличии, цены от {price}, {reviews} на Kaspi. Рассрочка и доставка Kaspi по Казахстану.",
     "guidesTitle": "Гайды: как выбрать переноску для ребёнка",
     "guidesDescription": "Как выбрать эргорюкзак или слинг, с какого возраста носить ребёнка в переноске. Сравнение моделей SlingoEmma на данных Kaspi.",
@@ -226,7 +226,11 @@
     "start": "Начать подбор",
     "fromBirth": "с рождения",
     "fromMonths": "с {count} мес",
-    "toMonths": "до {value}"
+    "toMonths": "до {value}",
+    "highlightBirth": "Подходит с рождения",
+    "highlightWeight": "Самый большой запас по весу - до {max} кг",
+    "highlightPopular": "Чаще всего берут - {reviews}",
+    "highlightCheapest": "Дешевле остальных - {price}"
   },
   "guides": {
     "h1": "Гайды: как выбрать переноску",
@@ -342,6 +346,9 @@
     "brand": "SlingoEmma"
   },
   "llms": {
-    "lead": "{lead} {source}: на Kaspi - {years}, заказов - {orders}, отзывов - {reviews}, средняя оценка - {rating}."
+    "lead": "{lead} Магазин SlingoEmma на Kaspi: {years}, {orders} заказов, {reviews}, средняя оценка {rating}.",
+    "models": "Модели",
+    "buyers": "Покупателям",
+    "faq": "Вопросы и ответы"
   }
 }

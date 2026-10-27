@@ -1,11 +1,11 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { compileMDX } from 'next-mdx-remote/rsc';
-import { getCatalog } from '@/lib/catalog';
+import { getCatalog, getModel } from '@/lib/catalog';
 import { getGuides, getGuideSource } from '@/lib/guides';
 import { guideModels } from '@/lib/guide-data';
 import { formatDate, formatPrice, t } from '@/lib/i18n';
-import { alternatesFor } from '@/lib/seo';
+import { alternatesFor, socialMeta } from '@/lib/seo';
 import { categorySummary, checkConsistency, fmtRating } from '@/lib/summary';
 import { absUrl } from '@/lib/site';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
@@ -29,7 +29,13 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
     title: src.meta.title,
     description: src.meta.description,
     alternates: alternatesFor(`/k/${guide}`),
-    openGraph: { title: src.meta.title, description: src.meta.description, url: absUrl(`/k/${guide}`), type: 'article' },
+    ...socialMeta({
+      title: src.meta.title,
+      description: src.meta.description,
+      path: `/k/${guide}`,
+      type: 'article',
+      image: getModel(src.meta.models[0] ?? '')?.defaultVariant.images[0],
+    }),
   };
 }
 

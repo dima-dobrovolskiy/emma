@@ -3,8 +3,8 @@
  *
  *   tsx scripts/mirror-media.ts [--scope=first|all] [--out=public/media]
  *
- * Скачивает gallery-large (1080 px) каждого фото, сжимает в WebP 180/370/750/1080 px,
- * кладёт в --out и пишет манифест data/media-manifest.json.
+ * Скачивает gallery-large (1080 px) каждого фото, сжимает в WebP 180/370/750/1080 px и JPEG для превью в соцсетях
+ * (-og.jpg: WebP понимают не все мессенджеры), кладёт в --out и пишет манифест data/media-manifest.json.
  * Включено по умолчанию (решение Р2, 2026-10-27): `pnpm build` сначала запускает этот скрипт с --soft.
  * Сайт берёт фото из манифеста, если файл реально лежит в public/media; выключить - MIRROR_MEDIA=0 (lib/images.ts).
  * --soft - ошибки скачивания не роняют сборку: такие фото остаются на CDN Kaspi.
@@ -71,7 +71,7 @@ async function main() {
   for (const img of images) {
     const key = mediaKey(img.large);
     const name = createHash('sha1').update(key).digest('hex').slice(0, 16);
-    if (manifest[key] && MEDIA_WIDTHS.every((w) => existsSync(path.join(OUT, `${name}-${w}.webp`)))) continue;
+    if (manifest[key] && MEDIA_WIDTHS.every((w) => existsSync(path.join(OUT, `${name}-${w}.webp`))) && existsSync(path.join(OUT, `${name}-og.jpg`))) continue;
     let src: Buffer;
     try {
       src = await download(img.large);
@@ -87,6 +87,7 @@ async function main() {
       writeFileSync(path.join(OUT, `${name}-${w}.webp`), out);
       if (w === 750) bytesOut += out.length;
     }
+    writeFileSync(path.join(OUT, `${name}-og.jpg`), await sharp(src).resize({ width: 1080, withoutEnlargement: true }).jpeg({ quality: 80, mozjpeg: true }).toBuffer());
     manifest[key] = { file: name, widths: [...MEDIA_WIDTHS] };
     done++;
     if (done % 10 === 0) console.log(`  ${done} фото...`);

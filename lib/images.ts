@@ -2,6 +2,7 @@ import { existsSync, readFileSync } from 'node:fs';
 import path from 'node:path';
 import type { KaspiImage } from './kaspi/schema';
 import type { GalleryImage } from './media-types';
+import { absUrl } from './site';
 
 /*
  * Фото по умолчанию отдаются с CDN Kaspi их собственными размерами (формат 3:4):
@@ -67,6 +68,16 @@ export function thumbSrc(img: KaspiImage): string {
 }
 
 export const KASPI_CDN = 'https://resources.cdn-kaspi.kz';
+
+/**
+ * Картинка для превью в соцсетях и мессенджерах: наш JPEG из зеркала (абсолютный адрес),
+ * иначе - фото с CDN Kaspi. Формат фото Kaspi - 3:4, 1080×1440.
+ */
+export function shareImage(img: KaspiImage): { url: string; width: number; height: number } {
+  const m = mirrored(img);
+  const og = m && existsSync(path.join(process.cwd(), 'public/media', `${m.file}-og.jpg`));
+  return { url: og ? absUrl(`/media/${m.file}-og.jpg`) : img.large, width: 1080, height: 1440 };
+}
 
 /** Фото галереи для клиентских компонентов: все URL готовы, файловая система не нужна. */
 export function galleryImage(img: KaspiImage): GalleryImage {

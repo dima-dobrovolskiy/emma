@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { getCatalog, getTrustNumbers, hasReviewBody } from '@/lib/catalog';
 import { formatNumber, t } from '@/lib/i18n';
-import { alternatesFor } from '@/lib/seo';
+import { alternatesFor, socialMeta } from '@/lib/seo';
 import { fmtRating } from '@/lib/summary';
 import { allDistribution, allReviewsDTO } from '@/lib/reviews-data';
 import { ReviewsBlock } from '@/components/reviews/ReviewsBlock';
@@ -9,10 +9,14 @@ import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 
 export function generateMetadata(): Metadata {
   const tr = getTrustNumbers();
+  const title = t('meta.reviewsTitle', { count: formatNumber(tr.reviews) });
+  const description = t('meta.reviewsDescription', { count: formatNumber(tr.reviews), rating: tr.rating !== null ? fmtRating(tr.rating) : '-' });
   return {
-    title: { absolute: `${t('meta.reviewsTitle', { count: formatNumber(tr.reviews) })}${t('meta.titleSuffix')}` },
-    description: t('meta.reviewsDescription', { count: formatNumber(tr.reviews), rating: tr.rating !== null ? fmtRating(tr.rating) : '-' }),
+    // В заголовке уже «SlingoEmma» - без хвоста с брендом.
+    title: { absolute: title },
+    description,
     alternates: alternatesFor('/otzyvy'),
+    ...socialMeta({ title, description, path: '/otzyvy' }),
   };
 }
 

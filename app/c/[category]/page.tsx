@@ -4,7 +4,7 @@ import { notFound } from 'next/navigation';
 import { getCatalog, type Category, type Collection } from '@/lib/catalog';
 import { getGuideMeta } from '@/lib/guides';
 import { formatDate, formatPrice, t } from '@/lib/i18n';
-import { alternatesFor } from '@/lib/seo';
+import { alternatesFor, socialMeta } from '@/lib/seo';
 import { absUrl } from '@/lib/site';
 import { categorySummary, creditText } from '@/lib/summary';
 import { listingFacets } from '@/lib/facets';
@@ -34,7 +34,9 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
   if (!c) return {};
   const minPrice = Math.min(...c.models.map((m) => m.minPrice));
   const reviews = c.models.reduce((s, m) => s + m.reviewsCount, 0);
-  const title = c.seo.title ?? t('meta.categoryTitle', { name: c.name, price: formatPrice(minPrice), reviews: t('common.reviewsCount', { count: reviews }) });
+  const maxPrice = Math.max(...c.models.map((m) => m.maxPrice));
+  const price = minPrice === maxPrice ? formatPrice(minPrice) : `${t('common.from')} ${formatPrice(minPrice)}`;
+  const title = c.seo.title ?? t('meta.categoryTitle', { name: c.name, price, reviews: t('common.reviewsCount', { count: reviews }) });
   const description =
     c.seo.description ??
     t('meta.categoryDescription', {
@@ -44,10 +46,11 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
       reviews: t('common.reviewsCount', { count: reviews }),
     });
   return {
-    title: { absolute: `${title}${t('meta.titleSuffix')}` },
+    // Бренд уже в начале шаблона - хвост « | SlingoEmma» не нужен (Р9). Свой seo.title у подборок - с хвостом.
+    title: { absolute: c.seo.title ? `${title}${t('meta.titleSuffix')}` : title },
     description,
     alternates: alternatesFor(`/c/${c.slug}`),
-    openGraph: { title, description, url: absUrl(`/c/${c.slug}`) },
+    ...socialMeta({ title, description, path: `/c/${c.slug}`, image: c.models[0]?.defaultVariant.images[0] }),
   };
 }
 
@@ -100,13 +103,13 @@ export default async function CategoryPage({ params }: Params) {
           <h2 id="cat-guides" className="h-section mb-6">
             {t('category.guidesTitle')}
           </h2>
-          <ul className="grid md:grid-cols-3 md:gap-x-8">
+          <ul className="grid gap-3 md:grid-cols-3 md:gap-5">
             {guides.map((g) => (
-              <li key={g.slug} className="border-t border-line">
-                <Link href={`/k/${g.slug}`} className="group flex min-h-[72px] items-center justify-between gap-4 py-5">
-                  <span className="font-display text-xl leading-snug group-hover:underline group-hover:underline-offset-4">{g.h1}</span>
-                  <span aria-hidden="true" className="text-accent transition-transform duration-200 group-hover:translate-x-1">
-                    →
+              <li key={g.slug}>
+                <Link href={`/k/${g.slug}`} className="plate group">
+                  <span className="font-display text-xl leading-snug">{g.h1}</span>
+                  <span className="text-sm font-semibold text-accent">
+                    {t('guides.read')} <span aria-hidden="true" className="inline-block transition-transform duration-200 group-hover:translate-x-1">→</span>
                   </span>
                 </Link>
               </li>

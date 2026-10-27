@@ -44,6 +44,32 @@ export type PodborResult = {
   winterAddon: PodborModel[];
 };
 
+export type Highlight = { kind: 'birth' | 'weight' | 'popular' | 'cheapest'; model: PodborModel };
+
+/**
+ * Одна отличительная строка на модель в результате подбора: чем она лучше остальных подобранных.
+ * Только при строгом превосходстве, каждая строка - не больше чем у одной модели. При одной модели строк нет.
+ */
+export function highlights(models: PodborModel[]): Map<string, Highlight['kind']> {
+  const out = new Map<string, Highlight['kind']>();
+  if (models.length < 2) return out;
+  const maxKg = (m: PodborModel) => m.shownMaxKg ?? m.weightTo ?? 0;
+  const best = (value: (m: PodborModel) => number): PodborModel | null => {
+    const sorted = [...models].sort((a, b) => value(b) - value(a));
+    return sorted[0] && value(sorted[0]) > value(sorted[1]!) ? sorted[0] : null;
+  };
+  const rules: Array<[Highlight['kind'], PodborModel | null]> = [
+    ['birth', models.filter((m) => m.ageFrom === 0).length === 1 ? (models.find((m) => m.ageFrom === 0) ?? null) : null],
+    ['weight', best(maxKg)],
+    ['popular', best((m) => m.reviews)],
+    ['cheapest', best((m) => -m.minPrice)],
+  ];
+  for (const [kind, m] of rules) {
+    if (m && !out.has(m.slug)) out.set(m.slug, kind);
+  }
+  return out;
+}
+
 export function podbor(
   models: PodborModel[],
   addons: PodborModel[],

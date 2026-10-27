@@ -67,10 +67,12 @@
   html.scroll-locked {
     overflow: hidden;
   }
-  /* На тач-экранах подсветку тапа браузера мы выключили - ссылки отвечают лёгким затуханием. */
+  /* На тач-экранах подсветку тапа браузера мы выключили - ссылки отвечают лёгким затуханием.
+     С задержкой: если палец начал прокрутку, браузер снимает :active раньше, и ссылка не мигает. */
   @media (hover: none) {
     a:active {
       opacity: 0.65;
+      transition-delay: 90ms;
     }
   }
   /* Липкая панель покупки на мобильном не должна закрывать низ подвала. */
@@ -169,6 +171,40 @@
   .chip:active,
   .press:active {
     transform: scale(0.97);
+  }
+  @media (hover: none) {
+    .btn:active,
+    .chip:active,
+    .press:active {
+      transition-delay: 60ms;
+    }
+  }
+  /* Плашка-ссылка: гайды и подобные переходы - видно, куда нажимать. */
+  .plate {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1.25rem;
+    height: 100%;
+    padding: 1.25rem;
+    border-radius: var(--radius-card);
+    background: var(--color-sand);
+    transition:
+      background-color var(--dur-fast) var(--ease-out),
+      transform var(--dur-press) var(--ease-out);
+  }
+  @media (min-width: 768px) {
+    .plate {
+      padding: 1.5rem;
+    }
+  }
+  @media (hover: hover) {
+    .plate:hover {
+      background: var(--color-sand-2);
+    }
+  }
+  .plate:active {
+    transform: scale(0.985);
   }
   .btn:disabled {
     cursor: default;
@@ -323,6 +359,7 @@
   /* Карточка целиком - ссылка: нажатие и фокус видны на всей карточке, а не только на названии. */
   .lift:has(a:active) {
     transform: scale(0.985);
+    transition-delay: 90ms;
   }
   .lift:has(a:focus-visible) {
     outline: 3px solid var(--color-accent);

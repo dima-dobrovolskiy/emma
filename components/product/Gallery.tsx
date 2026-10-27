@@ -25,11 +25,20 @@ export function Gallery({ images, alt, badge, swapped = false }: { images: Galle
   };
 
   const thumbs = useRef<HTMLDivElement>(null);
+  // Лента миниатюр (только на десктопе) подтягивается к активному фото. Прокручиваем только саму ленту:
+  // scrollIntoView на скрытой ленте в Safari на телефоне дёргал страницу и срывал свайп галереи.
+  const followThumb = (i: number) => {
+    const strip = thumbs.current;
+    const thumb = strip?.children[i] as HTMLElement | undefined;
+    if (!strip || !thumb || strip.offsetParent === null) return;
+    const left = thumb.offsetLeft - (strip.clientWidth - thumb.clientWidth) / 2;
+    strip.scrollTo({ left, behavior: 'smooth' });
+  };
   const onScroll = () => {
     const el = track.current;
     if (!el) return;
     const i = Math.round(el.scrollLeft / el.clientWidth);
-    if (i !== index) thumbs.current?.children[i]?.scrollIntoView({ block: 'nearest', inline: 'nearest' });
+    if (i !== index) followThumb(i);
     setIndex(i);
     setLoadedUpTo((x) => Math.max(x, i + 1));
   };

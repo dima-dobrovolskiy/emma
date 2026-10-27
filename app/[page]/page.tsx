@@ -4,7 +4,7 @@ import { compileMDX } from 'next-mdx-remote/rsc';
 import { getPage, getPages } from '@/lib/pages';
 import { getTrustNumbers } from '@/lib/catalog';
 import { formatNumber, t } from '@/lib/i18n';
-import { alternatesFor } from '@/lib/seo';
+import { alternatesFor, socialMeta } from '@/lib/seo';
 import { KASPI_SHOP_URL } from '@/lib/site';
 import { fmtRating } from '@/lib/summary';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
@@ -20,7 +20,12 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
   const { page } = await params;
   const p = getPage(page);
   if (!p) return {};
-  return { title: p.meta.title, description: p.meta.description, alternates: alternatesFor(`/${page}`) };
+  return {
+    title: p.meta.title,
+    description: p.meta.description,
+    alternates: alternatesFor(`/${page}`),
+    ...socialMeta({ title: `${p.meta.title}${t('meta.titleSuffix')}`, description: p.meta.description, path: `/${page}` }),
+  };
 }
 
 /** Цифры Kaspi для текстов страниц: {years} {orders} {reviews} {rating}. */

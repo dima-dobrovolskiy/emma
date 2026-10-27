@@ -6,7 +6,7 @@ import { useUrlParam } from '@/lib/hooks';
 import { formatPrice, t } from '@/lib/i18n';
 import { fmtRatingClient } from '@/lib/format';
 import { track } from '@/lib/analytics/events';
-import { podbor, type AgeOption, type PodborModel, type WeightOption, type Where } from '@/lib/podbor-rules';
+import { highlights, podbor, type AgeOption, type PodborModel, type WeightOption, type Where } from '@/lib/podbor-rules';
 
 type Props = {
   ages: AgeOption[];
@@ -77,6 +77,21 @@ export function Quiz({ ages, weights, where, models, addons, maxResults, ageLabe
   };
 
   if (result) {
+    const marks = highlights(result.main);
+    const markText = (m: PodborModel) => {
+      switch (marks.get(m.slug)) {
+        case 'birth':
+          return t('podbor.highlightBirth');
+        case 'weight':
+          return t('podbor.highlightWeight', { max: (m.shownMaxKg ?? m.weightTo)! });
+        case 'popular':
+          return t('podbor.highlightPopular', { reviews: t('common.reviewsCount', { count: m.reviews }) });
+        case 'cheapest':
+          return t('podbor.highlightCheapest', { price: formatPrice(m.minPrice) });
+        default:
+          return null;
+      }
+    };
     return (
       <div className="enter">
         <h2 ref={focusTarget as React.RefObject<HTMLHeadingElement>} tabIndex={-1} className="text-2xl outline-none md:text-3xl">
@@ -106,6 +121,7 @@ export function Quiz({ ages, weights, where, models, addons, maxResults, ageLabe
                   )}
                   <div className="min-w-0">
                     {isAddon && <p className="eyebrow">{t('podbor.winterAddon')}</p>}
+                    {!isAddon && markText(m) && <p className="text-sm font-semibold text-accent">{markText(m)}</p>}
                     <p className="text-lg font-semibold">
                       <Link href={`/p/${m.slug}`} prefetch={false} className="after:absolute after:inset-0 group-hover:underline group-hover:underline-offset-4">
                         {m.name}

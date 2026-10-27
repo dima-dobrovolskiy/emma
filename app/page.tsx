@@ -4,7 +4,7 @@ import homeContent from '@/content/ru/home.json';
 import { getCatalog, getModel, getTrustNumbers, isQuotable } from '@/lib/catalog';
 import { getGuides } from '@/lib/guides';
 import { formatNumber, t } from '@/lib/i18n';
-import { alternatesFor } from '@/lib/seo';
+import { alternatesFor, socialMeta } from '@/lib/seo';
 import { gallerySrcSet, cardSrcSet } from '@/lib/images';
 import { fmtRating } from '@/lib/summary';
 import { allReviewsDTO } from '@/lib/reviews-data';
@@ -16,11 +16,13 @@ import { Stars } from '@/components/ui/Stars';
 export function generateMetadata(): Metadata {
   const tr = getTrustNumbers();
   const { models } = getCatalog();
+  const title = t('meta.homeTitle');
+  const description = t('meta.homeDescription', { models: models.length, reviews: formatNumber(tr.reviews), rating: tr.rating !== null ? fmtRating(tr.rating) : '-' });
   return {
-    title: { absolute: t('meta.homeTitle') },
-    description: t('meta.homeDescription', { models: models.length, reviews: formatNumber(tr.reviews), rating: tr.rating !== null ? fmtRating(tr.rating) : '-' }),
+    title: { absolute: title },
+    description,
     alternates: alternatesFor('/'),
-    openGraph: { url: '/', images: getModel(homeContent.heroModel)?.defaultVariant.images[0] ? [{ url: getModel(homeContent.heroModel)!.defaultVariant.images[0]!.large, width: 1080, height: 1440 }] : [] },
+    ...socialMeta({ title, description, path: '/' }),
   };
 }
 
@@ -244,11 +246,11 @@ export default function HomePage() {
           <h2 id="home-guides" className="h-section mb-6 md:mb-8">
             {t('home.guidesTitle')}
           </h2>
-          <ul className="grid md:grid-cols-3 md:gap-x-8">
+          <ul className="grid gap-3 md:grid-cols-3 md:gap-5">
             {guides.map((g) => (
-              <li key={g.slug} className="border-t border-line">
-                <Link href={`/k/${g.slug}`} className="group flex h-full min-h-11 flex-col justify-between gap-4 py-5">
-                  <span className="font-display text-[1.375rem] leading-snug group-hover:underline group-hover:decoration-1 group-hover:underline-offset-4">{g.h1}</span>
+              <li key={g.slug}>
+                <Link href={`/k/${g.slug}`} className="plate group">
+                  <span className="font-display text-[1.375rem] leading-snug">{g.h1}</span>
                   <span className="text-sm font-semibold text-accent">
                     {t('guides.read')} <span aria-hidden="true" className="inline-block transition-transform duration-200 group-hover:translate-x-1">→</span>
                   </span>

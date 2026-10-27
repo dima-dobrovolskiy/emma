@@ -5,9 +5,9 @@ import { getCatalog, getModel, getTrustNumbers, hasReviewBody, isQuotable, model
 import { getCheckoutProvider } from '@/lib/commerce';
 import { flags } from '@/lib/flags';
 import { formatDate, formatNumber, formatPrice, t } from '@/lib/i18n';
-import { alternatesFor } from '@/lib/seo';
+import { alternatesFor, socialMeta } from '@/lib/seo';
 import { absUrl } from '@/lib/site';
-import { maxWeightKg, modelSummary, renderTemplate, fmtRating } from '@/lib/summary';
+import { cheapestVariant, maxWeightKg, modelSummary, renderTemplate, fmtRating } from '@/lib/summary';
 import { modelReviewsDTO } from '@/lib/reviews-data';
 import { getGuideMeta } from '@/lib/guides';
 import { galleryImage } from '@/lib/images';
@@ -35,10 +35,11 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
   const { model: slug } = await params;
   const m = getModel(slug);
   if (!m) return {};
-  const price = formatPrice(m.minPrice);
+  const price = m.minPrice === m.maxPrice ? formatPrice(m.minPrice) : `${t('common.from')} ${formatPrice(m.minPrice)}`;
   const reviews = t('common.reviewsCount', { count: m.reviewsCount });
   const title = m.seo.title ?? (m.reviewsCount > 0 ? t('meta.modelTitle', { name: m.name, price, reviews }) : t('meta.modelTitleNoReviews', { name: m.name, price }));
-  const credit = m.defaultVariant.creditMonthlyPrice ? t('meta.modelDescriptionCredit', { credit: m.defaultVariant.creditMonthlyPrice }) : '';
+  const cheap = cheapestVariant(m);
+  const credit = cheap.creditMonthlyPrice ? t('meta.modelDescriptionCredit', { credit: cheap.creditMonthlyPrice }) : '';
   const colors = t('common.colorsCount', { count: m.variants.length });
   const description =
     m.seo.description ??
@@ -50,8 +51,7 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
     title: { absolute: title },
     description,
     alternates: alternatesFor(`/p/${m.slug}`),
-    openGraph: { title, description, url: absUrl(`/p/${m.slug}`), images: img ? [{ url: img.large, width: 1080, height: 1440 }] : [] },
-    twitter: { title, description, images: img ? [img.large] : [] },
+    ...socialMeta({ title, description, path: `/p/${m.slug}`, image: img }),
   };
 }
 
