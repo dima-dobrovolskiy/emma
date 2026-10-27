@@ -19,7 +19,7 @@ import {
   type UnmappedItem,
 } from './kaspi/schema';
 import { DEFAULT_LOCALE, type Locale } from './i18n';
-import { capitalize, parseAgeMonths, parseWeightKg, uniq } from './text';
+import { capitalize, parseAgeRange, parseWeightKg, uniq } from './text';
 
 /*
  * Сборка каталога: наш слой (content/) поверх слоя Kaspi (data/kaspi/).
@@ -47,8 +47,10 @@ const catalogSchema = z.object({
       hidden: z.boolean(),
       variants: z.array(z.object({ kaspiCode: z.string(), designSlug: z.string(), hidden: z.boolean().optional() })),
       imageOrder: z.record(z.string(), z.array(z.number())),
+      seasons: z.array(z.string()).default([]),
     }),
   ),
+  collections: z.array(z.object({ slug: z.string(), models: z.array(z.string()), order: z.number() })).default([]),
 });
 
 const faqSchema = z.object({ q: z.string(), a: z.string() });
@@ -67,7 +69,9 @@ const modelTextSchema = z.object({
   seo: seoSchema.default({}),
   guide: z.string().optional(),
 });
-const modelsTextSchema = z.record(z.string(), modelTextSchema);
+const modelsTextSchema = z.record(z.string(), z.unknown()).transform((rec) =>
+  Object.fromEntries(Object.entries(rec).filter(([k]) => !k.startsWith('_')).map(([k, v]) => [k, modelTextSchema.parse(v)])),
+);
 
 const categoryTextSchema = z.object({
   name: z.string(),
@@ -78,7 +82,9 @@ const categoryTextSchema = z.object({
   guides: z.array(z.string()).default([]),
   seo: seoSchema.default({}),
 });
-const categoriesTextSchema = z.record(z.string(), categoryTextSchema);
+const categoriesTextSchema = z.record(z.string(), z.unknown()).transform((rec) =>
+  Object.fromEntries(Object.entries(rec).filter(([k]) => !k.startsWith('_')).map(([k, v]) => [k, categoryTextSchema.parse(v)])),
+);
 
 const designsSchema = z.object({ verified: z.boolean(), names: z.record(z.string(), z.string()) });
 
@@ -193,9 +199,12 @@ export type Category = {
   models: Model[];
 };
 
+export type Collection = Omit<Category, 'order'> & { order: number; isCollection: true };
+
 type Catalog = {
   locale: Locale;
   categories: Category[];
+  collections: Collection[];
   models: Model[];
   lines: LinesFile;
   merchant: MerchantFile | null;
@@ -272,7 +281,7 @@ export function getCatalog(locale: Locale = DEFAULT_LOCALE): Catalog {
       colorFamily: colorFromTitle(title),
       price,
       priceBeforeDiscount: l?.priceBeforeDiscount ?? price,
-      creditMonthlyPrice: l?.creditMonthlyPrice ?? null,
+      creditMonthlyPrice: l?.creditMonthlyPrice?.replace(/ /g, '\u00a0') ?? null,
       creditMonths: l?.creditMonths ?? null,
       bonus: l?.bonus ?? 0,
       inStock: l?.inStock ?? Boolean(s),
@@ -288,7 +297,7 @@ export function getCatalog(locale: Locale = DEFAULT_LOCALE): Catalog {
     };
   }
 
-  function finishModel(base: Omit<Model, 'defaultVariant' | 'minPrice' | 'maxPrice' | 'ratingAvg' | 'ratingCount' | 'reviewsCount' | 'inStockCount' | 'hasDiscount' | 'isHit' | 'videoIds' | 'carryPositions' | 'seasons' | 'materials' | 'ageRange' | 'weightRange' | 'rangesVerified'>): Model {
+  function finishModel(base: { seasonsOverride: string[] } & Omit<Model, 'defaultVariant' | 'minPrice' | 'maxPrice' | 'ratingAvg' | 'ratingCount' | 'reviewsCount' | 'inStockCount' | 'hasDiscount' | 'isHit' | 'videoIds' | 'carryPositions' | 'seasons' | 'materials' | 'ageRange' | 'weightRange' | 'rangesVerified'>): Model {
     const vs = base.variants;
     const inStock = vs.filter((v) => v.inStock);
     const pool = inStock.length ? inStock : vs;
@@ -301,22 +310,22 @@ export function getCatalog(locale: Locale = DEFAULT_LOCALE): Catalog {
 
     const specAge = specValues(vs, 'Рекомендуемый возраст ребенка');
     const specWeight = specValues(vs, 'Максимальный вес ребенка');
-    const ageFromSpec = specAge.map(parseAgeMonths).find((x) => x !== null) ?? null;
+    const ageFromSpec = specAge.map(parseAgeRange).find((x) => x !== null) ?? null;
     const weightFromSpec = specWeight.map(parseWeightKg).find((x) => x !== null) ?? null;
 
     const ageRange: Range | null = line
       ? { from: line.ageFromMonths, to: line.ageToMonths }
-      : ageFromSpec !== null
-        ? { from: ageFromSpec, to: null }
-        : null;
+      : ageFromSpec;
     const weightRange: Range | null = line
-      ? { from: line.weightFromKg, to: line.weightToKg }
+      ? { from: line.weightFromKg, to: line.weightToKg ?? weightFromSpec }
       : weightFromSpec !== null
         ? { from: null, to: weightFromSpec }
         : null;
 
+    const { seasonsOverride: _ignored, ...rest } = base;
+    void _ignored;
     return {
-      ...base,
+      ...rest,
       defaultVariant,
       minPrice: prices.length ? Math.min(...prices) : defaultVariant.price,
       maxPrice: prices.length ? Math.max(...prices) : defaultVariant.price,
@@ -328,7 +337,7 @@ export function getCatalog(locale: Locale = DEFAULT_LOCALE): Catalog {
       isHit: false,
       videoIds: uniq(vs.map((v) => v.videoId).filter((x): x is string => Boolean(x))),
       carryPositions: specValues(vs, 'Способ ношения'),
-      seasons: specValues(vs, 'Сезон'),
+      seasons: base.seasonsOverride.length ? base.seasonsOverride : specValues(vs, 'Сезон'),
       materials: specValues(vs, 'Материал'),
       ageRange,
       weightRange,
@@ -359,6 +368,7 @@ export function getCatalog(locale: Locale = DEFAULT_LOCALE): Catalog {
       hidden: m.hidden,
       unmapped: false,
       variants,
+      seasonsOverride: m.seasons,
     });
   });
 
@@ -384,6 +394,7 @@ export function getCatalog(locale: Locale = DEFAULT_LOCALE): Catalog {
         hidden: false,
         unmapped: true,
         variants: [v],
+        seasonsOverride: [],
       }),
     );
   }
@@ -411,9 +422,31 @@ export function getCatalog(locale: Locale = DEFAULT_LOCALE): Catalog {
     })
     .sort((a, b) => a.order - b.order);
 
+  const collectionTexts = categoriesTextSchema.parse(
+    (JSON.parse(readFileSync(path.join(ROOT, `content/${locale}/categories.json`), 'utf8')) as { _collections?: unknown })._collections ?? {},
+  );
+  const collections: Collection[] = catalog.collections.map((c) => {
+    const text = collectionTexts[c.slug];
+    if (!text) throw new Error(`Нет текстов для подборки ${c.slug}`);
+    return {
+      slug: c.slug,
+      name: text.name,
+      nameShort: text.nameShort ?? text.name,
+      intro: text.intro,
+      seoText: text.seoText,
+      faq: text.faq,
+      guides: text.guides,
+      seo: text.seo,
+      order: c.order,
+      isCollection: true as const,
+      models: c.models.map((slug) => visible.find((m) => m.slug === slug)).filter((m): m is Model => Boolean(m)),
+    };
+  });
+
   cache = {
     locale,
     categories,
+    collections,
     models: visible.sort((a, b) => a.order - b.order),
     lines,
     merchant,

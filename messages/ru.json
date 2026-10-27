@@ -212,7 +212,10 @@
     "reasonPopular": "{reviews} на Kaspi, оценка {rating}",
     "winterAddon": "Для зимы: накидка поверх переноски",
     "nothing": "Под эти ответы моделей нет: ребёнок тяжелее, чем выдерживают наши переноски. Напишите нам - подскажем.",
-    "start": "Начать подбор"
+    "start": "Начать подбор",
+    "fromBirth": "с рождения",
+    "fromMonths": "с {count} мес",
+    "toMonths": "до {value}"
   },
   "guides": {
     "h1": "Гайды: как выбрать переноску",
@@ -234,7 +237,19 @@
     "quotesTitle": "Что пишут покупатели",
     "modelsTitle": "Модели из гайда",
     "updated": "Данные по ценам и отзывам на {date}",
-    "summaryLine": "{models} · цены от {min} до {max} · {reviews} на Kaspi · средняя оценка {rating}"
+    "summaryLine": "{models} · цены от {min} до {max} · {reviews} на Kaspi · средняя оценка {rating}",
+    "whyPopular": "{reviews} на Kaspi, средняя оценка {rating}",
+    "whyCheapest": "цена от {price}",
+    "whyEquipped": "{features}",
+    "pickOf": "{kind}: {name}",
+    "yes": "да",
+    "no": "нет",
+    "dash": "-",
+    "toModel": "Смотреть модель",
+    "tableNote": "Цены, оценки и характеристики - по данным Kaspi на {date}. Возраст - как указано в характеристиках Kaspi.",
+    "colFeatures": "Особенности",
+    "colBelt": "Поясной ремень",
+    "colWeightSelf": "Вес изделия"
   },
   "footer": {
     "about": "Витрина магазина SlingoEmma на Kaspi. Цены и наличие сверяются с Kaspi; заказ, оплата и доставка - на kaspi.kz.",
@@ -245,7 +260,11 @@
     "fraudText": "Мы никогда не просим перевести деньги на карту и не звоним с просьбой продиктовать код из СМС. Оплата - только на kaspi.kz.",
     "kaspiShop": "Магазин на Kaspi",
     "legal": "Юридические данные",
-    "copyright": "© {year} SlingoEmma"
+    "copyright": "© {year} SlingoEmma",
+    "legalPending": "Юридические данные продавца будут указаны здесь.",
+    "contactsPending": "Контакты для связи появятся здесь. Вопросы по заказу - в чате приложения Kaspi.",
+    "orderQuestions": "Вопросы по заказу - в чате приложения Kaspi: там виден номер и статус заказа.",
+    "legalLine": "{entity}, БИН {bin}"
   },
   "pages": {
     "dostavka": "Доставка и оплата",
@@ -278,5 +297,34 @@
     "h1": "{category} в {city}",
     "lead": "Доставка Kaspi в {city}, оплата и рассрочка через Kaspi.",
     "otherCities": "Этот раздел в других городах"
+  },
+  "summary": {
+    "price": "{name} - {price}{credit}.",
+    "priceRange": "{name} - от {min} до {max}{credit}.",
+    "credit": ", в рассрочку на Kaspi {credit}",
+    "rating": "Средняя оценка на Kaspi - {rating} из 5 ({ratings}), {reviews} с текстом.",
+    "facts": "По характеристикам Kaspi: {facts}.",
+    "factAge": "рекомендуемый возраст - {value}",
+    "factWeight": "максимальный вес ребёнка - {value}",
+    "factCarry": "способы ношения: {value}",
+    "factMaterial": "материал - {value}",
+    "colors": "{colors}, в наличии - {inStock}.",
+    "out": "Сейчас нет в наличии на Kaspi.",
+    "category": "{name} SlingoEmma: {models}, в наличии - {inStock}, цены {prices}.",
+    "pricesFrom": "от {min}",
+    "pricesRange": "от {min} до {max}",
+    "categoryReviews": "{reviews} на Kaspi, средняя оценка {rating}.",
+    "categoryTop": "Больше всего отзывов у модели «{name}» - {count}.",
+    "kg": "{value} кг",
+    "kgRange": "{from}-{to} кг",
+    "listSep": "; "
+  },
+  "dates": {
+    "monthsGen": "января,февраля,марта,апреля,мая,июня,июля,августа,сентября,октября,ноября,декабря"
+  },
+  "jsonld": {
+    "maxWeight": "Максимальный вес ребёнка",
+    "anonymous": "Покупатель Kaspi",
+    "brand": "SlingoEmma"
   }
 }

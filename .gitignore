@@ -11,3 +11,7 @@ next-env.d.ts
 /reports/
 /.cache/
 docs/kit/*.zip
+
+# служебные
+/.cache/
+reports/

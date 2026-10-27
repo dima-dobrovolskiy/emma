@@ -1,5 +1,5 @@
 {
-  "_about": "Наш слой: маппинг SKU -> модель -> расцветка, порядок, скрытие. Синхронизация этот файл не трогает. imageOrder: {kaspiCode: [индексы фото Kaspi в нужном порядке]}.",
+  "_about": "Наш слой: маппинг SKU -> модель -> расцветка, порядок, скрытие. Синхронизация этот файл не трогает. imageOrder: {kaspiCode: [индексы фото Kaspi в нужном порядке]}. seasons: по текстам Kaspi («не жаркий на лето и удобный зимой», «на все сезоны», «идеально в жару», «до -15 градусов», сезон «зима» в характеристиках).",
   "categories": [
     {
       "slug": "ergoryukzaki",
@@ -95,7 +95,11 @@
           "designSlug": "blue"
         }
       ],
-      "imageOrder": {}
+      "imageOrder": {},
+      "seasons": [
+        "лето",
+        "зима"
+      ]
     },
     {
       "slug": "ergoryukzak-tiddly",
@@ -157,7 +161,8 @@
           "designSlug": "notre-dame"
         }
       ],
-      "imageOrder": {}
+      "imageOrder": {},
+      "seasons": []
     },
     {
       "slug": "ergoryukzak-beborn",
@@ -179,7 +184,11 @@
           "designSlug": "chocolate"
         }
       ],
-      "imageOrder": {}
+      "imageOrder": {},
+      "seasons": [
+        "лето",
+        "зима"
+      ]
     },
     {
       "slug": "sling-nesty",
@@ -209,7 +218,10 @@
           "designSlug": "grey-print"
         }
       ],
-      "imageOrder": {}
+      "imageOrder": {},
+      "seasons": [
+        "лето"
+      ]
     },
     {
       "slug": "nakidka-v-kurtku-do-18-kg",
@@ -227,7 +239,10 @@
           "designSlug": "blue"
         }
       ],
-      "imageOrder": {}
+      "imageOrder": {},
+      "seasons": [
+        "зима"
+      ]
     },
     {
       "slug": "slingonakidka-do-22-kg",
@@ -245,7 +260,10 @@
           "designSlug": "silver"
         }
       ],
-      "imageOrder": {}
+      "imageOrder": {},
+      "seasons": [
+        "зима"
+      ]
     },
     {
       "slug": "nabor-k-letu",
@@ -259,7 +277,10 @@
           "designSlug": "beige"
         }
       ],
-      "imageOrder": {}
+      "imageOrder": {},
+      "seasons": [
+        "лето"
+      ]
     },
     {
       "slug": "nabor-classic-nakidka-k-zime",
@@ -273,7 +294,10 @@
           "designSlug": "black"
         }
       ],
-      "imageOrder": {}
+      "imageOrder": {},
+      "seasons": [
+        "зима"
+      ]
     },
     {
       "slug": "nabor-sling-k-zime",
@@ -287,7 +311,10 @@
           "designSlug": "black"
         }
       ],
-      "imageOrder": {}
+      "imageOrder": {},
+      "seasons": [
+        "зима"
+      ]
     },
     {
       "slug": "komplekt-bezhevyi",
@@ -301,7 +328,10 @@
           "designSlug": "beige"
         }
       ],
-      "imageOrder": {}
+      "imageOrder": {},
+      "seasons": [
+        "зима"
+      ]
     },
     {
       "slug": "bortiki",
@@ -315,7 +345,8 @@
           "designSlug": "white"
         }
       ],
-      "imageOrder": {}
+      "imageOrder": {},
+      "seasons": []
     },
     {
       "slug": "pelenalnyi-matras",
@@ -329,7 +360,8 @@
           "designSlug": "white"
         }
       ],
-      "imageOrder": {}
+      "imageOrder": {},
+      "seasons": []
     },
     {
       "slug": "zapasnoi-komplekt",
@@ -343,7 +375,33 @@
           "designSlug": "multicolor"
         }
       ],
-      "imageOrder": {}
+      "imageOrder": {},
+      "seasons": []
+    }
+  ],
+  "collections": [
+    {
+      "slug": "dlya-novorozhdennyh",
+      "models": [
+        "ergoryukzak-beborn",
+        "nakidka-v-kurtku-do-18-kg",
+        "slingonakidka-do-22-kg",
+        "komplekt-bezhevyi",
+        "pelenalnyi-matras",
+        "bortiki"
+      ],
+      "order": 1
+    },
+    {
+      "slug": "na-zimu",
+      "models": [
+        "nakidka-v-kurtku-do-18-kg",
+        "slingonakidka-do-22-kg",
+        "nabor-classic-nakidka-k-zime",
+        "nabor-sling-k-zime",
+        "komplekt-bezhevyi"
+      ],
+      "order": 2
     }
   ]
 }

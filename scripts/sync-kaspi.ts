@@ -256,7 +256,7 @@ async function fetchReviewsFor(code: string, referer: string, prevModelName: str
     ratingCount: f ? groupTotal(f, 'ALL') : 0,
     commentCount: f ? groupTotal(f, 'COMMENT') : 0,
     pictureCount: f ? groupTotal(f, 'PICTURE') : 0,
-    ratingAvg: f?.summary?.global ?? null,
+    ratingAvg: f && groupTotal(f, 'ALL') > 0 ? (f.summary?.global ?? null) : null,
     distribution: f ? distributionOf(f) : { 1: 0, 2: 0, 3: 0, 4: 0, 5: 0 },
     reviews,
   };

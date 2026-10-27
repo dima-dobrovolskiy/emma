@@ -42,8 +42,9 @@ function formatPlural(body: string, n: number, locale: Locale): string {
   return form.replace(/#/g, formatNumber(n, locale));
 }
 
+/** Разряды через неразрывный пробел: «10 000» не разрывается при переносе строки. */
 export function formatNumber(n: number, locale: Locale = DEFAULT_LOCALE): string {
-  return n.toLocaleString(locale === 'ru' ? 'ru-RU' : locale).replace(/ | /g, ' ');
+  return n.toLocaleString(locale === 'ru' ? 'ru-RU' : locale).replace(/[\u202f\u00a0 ]/g, '\u00a0');
 }
 
 export function format(template: string, params: Params = {}, locale: Locale = DEFAULT_LOCALE): string {
@@ -64,14 +65,13 @@ export function messagesFor<S extends keyof Dict>(section: S, locale: Locale = D
 }
 
 export function formatPrice(n: number, locale: Locale = DEFAULT_LOCALE): string {
-  return `${formatNumber(Math.round(n), locale)} ${lookup(dictionaries[locale], 'common.kzt')}`;
+  return `${formatNumber(Math.round(n), locale)}\u00a0${lookup(dictionaries[locale], 'common.kzt')}`;
 }
 
-const MONTHS_GEN = ['января', 'февраля', 'марта', 'апреля', 'мая', 'июня', 'июля', 'августа', 'сентября', 'октября', 'ноября', 'декабря'];
-
 /** yyyy-mm-dd → «27 октября 2026» */
-export function formatDate(iso: string): string {
+export function formatDate(iso: string, locale: Locale = DEFAULT_LOCALE): string {
   const [y, m, d] = iso.split('-').map(Number);
   if (!y || !m || !d) return iso;
-  return `${d} ${MONTHS_GEN[m - 1]} ${y}`;
+  const months = lookup(dictionaries[locale], 'dates.monthsGen').split(',');
+  return `${d} ${months[m - 1]} ${y}`;
 }

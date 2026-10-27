@@ -7,17 +7,25 @@
       "ageToMonths": 24,
       "weightFromKg": 7,
       "weightToKg": 22,
-      "uses": ["home", "walks", "travel"],
-      "kaspiSays": "«с 4 мес до 2 лет», «для малышей от 7 кг», макс. 22 кг"
+      "uses": [
+        "home",
+        "walks",
+        "travel"
+      ],
+      "kaspiSays": "в характеристиках «3-4 мес», «с 4 мес до 2 лет», «с 4-5 мес до 2 лет», макс. 22 кг; в описании «с 4 месяцев, 7 кг». Для подбора: с 4 мес, от 7 кг."
     },
     "tiddly": {
       "verified": false,
-      "ageFromMonths": 4,
+      "ageFromMonths": 2,
       "ageToMonths": 18,
-      "weightFromKg": 7,
-      "weightToKg": 18,
-      "uses": ["home", "walks", "travel"],
-      "kaspiSays": "в характеристиках «с 2 месяцев», в описаниях встречаются «с 2 месяцев, 5 кг» и «с 4-5 месяцев, 7 кг», макс. 18 кг. Взято осторожное: с 4 мес и 7 кг."
+      "weightFromKg": 5,
+      "weightToKg": 14,
+      "uses": [
+        "home",
+        "walks",
+        "travel"
+      ],
+      "kaspiSays": "в характеристиках «с 2 месяцев», макс. 18 кг; в описаниях «с 2 месяцев, 5 кг, до 18 кг, 1.5 лет» и «от 2 месяцев до 1,6 лет, от 5 до 14 кг». Для подбора взято осторожное: до 14 кг."
     },
     "beborn": {
       "verified": false,
@@ -25,17 +33,24 @@
       "ageToMonths": 18,
       "weightFromKg": 2.8,
       "weightToKg": 14,
-      "uses": ["home", "walks", "travel"],
-      "kaspiSays": "«от рождения до 1,6 лет», макс. 18 кг; в описании «от 0 до 1,5 лет, с 2,8 до 14 кг». Взято осторожное: до 14 кг и до 1,5 лет."
+      "uses": [
+        "home",
+        "walks",
+        "travel"
+      ],
+      "kaspiSays": "в характеристиках «от рождения до 1,6 лет», макс. 18 кг; в описаниях «от 0+ до 1.5 лет, с 2.8 до 18 кг» и «с 2.8 до 14 кг». Для подбора взято осторожное: до 14 кг и до 1,5 лет."
     },
     "nesty": {
       "verified": false,
       "ageFromMonths": 3,
-      "ageToMonths": 36,
-      "weightFromKg": null,
+      "ageToMonths": 18,
+      "weightFromKg": 6,
       "weightToKg": 18,
-      "uses": ["home", "walks"],
-      "kaspiSays": "«3+» (с 3 мес), макс. 18 кг, на одно плечо, короткие прогулки и укачивание, не жаркий"
+      "uses": [
+        "home",
+        "walks"
+      ],
+      "kaspiSays": "в характеристиках «3+», «с 3 мес до 1.5 лет», макс. 18 кг, одна лямка; в описании «от 3 мес, 6 кг, до 1.5 лет, до 18 кг», «на одно плечо», «можно носить на оба плеча»."
     },
     "nakidka": {
       "verified": false,
@@ -43,27 +58,78 @@
       "ageToMonths": 24,
       "weightFromKg": null,
       "weightToKg": null,
-      "uses": ["winter"],
-      "kaspiSays": "«с 0 до 2 лет», «до -15 градусов»"
+      "uses": [
+        "winter"
+      ],
+      "kaspiSays": "«с 0 до 2 лет», накидка в куртку - «до -15 градусов», макс. 18 кг; слингонакидка - макс. 22 кг, «не переноска, ребёнка не держит»."
     }
   },
   "podbor": {
     "ages": [
-      { "id": "0-3", "fromMonths": 0, "toMonths": 3 },
-      { "id": "3-6", "fromMonths": 3, "toMonths": 6 },
-      { "id": "6-12", "fromMonths": 6, "toMonths": 12 },
-      { "id": "12-24", "fromMonths": 12, "toMonths": 24 },
-      { "id": "24+", "fromMonths": 24, "toMonths": 48 }
+      {
+        "id": "0-3",
+        "fromMonths": 0,
+        "toMonths": 3
+      },
+      {
+        "id": "3-6",
+        "fromMonths": 3,
+        "toMonths": 6
+      },
+      {
+        "id": "6-12",
+        "fromMonths": 6,
+        "toMonths": 12
+      },
+      {
+        "id": "12-24",
+        "fromMonths": 12,
+        "toMonths": 24
+      },
+      {
+        "id": "24+",
+        "fromMonths": 24,
+        "toMonths": 48
+      }
     ],
     "weights": [
-      { "id": "0-7", "fromKg": 0, "toKg": 7 },
-      { "id": "7-14", "fromKg": 7, "toKg": 14 },
-      { "id": "14-18", "fromKg": 14, "toKg": 18 },
-      { "id": "18-22", "fromKg": 18, "toKg": 22 }
+      {
+        "id": "0-7",
+        "fromKg": 0,
+        "toKg": 7
+      },
+      {
+        "id": "7-14",
+        "fromKg": 7,
+        "toKg": 14
+      },
+      {
+        "id": "14-18",
+        "fromKg": 14,
+        "toKg": 18
+      },
+      {
+        "id": "18-22",
+        "fromKg": 18,
+        "toKg": 22
+      }
     ],
-    "where": ["home", "walks", "travel", "winter"],
-    "carrierModels": ["ergoryukzak-classic", "ergoryukzak-tiddly", "ergoryukzak-beborn", "sling-nesty"],
-    "winterAddonModels": ["nakidka-v-kurtku-do-18-kg", "slingonakidka-do-22-kg"],
+    "where": [
+      "home",
+      "walks",
+      "travel",
+      "winter"
+    ],
+    "carrierModels": [
+      "ergoryukzak-classic",
+      "ergoryukzak-tiddly",
+      "ergoryukzak-beborn",
+      "sling-nesty"
+    ],
+    "winterAddonModels": [
+      "nakidka-v-kurtku-do-18-kg",
+      "slingonakidka-do-22-kg"
+    ],
     "maxResults": 3
   }
 }

@@ -143,24 +143,42 @@ export function modelNameFromBaseCodes(codes: readonly string[] | null | undefin
   for (const code of codes ?? []) {
     const groups = [...code.matchAll(/\{([^}]*)\}/g)].map((m) => m[1]?.trim() ?? '');
     const last = groups.at(-1);
-    if (last && /\D/.test(last)) return last;
+    if (last && /\D/.test(last)) return decodeEntities(last);
   }
   return null;
 }
 
+const NAMED_ENTITIES: Record<string, string> = {
+  nbsp: ' ',
+  quot: '"',
+  laquo: '«',
+  raquo: '»',
+  mdash: '—',
+  ndash: '–',
+  apos: "'",
+  amp: '&',
+  lt: '<',
+  gt: '>',
+  hellip: '…',
+};
+
+export function decodeEntities(s: string): string {
+  return s.replace(/&(#x[0-9a-f]+|#\d+|[a-z]+);/gi, (whole, ent: string) => {
+    if (ent[0] === '#') {
+      const code = ent[1]?.toLowerCase() === 'x' ? parseInt(ent.slice(2), 16) : parseInt(ent.slice(1), 10);
+      return Number.isFinite(code) ? String.fromCodePoint(code) : whole;
+    }
+    return NAMED_ENTITIES[ent.toLowerCase()] ?? whole;
+  });
+}
+
 export function htmlToText(html: string): string {
-  return html
-    .replace(/<br\s*\/?>/gi, '\n')
-    .replace(/<\/(p|li|div|h\d)>/gi, '\n')
-    .replace(/<[^>]+>/g, '')
-    .replace(/&nbsp;/g, ' ')
-    .replace(/&quot;/g, '"')
-    .replace(/&laquo;/g, '«')
-    .replace(/&raquo;/g, '»')
-    .replace(/&mdash;/g, '—')
-    .replace(/&ndash;/g, '–')
-    .replace(/&#39;|&apos;/g, "'")
-    .replace(/&amp;/g, '&')
+  return decodeEntities(
+    html
+      .replace(/<br\s*\/?>/gi, '\n')
+      .replace(/<\/(p|li|div|h\d)>/gi, '\n')
+      .replace(/<[^>]+>/g, ''),
+  )
     .replace(/[ \t]+/g, ' ')
     .replace(/\n\s*\n+/g, '\n')
     .trim();
@@ -169,7 +187,7 @@ export function htmlToText(html: string): string {
 function normalizeSpecValue(v: string): string {
   if (v === 'true') return 'да';
   if (v === 'false') return 'нет';
-  return v.trim();
+  return decodeEntities(v).replace(/\s+/g, ' ').trim();
 }
 
 export function parseSpecs(raw: RawItem['specifications']): SpecGroup[] {
@@ -185,7 +203,7 @@ export function parseProduct(raw: RawItem, finalUrl: string): KaspiProduct {
   const images: KaspiImage[] = (raw.galleryImages ?? []).map((i) => ({ small: i.small, medium: i.medium, large: i.large }));
   return {
     kaspiCode: raw.card.id,
-    title: raw.card.title,
+    title: decodeEntities(raw.card.title),
     url: finalUrl,
     kaspiModelName: modelNameFromBaseCodes(raw.card.promoConditions?.baseProductCodes),
     kaspiCategory: raw.breadcrumbs?.at(-1)?.title ?? null,
@@ -219,9 +237,9 @@ export function parseReview(raw: RawReviews['data'][number], kaspiCode: string):
     author: (raw.author ?? '').trim().split(/\s+/)[0] ?? '',
     date: parseKaspiDate(raw.date),
     rating: Math.min(5, Math.max(1, Math.round(raw.rating))),
-    text: (raw.comment?.text ?? '').trim(),
-    plus: (raw.comment?.plus ?? '').trim(),
-    minus: (raw.comment?.minus ?? '').trim(),
+    text: decodeEntities(raw.comment?.text ?? '').trim(),
+    plus: decodeEntities(raw.comment?.plus ?? '').trim(),
+    minus: decodeEntities(raw.comment?.minus ?? '').trim(),
     photos: (raw.galleryImages ?? []).map((i) => ({ small: i.small, medium: i.medium, large: i.large })),
     helpfulCount: Math.max(0, raw.feedback?.positive ?? 0),
   };
