@@ -326,5 +326,8 @@
     "maxWeight": "Максимальный вес ребёнка",
     "anonymous": "Покупатель Kaspi",
     "brand": "SlingoEmma"
+  },
+  "llms": {
+    "lead": "{lead} {source}: на Kaspi - {years}, заказов - {orders}, отзывов - {reviews}, средняя оценка - {rating}."
   }
 }

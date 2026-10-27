@@ -12,7 +12,14 @@ export function llmsTxt(full: boolean): string {
   const lines: string[] = [];
   lines.push(`# ${t('meta.siteName')}`, '');
   lines.push(
-    `> ${t('home.lead')} ${t('trust.sourceNote')}: ${tr.years !== null ? t('common.yearsCount', { count: tr.years }) : ''} на Kaspi, ${tr.ordersSegment !== null ? t('trust.orders', { value: formatNumber(tr.ordersSegment) }) : ''} заказов, ${formatNumber(tr.reviews)} отзывов, средняя оценка ${tr.rating !== null ? fmtRating(tr.rating) : '-'}.`,
+    `> ${t('llms.lead', {
+      lead: t('home.lead'),
+      source: t('trust.sourceNote'),
+      years: tr.years !== null ? t('common.yearsCount', { count: tr.years }) : '-',
+      orders: tr.ordersSegment !== null ? t('trust.orders', { value: formatNumber(tr.ordersSegment) }) : '-',
+      reviews: formatNumber(tr.reviews),
+      rating: tr.rating !== null ? fmtRating(tr.rating) : '-',
+    })}`,
     '',
   );
   lines.push(`- ${t('footer.kaspiShop')}: ${KASPI_SHOP_URL}`, `- ${t('common.pricesActual', { date: pricesDate })}`, '');
