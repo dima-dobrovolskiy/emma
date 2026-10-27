@@ -1,0 +1,851 @@
+{
+  "_about": "Стартовый срез каталога Каспи-магазина SlingoEmma (merchant 8851015). Цены и отзывы - снимок с витрины Kaspi, город Алматы, 2026-10-27. Источник правды - синхронизация, этот файл только для старта и маппинга SKU -> модель -> расцветка. designNameDraft - черновые русские названия из адресов карточек, подтвердить у Эммы. Группировку в модели и категории подтвердить у Эммы.",
+  "merchant": {
+    "name": "SlingoEmma",
+    "kaspiMerchantId": "8851015",
+    "shopUrl": "https://kaspi.kz/shop/m/8851015/products",
+    "cityIdAlmaty": "750000000"
+  },
+  "categories": [
+    {
+      "slug": "ergoryukzaki",
+      "name": "Эргорюкзаки",
+      "note": "Classic, Tiddly, BeBorn"
+    },
+    {
+      "slug": "slingi",
+      "name": "Слинги",
+      "note": "Nesty на одно плечо"
+    },
+    {
+      "slug": "nabory",
+      "name": "Наборы",
+      "note": "1+1 к лету, 1+1 к зиме, комплекты"
+    },
+    {
+      "slug": "nakidki",
+      "name": "Зимние накидки",
+      "note": "накидки в куртку поверх эргорюкзака"
+    },
+    {
+      "slug": "dlya-doma",
+      "name": "Для дома и аксессуары",
+      "note": "бортики, пеленальный матрас, запасной комплект"
+    }
+  ],
+  "models": [
+    {
+      "slug": "ergoryukzak-classic",
+      "line": "Classic",
+      "category": "ergoryukzaki",
+      "variants": [
+        "106916682",
+        "106916687",
+        "106916693",
+        "115956458",
+        "106132340",
+        "104765700",
+        "104765672",
+        "106132095",
+        "104970281",
+        "106132427",
+        "104970275",
+        "106916674",
+        "104970251",
+        "106916662",
+        "134945991",
+        "104765697"
+      ]
+    },
+    {
+      "slug": "ergoryukzak-beborn",
+      "line": "BeBorn",
+      "category": "ergoryukzaki",
+      "variants": [
+        "135829077",
+        "113923093",
+        "113923758"
+      ]
+    },
+    {
+      "slug": "ergoryukzak-tiddly",
+      "line": "Tiddly",
+      "category": "ergoryukzaki",
+      "variants": [
+        "106533064",
+        "114174092",
+        "113543411",
+        "113973706",
+        "115071176",
+        "104970266",
+        "115071158",
+        "106533075",
+        "106132297",
+        "104970257",
+        "114174062",
+        "106533019",
+        "106532804"
+      ]
+    },
+    {
+      "slug": "sling-nesty",
+      "line": "Nesty",
+      "category": "slingi",
+      "variants": [
+        "114174041",
+        "115956460",
+        "167342544",
+        "113923296",
+        "104765677"
+      ]
+    },
+    {
+      "slug": "nabor-k-letu",
+      "line": "Набор",
+      "category": "nabory",
+      "variants": [
+        "104765674"
+      ]
+    },
+    {
+      "slug": "bortiki",
+      "line": "Для дома",
+      "category": "dlya-doma",
+      "variants": [
+        "179229608"
+      ]
+    },
+    {
+      "slug": "pelenalnyi-matras",
+      "line": "Для дома",
+      "category": "dlya-doma",
+      "variants": [
+        "179226468"
+      ]
+    },
+    {
+      "slug": "nabor-classic-nakidka-k-zime",
+      "line": "Набор",
+      "category": "nabory",
+      "variants": [
+        "179761354"
+      ]
+    },
+    {
+      "slug": "nakidka-v-kurtku-do-18-kg",
+      "line": "Накидка",
+      "category": "nakidki",
+      "variants": [
+        "114174150",
+        "114174159"
+      ]
+    },
+    {
+      "slug": "komplekt-bezhevyi",
+      "line": "Набор",
+      "category": "nabory",
+      "variants": [
+        "179623125"
+      ]
+    },
+    {
+      "slug": "nabor-sling-k-zime",
+      "line": "Набор",
+      "category": "nabory",
+      "variants": [
+        "179761200"
+      ]
+    },
+    {
+      "slug": "slingonakidka-do-22-kg",
+      "line": "Накидка",
+      "category": "nakidki",
+      "variants": [
+        "149603480",
+        "149603474"
+      ]
+    },
+    {
+      "slug": "zapasnoi-komplekt",
+      "line": "Аксессуар",
+      "category": "dlya-doma",
+      "variants": [
+        "156734493"
+      ]
+    }
+  ],
+  "variants": [
+    {
+      "kaspiCode": "106916682",
+      "kaspiUrl": "https://kaspi.kz/shop/p/ergorjukzak-slingoemma-sling-4-classic-dark-mokko-do-22-kg-mul-tikolor-106916682/",
+      "kaspiTitle": "Эргорюкзак SlingoEmma до 22 кг, мультиколор",
+      "line": "Classic",
+      "model": "ergoryukzak-classic",
+      "category": "ergoryukzaki",
+      "designSlug": "dark-mocha",
+      "designNameDraft": "Тёмный мокко",
+      "priceKztSnapshot": 27990,
+      "reviewsOnListingSnapshot": 396,
+      "oldTildaPath": "/classic-dark-mocha",
+      "tildaMatchConfidence": "high"
+    },
+    {
+      "kaspiCode": "135829077",
+      "kaspiUrl": "https://kaspi.kz/shop/p/ergorjukzak-slingoemma-sling-0-s-rozhdenija-dark-do-18-kg-seryi-135829077/",
+      "kaspiTitle": "Эргорюкзак SlingoEmma до 18 кг, серый",
+      "line": "BeBorn",
+      "model": "ergoryukzak-beborn",
+      "category": "ergoryukzaki",
+      "designSlug": "dark",
+      "designNameDraft": "Dark",
+      "priceKztSnapshot": 27990,
+      "reviewsOnListingSnapshot": 101,
+      "oldTildaPath": null,
+      "tildaMatchConfidence": null
+    },
+    {
+      "kaspiCode": "106533064",
+      "kaspiUrl": "https://kaspi.kz/shop/p/ergorjukzak-slingoemma-sling-2-tiddly-chernyi-do-18-kg-chernyi-106533064/",
+      "kaspiTitle": "Эргорюкзак SlingoEmma до 18 кг, черный",
+      "line": "Tiddly",
+      "model": "ergoryukzak-tiddly",
+      "category": "ergoryukzaki",
+      "designSlug": "black",
+      "designNameDraft": "Чёрный",
+      "priceKztSnapshot": 27990,
+      "reviewsOnListingSnapshot": 138,
+      "oldTildaPath": "/tiddly-black",
+      "tildaMatchConfidence": "high"
+    },
+    {
+      "kaspiCode": "114174041",
+      "kaspiUrl": "https://kaspi.kz/shop/p/sling-slingoemma-sling-nesty-s-3-mes-do-18-kg-chernyi-114174041/",
+      "kaspiTitle": "Слинг SlingoEmma до 18 кг, черный",
+      "line": "Nesty",
+      "model": "sling-nesty",
+      "category": "slingi",
+      "designSlug": "black",
+      "designNameDraft": "Чёрный",
+      "priceKztSnapshot": 12990,
+      "reviewsOnListingSnapshot": 54,
+      "oldTildaPath": null,
+      "tildaMatchConfidence": null
+    },
+    {
+      "kaspiCode": "115956460",
+      "kaspiUrl": "https://kaspi.kz/shop/p/sling-slingoemma-sling-nesty-3-tengri-do-18-kg-bezhevyi-115956460/",
+      "kaspiTitle": "Слинг SlingoEmma до 18 кг, бежевый",
+      "line": "Nesty",
+      "model": "sling-nesty",
+      "category": "slingi",
+      "designSlug": "tengri",
+      "designNameDraft": "Тенгри",
+      "priceKztSnapshot": 12990,
+      "reviewsOnListingSnapshot": 296,
+      "oldTildaPath": null,
+      "tildaMatchConfidence": null
+    },
+    {
+      "kaspiCode": "167342544",
+      "kaspiUrl": "https://kaspi.kz/shop/p/sling-slingoemma-sling-nesty-3-etno-do-18-kg-seryi-167342544/",
+      "kaspiTitle": "Слинг SlingoEmma до 18 кг, серый",
+      "line": "Nesty",
+      "model": "sling-nesty",
+      "category": "slingi",
+      "designSlug": "etno",
+      "designNameDraft": "Этно",
+      "priceKztSnapshot": 12990,
+      "reviewsOnListingSnapshot": 20,
+      "oldTildaPath": null,
+      "tildaMatchConfidence": null
+    },
+    {
+      "kaspiCode": "113923093",
+      "kaspiUrl": "https://kaspi.kz/shop/p/ergorjukzak-slingoemma-sling-beborn-0-dlja-novorozhdennyh-seryi-do-18-kg-seryi-113923093/",
+      "kaspiTitle": "Эргорюкзак SlingoEmma до 18 кг, серый",
+      "line": "BeBorn",
+      "model": "ergoryukzak-beborn",
+      "category": "ergoryukzaki",
+      "designSlug": "grey",
+      "designNameDraft": "Серый",
+      "priceKztSnapshot": 27990,
+      "reviewsOnListingSnapshot": 274,
+      "oldTildaPath": "/biborn-grey",
+      "tildaMatchConfidence": "high"
+    },
+    {
+      "kaspiCode": "106916687",
+      "kaspiUrl": "https://kaspi.kz/shop/p/ergorjukzak-slingoemma-sling-4mes-classic-seryi-mokko-do-22-kg-serebristyi-106916687/",
+      "kaspiTitle": "Эргорюкзак SlingoEmma до 22 кг, серебристый",
+      "line": "Classic",
+      "model": "ergoryukzak-classic",
+      "category": "ergoryukzaki",
+      "designSlug": "grey-mocha",
+      "designNameDraft": "Серый мокко",
+      "priceKztSnapshot": 27990,
+      "reviewsOnListingSnapshot": 32,
+      "oldTildaPath": null,
+      "tildaMatchConfidence": null
+    },
+    {
+      "kaspiCode": "104765674",
+      "kaspiUrl": "https://kaspi.kz/shop/p/ergorjukzak-slingoemma-sling-nesty-1-1-nabor-k-letu-do-22-kg-bezhevyi-104765674/",
+      "kaspiTitle": "Эргорюкзак SlingoEmma до 22 кг, бежевый",
+      "line": "Набор",
+      "model": "nabor-k-letu",
+      "category": "nabory",
+      "designSlug": "beige",
+      "designNameDraft": "Бежевый",
+      "priceKztSnapshot": 30900,
+      "reviewsOnListingSnapshot": 55,
+      "oldTildaPath": null,
+      "tildaMatchConfidence": null
+    },
+    {
+      "kaspiCode": "106916693",
+      "kaspiUrl": "https://kaspi.kz/shop/p/ergorjukzak-slingoemma-sling-4-classic-chernyi-do-22-kg-chernyi-106916693/",
+      "kaspiTitle": "Эргорюкзак SlingoEmma до 22 кг, черный",
+      "line": "Classic",
+      "model": "ergoryukzak-classic",
+      "category": "ergoryukzaki",
+      "designSlug": "black",
+      "designNameDraft": "Чёрный",
+      "priceKztSnapshot": 27990,
+      "reviewsOnListingSnapshot": 95,
+      "oldTildaPath": "/classic-black",
+      "tildaMatchConfidence": "high"
+    },
+    {
+      "kaspiCode": "113923758",
+      "kaspiUrl": "https://kaspi.kz/shop/p/ergorjukzak-slingoemma-sling-0-beborn-do-18-kg-korichnevyi-113923758/",
+      "kaspiTitle": "Эргорюкзак SlingoEmma до 18 кг, коричневый",
+      "line": "BeBorn",
+      "model": "ergoryukzak-beborn",
+      "category": "ergoryukzaki",
+      "designSlug": "chocolate",
+      "designNameDraft": "Шоколад",
+      "priceKztSnapshot": 27990,
+      "reviewsOnListingSnapshot": 195,
+      "oldTildaPath": "/biborn-chocolate",
+      "tildaMatchConfidence": "high"
+    },
+    {
+      "kaspiCode": "113923296",
+      "kaspiUrl": "https://kaspi.kz/shop/p/sling-slingoemma-sling-nesty-s-3-mes-do-18-kg-bezhevyi-113923296/",
+      "kaspiTitle": "Слинг SlingoEmma до 18 кг, бежевый",
+      "line": "Nesty",
+      "model": "sling-nesty",
+      "category": "slingi",
+      "designSlug": "beige",
+      "designNameDraft": "Бежевый",
+      "priceKztSnapshot": 12990,
+      "reviewsOnListingSnapshot": 116,
+      "oldTildaPath": null,
+      "tildaMatchConfidence": null
+    },
+    {
+      "kaspiCode": "114174092",
+      "kaspiUrl": "https://kaspi.kz/shop/p/ergorjukzak-slingoemma-sling-2-tiddly-dark-elochki-do-18-seryi-114174092/",
+      "kaspiTitle": "Эргорюкзак SlingoEmma до 18 кг, серый",
+      "line": "Tiddly",
+      "model": "ergoryukzak-tiddly",
+      "category": "ergoryukzaki",
+      "designSlug": "fir-trees-dark",
+      "designNameDraft": "Ёлочки dark",
+      "priceKztSnapshot": 27990,
+      "reviewsOnListingSnapshot": 53,
+      "oldTildaPath": "/tiddley-fir-trees-dark",
+      "tildaMatchConfidence": "high"
+    },
+    {
+      "kaspiCode": "113543411",
+      "kaspiUrl": "https://kaspi.kz/shop/p/ergorjukzak-slingoemma-tiddly-2-bezh-zvezdy-do-18-kg-bezhevyi-113543411/",
+      "kaspiTitle": "Эргорюкзак SlingoEmma до 18 кг, бежевый",
+      "line": "Tiddly",
+      "model": "ergoryukzak-tiddly",
+      "category": "ergoryukzaki",
+      "designSlug": "beige-stars",
+      "designNameDraft": "Бежевые звёзды",
+      "priceKztSnapshot": 27990,
+      "reviewsOnListingSnapshot": 96,
+      "oldTildaPath": null,
+      "tildaMatchConfidence": null
+    },
+    {
+      "kaspiCode": "115956458",
+      "kaspiUrl": "https://kaspi.kz/shop/p/ergorjukzak-slingoemma-sling-4-classic-bezhevyi-mokko-do-22-bezhevyi-115956458/",
+      "kaspiTitle": "Эргорюкзак SlingoEmma до 22 кг, бежевый",
+      "line": "Classic",
+      "model": "ergoryukzak-classic",
+      "category": "ergoryukzaki",
+      "designSlug": "mocha-beige",
+      "designNameDraft": "Бежевый мокко",
+      "priceKztSnapshot": 27990,
+      "reviewsOnListingSnapshot": 242,
+      "oldTildaPath": "/classic-mocha-beige",
+      "tildaMatchConfidence": "high"
+    },
+    {
+      "kaspiCode": "113973706",
+      "kaspiUrl": "https://kaspi.kz/shop/p/ergorjukzak-slingoemma-zaichata-do-18-bezhevyi-113973706/",
+      "kaspiTitle": "Эргорюкзак SlingoEmma до 18 кг, бежевый",
+      "line": "Tiddly",
+      "model": "ergoryukzak-tiddly",
+      "category": "ergoryukzaki",
+      "designSlug": "bunny-beige",
+      "designNameDraft": "Зайчата",
+      "priceKztSnapshot": 27990,
+      "reviewsOnListingSnapshot": 126,
+      "oldTildaPath": "/tiddley-bunny-beige",
+      "tildaMatchConfidence": "high"
+    },
+    {
+      "kaspiCode": "106132340",
+      "kaspiUrl": "https://kaspi.kz/shop/p/ergorjukzak-slingoemma-sling-4-classic-serebro-zvezdy-do-22-seryi-106132340/",
+      "kaspiTitle": "Эргорюкзак SlingoEmma до 22 кг, серый",
+      "line": "Classic",
+      "model": "ergoryukzak-classic",
+      "category": "ergoryukzaki",
+      "designSlug": "stars-silver",
+      "designNameDraft": "Серебряные звёзды",
+      "priceKztSnapshot": 27990,
+      "reviewsOnListingSnapshot": 102,
+      "oldTildaPath": "/classic-stars-silver",
+      "tildaMatchConfidence": "high"
+    },
+    {
+      "kaspiCode": "115071176",
+      "kaspiUrl": "https://kaspi.kz/shop/p/ergorjukzak-slingoemma-sling-tiddly-2-arman-serebro-do-18-seryi-115071176/",
+      "kaspiTitle": "Эргорюкзак SlingoEmma до 18 кг, серый",
+      "line": "Tiddly",
+      "model": "ergoryukzak-tiddly",
+      "category": "ergoryukzaki",
+      "designSlug": "arman-silver",
+      "designNameDraft": "Арман серебро",
+      "priceKztSnapshot": 21990,
+      "reviewsOnListingSnapshot": 32,
+      "oldTildaPath": "/tiddly-armand-silver",
+      "tildaMatchConfidence": "high"
+    },
+    {
+      "kaspiCode": "104765677",
+      "kaspiUrl": "https://kaspi.kz/shop/p/sling-slingoemma-nesty-3-do-18-kg-seryi-s-risunkom-104765677/",
+      "kaspiTitle": "Слинг SlingoEmma до 18 кг, серый, с рисунком",
+      "line": "Nesty",
+      "model": "sling-nesty",
+      "category": "slingi",
+      "designSlug": "grey-print",
+      "designNameDraft": "Серый с рисунком",
+      "priceKztSnapshot": 12990,
+      "reviewsOnListingSnapshot": 38,
+      "oldTildaPath": null,
+      "tildaMatchConfidence": null
+    },
+    {
+      "kaspiCode": "104765700",
+      "kaspiUrl": "https://kaspi.kz/shop/p/ergorjukzak-slingoemma-sling-4-classic-chernyi-zvezdy-do-22-kg-chernyi-104765700/",
+      "kaspiTitle": "Эргорюкзак SlingoEmma до 22 кг, черный",
+      "line": "Classic",
+      "model": "ergoryukzak-classic",
+      "category": "ergoryukzaki",
+      "designSlug": "stars-black",
+      "designNameDraft": "Чёрные звёзды",
+      "priceKztSnapshot": 27990,
+      "reviewsOnListingSnapshot": 59,
+      "oldTildaPath": null,
+      "tildaMatchConfidence": null
+    },
+    {
+      "kaspiCode": "104765672",
+      "kaspiUrl": "https://kaspi.kz/shop/p/ergorjukzak-slingoemma-sling-4-classic-biskvit-do-22-kg-bezhevyi-104765672/",
+      "kaspiTitle": "Эргорюкзак SlingoEmma до 22 кг, бежевый",
+      "line": "Classic",
+      "model": "ergoryukzak-classic",
+      "category": "ergoryukzaki",
+      "designSlug": "biscuit",
+      "designNameDraft": "Бисквит",
+      "priceKztSnapshot": 27990,
+      "reviewsOnListingSnapshot": 21,
+      "oldTildaPath": "/classic-biscuit",
+      "tildaMatchConfidence": "high"
+    },
+    {
+      "kaspiCode": "179229608",
+      "kaspiUrl": "https://kaspi.kz/shop/p/bortiki-slingoemma-835520897-hlopok-satin-belyi-179229608/",
+      "kaspiTitle": "Бортики SlingoEmma 835520897, хлопок, сатин, белый",
+      "line": "Для дома",
+      "model": "bortiki",
+      "category": "dlya-doma",
+      "designSlug": "white",
+      "designNameDraft": "Белый",
+      "priceKztSnapshot": 8990,
+      "reviewsOnListingSnapshot": 5,
+      "oldTildaPath": null,
+      "tildaMatchConfidence": null
+    },
+    {
+      "kaspiCode": "104970266",
+      "kaspiUrl": "https://kaspi.kz/shop/p/ergorjukzak-slingoemma-sling-s-2-mes-tiddly-seryi-zvezdy-do-18-kg-seryi-serebristyi-104970266/",
+      "kaspiTitle": "Эргорюкзак SlingoEmma до 18 кг, серый, серебристый",
+      "line": "Tiddly",
+      "model": "ergoryukzak-tiddly",
+      "category": "ergoryukzaki",
+      "designSlug": "stars-grey",
+      "designNameDraft": "Серые звёзды",
+      "priceKztSnapshot": 27990,
+      "reviewsOnListingSnapshot": 27,
+      "oldTildaPath": "/tiddly-stars-dust-dark",
+      "tildaMatchConfidence": "low"
+    },
+    {
+      "kaspiCode": "179226468",
+      "kaspiUrl": "https://kaspi.kz/shop/p/pelenal-nyi-matras-slingoemma-501891707-75x70-sm-belyi-179226468/",
+      "kaspiTitle": "Пеленальный матрас SlingoEmma 501891707, 75x70 см, белый",
+      "line": "Для дома",
+      "model": "pelenalnyi-matras",
+      "category": "dlya-doma",
+      "designSlug": "white",
+      "designNameDraft": "Белый",
+      "priceKztSnapshot": 7000,
+      "reviewsOnListingSnapshot": 5,
+      "oldTildaPath": null,
+      "tildaMatchConfidence": null
+    },
+    {
+      "kaspiCode": "115071158",
+      "kaspiUrl": "https://kaspi.kz/shop/p/ergorjukzak-slingoemma-sling-tiddly-2-arman-dark-do-18-mul-tikolor-115071158/",
+      "kaspiTitle": "Эргорюкзак SlingoEmma до 18 кг, мультиколор",
+      "line": "Tiddly",
+      "model": "ergoryukzak-tiddly",
+      "category": "ergoryukzaki",
+      "designSlug": "arman-dark",
+      "designNameDraft": "Арман dark",
+      "priceKztSnapshot": 27990,
+      "reviewsOnListingSnapshot": 38,
+      "oldTildaPath": "/tiddly-armand-dark",
+      "tildaMatchConfidence": "high"
+    },
+    {
+      "kaspiCode": "106533075",
+      "kaspiUrl": "https://kaspi.kz/shop/p/ergorjukzak-slingoemma-sling-s-2-mes-tiddly-chernyi-zvezdy-do-18-kg-chernyi-106533075/",
+      "kaspiTitle": "Эргорюкзак SlingoEmma до 18 кг, черный",
+      "line": "Tiddly",
+      "model": "ergoryukzak-tiddly",
+      "category": "ergoryukzaki",
+      "designSlug": "stars-black",
+      "designNameDraft": "Чёрные звёзды",
+      "priceKztSnapshot": 27990,
+      "reviewsOnListingSnapshot": 43,
+      "oldTildaPath": "/tiddly-stars-black",
+      "tildaMatchConfidence": "high"
+    },
+    {
+      "kaspiCode": "106132095",
+      "kaspiUrl": "https://kaspi.kz/shop/p/ergorjukzak-slingoemma-sling-4-classic-do-22-kg-bezhevyi-106132095/",
+      "kaspiTitle": "Эргорюкзак SlingoEmma до 22 кг, бежевый",
+      "line": "Classic",
+      "model": "ergoryukzak-classic",
+      "category": "ergoryukzaki",
+      "designSlug": "beige",
+      "designNameDraft": "Бежевый",
+      "priceKztSnapshot": 27990,
+      "reviewsOnListingSnapshot": 40,
+      "oldTildaPath": "/classic-arman-beige",
+      "tildaMatchConfidence": "low"
+    },
+    {
+      "kaspiCode": "104970281",
+      "kaspiUrl": "https://kaspi.kz/shop/p/ergorjukzak-slingoemma-sling-4-classic-do-22-birjuzovyi-104970281/",
+      "kaspiTitle": "Эргорюкзак SlingoEmma до 22 кг, бирюзовый",
+      "line": "Classic",
+      "model": "ergoryukzak-classic",
+      "category": "ergoryukzaki",
+      "designSlug": "turquoise",
+      "designNameDraft": "Бирюзовый",
+      "priceKztSnapshot": 27990,
+      "reviewsOnListingSnapshot": 52,
+      "oldTildaPath": "/classic-safari-turquoise",
+      "tildaMatchConfidence": "medium"
+    },
+    {
+      "kaspiCode": "179761354",
+      "kaspiUrl": "https://kaspi.kz/shop/p/ergorjukzak-slingoemma-classic-nakidka-v-kurtku-1-1-sekonom-k-zime-do-22-kg-chernyi-179761354/",
+      "kaspiTitle": "Эргорюкзак SlingoEmma до 22 кг, черный",
+      "line": "Набор",
+      "model": "nabor-classic-nakidka-k-zime",
+      "category": "nabory",
+      "designSlug": "black",
+      "designNameDraft": "Чёрный",
+      "priceKztSnapshot": 39000,
+      "reviewsOnListingSnapshot": 2,
+      "oldTildaPath": null,
+      "tildaMatchConfidence": null
+    },
+    {
+      "kaspiCode": "114174150",
+      "kaspiUrl": "https://kaspi.kz/shop/p/aksessuar-slingoemma-nakidka-v-kurtku-0-2g-chernaja-do-18-kg-chernyi-114174150/",
+      "kaspiTitle": "Аксессуар SlingoEmma до 18 кг, черный",
+      "line": "Накидка",
+      "model": "nakidka-v-kurtku-do-18-kg",
+      "category": "nakidki",
+      "designSlug": "black",
+      "designNameDraft": "Чёрная",
+      "priceKztSnapshot": 17000,
+      "reviewsOnListingSnapshot": 27,
+      "oldTildaPath": "/cape-black",
+      "tildaMatchConfidence": "high"
+    },
+    {
+      "kaspiCode": "179623125",
+      "kaspiUrl": "https://kaspi.kz/shop/p/komplekt-slingoemma-bezhevyi-179623125/",
+      "kaspiTitle": "Комплект SlingoEmma бежевый",
+      "line": "Набор",
+      "model": "komplekt-bezhevyi",
+      "category": "nabory",
+      "designSlug": "beige",
+      "designNameDraft": "Бежевый",
+      "priceKztSnapshot": 27990,
+      "reviewsOnListingSnapshot": 0,
+      "oldTildaPath": null,
+      "tildaMatchConfidence": null
+    },
+    {
+      "kaspiCode": "179761200",
+      "kaspiUrl": "https://kaspi.kz/shop/p/sling-slingoemma-sling-1-1-sekonom-k-zime-do-22-kg-chernyi-179761200/",
+      "kaspiTitle": "Слинг SlingoEmma до 22 кг, черный",
+      "line": "Набор",
+      "model": "nabor-sling-k-zime",
+      "category": "nabory",
+      "designSlug": "black",
+      "designNameDraft": "Чёрный",
+      "priceKztSnapshot": 34900,
+      "reviewsOnListingSnapshot": 0,
+      "oldTildaPath": null,
+      "tildaMatchConfidence": null
+    },
+    {
+      "kaspiCode": "106132297",
+      "kaspiUrl": "https://kaspi.kz/shop/p/ergorjukzak-slingoemma-sling-2-tiddly-serebro-mramor-do-18-seryi-106132297/",
+      "kaspiTitle": "Эргорюкзак SlingoEmma до 18 кг, серый",
+      "line": "Tiddly",
+      "model": "ergoryukzak-tiddly",
+      "category": "ergoryukzaki",
+      "designSlug": "marble-grey",
+      "designNameDraft": "Серебряный мрамор",
+      "priceKztSnapshot": 27990,
+      "reviewsOnListingSnapshot": 45,
+      "oldTildaPath": "/tiddly-marble-gray",
+      "tildaMatchConfidence": "high"
+    },
+    {
+      "kaspiCode": "104970257",
+      "kaspiUrl": "https://kaspi.kz/shop/p/ergorjukzak-slingoemma-sling-2-do-18-bezhevyi-104970257/",
+      "kaspiTitle": "Эргорюкзак SlingoEmma до 18 кг, бежевый",
+      "line": "Tiddly",
+      "model": "ergoryukzak-tiddly",
+      "category": "ergoryukzaki",
+      "designSlug": "beige",
+      "designNameDraft": "Бежевый",
+      "priceKztSnapshot": 27990,
+      "reviewsOnListingSnapshot": 12,
+      "oldTildaPath": "/tiddley-biscuit",
+      "tildaMatchConfidence": "low"
+    },
+    {
+      "kaspiCode": "106132427",
+      "kaspiUrl": "https://kaspi.kz/shop/p/ergorjukzak-slingoemma-sling-classic-s-4-mes-bezh-uzory-do-22-kg-bezhevyi-106132427/",
+      "kaspiTitle": "Эргорюкзак SlingoEmma до 22 кг, бежевый",
+      "line": "Classic",
+      "model": "ergoryukzak-classic",
+      "category": "ergoryukzaki",
+      "designSlug": "beige-patterns",
+      "designNameDraft": "Бежевые узоры",
+      "priceKztSnapshot": 27990,
+      "reviewsOnListingSnapshot": 9,
+      "oldTildaPath": null,
+      "tildaMatchConfidence": null
+    },
+    {
+      "kaspiCode": "104970275",
+      "kaspiUrl": "https://kaspi.kz/shop/p/ergorjukzak-slingoemma-sling-4-classic-romby-seryi-do-22-seryi-104970275/",
+      "kaspiTitle": "Эргорюкзак SlingoEmma до 22 кг, серый",
+      "line": "Classic",
+      "model": "ergoryukzak-classic",
+      "category": "ergoryukzaki",
+      "designSlug": "diamonds-grey",
+      "designNameDraft": "Серые ромбы",
+      "priceKztSnapshot": 27990,
+      "reviewsOnListingSnapshot": 31,
+      "oldTildaPath": "/classic-silver-diamonds",
+      "tildaMatchConfidence": "medium"
+    },
+    {
+      "kaspiCode": "149603480",
+      "kaspiUrl": "https://kaspi.kz/shop/p/aksessuar-slingoemma-slingonakidka-v-kurtku-slingoemma-0-2-let-do-22-kg-korichnevyi-149603480/",
+      "kaspiTitle": "Аксессуар SlingoEmma до 22 кг, коричневый",
+      "line": "Накидка",
+      "model": "slingonakidka-do-22-kg",
+      "category": "nakidki",
+      "designSlug": "brown",
+      "designNameDraft": "Коричневая",
+      "priceKztSnapshot": 17000,
+      "reviewsOnListingSnapshot": 3,
+      "oldTildaPath": null,
+      "tildaMatchConfidence": null
+    },
+    {
+      "kaspiCode": "149603474",
+      "kaspiUrl": "https://kaspi.kz/shop/p/aksessuar-slingoemma-slingonakidka-v-kurtku-0-2let-slingoemma-do-22-kg-serebristyi-149603474/",
+      "kaspiTitle": "Аксессуар SlingoEmma до 22 кг, серебристый",
+      "line": "Накидка",
+      "model": "slingonakidka-do-22-kg",
+      "category": "nakidki",
+      "designSlug": "silver",
+      "designNameDraft": "Серебристая",
+      "priceKztSnapshot": 17000,
+      "reviewsOnListingSnapshot": 5,
+      "oldTildaPath": null,
+      "tildaMatchConfidence": null
+    },
+    {
+      "kaspiCode": "106916674",
+      "kaspiUrl": "https://kaspi.kz/shop/p/ergorjukzak-slingoemma-sling-4-classic-marrakesh-do-22-kg-seryi-106916674/",
+      "kaspiTitle": "Эргорюкзак SlingoEmma до 22 кг, серый",
+      "line": "Classic",
+      "model": "ergoryukzak-classic",
+      "category": "ergoryukzaki",
+      "designSlug": "marrakech",
+      "designNameDraft": "Марракеш",
+      "priceKztSnapshot": 21990,
+      "reviewsOnListingSnapshot": 6,
+      "oldTildaPath": "/classic-marrakech",
+      "tildaMatchConfidence": "high"
+    },
+    {
+      "kaspiCode": "114174062",
+      "kaspiUrl": "https://kaspi.kz/shop/p/ergorjukzak-slingoemma-sling-2-tiddly-serebro-babochki-do-18-seryi-114174062/",
+      "kaspiTitle": "Эргорюкзак SlingoEmma до 18 кг, серый",
+      "line": "Tiddly",
+      "model": "ergoryukzak-tiddly",
+      "category": "ergoryukzaki",
+      "designSlug": "butterflies-silver",
+      "designNameDraft": "Серебряные бабочки",
+      "priceKztSnapshot": 27990,
+      "reviewsOnListingSnapshot": 9,
+      "oldTildaPath": "/tiddly-butterflies-silver",
+      "tildaMatchConfidence": "high"
+    },
+    {
+      "kaspiCode": "104970251",
+      "kaspiUrl": "https://kaspi.kz/shop/p/ergorjukzak-slingoemma-sling-4-classic-bezh-do-22-bezhevyi-104970251/",
+      "kaspiTitle": "Эргорюкзак SlingoEmma до 22 кг, бежевый",
+      "line": "Classic",
+      "model": "ergoryukzak-classic",
+      "category": "ergoryukzaki",
+      "designSlug": "beige-2",
+      "designNameDraft": "Бежевый (второй вариант)",
+      "priceKztSnapshot": 27990,
+      "reviewsOnListingSnapshot": 5,
+      "oldTildaPath": null,
+      "tildaMatchConfidence": null
+    },
+    {
+      "kaspiCode": "106916662",
+      "kaspiUrl": "https://kaspi.kz/shop/p/ergorjukzak-slingoemma-sling-4-rozy-seryi-do-22-kg-seryi-106916662/",
+      "kaspiTitle": "Эргорюкзак SlingoEmma до 22 кг, серый",
+      "line": "Classic",
+      "model": "ergoryukzak-classic",
+      "category": "ergoryukzaki",
+      "designSlug": "roses-grey",
+      "designNameDraft": "Серые розы",
+      "priceKztSnapshot": 21990,
+      "reviewsOnListingSnapshot": 4,
+      "oldTildaPath": "/classic-roses-gray",
+      "tildaMatchConfidence": "high"
+    },
+    {
+      "kaspiCode": "134945991",
+      "kaspiUrl": "https://kaspi.kz/shop/p/ergorjukzak-slingoemma-sling-4-classic-tengri-do-22-kg-chernyi-belyi-s-risunkom-134945991/",
+      "kaspiTitle": "Эргорюкзак SlingoEmma до 22 кг, черный, белый, с рисунком",
+      "line": "Classic",
+      "model": "ergoryukzak-classic",
+      "category": "ergoryukzaki",
+      "designSlug": "tengri",
+      "designNameDraft": "Тенгри",
+      "priceKztSnapshot": 27990,
+      "reviewsOnListingSnapshot": 4,
+      "oldTildaPath": null,
+      "tildaMatchConfidence": null
+    },
+    {
+      "kaspiCode": "114174159",
+      "kaspiUrl": "https://kaspi.kz/shop/p/aksessuar-slingoemma-nakidka-v-kurtku-0-2g-poverh-ergorjukzaka-do-18-kg-sinii-114174159/",
+      "kaspiTitle": "Аксессуар SlingoEmma до 18 кг, синий",
+      "line": "Накидка",
+      "model": "nakidka-v-kurtku-do-18-kg",
+      "category": "nakidki",
+      "designSlug": "blue",
+      "designNameDraft": "Синяя",
+      "priceKztSnapshot": 17000,
+      "reviewsOnListingSnapshot": 3,
+      "oldTildaPath": "/cape-blue",
+      "tildaMatchConfidence": "high"
+    },
+    {
+      "kaspiCode": "106533019",
+      "kaspiUrl": "https://kaspi.kz/shop/p/ergorjukzak-slingoemma-sling-s-2-mes-tiddly-marrakesh-do-18-kg-seryi-106533019/",
+      "kaspiTitle": "Эргорюкзак SlingoEmma до 18 кг, серый",
+      "line": "Tiddly",
+      "model": "ergoryukzak-tiddly",
+      "category": "ergoryukzaki",
+      "designSlug": "marrakech",
+      "designNameDraft": "Марракеш",
+      "priceKztSnapshot": 27990,
+      "reviewsOnListingSnapshot": 3,
+      "oldTildaPath": "/tiddly-marrakech",
+      "tildaMatchConfidence": "high"
+    },
+    {
+      "kaspiCode": "106532804",
+      "kaspiUrl": "https://kaspi.kz/shop/p/ergorjukzak-slingoemma-sling-2-tiddly-notrdam00922-do-18-seryi-106532804/",
+      "kaspiTitle": "Эргорюкзак SlingoEmma до 18 кг, серый",
+      "line": "Tiddly",
+      "model": "ergoryukzak-tiddly",
+      "category": "ergoryukzaki",
+      "designSlug": "notre-dame",
+      "designNameDraft": "Нотр-Дам",
+      "priceKztSnapshot": 27990,
+      "reviewsOnListingSnapshot": 2,
+      "oldTildaPath": "/tiddly-notre-dame",
+      "tildaMatchConfidence": "high"
+    },
+    {
+      "kaspiCode": "104765697",
+      "kaspiUrl": "https://kaspi.kz/shop/p/ergorjukzak-slingoemma-sling-4-classic-do-22-sinii-104765697/",
+      "kaspiTitle": "Эргорюкзак SlingoEmma до 22 кг, синий",
+      "line": "Classic",
+      "model": "ergoryukzak-classic",
+      "category": "ergoryukzaki",
+      "designSlug": "blue",
+      "designNameDraft": "Синий",
+      "priceKztSnapshot": 27900,
+      "reviewsOnListingSnapshot": 6,
+      "oldTildaPath": null,
+      "tildaMatchConfidence": null
+    },
+    {
+      "kaspiCode": "156734493",
+      "kaspiUrl": "https://kaspi.kz/shop/p/aksessuar-slingoemma-zapasnoi-komplekt-do-22-kg-mul-tikolor-156734493/",
+      "kaspiTitle": "Аксессуар SlingoEmma до 22 кг, мультиколор",
+      "line": "Аксессуар",
+      "model": "zapasnoi-komplekt",
+      "category": "dlya-doma",
+      "designSlug": "multicolor",
+      "designNameDraft": "Мультиколор",
+      "priceKztSnapshot": 4000,
+      "reviewsOnListingSnapshot": 0,
+      "oldTildaPath": null,
+      "tildaMatchConfidence": null
+    }
+  ]
+}

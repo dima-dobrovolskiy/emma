@@ -1,0 +1,37 @@
+from,to,confidence,note
+/,/,exact,главная остаётся главной
+/biborn-blue,/p/ergoryukzak-beborn,model-only,расцветки нет на Kaspi - ведём на модель
+/biborn-mint,/p/ergoryukzak-beborn,model-only,расцветки нет на Kaspi - ведём на модель
+/biborn-turquoise,/p/ergoryukzak-beborn,model-only,расцветки нет на Kaspi - ведём на модель
+/biborn-grey,/p/ergoryukzak-beborn?color=grey,high,расцветка найдена на Kaspi
+/biborn-chocolate,/p/ergoryukzak-beborn?color=chocolate,high,расцветка найдена на Kaspi
+/classic-arman-beige,/p/ergoryukzak-classic?color=beige,low,проверить соответствие у Эммы
+/classic-mocha-beige,/p/ergoryukzak-classic?color=mocha-beige,high,расцветка найдена на Kaspi
+/classic-biscuit,/p/ergoryukzak-classic?color=biscuit,high,расцветка найдена на Kaspi
+/classic-dark-mocha,/p/ergoryukzak-classic?color=dark-mocha,high,расцветка найдена на Kaspi
+/classic-marrakech,/p/ergoryukzak-classic?color=marrakech,high,расцветка найдена на Kaspi
+/classic-roses-gray,/p/ergoryukzak-classic?color=roses-grey,high,расцветка найдена на Kaspi
+/classic-silver-diamonds,/p/ergoryukzak-classic?color=diamonds-grey,medium,проверить соответствие у Эммы
+/classic-safari-turquoise,/p/ergoryukzak-classic?color=turquoise,medium,проверить соответствие у Эммы
+/classic-heart-gray,/p/ergoryukzak-classic,model-only,расцветки нет на Kaspi - ведём на модель
+/classic-armand-silver,/p/ergoryukzak-classic,model-only,расцветки нет на Kaspi - ведём на модель
+/classic-stars-silver,/p/ergoryukzak-classic?color=stars-silver,high,расцветка найдена на Kaspi
+/classic-hearts-black,/p/ergoryukzak-classic,model-only,расцветки нет на Kaspi - ведём на модель
+/classic-black,/p/ergoryukzak-classic?color=black,high,расцветка найдена на Kaspi
+/cape-blue,/p/nakidka-v-kurtku-do-18-kg?color=blue,high,расцветка найдена на Kaspi
+/cape-black,/p/nakidka-v-kurtku-do-18-kg?color=black,high,расцветка найдена на Kaspi
+/tiddly-armand-dark,/p/ergoryukzak-tiddly?color=arman-dark,high,расцветка найдена на Kaspi
+/tiddley-bunny-beige,/p/ergoryukzak-tiddly?color=bunny-beige,high,расцветка найдена на Kaspi
+/tiddley-biscuit,/p/ergoryukzak-tiddly?color=beige,low,проверить соответствие у Эммы
+/tiddley-fir-trees-dark,/p/ergoryukzak-tiddly?color=fir-trees-dark,high,расцветка найдена на Kaspi
+/tiddly-stars-dust-dark,/p/ergoryukzak-tiddly?color=stars-grey,low,проверить соответствие у Эммы
+/tiddly-marrakech,/p/ergoryukzak-tiddly?color=marrakech,high,расцветка найдена на Kaspi
+/tiddly-marble-gray,/p/ergoryukzak-tiddly?color=marble-grey,high,расцветка найдена на Kaspi
+/tiddly-notre-dame,/p/ergoryukzak-tiddly?color=notre-dame,high,расцветка найдена на Kaspi
+/tiddly-butterflies-silver,/p/ergoryukzak-tiddly?color=butterflies-silver,high,расцветка найдена на Kaspi
+/tiddly-armand-silver,/p/ergoryukzak-tiddly?color=arman-silver,high,расцветка найдена на Kaspi
+/tiddly-stars-black,/p/ergoryukzak-tiddly?color=stars-black,high,расцветка найдена на Kaspi
+/tiddly-black,/p/ergoryukzak-tiddly?color=black,high,расцветка найдена на Kaspi
+/page94429986.html,/,unknown,посмотреть только <title> старой страницы и выбрать цель
+/1,/,unknown,посмотреть только <title> старой страницы и выбрать цель
+/ergoryukzak-kaspi,/,unknown,посмотреть только <title> старой страницы и выбрать цель
