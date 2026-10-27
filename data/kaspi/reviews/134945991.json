@@ -1,0 +1,94 @@
+{
+ "kaspiCode": "134945991",
+ "kaspiModelName": "Слинг 4+ Classic Тенгри",
+ "ratingCount": 4,
+ "commentCount": 4,
+ "pictureCount": 4,
+ "ratingAvg": 5,
+ "distribution": {
+  "1": 0,
+  "2": 0,
+  "3": 0,
+  "4": 0,
+  "5": 4
+ },
+ "reviews": [
+  {
+   "id": "b1bbb81b336ce2be",
+   "kaspiCode": "134945991",
+   "author": "Бауыржан",
+   "date": "2026-08-01",
+   "rating": 5,
+   "text": "Хороший рюкзак и цвет приятный.",
+   "plus": "",
+   "minus": "",
+   "photos": [
+    {
+     "small": "https://resources.cdn-kaspi.kz/img/p/r/1012170193-134945991/c271963e-cdb5-453f-97da-4522666805c6.jpeg?format=review_small",
+     "medium": "https://resources.cdn-kaspi.kz/img/p/r/1012170193-134945991/c271963e-cdb5-453f-97da-4522666805c6.jpeg?format=review_medium",
+     "large": "https://resources.cdn-kaspi.kz/img/p/r/1012170193-134945991/c271963e-cdb5-453f-97da-4522666805c6.jpeg?format=review_large"
+    }
+   ],
+   "helpfulCount": 0
+  },
+  {
+   "id": "924a230fdde56db5",
+   "kaspiCode": "134945991",
+   "author": "Ләззат",
+   "date": "2026-07-30",
+   "rating": 5,
+   "text": "Очень понравился. Ребенок засыпает через 10 минут.",
+   "plus": "",
+   "minus": "",
+   "photos": [
+    {
+     "small": "https://resources.cdn-kaspi.kz/img/p/r/1009365362-134945991/8cb9eb31-ea69-41e5-8f6c-0f6082a728b2.jpeg?format=review_small",
+     "medium": "https://resources.cdn-kaspi.kz/img/p/r/1009365362-134945991/8cb9eb31-ea69-41e5-8f6c-0f6082a728b2.jpeg?format=review_medium",
+     "large": "https://resources.cdn-kaspi.kz/img/p/r/1009365362-134945991/8cb9eb31-ea69-41e5-8f6c-0f6082a728b2.jpeg?format=review_large"
+    }
+   ],
+   "helpfulCount": 0
+  },
+  {
+   "id": "4a57eaacde54d163",
+   "kaspiCode": "134945991",
+   "author": "Меруерт",
+   "date": "2026-07-07",
+   "rating": 5,
+   "text": "Ткань приятная, имеется мешочек для хранения.",
+   "plus": "",
+   "minus": "",
+   "photos": [
+    {
+     "small": "https://resources.cdn-kaspi.kz/img/p/r/988338780-134945991/5fed1ecd-244d-4417-b866-12330c4fe305.jpeg?format=review_small",
+     "medium": "https://resources.cdn-kaspi.kz/img/p/r/988338780-134945991/5fed1ecd-244d-4417-b866-12330c4fe305.jpeg?format=review_medium",
+     "large": "https://resources.cdn-kaspi.kz/img/p/r/988338780-134945991/5fed1ecd-244d-4417-b866-12330c4fe305.jpeg?format=review_large"
+    }
+   ],
+   "helpfulCount": 0
+  },
+  {
+   "id": "65f413838189cb0f",
+   "kaspiCode": "134945991",
+   "author": "Қарақат",
+   "date": "2026-06-17",
+   "rating": 5,
+   "text": "Просто без слов супер находка. Ребенку удобно. Сохраняет М позицию.",
+   "plus": "",
+   "minus": "",
+   "photos": [
+    {
+     "small": "https://resources.cdn-kaspi.kz/img/p/r/959924829-134945991/e2d67ccc-a4da-468c-91a4-5ed12aae0fbb.jpeg?format=review_small",
+     "medium": "https://resources.cdn-kaspi.kz/img/p/r/959924829-134945991/e2d67ccc-a4da-468c-91a4-5ed12aae0fbb.jpeg?format=review_medium",
+     "large": "https://resources.cdn-kaspi.kz/img/p/r/959924829-134945991/e2d67ccc-a4da-468c-91a4-5ed12aae0fbb.jpeg?format=review_large"
+    },
+    {
+     "small": "https://resources.cdn-kaspi.kz/img/p/r/959924829-134945991/1391584a-c2fb-43cc-868f-ba86ffb0cb00.jpeg?format=review_small",
+     "medium": "https://resources.cdn-kaspi.kz/img/p/r/959924829-134945991/1391584a-c2fb-43cc-868f-ba86ffb0cb00.jpeg?format=review_medium",
+     "large": "https://resources.cdn-kaspi.kz/img/p/r/959924829-134945991/1391584a-c2fb-43cc-868f-ba86ffb0cb00.jpeg?format=review_large"
+    }
+   ],
+   "helpfulCount": 0
+  }
+ ]
+}

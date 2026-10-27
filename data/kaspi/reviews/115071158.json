@@ -1,0 +1,588 @@
+{
+ "kaspiCode": "115071158",
+ "kaspiModelName": "Слинг Tiddly 2+ Арман Дарк",
+ "ratingCount": 55,
+ "commentCount": 38,
+ "pictureCount": 10,
+ "ratingAvg": 4.9,
+ "distribution": {
+  "1": 0,
+  "2": 1,
+  "3": 1,
+  "4": 1,
+  "5": 52
+ },
+ "reviews": [
+  {
+   "id": "f242f57d9dc117ac",
+   "kaspiCode": "115071158",
+   "author": "Мария",
+   "date": "2024-01-30",
+   "rating": 5,
+   "text": "Качество супер. Нужно привыкнуть малышу, но уверенна будет сидеть с удовольствием. Цвет вообще огонь. Очень удобен и облегчает. Почти 7кг малыш, стал пушинкой. Спасибо, Эмма. Отдельное спасибо, что Вы есть на Каспи.",
+   "plus": "",
+   "minus": "",
+   "photos": [],
+   "helpfulCount": 6
+  },
+  {
+   "id": "a8910fc4878f549b",
+   "kaspiCode": "115071158",
+   "author": "Іңкәр",
+   "date": "2024-04-27",
+   "rating": 5,
+   "text": "Рюкзак классный. После покупки написал консультант, уточнил вес и возраст ребенка, посоветовали модель классик, поскольку он больше подходит. Сервис на высоте. Уже опробовали, дочка хорошо в нем засыпает на улице. И удобно когда нужно быстро сбегать в магазин или в поликлинику, чтобы не таскать коляску. Спасибо большое, Эмма!",
+   "plus": "",
+   "minus": "",
+   "photos": [],
+   "helpfulCount": 5
+  },
+  {
+   "id": "27a219906173185f",
+   "kaspiCode": "115071158",
+   "author": "Дамира",
+   "date": "2025-09-17",
+   "rating": 5,
+   "text": "Тауар маған ұнады, мықты матасы өте жақсы екен.",
+   "plus": "",
+   "minus": "",
+   "photos": [
+    {
+     "small": "https://resources.cdn-kaspi.kz/img/p/r/626860412-115071158/179fcac8-dd07-40e3-a3c7-56c569c5e5f9.jpeg?format=review_small",
+     "medium": "https://resources.cdn-kaspi.kz/img/p/r/626860412-115071158/179fcac8-dd07-40e3-a3c7-56c569c5e5f9.jpeg?format=review_medium",
+     "large": "https://resources.cdn-kaspi.kz/img/p/r/626860412-115071158/179fcac8-dd07-40e3-a3c7-56c569c5e5f9.jpeg?format=review_large"
+    },
+    {
+     "small": "https://resources.cdn-kaspi.kz/img/p/r/626860412-115071158/a0e8a415-da70-45ea-8700-0146dec259ad.jpeg?format=review_small",
+     "medium": "https://resources.cdn-kaspi.kz/img/p/r/626860412-115071158/a0e8a415-da70-45ea-8700-0146dec259ad.jpeg?format=review_medium",
+     "large": "https://resources.cdn-kaspi.kz/img/p/r/626860412-115071158/a0e8a415-da70-45ea-8700-0146dec259ad.jpeg?format=review_large"
+    },
+    {
+     "small": "https://resources.cdn-kaspi.kz/img/p/r/626860412-115071158/08b650f0-5d49-4ba2-b3c2-5fa7d8d265af.jpeg?format=review_small",
+     "medium": "https://resources.cdn-kaspi.kz/img/p/r/626860412-115071158/08b650f0-5d49-4ba2-b3c2-5fa7d8d265af.jpeg?format=review_medium",
+     "large": "https://resources.cdn-kaspi.kz/img/p/r/626860412-115071158/08b650f0-5d49-4ba2-b3c2-5fa7d8d265af.jpeg?format=review_large"
+    },
+    {
+     "small": "https://resources.cdn-kaspi.kz/img/p/r/626860412-115071158/8de9b1b5-e0b5-4057-b529-e86ca8c658b8.jpeg?format=review_small",
+     "medium": "https://resources.cdn-kaspi.kz/img/p/r/626860412-115071158/8de9b1b5-e0b5-4057-b529-e86ca8c658b8.jpeg?format=review_medium",
+     "large": "https://resources.cdn-kaspi.kz/img/p/r/626860412-115071158/8de9b1b5-e0b5-4057-b529-e86ca8c658b8.jpeg?format=review_large"
+    }
+   ],
+   "helpfulCount": 3
+  },
+  {
+   "id": "44b0ea3c11439137",
+   "kaspiCode": "115071158",
+   "author": "Назым",
+   "date": "2025-02-24",
+   "rating": 5,
+   "text": "Здравствуйте. Получила рюкзачок. Спасибо большое! Очень рада своей покупкой! Спина сказала спасибо когда гуляли в ТРЦ всем рекомендую) очень нужная вещь.",
+   "plus": "",
+   "minus": "",
+   "photos": [],
+   "helpfulCount": 3
+  },
+  {
+   "id": "169d10a04774a894",
+   "kaspiCode": "115071158",
+   "author": "Аққу",
+   "date": "2024-10-25",
+   "rating": 5,
+   "text": "Өте ыңғайлы, маған ұнады.",
+   "plus": "",
+   "minus": "",
+   "photos": [],
+   "helpfulCount": 3
+  },
+  {
+   "id": "4f9dccb6a1197a6c",
+   "kaspiCode": "115071158",
+   "author": "Раиса",
+   "date": "2024-10-21",
+   "rating": 5,
+   "text": "Спасибо большое. Экорюкзак очень понравился дочке.",
+   "plus": "",
+   "minus": "",
+   "photos": [],
+   "helpfulCount": 3
+  },
+  {
+   "id": "fd8af08ca4fcd2ad",
+   "kaspiCode": "115071158",
+   "author": "Дина",
+   "date": "2024-05-22",
+   "rating": 5,
+   "text": "Супер находка для нас, быстренько разобралась по видео, теперь ходим в обнимку с малышом. И животик не беспокоит, и мои руки спина не болят, в общем одни только плюсы, всем мамочкам рекомендую.",
+   "plus": "",
+   "minus": "",
+   "photos": [],
+   "helpfulCount": 3
+  },
+  {
+   "id": "b2b40559b80bc8d0",
+   "kaspiCode": "115071158",
+   "author": "Диляра",
+   "date": "2024-05-08",
+   "rating": 5,
+   "text": "Вчера мы отмечали день рождения сына, был большой торт. Так даже на тое мне был полезен эргорюкзак. Я успела и подарки гостям раздать, и тосты выслушать и призы вручить. Спасибо Вам большое, Вы действительно облегчили жизнь мамочек. В повседневной жизни рюкзак просто мне необходим сейчас, я могу спокойно съездить на прием, не напрягая мужа и не толкая коляску, даже на автобусе могу спокойно передвигаться.",
+   "plus": "",
+   "minus": "",
+   "photos": [],
+   "helpfulCount": 3
+  },
+  {
+   "id": "bec78b8439bd44c0",
+   "kaspiCode": "115071158",
+   "author": "Диана",
+   "date": "2025-06-15",
+   "rating": 2,
+   "text": "Качество эргорюкзака отличное, но малыш в нем не сидит совсем.",
+   "plus": "",
+   "minus": "",
+   "photos": [],
+   "helpfulCount": 2
+  },
+  {
+   "id": "1f82127e152e7ca2",
+   "kaspiCode": "115071158",
+   "author": "Асылай",
+   "date": "2025-04-13",
+   "rating": 5,
+   "text": "Отличный эргорюкзак, малыш хорошо спит в нем.",
+   "plus": "",
+   "minus": "",
+   "photos": [],
+   "helpfulCount": 2
+  },
+  {
+   "id": "3d6dcdba97c4104f",
+   "kaspiCode": "115071158",
+   "author": "Диана",
+   "date": "2025-02-11",
+   "rating": 5,
+   "text": "Очень удобный и практичный, никак не жалею, что купила эргорюкзак, я довольна покупкой.",
+   "plus": "",
+   "minus": "",
+   "photos": [],
+   "helpfulCount": 2
+  },
+  {
+   "id": "c745ae9742074a47",
+   "kaspiCode": "115071158",
+   "author": "Александр",
+   "date": "2024-11-20",
+   "rating": 5,
+   "text": "Отличный эргорюкзак. Только малышу нужно к нему привыкнуть. Новые ощущения от позы у малыша.",
+   "plus": "",
+   "minus": "",
+   "photos": [],
+   "helpfulCount": 2
+  },
+  {
+   "id": "3cdd821c7e626dff",
+   "kaspiCode": "115071158",
+   "author": "Анна",
+   "date": "2024-11-12",
+   "rating": 5,
+   "text": "Пользуюсь пол месяца, одевается легко, ребёнку 2, 5 месяца дома иногда даже засыпает в рюкзачке, на улице тоже в нем спит, рюкзак облегчает поход в магазин. Пять баллов изделию, магазину и работникам магазина.",
+   "plus": "",
+   "minus": "",
+   "photos": [],
+   "helpfulCount": 2
+  },
+  {
+   "id": "63896ca5a24b131c",
+   "kaspiCode": "115071158",
+   "author": "Зарина",
+   "date": "2024-10-10",
+   "rating": 5,
+   "text": "Очень удобный, особенно на прогулку, малыш всю прогулку спал. Спасибо.",
+   "plus": "",
+   "minus": "",
+   "photos": [],
+   "helpfulCount": 2
+  },
+  {
+   "id": "c52b6a788df69126",
+   "kaspiCode": "115071158",
+   "author": "Гулнар",
+   "date": "2024-06-27",
+   "rating": 5,
+   "text": "Удобный и практичный, эргорюкзак.",
+   "plus": "",
+   "minus": "",
+   "photos": [],
+   "helpfulCount": 2
+  },
+  {
+   "id": "b0a7126641612132",
+   "kaspiCode": "115071158",
+   "author": "Балнур",
+   "date": "2024-04-29",
+   "rating": 5,
+   "text": "Классный эргорюкзак! Доче 2, 5 мес, носим с удовольствием, тем более скоро лето, будем выходить чаще на прогулку.",
+   "plus": "",
+   "minus": "",
+   "photos": [
+    {
+     "small": "https://resources.cdn-kaspi.kz/img/p/r/345132965-115071158/29f81a07-4801-4b77-b4c1-2303b9823232.jpeg?format=review_small",
+     "medium": "https://resources.cdn-kaspi.kz/img/p/r/345132965-115071158/29f81a07-4801-4b77-b4c1-2303b9823232.jpeg?format=review_medium",
+     "large": "https://resources.cdn-kaspi.kz/img/p/r/345132965-115071158/29f81a07-4801-4b77-b4c1-2303b9823232.jpeg?format=review_large"
+    }
+   ],
+   "helpfulCount": 2
+  },
+  {
+   "id": "de5f7a834cf9a49e",
+   "kaspiCode": "115071158",
+   "author": "Омаргали",
+   "date": "2024-04-20",
+   "rating": 5,
+   "text": "Очень классный и удобный! Качество супер! Всем советую.",
+   "plus": "",
+   "minus": "",
+   "photos": [],
+   "helpfulCount": 2
+  },
+  {
+   "id": "4812b9ad72bb0ebd",
+   "kaspiCode": "115071158",
+   "author": "Әсем",
+   "date": "2024-04-05",
+   "rating": 5,
+   "text": "Мне понравилось, очень удобно. Протестирую ещё на прогулке.",
+   "plus": "",
+   "minus": "",
+   "photos": [],
+   "helpfulCount": 2
+  },
+  {
+   "id": "20bccb556a4fae40",
+   "kaspiCode": "115071158",
+   "author": "Айша",
+   "date": "2024-03-23",
+   "rating": 5,
+   "text": "Очень хороший, качественный эргорюкзак. Нам понравился.",
+   "plus": "",
+   "minus": "",
+   "photos": [],
+   "helpfulCount": 2
+  },
+  {
+   "id": "68b43ca35440bdf7",
+   "kaspiCode": "115071158",
+   "author": "Шолпан",
+   "date": "2024-03-10",
+   "rating": 5,
+   "text": "Отличный эргорюкзак, взяла в цвете “звездная пыль”, на самом деле облегчил жизнь, спина не болит.",
+   "plus": "",
+   "minus": "",
+   "photos": [],
+   "helpfulCount": 2
+  },
+  {
+   "id": "b3c5c52fc63ef6cc",
+   "kaspiCode": "115071158",
+   "author": "Асель",
+   "date": "2024-02-22",
+   "rating": 5,
+   "text": "Спасибо большое за быструю доставку, хорошая вещь. Померили, только ещё не пользуемся. Качество хорошее.",
+   "plus": "",
+   "minus": "",
+   "photos": [],
+   "helpfulCount": 2
+  },
+  {
+   "id": "b5ba6d8cd84feda2",
+   "kaspiCode": "115071158",
+   "author": "Айгерим",
+   "date": "2025-09-03",
+   "rating": 5,
+   "text": "Супер качество удобно, комфортно, ребёнок в тепле и спит, меня прям выручает Слинг! Советую, особенно у кого детки ручные берите.",
+   "plus": "",
+   "minus": "",
+   "photos": [
+    {
+     "small": "https://resources.cdn-kaspi.kz/img/p/r/601857284-115071158/e42cfa40-5867-40e2-9068-b0db0cfdc72f.jpeg?format=review_small",
+     "medium": "https://resources.cdn-kaspi.kz/img/p/r/601857284-115071158/e42cfa40-5867-40e2-9068-b0db0cfdc72f.jpeg?format=review_medium",
+     "large": "https://resources.cdn-kaspi.kz/img/p/r/601857284-115071158/e42cfa40-5867-40e2-9068-b0db0cfdc72f.jpeg?format=review_large"
+    }
+   ],
+   "helpfulCount": 1
+  },
+  {
+   "id": "5f330008788377c2",
+   "kaspiCode": "115071158",
+   "author": "Бийбигуль",
+   "date": "2025-06-03",
+   "rating": 5,
+   "text": "Очень мне понравился. Удобно и супер просто.",
+   "plus": "",
+   "minus": "",
+   "photos": [],
+   "helpfulCount": 1
+  },
+  {
+   "id": "a2639d96c5f83536",
+   "kaspiCode": "115071158",
+   "author": "Динара",
+   "date": "2025-05-13",
+   "rating": 5,
+   "text": "Бізге ұнады. Басында қолдана алмадым. Бірақ сатушы жазып түсіндіріп берді. Қазір бөпеммен осы рюкзакпен жүрміз.",
+   "plus": "",
+   "minus": "",
+   "photos": [],
+   "helpfulCount": 1
+  },
+  {
+   "id": "3cf662e719c3db97",
+   "kaspiCode": "115071158",
+   "author": "Рахат",
+   "date": "2025-04-07",
+   "rating": 5,
+   "text": "Отличный рюкзак, жене понравилось, и качество материала хорошее.",
+   "plus": "",
+   "minus": "",
+   "photos": [],
+   "helpfulCount": 1
+  },
+  {
+   "id": "f0de5e55b237f6f0",
+   "kaspiCode": "115071158",
+   "author": "Әсем",
+   "date": "2025-03-13",
+   "rating": 5,
+   "text": "Классный эргорюкзачок! Доставка вовремя. Вот привыкаем с малышом! Нам нравится.",
+   "plus": "",
+   "minus": "",
+   "photos": [],
+   "helpfulCount": 1
+  },
+  {
+   "id": "237bb06c7af98c56",
+   "kaspiCode": "115071158",
+   "author": "Дина",
+   "date": "2024-12-20",
+   "rating": 5,
+   "text": "Это очень хорошая вещь.",
+   "plus": "",
+   "minus": "",
+   "photos": [],
+   "helpfulCount": 1
+  },
+  {
+   "id": "0fc9c0058336271c",
+   "kaspiCode": "115071158",
+   "author": "Сания",
+   "date": "2024-11-29",
+   "rating": 3,
+   "text": "Эргорюкзак хорошего качества, две звезды сняла потому, что нам он не зашел, доча сидит в нем максимум 3 минуты, в районе ляжек сильно давит, остается красный след.",
+   "plus": "",
+   "minus": "",
+   "photos": [
+    {
+     "small": "https://resources.cdn-kaspi.kz/img/p/r/445033347-115071158/fb5b18c7-5538-49f9-b370-0e77dd49a052.jpeg?format=review_small",
+     "medium": "https://resources.cdn-kaspi.kz/img/p/r/445033347-115071158/fb5b18c7-5538-49f9-b370-0e77dd49a052.jpeg?format=review_medium",
+     "large": "https://resources.cdn-kaspi.kz/img/p/r/445033347-115071158/fb5b18c7-5538-49f9-b370-0e77dd49a052.jpeg?format=review_large"
+    },
+    {
+     "small": "https://resources.cdn-kaspi.kz/img/p/r/445033347-115071158/5de853dc-dd59-4b2d-ae76-9bcfecc77175.jpeg?format=review_small",
+     "medium": "https://resources.cdn-kaspi.kz/img/p/r/445033347-115071158/5de853dc-dd59-4b2d-ae76-9bcfecc77175.jpeg?format=review_medium",
+     "large": "https://resources.cdn-kaspi.kz/img/p/r/445033347-115071158/5de853dc-dd59-4b2d-ae76-9bcfecc77175.jpeg?format=review_large"
+    },
+    {
+     "small": "https://resources.cdn-kaspi.kz/img/p/r/445033347-115071158/9754ead3-eeca-41e3-b344-c7d95df9b094.jpeg?format=review_small",
+     "medium": "https://resources.cdn-kaspi.kz/img/p/r/445033347-115071158/9754ead3-eeca-41e3-b344-c7d95df9b094.jpeg?format=review_medium",
+     "large": "https://resources.cdn-kaspi.kz/img/p/r/445033347-115071158/9754ead3-eeca-41e3-b344-c7d95df9b094.jpeg?format=review_large"
+    },
+    {
+     "small": "https://resources.cdn-kaspi.kz/img/p/r/445033347-115071158/d6f2634e-1483-44b4-adb9-ae5e80a913f1.jpeg?format=review_small",
+     "medium": "https://resources.cdn-kaspi.kz/img/p/r/445033347-115071158/d6f2634e-1483-44b4-adb9-ae5e80a913f1.jpeg?format=review_medium",
+     "large": "https://resources.cdn-kaspi.kz/img/p/r/445033347-115071158/d6f2634e-1483-44b4-adb9-ae5e80a913f1.jpeg?format=review_large"
+    },
+    {
+     "small": "https://resources.cdn-kaspi.kz/img/p/r/445033347-115071158/5e6be1fb-72e3-4b01-a9b6-0a61c2b95a2c.jpeg?format=review_small",
+     "medium": "https://resources.cdn-kaspi.kz/img/p/r/445033347-115071158/5e6be1fb-72e3-4b01-a9b6-0a61c2b95a2c.jpeg?format=review_medium",
+     "large": "https://resources.cdn-kaspi.kz/img/p/r/445033347-115071158/5e6be1fb-72e3-4b01-a9b6-0a61c2b95a2c.jpeg?format=review_large"
+    }
+   ],
+   "helpfulCount": 1
+  },
+  {
+   "id": "765a629ed6638f52",
+   "kaspiCode": "115071158",
+   "author": "Камила",
+   "date": "2024-09-26",
+   "rating": 5,
+   "text": "Хороший эргорюкзак! Ребенок спокойно сидит.",
+   "plus": "",
+   "minus": "",
+   "photos": [],
+   "helpfulCount": 1
+  },
+  {
+   "id": "b83203eadefb9f81",
+   "kaspiCode": "115071158",
+   "author": "Аружан",
+   "date": "2024-09-23",
+   "rating": 5,
+   "text": "Нам очень понравился эргорюкзак. Малыш сразу засыпает в нем, удобно, для нас просто находка, так как не любим лежать в коляске.",
+   "plus": "",
+   "minus": "",
+   "photos": [
+    {
+     "small": "https://resources.cdn-kaspi.kz/img/p/r/407699086-115071158/8c14f83c-235e-4c45-bd93-752d1428e4e1.jpeg?format=review_small",
+     "medium": "https://resources.cdn-kaspi.kz/img/p/r/407699086-115071158/8c14f83c-235e-4c45-bd93-752d1428e4e1.jpeg?format=review_medium",
+     "large": "https://resources.cdn-kaspi.kz/img/p/r/407699086-115071158/8c14f83c-235e-4c45-bd93-752d1428e4e1.jpeg?format=review_large"
+    }
+   ],
+   "helpfulCount": 1
+  },
+  {
+   "id": "ff6a33b27cf3cbfc",
+   "kaspiCode": "115071158",
+   "author": "Ксения",
+   "date": "2024-07-11",
+   "rating": 5,
+   "text": "Шикарная вещь, удобно гулять с ребенком, он не плачет как в коляске, да и просто по дому дела сделать удобно, если ребенок без вас не спит. Дитенку удобно, уснул в слинге в первый же раз как надели.",
+   "plus": "",
+   "minus": "",
+   "photos": [],
+   "helpfulCount": 1
+  },
+  {
+   "id": "914bb19a846de624",
+   "kaspiCode": "115071158",
+   "author": "Багдат",
+   "date": "2024-06-10",
+   "rating": 5,
+   "text": "Спасибо, очень понравилось, качественно, удобно, и большое спасибо Каспи.",
+   "plus": "",
+   "minus": "",
+   "photos": [],
+   "helpfulCount": 1
+  },
+  {
+   "id": "e3ca0ed99e22abb5",
+   "kaspiCode": "115071158",
+   "author": "Эльвира",
+   "date": "2024-05-11",
+   "rating": 5,
+   "text": "Эргорюкзак супер, облегчает жизнь.",
+   "plus": "",
+   "minus": "",
+   "photos": [],
+   "helpfulCount": 1
+  },
+  {
+   "id": "2bf485dfb3f5c1f7",
+   "kaspiCode": "115071158",
+   "author": "Диана",
+   "date": "2026-05-23",
+   "rating": 5,
+   "text": "Привезли вовремя, эти рюкзаки спасение. Уже наш второй эргорюкзак. Первый брала размер классик для сына. С дочей нужен уже почти с рождения, но размер выбрала меньше. Так как нет 3 месяцев. Посадила очень легко, руки все же помнят. Доча сразу уснула. Спасибо магазину и консультантам, писали помогли с выбором.",
+   "plus": "",
+   "minus": "",
+   "photos": [
+    {
+     "small": "https://resources.cdn-kaspi.kz/img/p/r/928777969-115071158/f57003c7-3b58-433f-8a29-e5a4244c097f.jpeg?format=review_small",
+     "medium": "https://resources.cdn-kaspi.kz/img/p/r/928777969-115071158/f57003c7-3b58-433f-8a29-e5a4244c097f.jpeg?format=review_medium",
+     "large": "https://resources.cdn-kaspi.kz/img/p/r/928777969-115071158/f57003c7-3b58-433f-8a29-e5a4244c097f.jpeg?format=review_large"
+    }
+   ],
+   "helpfulCount": 0
+  },
+  {
+   "id": "831fbf1d07f2625d",
+   "kaspiCode": "115071158",
+   "author": "Талгатбек",
+   "date": "2026-05-14",
+   "rating": 5,
+   "text": "Инструкция понятная, все получилось с первого раза. Нужно приловчиться с регулировкой, будем присматриваться к безопасности. В целом ребенку понравилось, уснул почти сразу. Есть небольшой заводской запах. Материал хороший.",
+   "plus": "",
+   "minus": "",
+   "photos": [
+    {
+     "small": "https://resources.cdn-kaspi.kz/img/p/r/917735706-115071158/998a779a-540f-42ab-a973-96fd2e4e7f1a.jpeg?format=review_small",
+     "medium": "https://resources.cdn-kaspi.kz/img/p/r/917735706-115071158/998a779a-540f-42ab-a973-96fd2e4e7f1a.jpeg?format=review_medium",
+     "large": "https://resources.cdn-kaspi.kz/img/p/r/917735706-115071158/998a779a-540f-42ab-a973-96fd2e4e7f1a.jpeg?format=review_large"
+    },
+    {
+     "small": "https://resources.cdn-kaspi.kz/img/p/r/917735706-115071158/c5c60218-18f1-4861-9b8b-9ec1aaf65829.jpeg?format=review_small",
+     "medium": "https://resources.cdn-kaspi.kz/img/p/r/917735706-115071158/c5c60218-18f1-4861-9b8b-9ec1aaf65829.jpeg?format=review_medium",
+     "large": "https://resources.cdn-kaspi.kz/img/p/r/917735706-115071158/c5c60218-18f1-4861-9b8b-9ec1aaf65829.jpeg?format=review_large"
+    },
+    {
+     "small": "https://resources.cdn-kaspi.kz/img/p/r/917735706-115071158/614f5903-4230-4e77-b94f-d5418a813eb3.jpeg?format=review_small",
+     "medium": "https://resources.cdn-kaspi.kz/img/p/r/917735706-115071158/614f5903-4230-4e77-b94f-d5418a813eb3.jpeg?format=review_medium",
+     "large": "https://resources.cdn-kaspi.kz/img/p/r/917735706-115071158/614f5903-4230-4e77-b94f-d5418a813eb3.jpeg?format=review_large"
+    },
+    {
+     "small": "https://resources.cdn-kaspi.kz/img/p/r/917735706-115071158/7a70207e-2b98-4984-b6ba-5013628a39eb.jpeg?format=review_small",
+     "medium": "https://resources.cdn-kaspi.kz/img/p/r/917735706-115071158/7a70207e-2b98-4984-b6ba-5013628a39eb.jpeg?format=review_medium",
+     "large": "https://resources.cdn-kaspi.kz/img/p/r/917735706-115071158/7a70207e-2b98-4984-b6ba-5013628a39eb.jpeg?format=review_large"
+    }
+   ],
+   "helpfulCount": 0
+  },
+  {
+   "id": "bb28f917107b3567",
+   "kaspiCode": "115071158",
+   "author": "Адилет",
+   "date": "2026-04-08",
+   "rating": 5,
+   "text": "Отличный инструмент для ношения ребенка и снижения нагрузки. Предварительно согласовали, что цвет будет немного другой, а также оперативно отрабатывали по возникшим вопросам. Приятно, что в Казахстане есть такие производства.",
+   "plus": "",
+   "minus": "",
+   "photos": [
+    {
+     "small": "https://resources.cdn-kaspi.kz/img/p/r/877704364-115071158/6f9a6a1d-a035-480c-bd3a-0b21c7992292.jpeg?format=review_small",
+     "medium": "https://resources.cdn-kaspi.kz/img/p/r/877704364-115071158/6f9a6a1d-a035-480c-bd3a-0b21c7992292.jpeg?format=review_medium",
+     "large": "https://resources.cdn-kaspi.kz/img/p/r/877704364-115071158/6f9a6a1d-a035-480c-bd3a-0b21c7992292.jpeg?format=review_large"
+    },
+    {
+     "small": "https://resources.cdn-kaspi.kz/img/p/r/877704364-115071158/9e3a638c-503d-4d64-9ded-b189726e2439.jpeg?format=review_small",
+     "medium": "https://resources.cdn-kaspi.kz/img/p/r/877704364-115071158/9e3a638c-503d-4d64-9ded-b189726e2439.jpeg?format=review_medium",
+     "large": "https://resources.cdn-kaspi.kz/img/p/r/877704364-115071158/9e3a638c-503d-4d64-9ded-b189726e2439.jpeg?format=review_large"
+    }
+   ],
+   "helpfulCount": 0
+  },
+  {
+   "id": "a070faf3ea7d5bc7",
+   "kaspiCode": "115071158",
+   "author": "Алтынай",
+   "date": "2026-03-24",
+   "rating": 5,
+   "text": "Обслуживание на высшем уровне, заранее написали, проконсультировали, еще есть видео урок как надо надевать. Эргорюкзак стоит своих денег.",
+   "plus": "",
+   "minus": "",
+   "photos": [
+    {
+     "small": "https://resources.cdn-kaspi.kz/img/p/r/862167317-115071158/90f39c9b-7982-4754-910a-ef5e5973e39f.jpeg?format=review_small",
+     "medium": "https://resources.cdn-kaspi.kz/img/p/r/862167317-115071158/90f39c9b-7982-4754-910a-ef5e5973e39f.jpeg?format=review_medium",
+     "large": "https://resources.cdn-kaspi.kz/img/p/r/862167317-115071158/90f39c9b-7982-4754-910a-ef5e5973e39f.jpeg?format=review_large"
+    }
+   ],
+   "helpfulCount": 0
+  },
+  {
+   "id": "15ac1543383b1e36",
+   "kaspiCode": "115071158",
+   "author": "Аружан",
+   "date": "2026-02-28",
+   "rating": 5,
+   "text": "Очень понравилось, доставили на 1 день раньше.",
+   "plus": "",
+   "minus": "",
+   "photos": [
+    {
+     "small": "https://resources.cdn-kaspi.kz/img/p/r/835930783-115071158/ef958c4c-fa03-419b-8b6e-1c40df8b1b7e.jpeg?format=review_small",
+     "medium": "https://resources.cdn-kaspi.kz/img/p/r/835930783-115071158/ef958c4c-fa03-419b-8b6e-1c40df8b1b7e.jpeg?format=review_medium",
+     "large": "https://resources.cdn-kaspi.kz/img/p/r/835930783-115071158/ef958c4c-fa03-419b-8b6e-1c40df8b1b7e.jpeg?format=review_large"
+    }
+   ],
+   "helpfulCount": 0
+  }
+ ]
+}

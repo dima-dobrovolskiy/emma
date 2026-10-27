@@ -1,0 +1,52 @@
+{
+ "kaspiCode": "106532804",
+ "kaspiModelName": "Слинг 2+ Tiddly NotrDam00922",
+ "ratingCount": 2,
+ "commentCount": 2,
+ "pictureCount": 1,
+ "ratingAvg": 5,
+ "distribution": {
+  "1": 0,
+  "2": 0,
+  "3": 0,
+  "4": 0,
+  "5": 2
+ },
+ "reviews": [
+  {
+   "id": "b26203da95fdd9d0",
+   "kaspiCode": "106532804",
+   "author": "Зарина",
+   "date": "2026-03-10",
+   "rating": 5,
+   "text": "Отличный эргорюкзак, качество супер, доча пока не захотела в нем находиться будем постепенно привыкать.",
+   "plus": "",
+   "minus": "",
+   "photos": [
+    {
+     "small": "https://resources.cdn-kaspi.kz/img/p/r/846996231-106532804/f7400d46-436a-4f90-a1f3-0992f7559156.jpeg?format=review_small",
+     "medium": "https://resources.cdn-kaspi.kz/img/p/r/846996231-106532804/f7400d46-436a-4f90-a1f3-0992f7559156.jpeg?format=review_medium",
+     "large": "https://resources.cdn-kaspi.kz/img/p/r/846996231-106532804/f7400d46-436a-4f90-a1f3-0992f7559156.jpeg?format=review_large"
+    },
+    {
+     "small": "https://resources.cdn-kaspi.kz/img/p/r/846996231-106532804/94585af3-fcd1-4a1a-82fd-90823c6a663c.jpeg?format=review_small",
+     "medium": "https://resources.cdn-kaspi.kz/img/p/r/846996231-106532804/94585af3-fcd1-4a1a-82fd-90823c6a663c.jpeg?format=review_medium",
+     "large": "https://resources.cdn-kaspi.kz/img/p/r/846996231-106532804/94585af3-fcd1-4a1a-82fd-90823c6a663c.jpeg?format=review_large"
+    }
+   ],
+   "helpfulCount": 0
+  },
+  {
+   "id": "d0aafc549ef578d4",
+   "kaspiCode": "106532804",
+   "author": "Гульсим",
+   "date": "2023-12-13",
+   "rating": 5,
+   "text": "Качество пошива отличное. Ребенок пока не хочет в нем сидеть, время надо чтобы привык. А задумка отличная.",
+   "plus": "",
+   "minus": "",
+   "photos": [],
+   "helpfulCount": 0
+  }
+ ]
+}

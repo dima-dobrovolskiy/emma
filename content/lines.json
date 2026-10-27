@@ -1,0 +1,69 @@
+{
+  "_about": "Правила подбора и бейджа возраста/веса по линейкам. Все значения - черновые из карточек Kaspi (verified: false), подтверждает Эмма (OPEN-QUESTIONS Э1). Пока verified: false, бейдж на фото скрыт, а подбор работает на этих значениях. Где Kaspi противоречит сам себе, взято более осторожное значение.",
+  "lines": {
+    "classic": {
+      "verified": false,
+      "ageFromMonths": 4,
+      "ageToMonths": 24,
+      "weightFromKg": 7,
+      "weightToKg": 22,
+      "uses": ["home", "walks", "travel"],
+      "kaspiSays": "«с 4 мес до 2 лет», «для малышей от 7 кг», макс. 22 кг"
+    },
+    "tiddly": {
+      "verified": false,
+      "ageFromMonths": 4,
+      "ageToMonths": 18,
+      "weightFromKg": 7,
+      "weightToKg": 18,
+      "uses": ["home", "walks", "travel"],
+      "kaspiSays": "в характеристиках «с 2 месяцев», в описаниях встречаются «с 2 месяцев, 5 кг» и «с 4-5 месяцев, 7 кг», макс. 18 кг. Взято осторожное: с 4 мес и 7 кг."
+    },
+    "beborn": {
+      "verified": false,
+      "ageFromMonths": 0,
+      "ageToMonths": 18,
+      "weightFromKg": 2.8,
+      "weightToKg": 14,
+      "uses": ["home", "walks", "travel"],
+      "kaspiSays": "«от рождения до 1,6 лет», макс. 18 кг; в описании «от 0 до 1,5 лет, с 2,8 до 14 кг». Взято осторожное: до 14 кг и до 1,5 лет."
+    },
+    "nesty": {
+      "verified": false,
+      "ageFromMonths": 3,
+      "ageToMonths": 36,
+      "weightFromKg": null,
+      "weightToKg": 18,
+      "uses": ["home", "walks"],
+      "kaspiSays": "«3+» (с 3 мес), макс. 18 кг, на одно плечо, короткие прогулки и укачивание, не жаркий"
+    },
+    "nakidka": {
+      "verified": false,
+      "ageFromMonths": 0,
+      "ageToMonths": 24,
+      "weightFromKg": null,
+      "weightToKg": null,
+      "uses": ["winter"],
+      "kaspiSays": "«с 0 до 2 лет», «до -15 градусов»"
+    }
+  },
+  "podbor": {
+    "ages": [
+      { "id": "0-3", "fromMonths": 0, "toMonths": 3 },
+      { "id": "3-6", "fromMonths": 3, "toMonths": 6 },
+      { "id": "6-12", "fromMonths": 6, "toMonths": 12 },
+      { "id": "12-24", "fromMonths": 12, "toMonths": 24 },
+      { "id": "24+", "fromMonths": 24, "toMonths": 48 }
+    ],
+    "weights": [
+      { "id": "0-7", "fromKg": 0, "toKg": 7 },
+      { "id": "7-14", "fromKg": 7, "toKg": 14 },
+      { "id": "14-18", "fromKg": 14, "toKg": 18 },
+      { "id": "18-22", "fromKg": 18, "toKg": 22 }
+    ],
+    "where": ["home", "walks", "travel", "winter"],
+    "carrierModels": ["ergoryukzak-classic", "ergoryukzak-tiddly", "ergoryukzak-beborn", "sling-nesty"],
+    "winterAddonModels": ["nakidka-v-kurtku-do-18-kg", "slingonakidka-do-22-kg"],
+    "maxResults": 3
+  }
+}

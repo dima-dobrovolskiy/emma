@@ -1,0 +1,53 @@
+{
+ "kaspiCode": "179761354",
+ "kaspiModelName": "Classic +Накидка в куртку 1+1 сэкономь к зиме",
+ "ratingCount": 2,
+ "commentCount": 2,
+ "pictureCount": 2,
+ "ratingAvg": 5,
+ "distribution": {
+  "1": 0,
+  "2": 0,
+  "3": 0,
+  "4": 0,
+  "5": 2
+ },
+ "reviews": [
+  {
+   "id": "9899c7b1f2fa429d",
+   "kaspiCode": "179761354",
+   "author": "Ляззат",
+   "date": "2026-10-23",
+   "rating": 5,
+   "text": "Очень удобный эргорюкзак! И прекрасный сервис!",
+   "plus": "",
+   "minus": "",
+   "photos": [
+    {
+     "small": "https://resources.cdn-kaspi.kz/img/p/r/1117411671-179761354/f674a97c-2584-423d-acc4-885792bd6981.jpeg?format=review_small",
+     "medium": "https://resources.cdn-kaspi.kz/img/p/r/1117411671-179761354/f674a97c-2584-423d-acc4-885792bd6981.jpeg?format=review_medium",
+     "large": "https://resources.cdn-kaspi.kz/img/p/r/1117411671-179761354/f674a97c-2584-423d-acc4-885792bd6981.jpeg?format=review_large"
+    }
+   ],
+   "helpfulCount": 0
+  },
+  {
+   "id": "83de05e69f851b4c",
+   "kaspiCode": "179761354",
+   "author": "Аяжан",
+   "date": "2026-10-23",
+   "rating": 5,
+   "text": "Матасы жақсы, терлетпейді, накидкасымен алдым. Күшті екен.",
+   "plus": "",
+   "minus": "",
+   "photos": [
+    {
+     "small": "https://resources.cdn-kaspi.kz/img/p/r/1120638492-179761354/c1e4fe59-27e9-4083-8618-21efea722916.jpeg?format=review_small",
+     "medium": "https://resources.cdn-kaspi.kz/img/p/r/1120638492-179761354/c1e4fe59-27e9-4083-8618-21efea722916.jpeg?format=review_medium",
+     "large": "https://resources.cdn-kaspi.kz/img/p/r/1120638492-179761354/c1e4fe59-27e9-4083-8618-21efea722916.jpeg?format=review_large"
+    }
+   ],
+   "helpfulCount": 0
+  }
+ ]
+}

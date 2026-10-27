@@ -1,0 +1,349 @@
+{
+  "_about": "Наш слой: маппинг SKU -> модель -> расцветка, порядок, скрытие. Синхронизация этот файл не трогает. imageOrder: {kaspiCode: [индексы фото Kaspi в нужном порядке]}.",
+  "categories": [
+    {
+      "slug": "ergoryukzaki",
+      "order": 1
+    },
+    {
+      "slug": "slingi",
+      "order": 2
+    },
+    {
+      "slug": "nabory",
+      "order": 3
+    },
+    {
+      "slug": "nakidki",
+      "order": 4
+    },
+    {
+      "slug": "dlya-doma",
+      "order": 5
+    }
+  ],
+  "models": [
+    {
+      "slug": "ergoryukzak-classic",
+      "category": "ergoryukzaki",
+      "line": "classic",
+      "order": 1,
+      "hidden": false,
+      "variants": [
+        {
+          "kaspiCode": "106916682",
+          "designSlug": "dark-mocha"
+        },
+        {
+          "kaspiCode": "106916687",
+          "designSlug": "grey-mocha"
+        },
+        {
+          "kaspiCode": "106916693",
+          "designSlug": "black"
+        },
+        {
+          "kaspiCode": "115956458",
+          "designSlug": "mocha-beige"
+        },
+        {
+          "kaspiCode": "106132340",
+          "designSlug": "stars-silver"
+        },
+        {
+          "kaspiCode": "104765700",
+          "designSlug": "stars-black"
+        },
+        {
+          "kaspiCode": "104765672",
+          "designSlug": "biscuit"
+        },
+        {
+          "kaspiCode": "106132095",
+          "designSlug": "beige"
+        },
+        {
+          "kaspiCode": "104970281",
+          "designSlug": "turquoise"
+        },
+        {
+          "kaspiCode": "106132427",
+          "designSlug": "beige-patterns"
+        },
+        {
+          "kaspiCode": "104970275",
+          "designSlug": "diamonds-grey"
+        },
+        {
+          "kaspiCode": "106916674",
+          "designSlug": "marrakech"
+        },
+        {
+          "kaspiCode": "104970251",
+          "designSlug": "beige-2"
+        },
+        {
+          "kaspiCode": "106916662",
+          "designSlug": "roses-grey"
+        },
+        {
+          "kaspiCode": "134945991",
+          "designSlug": "tengri"
+        },
+        {
+          "kaspiCode": "104765697",
+          "designSlug": "blue"
+        }
+      ],
+      "imageOrder": {}
+    },
+    {
+      "slug": "ergoryukzak-tiddly",
+      "category": "ergoryukzaki",
+      "line": "tiddly",
+      "order": 2,
+      "hidden": false,
+      "variants": [
+        {
+          "kaspiCode": "106533064",
+          "designSlug": "black"
+        },
+        {
+          "kaspiCode": "114174092",
+          "designSlug": "fir-trees-dark"
+        },
+        {
+          "kaspiCode": "113543411",
+          "designSlug": "beige-stars"
+        },
+        {
+          "kaspiCode": "113973706",
+          "designSlug": "bunny-beige"
+        },
+        {
+          "kaspiCode": "115071176",
+          "designSlug": "arman-silver"
+        },
+        {
+          "kaspiCode": "104970266",
+          "designSlug": "stars-grey"
+        },
+        {
+          "kaspiCode": "115071158",
+          "designSlug": "arman-dark"
+        },
+        {
+          "kaspiCode": "106533075",
+          "designSlug": "stars-black"
+        },
+        {
+          "kaspiCode": "106132297",
+          "designSlug": "marble-grey"
+        },
+        {
+          "kaspiCode": "104970257",
+          "designSlug": "beige"
+        },
+        {
+          "kaspiCode": "114174062",
+          "designSlug": "butterflies-silver"
+        },
+        {
+          "kaspiCode": "106533019",
+          "designSlug": "marrakech"
+        },
+        {
+          "kaspiCode": "106532804",
+          "designSlug": "notre-dame"
+        }
+      ],
+      "imageOrder": {}
+    },
+    {
+      "slug": "ergoryukzak-beborn",
+      "category": "ergoryukzaki",
+      "line": "beborn",
+      "order": 3,
+      "hidden": false,
+      "variants": [
+        {
+          "kaspiCode": "135829077",
+          "designSlug": "dark"
+        },
+        {
+          "kaspiCode": "113923093",
+          "designSlug": "grey"
+        },
+        {
+          "kaspiCode": "113923758",
+          "designSlug": "chocolate"
+        }
+      ],
+      "imageOrder": {}
+    },
+    {
+      "slug": "sling-nesty",
+      "category": "slingi",
+      "line": "nesty",
+      "order": 4,
+      "hidden": false,
+      "variants": [
+        {
+          "kaspiCode": "114174041",
+          "designSlug": "black"
+        },
+        {
+          "kaspiCode": "115956460",
+          "designSlug": "tengri"
+        },
+        {
+          "kaspiCode": "167342544",
+          "designSlug": "etno"
+        },
+        {
+          "kaspiCode": "113923296",
+          "designSlug": "beige"
+        },
+        {
+          "kaspiCode": "104765677",
+          "designSlug": "grey-print"
+        }
+      ],
+      "imageOrder": {}
+    },
+    {
+      "slug": "nakidka-v-kurtku-do-18-kg",
+      "category": "nakidki",
+      "line": "nakidka",
+      "order": 5,
+      "hidden": false,
+      "variants": [
+        {
+          "kaspiCode": "114174150",
+          "designSlug": "black"
+        },
+        {
+          "kaspiCode": "114174159",
+          "designSlug": "blue"
+        }
+      ],
+      "imageOrder": {}
+    },
+    {
+      "slug": "slingonakidka-do-22-kg",
+      "category": "nakidki",
+      "line": "nakidka",
+      "order": 6,
+      "hidden": false,
+      "variants": [
+        {
+          "kaspiCode": "149603480",
+          "designSlug": "brown"
+        },
+        {
+          "kaspiCode": "149603474",
+          "designSlug": "silver"
+        }
+      ],
+      "imageOrder": {}
+    },
+    {
+      "slug": "nabor-k-letu",
+      "category": "nabory",
+      "line": null,
+      "order": 7,
+      "hidden": false,
+      "variants": [
+        {
+          "kaspiCode": "104765674",
+          "designSlug": "beige"
+        }
+      ],
+      "imageOrder": {}
+    },
+    {
+      "slug": "nabor-classic-nakidka-k-zime",
+      "category": "nabory",
+      "line": null,
+      "order": 8,
+      "hidden": false,
+      "variants": [
+        {
+          "kaspiCode": "179761354",
+          "designSlug": "black"
+        }
+      ],
+      "imageOrder": {}
+    },
+    {
+      "slug": "nabor-sling-k-zime",
+      "category": "nabory",
+      "line": null,
+      "order": 9,
+      "hidden": false,
+      "variants": [
+        {
+          "kaspiCode": "179761200",
+          "designSlug": "black"
+        }
+      ],
+      "imageOrder": {}
+    },
+    {
+      "slug": "komplekt-bezhevyi",
+      "category": "nabory",
+      "line": null,
+      "order": 10,
+      "hidden": false,
+      "variants": [
+        {
+          "kaspiCode": "179623125",
+          "designSlug": "beige"
+        }
+      ],
+      "imageOrder": {}
+    },
+    {
+      "slug": "bortiki",
+      "category": "dlya-doma",
+      "line": null,
+      "order": 11,
+      "hidden": false,
+      "variants": [
+        {
+          "kaspiCode": "179229608",
+          "designSlug": "white"
+        }
+      ],
+      "imageOrder": {}
+    },
+    {
+      "slug": "pelenalnyi-matras",
+      "category": "dlya-doma",
+      "line": null,
+      "order": 12,
+      "hidden": false,
+      "variants": [
+        {
+          "kaspiCode": "179226468",
+          "designSlug": "white"
+        }
+      ],
+      "imageOrder": {}
+    },
+    {
+      "slug": "zapasnoi-komplekt",
+      "category": "dlya-doma",
+      "line": null,
+      "order": 13,
+      "hidden": false,
+      "variants": [
+        {
+          "kaspiCode": "156734493",
+          "designSlug": "multicolor"
+        }
+      ],
+      "imageOrder": {}
+    }
+  ]
+}
