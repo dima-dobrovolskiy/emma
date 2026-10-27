@@ -1,0 +1,52 @@
+name: Синхронизация с Kaspi
+
+# Цены и наличие - каждый час, полный срез (карточки, фото, отзывы, новые SKU) - раз в сутки ночью по Алматы.
+# Коммит в data/kaspi/ - только если данные изменились. Хостинг пересобирает сайт по коммиту.
+# При сбое (цена 0, пропало >30% SKU, сломался формат) скрипт падает, данные не трогаются, GitHub присылает уведомление.
+on:
+  schedule:
+    - cron: '7 * * * *'      # каждый час: цены и наличие
+    - cron: '23 21 * * *'    # 02:23 по Алматы (UTC+5): полный срез
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: 'prices или full'
+        default: 'full'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: kaspi-sync
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - name: Режим
+        id: mode
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then echo "mode=${{ inputs.mode }}" >> "$GITHUB_OUTPUT";
+          elif [ "${{ github.event.schedule }}" = "23 21 * * *" ]; then echo "mode=full" >> "$GITHUB_OUTPUT";
+          else echo "mode=prices" >> "$GITHUB_OUTPUT"; fi
+      - name: Синхронизация
+        run: pnpm tsx scripts/sync-kaspi.ts --mode=${{ steps.mode.outputs.mode }}
+      - name: Проверка сборки с новыми данными
+        run: pnpm test && pnpm build
+      - name: Коммит, если данные изменились
+        run: |
+          git config user.name "kaspi-sync"
+          git config user.email "kaspi-sync@users.noreply.github.com"
+          git add data/kaspi OPEN-QUESTIONS.md
+          if git diff --cached --quiet; then echo "Изменений нет"; exit 0; fi
+          git commit -m "Данные Kaspi: ${{ steps.mode.outputs.mode }}, $(TZ=Asia/Almaty date +'%Y-%m-%d %H:%M')"
+          git push

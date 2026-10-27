@@ -150,7 +150,8 @@
     text-transform: uppercase;
     color: var(--color-ink-3);
   }
-  .prose-se {
+  /* Текст ограничен по ширине для чтения, блоки внутри (таблицы, карточки) - на всю ширину контейнера. */
+  .prose-se > :where(p, ul, ol, h2, h3, blockquote) {
     max-width: 44rem;
   }
   .prose-se > h2 {

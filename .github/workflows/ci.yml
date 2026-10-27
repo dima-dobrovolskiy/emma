@@ -1,0 +1,33 @@
+name: Проверки
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm typecheck
+      - run: pnpm lint
+      - run: pnpm test
+      - run: pnpm redirects
+      - run: pnpm build
+      - run: pnpm tsx scripts/check-links.ts
+      - run: pnpm tsx scripts/check-jsonld.ts
+      - run: pnpm exec playwright install --with-deps chromium
+      - run: pnpm test:e2e
+      - name: Редиректы по HTTP
+        run: |
+          pnpm exec serve out -l 4174 -c ../serve.json --no-clipboard &
+          sleep 3
+          pnpm tsx scripts/check-redirects.ts --base=http://localhost:4174

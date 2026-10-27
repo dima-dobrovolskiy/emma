@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { getCatalog, getModel } from '@/lib/catalog';
+import { alternatesFor } from '@/lib/seo';
 import { t } from '@/lib/i18n';
 import { cardSrcSet } from '@/lib/images';
 import type { PodborModel, Where } from '@/lib/podbor-rules';
@@ -9,7 +10,7 @@ import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 export const metadata: Metadata = {
   title: { absolute: `${t('meta.podborTitle')}${t('meta.titleSuffix')}` },
   description: t('meta.podborDescription'),
-  alternates: { canonical: '/podbor' },
+  alternates: alternatesFor('/podbor'),
 };
 
 function ageRangeLabel(from: number | null, to: number | null): string {

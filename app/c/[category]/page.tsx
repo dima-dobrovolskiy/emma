@@ -4,6 +4,7 @@ import { notFound } from 'next/navigation';
 import { getCatalog, type Category, type Collection } from '@/lib/catalog';
 import { getGuideMeta } from '@/lib/guides';
 import { formatDate, formatPrice, t } from '@/lib/i18n';
+import { alternatesFor } from '@/lib/seo';
 import { absUrl } from '@/lib/site';
 import { categorySummary, creditText } from '@/lib/summary';
 import { listingFacets } from '@/lib/facets';
@@ -45,7 +46,7 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
   return {
     title: { absolute: `${title}${t('meta.titleSuffix')}` },
     description,
-    alternates: { canonical: `/c/${c.slug}` },
+    alternates: alternatesFor(`/c/${c.slug}`),
     openGraph: { title, description, url: absUrl(`/c/${c.slug}`) },
   };
 }

@@ -5,6 +5,7 @@ import { getCatalog } from '@/lib/catalog';
 import { getGuides, getGuideSource } from '@/lib/guides';
 import { guideModels } from '@/lib/guide-data';
 import { formatDate, formatPrice, t } from '@/lib/i18n';
+import { alternatesFor } from '@/lib/seo';
 import { categorySummary, fmtRating } from '@/lib/summary';
 import { absUrl } from '@/lib/site';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
@@ -27,7 +28,7 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
   return {
     title: src.meta.title,
     description: src.meta.description,
-    alternates: { canonical: `/k/${guide}` },
+    alternates: alternatesFor(`/k/${guide}`),
     openGraph: { title: src.meta.title, description: src.meta.description, url: absUrl(`/k/${guide}`), type: 'article' },
   };
 }
@@ -72,7 +73,7 @@ export default async function GuidePage({ params }: Params) {
       <div className="mt-6 max-w-3xl">
         <Short text={summary} date={t('guides.updated', { date: formatDate(pricesDate) })} />
       </div>
-      <div className="prose-se mt-8 max-w-3xl [&_.not-prose]:max-w-none">{content}</div>
+      <div className="prose-se mt-8">{content}</div>
       <div className="max-w-3xl">
         <Faq items={meta.faq} />
       </div>

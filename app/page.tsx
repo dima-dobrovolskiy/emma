@@ -4,6 +4,7 @@ import homeContent from '@/content/ru/home.json';
 import { getCatalog, getModel, getTrustNumbers } from '@/lib/catalog';
 import { getGuides } from '@/lib/guides';
 import { formatNumber, t } from '@/lib/i18n';
+import { alternatesFor } from '@/lib/seo';
 import { gallerySrcSet, cardSrcSet } from '@/lib/images';
 import { fmtRating } from '@/lib/summary';
 import { allReviewsDTO } from '@/lib/reviews-data';
@@ -18,7 +19,8 @@ export function generateMetadata(): Metadata {
   return {
     title: { absolute: t('meta.homeTitle') },
     description: t('meta.homeDescription', { models: models.length, reviews: formatNumber(tr.reviews), rating: tr.rating !== null ? fmtRating(tr.rating) : '-' }),
-    alternates: { canonical: '/' },
+    alternates: alternatesFor('/'),
+    openGraph: { url: '/', images: getModel(homeContent.heroModel)?.defaultVariant.images[0] ? [{ url: getModel(homeContent.heroModel)!.defaultVariant.images[0]!.large, width: 1080, height: 1440 }] : [] },
   };
 }
 

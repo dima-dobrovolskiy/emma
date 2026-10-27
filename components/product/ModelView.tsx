@@ -2,7 +2,7 @@
 
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { setUrlParams, usePageLoaded, useUrlParam } from '@/lib/hooks';
-import type { KaspiImage } from '@/lib/kaspi/schema';
+import type { GalleryImage } from '@/lib/media-types';
 import { formatPrice, t } from '@/lib/i18n';
 import { track } from '@/lib/analytics/events';
 import { Gallery } from './Gallery';
@@ -19,7 +19,7 @@ export type ViewVariant = {
   creditMonths: number | null;
   bonus: number;
   buyHref: string;
-  images: KaspiImage[];
+  images: GalleryImage[];
 };
 
 type Props = {
@@ -121,7 +121,7 @@ export function ModelView({ modelSlug, modelName, lineLabel, variants, defaultSl
                       } ${x.inStock ? '' : 'opacity-50 grayscale'}`}
                     >
                       {swatchImages && x.images[0] && (
-                        <img src={x.images[0].small} alt="" width={44} height={56} decoding="async" className="h-full w-full object-cover" />
+                        <img src={x.images[0].swatch} alt="" width={44} height={56} decoding="async" className="h-full w-full object-cover" />
                       )}
                       {!x.inStock && <span aria-hidden="true" className="absolute inset-0 bg-[linear-gradient(135deg,transparent_47%,var(--color-ink-3)_48%,var(--color-ink-3)_52%,transparent_53%)]" />}
                     </button>

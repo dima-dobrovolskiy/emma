@@ -11,7 +11,10 @@ type Option = { value: string; label: string };
 type Props = {
   id?: string;
   initial: ReviewDTO[];
+  /** Отзывов с текстом на Kaspi (как считает Kaspi). */
   totalWithText: number;
+  /** Сколько отзывов в полном списке (с текстом плюс отзывы только с фото). */
+  totalListed: number;
   ratingCount: number;
   ratingAvg: number | null;
   distribution: Record<1 | 2 | 3 | 4 | 5, number>;
@@ -26,6 +29,7 @@ export function ReviewsBlock({
   id = 'reviews',
   initial,
   totalWithText,
+  totalListed,
   ratingCount,
   ratingAvg,
   distribution,
@@ -68,7 +72,7 @@ export function ReviewsBlock({
     [source, stars, photos, group, groupBy],
   );
   const visible = filtered.slice(0, shown);
-  const totalForFilter = needAll && all ? filtered.length : totalWithText;
+  const totalForFilter = needAll && all ? filtered.length : totalListed;
   const maxBar = Math.max(1, ...Object.values(distribution));
 
   const setFilter = (name: string, value: string, apply: () => void) => {
@@ -194,7 +198,7 @@ export function ReviewsBlock({
             ))}
           </ul>
 
-          {visible.length < (all ? filtered.length : totalWithText) && (
+          {visible.length < (all ? filtered.length : totalListed) && (
             <div className="mt-6 flex flex-col items-center gap-2">
               <button
                 type="button"

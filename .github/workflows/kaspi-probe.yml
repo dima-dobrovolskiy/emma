@@ -1,0 +1,25 @@
+name: Проба доступа к Kaspi с раннера
+
+# Ручной запуск. Проверяет, отвечает ли Kaspi раннерам GitHub (зарубежные IP дата-центров).
+# Ничего не коммитит. Результат - в логе шага. См. OPEN-QUESTIONS Р3.
+on:
+  workflow_dispatch:
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - name: Внешний IP раннера
+        run: curl -s https://ifconfig.me || true
+      - name: Пробный прогон синхронизации (только цены, без записи)
+        run: pnpm tsx scripts/sync-kaspi.ts --mode=prices --dry-run
+      - name: Пробный полный прогон по двум SKU (без записи)
+        run: pnpm tsx scripts/sync-kaspi.ts --only=106533064,114174041 --dry-run

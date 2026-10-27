@@ -1,6 +1,8 @@
 import Link from 'next/link';
 import { t } from '@/lib/i18n';
 import { mainNav } from '@/lib/nav';
+import { flags } from '@/lib/flags';
+import { LangSwitch } from './LangSwitch';
 
 export function Header() {
   const nav = mainNav();
@@ -25,6 +27,7 @@ export function Header() {
           </ul>
         </nav>
         <div className="flex items-center gap-2">
+          {flags.kk && <LangSwitch />}
           <Link href="/podbor" className="btn btn-primary hidden min-h-[44px] px-4 text-sm sm:inline-flex lg:hidden xl:inline-flex">
             {t('nav.podbor')}
           </Link>

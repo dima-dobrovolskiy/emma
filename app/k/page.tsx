@@ -1,13 +1,14 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { getGuides } from '@/lib/guides';
+import { alternatesFor } from '@/lib/seo';
 import { t } from '@/lib/i18n';
 import { Breadcrumbs } from '@/components/ui/Breadcrumbs';
 
 export const metadata: Metadata = {
   title: { absolute: `${t('meta.guidesTitle')}${t('meta.titleSuffix')}` },
   description: t('meta.guidesDescription'),
-  alternates: { canonical: '/k' },
+  alternates: alternatesFor('/k'),
 };
 
 export default function GuidesIndex() {

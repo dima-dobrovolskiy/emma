@@ -44,6 +44,7 @@ import {
   type UnmappedItem,
   type MetaFile,
 } from '../lib/kaspi/schema';
+import { checkListing, MAX_MISSING_SHARE } from '../lib/kaspi/guard';
 
 const ROOT = path.resolve(import.meta.dirname, '..');
 const OUT = path.join(ROOT, 'data/kaspi');
@@ -52,7 +53,6 @@ const MERCHANT_ID = '8851015';
 const CITY_ID = '750000000';
 const UA =
   'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36';
-const MAX_MISSING_SHARE = 0.3;
 const REVIEWS_PAGE = 100;
 
 const args = new Map(
@@ -308,16 +308,9 @@ async function main() {
   // 1. Листинг: цены, рассрочка, бонусы, наличие.
   const listing = await fetchListing();
   log(`листинг: ${listing.length} SKU`);
-  const zeroPrice = listing.filter((i) => !(i.price > 0));
-  if (zeroPrice.length) throw new SyncError(`Цена 0 у SKU: ${zeroPrice.map((i) => i.kaspiCode).join(', ')}`);
-
-  const byCode = new Map(listing.map((i) => [i.kaspiCode, i]));
-  const missing = [...mapping.codes].filter((c) => !byCode.has(c));
-  if (missing.length / mapping.codes.size > MAX_MISSING_SHARE) {
-    throw new SyncError(
-      `Из листинга пропало ${missing.length} из ${mapping.codes.size} SKU (больше ${MAX_MISSING_SHARE * 100}%). Похоже на сбой Kaspi или блокировку - данные не обновлены.`,
-    );
-  }
+  const guard = checkListing(listing, mapping.codes);
+  if (!guard.ok) throw new SyncError(guard.reason);
+  const missing = guard.missing;
 
   // 2. Пропавшие SKU: проверяем offers, прежде чем ставить «нет в наличии».
   const items: Record<string, ListingItem> = {};

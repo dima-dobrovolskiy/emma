@@ -2,12 +2,11 @@
 
 import { useRef, useState } from 'react';
 import { usePageLoaded } from '@/lib/hooks';
-import type { KaspiImage } from '@/lib/kaspi/schema';
-import { gallerySrcSet, thumbSrc } from '@/lib/images';
+import type { GalleryImage } from '@/lib/media-types';
 import { t } from '@/lib/i18n';
 
 /** Галерея на scroll-snap: свайп на мобильном, миниатюры на десктопе. Без внешних библиотек. */
-export function Gallery({ images, alt, badge }: { images: KaspiImage[]; alt: string; badge: string | null }) {
+export function Gallery({ images, alt, badge }: { images: GalleryImage[]; alt: string; badge: string | null }) {
   const [index, setIndex] = useState(0);
   // Фото грузим по мере листания: текущее и соседнее. Остальные 10-20 фото по 200+ КБ не тянем заранее.
   const [scrolledTo, setLoadedUpTo] = useState(0);
@@ -47,7 +46,7 @@ export function Gallery({ images, alt, badge }: { images: KaspiImage[]; alt: str
         >
           {images.map((img, i) => (
             <div
-              key={img.medium}
+              key={img.src}
               className="relative h-full w-full shrink-0 snap-center"
               role="group"
               aria-roledescription="slide"
@@ -55,7 +54,8 @@ export function Gallery({ images, alt, badge }: { images: KaspiImage[]; alt: str
             >
               {i === 0 && (
                 <img
-                  {...gallerySrcSet(img)}
+                  src={img.src}
+                  srcSet={img.srcSet}
                   sizes="(min-width: 1200px) 600px, (min-width: 768px) 52vw, 100vw"
                   alt={alt}
                   width={750}
@@ -67,7 +67,8 @@ export function Gallery({ images, alt, badge }: { images: KaspiImage[]; alt: str
                 />
               )}
               {i > 0 && i <= loadedUpTo && <img
-                {...gallerySrcSet(img)}
+                src={img.src}
+                  srcSet={img.srcSet}
                 sizes="(min-width: 1200px) 600px, (min-width: 768px) 52vw, 100vw"
                 alt={`${alt} - ${t('model.photoOf', { index: i + 1, total: images.length })}`}
                 width={750}
@@ -112,14 +113,14 @@ export function Gallery({ images, alt, badge }: { images: KaspiImage[]; alt: str
         <div className="no-scrollbar mt-3 hidden gap-2 overflow-x-auto md:flex">
           {images.map((img, i) => (
             <button
-              key={img.medium}
+              key={img.src}
               type="button"
               onClick={() => go(i)}
               aria-label={t('model.photoOf', { index: i + 1, total: images.length })}
               aria-current={i === index}
               className={`h-[72px] w-[54px] shrink-0 overflow-hidden rounded-lg border-2 ${i === index ? 'border-ink' : 'border-transparent'}`}
             >
-              <img src={thumbSrc(img)} alt="" width={54} height={72} loading="lazy" className="h-full w-full object-cover" />
+              <img src={img.thumb} alt="" width={54} height={72} loading="lazy" className="h-full w-full object-cover" />
             </button>
           ))}
         </div>

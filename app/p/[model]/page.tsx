@@ -5,10 +5,12 @@ import { getCatalog, getModel, modelDistribution, type Model } from '@/lib/catal
 import { getCheckoutProvider } from '@/lib/commerce';
 import { flags } from '@/lib/flags';
 import { formatDate, formatPrice, t } from '@/lib/i18n';
+import { alternatesFor } from '@/lib/seo';
 import { absUrl } from '@/lib/site';
 import { maxWeightKg, modelSummary, renderTemplate, fmtRating } from '@/lib/summary';
 import { modelReviewsDTO } from '@/lib/reviews-data';
 import { getGuideMeta } from '@/lib/guides';
+import { galleryImage } from '@/lib/images';
 import { ModelView, type ViewVariant } from '@/components/product/ModelView';
 import { ModelCard } from '@/components/product/ModelCard';
 import { LiteYouTube } from '@/components/product/LiteYouTube';
@@ -46,7 +48,7 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
   return {
     title: { absolute: title },
     description,
-    alternates: { canonical: `/p/${m.slug}` },
+    alternates: alternatesFor(`/p/${m.slug}`),
     openGraph: { title, description, url: absUrl(`/p/${m.slug}`), images: img ? [{ url: img.large, width: 1080, height: 1440 }] : [] },
     twitter: { title, description, images: img ? [img.large] : [] },
   };
@@ -78,7 +80,7 @@ export default async function ModelPage({ params }: Params) {
       creditMonths: v.creditMonths,
       bonus: v.bonus,
       buyHref: action.kind === 'external' ? action.href : v.kaspiUrl,
-      images: v.images,
+      images: v.images.map(galleryImage),
     };
   });
 
@@ -207,7 +209,8 @@ export default async function ModelPage({ params }: Params) {
           </h2>
           <ReviewsBlock
             initial={reviews.slice(0, 6)}
-            totalWithText={reviews.length}
+            totalWithText={model.reviewsCount}
+            totalListed={reviews.length}
             ratingCount={model.ratingCount}
             ratingAvg={model.ratingAvg}
             distribution={distribution}

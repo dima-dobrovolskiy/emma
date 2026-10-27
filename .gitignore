@@ -15,3 +15,6 @@ docs/kit/*.zip
 # служебные
 /.cache/
 reports/
+
+# зеркало фото Kaspi (Р2): генерируется scripts/mirror-media.ts
+/public/media/
