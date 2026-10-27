@@ -1,0 +1,207 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/biborn-blue",
+      "destination": "/p/ergoryukzak-beborn",
+      "permanent": true
+    },
+    {
+      "source": "/biborn-mint",
+      "destination": "/p/ergoryukzak-beborn",
+      "permanent": true
+    },
+    {
+      "source": "/biborn-turquoise",
+      "destination": "/p/ergoryukzak-beborn",
+      "permanent": true
+    },
+    {
+      "source": "/biborn-grey",
+      "destination": "/p/ergoryukzak-beborn?color=grey",
+      "permanent": true
+    },
+    {
+      "source": "/biborn-chocolate",
+      "destination": "/p/ergoryukzak-beborn?color=chocolate",
+      "permanent": true
+    },
+    {
+      "source": "/classic-arman-beige",
+      "destination": "/p/ergoryukzak-classic?color=beige",
+      "permanent": true
+    },
+    {
+      "source": "/classic-mocha-beige",
+      "destination": "/p/ergoryukzak-classic?color=mocha-beige",
+      "permanent": true
+    },
+    {
+      "source": "/classic-biscuit",
+      "destination": "/p/ergoryukzak-classic?color=biscuit",
+      "permanent": true
+    },
+    {
+      "source": "/classic-dark-mocha",
+      "destination": "/p/ergoryukzak-classic?color=dark-mocha",
+      "permanent": true
+    },
+    {
+      "source": "/classic-marrakech",
+      "destination": "/p/ergoryukzak-classic?color=marrakech",
+      "permanent": true
+    },
+    {
+      "source": "/classic-roses-gray",
+      "destination": "/p/ergoryukzak-classic?color=roses-grey",
+      "permanent": true
+    },
+    {
+      "source": "/classic-silver-diamonds",
+      "destination": "/p/ergoryukzak-classic?color=diamonds-grey",
+      "permanent": true
+    },
+    {
+      "source": "/classic-safari-turquoise",
+      "destination": "/p/ergoryukzak-classic?color=turquoise",
+      "permanent": true
+    },
+    {
+      "source": "/classic-heart-gray",
+      "destination": "/p/ergoryukzak-classic",
+      "permanent": true
+    },
+    {
+      "source": "/classic-armand-silver",
+      "destination": "/p/ergoryukzak-classic",
+      "permanent": true
+    },
+    {
+      "source": "/classic-stars-silver",
+      "destination": "/p/ergoryukzak-classic?color=stars-silver",
+      "permanent": true
+    },
+    {
+      "source": "/classic-hearts-black",
+      "destination": "/p/ergoryukzak-classic",
+      "permanent": true
+    },
+    {
+      "source": "/classic-black",
+      "destination": "/p/ergoryukzak-classic?color=black",
+      "permanent": true
+    },
+    {
+      "source": "/cape-blue",
+      "destination": "/p/nakidka-v-kurtku-do-18-kg?color=blue",
+      "permanent": true
+    },
+    {
+      "source": "/cape-black",
+      "destination": "/p/nakidka-v-kurtku-do-18-kg?color=black",
+      "permanent": true
+    },
+    {
+      "source": "/tiddly-armand-dark",
+      "destination": "/p/ergoryukzak-tiddly?color=arman-dark",
+      "permanent": true
+    },
+    {
+      "source": "/tiddley-bunny-beige",
+      "destination": "/p/ergoryukzak-tiddly?color=bunny-beige",
+      "permanent": true
+    },
+    {
+      "source": "/tiddley-biscuit",
+      "destination": "/p/ergoryukzak-tiddly?color=beige",
+      "permanent": true
+    },
+    {
+      "source": "/tiddley-fir-trees-dark",
+      "destination": "/p/ergoryukzak-tiddly?color=fir-trees-dark",
+      "permanent": true
+    },
+    {
+      "source": "/tiddly-stars-dust-dark",
+      "destination": "/p/ergoryukzak-tiddly?color=stars-grey",
+      "permanent": true
+    },
+    {
+      "source": "/tiddly-marrakech",
+      "destination": "/p/ergoryukzak-tiddly?color=marrakech",
+      "permanent": true
+    },
+    {
+      "source": "/tiddly-marble-gray",
+      "destination": "/p/ergoryukzak-tiddly?color=marble-grey",
+      "permanent": true
+    },
+    {
+      "source": "/tiddly-notre-dame",
+      "destination": "/p/ergoryukzak-tiddly?color=notre-dame",
+      "permanent": true
+    },
+    {
+      "source": "/tiddly-butterflies-silver",
+      "destination": "/p/ergoryukzak-tiddly?color=butterflies-silver",
+      "permanent": true
+    },
+    {
+      "source": "/tiddly-armand-silver",
+      "destination": "/p/ergoryukzak-tiddly?color=arman-silver",
+      "permanent": true
+    },
+    {
+      "source": "/tiddly-stars-black",
+      "destination": "/p/ergoryukzak-tiddly?color=stars-black",
+      "permanent": true
+    },
+    {
+      "source": "/tiddly-black",
+      "destination": "/p/ergoryukzak-tiddly?color=black",
+      "permanent": true
+    },
+    {
+      "source": "/page94429986.html",
+      "destination": "/konfidentsialnost",
+      "permanent": true
+    },
+    {
+      "source": "/page94429986",
+      "destination": "/konfidentsialnost",
+      "permanent": true
+    },
+    {
+      "source": "/1",
+      "destination": "/k",
+      "permanent": true
+    },
+    {
+      "source": "/ergoryukzak-kaspi",
+      "destination": "/c/ergoryukzaki",
+      "permanent": true
+    }
+  ],
+  "headers": [
+    {
+      "source": "/_next/static/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/data/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=3600"
+        }
+      ]
+    }
+  ]
+}

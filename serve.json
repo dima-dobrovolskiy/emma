@@ -1,0 +1,186 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/biborn-blue",
+      "destination": "/p/ergoryukzak-beborn",
+      "type": 301
+    },
+    {
+      "source": "/biborn-mint",
+      "destination": "/p/ergoryukzak-beborn",
+      "type": 301
+    },
+    {
+      "source": "/biborn-turquoise",
+      "destination": "/p/ergoryukzak-beborn",
+      "type": 301
+    },
+    {
+      "source": "/biborn-grey",
+      "destination": "/p/ergoryukzak-beborn?color=grey",
+      "type": 301
+    },
+    {
+      "source": "/biborn-chocolate",
+      "destination": "/p/ergoryukzak-beborn?color=chocolate",
+      "type": 301
+    },
+    {
+      "source": "/classic-arman-beige",
+      "destination": "/p/ergoryukzak-classic?color=beige",
+      "type": 301
+    },
+    {
+      "source": "/classic-mocha-beige",
+      "destination": "/p/ergoryukzak-classic?color=mocha-beige",
+      "type": 301
+    },
+    {
+      "source": "/classic-biscuit",
+      "destination": "/p/ergoryukzak-classic?color=biscuit",
+      "type": 301
+    },
+    {
+      "source": "/classic-dark-mocha",
+      "destination": "/p/ergoryukzak-classic?color=dark-mocha",
+      "type": 301
+    },
+    {
+      "source": "/classic-marrakech",
+      "destination": "/p/ergoryukzak-classic?color=marrakech",
+      "type": 301
+    },
+    {
+      "source": "/classic-roses-gray",
+      "destination": "/p/ergoryukzak-classic?color=roses-grey",
+      "type": 301
+    },
+    {
+      "source": "/classic-silver-diamonds",
+      "destination": "/p/ergoryukzak-classic?color=diamonds-grey",
+      "type": 301
+    },
+    {
+      "source": "/classic-safari-turquoise",
+      "destination": "/p/ergoryukzak-classic?color=turquoise",
+      "type": 301
+    },
+    {
+      "source": "/classic-heart-gray",
+      "destination": "/p/ergoryukzak-classic",
+      "type": 301
+    },
+    {
+      "source": "/classic-armand-silver",
+      "destination": "/p/ergoryukzak-classic",
+      "type": 301
+    },
+    {
+      "source": "/classic-stars-silver",
+      "destination": "/p/ergoryukzak-classic?color=stars-silver",
+      "type": 301
+    },
+    {
+      "source": "/classic-hearts-black",
+      "destination": "/p/ergoryukzak-classic",
+      "type": 301
+    },
+    {
+      "source": "/classic-black",
+      "destination": "/p/ergoryukzak-classic?color=black",
+      "type": 301
+    },
+    {
+      "source": "/cape-blue",
+      "destination": "/p/nakidka-v-kurtku-do-18-kg?color=blue",
+      "type": 301
+    },
+    {
+      "source": "/cape-black",
+      "destination": "/p/nakidka-v-kurtku-do-18-kg?color=black",
+      "type": 301
+    },
+    {
+      "source": "/tiddly-armand-dark",
+      "destination": "/p/ergoryukzak-tiddly?color=arman-dark",
+      "type": 301
+    },
+    {
+      "source": "/tiddley-bunny-beige",
+      "destination": "/p/ergoryukzak-tiddly?color=bunny-beige",
+      "type": 301
+    },
+    {
+      "source": "/tiddley-biscuit",
+      "destination": "/p/ergoryukzak-tiddly?color=beige",
+      "type": 301
+    },
+    {
+      "source": "/tiddley-fir-trees-dark",
+      "destination": "/p/ergoryukzak-tiddly?color=fir-trees-dark",
+      "type": 301
+    },
+    {
+      "source": "/tiddly-stars-dust-dark",
+      "destination": "/p/ergoryukzak-tiddly?color=stars-grey",
+      "type": 301
+    },
+    {
+      "source": "/tiddly-marrakech",
+      "destination": "/p/ergoryukzak-tiddly?color=marrakech",
+      "type": 301
+    },
+    {
+      "source": "/tiddly-marble-gray",
+      "destination": "/p/ergoryukzak-tiddly?color=marble-grey",
+      "type": 301
+    },
+    {
+      "source": "/tiddly-notre-dame",
+      "destination": "/p/ergoryukzak-tiddly?color=notre-dame",
+      "type": 301
+    },
+    {
+      "source": "/tiddly-butterflies-silver",
+      "destination": "/p/ergoryukzak-tiddly?color=butterflies-silver",
+      "type": 301
+    },
+    {
+      "source": "/tiddly-armand-silver",
+      "destination": "/p/ergoryukzak-tiddly?color=arman-silver",
+      "type": 301
+    },
+    {
+      "source": "/tiddly-stars-black",
+      "destination": "/p/ergoryukzak-tiddly?color=stars-black",
+      "type": 301
+    },
+    {
+      "source": "/tiddly-black",
+      "destination": "/p/ergoryukzak-tiddly?color=black",
+      "type": 301
+    },
+    {
+      "source": "/page94429986.html",
+      "destination": "/konfidentsialnost",
+      "type": 301
+    },
+    {
+      "source": "/page94429986",
+      "destination": "/konfidentsialnost",
+      "type": 301
+    },
+    {
+      "source": "/1",
+      "destination": "/k",
+      "type": 301
+    },
+    {
+      "source": "/ergoryukzak-kaspi",
+      "destination": "/c/ergoryukzaki",
+      "type": 301
+    }
+  ]
+}

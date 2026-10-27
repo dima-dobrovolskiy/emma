@@ -1,0 +1,8 @@
+{
+  "_about": "Наш выбор целей для строк redirects-tilda.csv с confidence unknown. Выбрано по <title> старых страниц (2026-10-27). Черновик - OPEN-QUESTIONS Р6.",
+  "overrides": {
+    "/page94429986.html": { "to": "/konfidentsialnost", "title": "Политика конфиденциальности" },
+    "/1": { "to": "/k", "title": "Поздравляем с покупкой вашего эргорюкзака!" },
+    "/ergoryukzak-kaspi": { "to": "/c/ergoryukzaki", "title": "Blank page" }
+  }
+}
