@@ -5,6 +5,12 @@ const config = [
   ...nextVitals,
   ...nextTs,
   {
+    rules: {
+      // Фото отдаются с CDN Kaspi их собственными размерами через srcset (статическая сборка, без оптимизатора Next).
+      '@next/next/no-img-element': 'off',
+    },
+  },
+  {
     ignores: ['node_modules/**', '.next/**', 'out/**', '.cache/**', 'docs/**', 'next-env.d.ts', 'reports/**', 'test-results/**', 'playwright-report/**'],
   },
 ];

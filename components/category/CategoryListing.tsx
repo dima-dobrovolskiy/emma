@@ -1,6 +1,7 @@
 'use client';
 
-import { useEffect, useMemo, useState } from 'react';
+import { useMemo } from 'react';
+import { setUrlParams, useSearch } from '@/lib/hooks';
 import { t } from '@/lib/i18n';
 import { track } from '@/lib/analytics/events';
 import { matchAge, matchWeight, type AgeOption, type WeightOption } from '@/lib/podbor-rules';
@@ -40,26 +41,18 @@ type Props = {
 };
 
 export function CategoryListing({ page, items, cards, ages, weights, ageLabels }: Props) {
-  const [f, setF] = useState<Filters>(EMPTY);
-  const [sort, setSort] = useState<Sort>('popular');
-
-  // Фильтры и сортировка живут в адресе, но такие адреса закрыты от индексации (robots.txt).
-  useEffect(() => {
-    const q = new URLSearchParams(window.location.search);
-    const next = { ...EMPTY };
-    for (const k of Object.keys(EMPTY) as Array<keyof Filters>) next[k] = q.get(k) ?? '';
-    setF(next);
+  // Фильтры и сортировка живут в адресе (такие адреса закрыты от индексации в robots.txt).
+  const search = useSearch();
+  const { f, sort } = useMemo(() => {
+    const q = new URLSearchParams(search);
+    const filters = { ...EMPTY };
+    for (const k of Object.keys(EMPTY) as Array<keyof Filters>) filters[k] = q.get(k) ?? '';
     const s = q.get('sort');
-    if (s && SORTS.some((x) => x.id === s)) setSort(s as Sort);
-  }, []);
+    return { f: filters, sort: (SORTS.some((x) => x.id === s) ? s : 'popular') as Sort };
+  }, [search]);
 
   const update = (key: keyof Filters | 'sort', value: string) => {
-    const url = new URL(window.location.href);
-    if (value) url.searchParams.set(key, value);
-    else url.searchParams.delete(key);
-    window.history.replaceState(null, '', url.toString());
-    if (key === 'sort') setSort((value || 'popular') as Sort);
-    else setF((prev) => ({ ...prev, [key]: value }));
+    setUrlParams({ [key]: value || null });
     track('filter_use', { filter: key, value: value || 'reset', page });
   };
 
@@ -141,7 +134,10 @@ export function CategoryListing({ page, items, cards, ages, weights, ageLabels }
               </div>
             </fieldset>
             {active && (
-              <button type="button" className="btn btn-secondary min-h-[44px] text-sm" onClick={() => (Object.keys(EMPTY) as Array<keyof Filters>).forEach((k) => update(k, ''))}>
+              <button type="button" className="btn btn-secondary min-h-[44px] text-sm" onClick={() => {
+                  setUrlParams(Object.fromEntries(Object.keys(EMPTY).map((k) => [k, null])));
+                  track('filter_use', { filter: 'all', value: 'reset', page });
+                }}>
                 {t('category.filtersReset')}
               </button>
             )}

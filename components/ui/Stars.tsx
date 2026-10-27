@@ -1,10 +1,23 @@
 import { t } from '@/lib/i18n';
 import { fmtRatingClient } from '@/lib/format';
 
-type Props = { rating: number | null; count?: number; size?: 'sm' | 'md'; showValue?: boolean };
+type Props = { rating: number | null; count?: number; size?: 'sm' | 'md'; showValue?: boolean; compact?: boolean };
 
-export function Stars({ rating, count, size = 'sm', showValue = true }: Props) {
+export function Stars({ rating, count, size = 'sm', showValue = true, compact = false }: Props) {
   if (rating === null) return null;
+  if (compact) {
+    return (
+      <span className="flex flex-wrap items-center gap-x-1 text-sm leading-snug">
+        <span aria-hidden="true" className="text-star">
+          ★
+        </span>
+        <span className="font-semibold" aria-label={t('common.ratingOutOf', { rating: fmtRatingClient(rating) })}>
+          {fmtRatingClient(rating)}
+        </span>
+        {count !== undefined && <span className="text-ink-3">· {t('common.reviewsCount', { count })}</span>}
+      </span>
+    );
+  }
   const pct = Math.max(0, Math.min(100, (rating / 5) * 100));
   const h = size === 'sm' ? 'h-4' : 'h-5';
   return (

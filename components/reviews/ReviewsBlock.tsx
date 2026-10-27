@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useMemo, useState } from 'react';
+import { useMemo, useState } from 'react';
 import { formatDate, formatNumber, t } from '@/lib/i18n';
 import { fmtRatingClient } from '@/lib/format';
 import { track } from '@/lib/analytics/events';
@@ -45,15 +45,16 @@ export function ReviewsBlock({
 
   const needAll = stars !== null || photos || group !== '' || shown > initial.length;
 
-  useEffect(() => {
-    if (!needAll || all || loading) return;
+  // Полный список отзывов модели - отдельный статический JSON, грузим при первом фильтре или «Показать ещё».
+  const ensureAll = () => {
+    if (all || loading) return;
     setLoading(true);
     fetch(dataUrl)
       .then((r) => (r.ok ? (r.json() as Promise<ReviewDTO[]>) : Promise.reject(new Error(String(r.status)))))
       .then(setAll)
       .catch(() => setAll(initial))
       .finally(() => setLoading(false));
-  }, [needAll, all, loading, dataUrl, initial]);
+  };
 
   const source = all ?? initial;
   const filtered = useMemo(
@@ -71,6 +72,7 @@ export function ReviewsBlock({
   const maxBar = Math.max(1, ...Object.values(distribution));
 
   const setFilter = (name: string, value: string, apply: () => void) => {
+    ensureAll();
     apply();
     setShown(pageSize);
     track('filter_use', { filter: `reviews_${name}`, value, page: analyticsPage });
@@ -194,7 +196,14 @@ export function ReviewsBlock({
 
           {visible.length < (all ? filtered.length : totalWithText) && (
             <div className="mt-6 flex flex-col items-center gap-2">
-              <button type="button" onClick={() => setShown(shown + pageSize * 2)} className="btn btn-secondary">
+              <button
+                type="button"
+                onClick={() => {
+                  ensureAll();
+                  setShown(shown + pageSize * 2);
+                }}
+                className="btn btn-secondary"
+              >
                 {t('common.showMore')}
               </button>
               <p className="text-xs text-ink-3">{t('reviews.shown', { shown: visible.length, total: formatNumber(totalForFilter) })}</p>

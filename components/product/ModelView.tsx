@@ -1,6 +1,7 @@
 'use client';
 
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { setUrlParams, usePageLoaded, useUrlParam } from '@/lib/hooks';
 import type { KaspiImage } from '@/lib/kaspi/schema';
 import { formatPrice, t } from '@/lib/i18n';
 import { track } from '@/lib/analytics/events';
@@ -34,17 +35,16 @@ type Props = {
 };
 
 export function ModelView({ modelSlug, modelName, lineLabel, variants, defaultSlug, badge, pricesDate, ratingSlot, bonusPopup }: Props) {
-  const [slug, setSlug] = useState(defaultSlug);
+  // Расцветка: выбор пользователя → ?color= из адреса → расцветка по умолчанию.
+  const urlColor = useUrlParam('color');
+  const [picked, setPicked] = useState<string | null>(null);
+  const slug = picked ?? (urlColor && variants.some((x) => x.designSlug === urlColor) ? urlColor : defaultSlug);
   const [popup, setPopup] = useState(false);
   const [buyVisible, setBuyVisible] = useState(true);
+  // Миниатюры расцветок грузим после главного фото: на мобильном 16 картинок иначе отбирают канал у первого экрана.
+  const swatchImages = usePageLoaded();
   const buyRef = useRef<HTMLDivElement>(null);
   const v = useMemo(() => variants.find((x) => x.designSlug === slug) ?? variants[0]!, [slug, variants]);
-
-  // ?color= из адреса: выбираем расцветку после загрузки статической страницы.
-  useEffect(() => {
-    const fromUrl = new URLSearchParams(window.location.search).get('color');
-    if (fromUrl && fromUrl !== defaultSlug && variants.some((x) => x.designSlug === fromUrl)) setSlug(fromUrl);
-  }, [defaultSlug, variants]);
 
   useEffect(() => {
     const el = buyRef.current;
@@ -56,10 +56,8 @@ export function ModelView({ modelSlug, modelName, lineLabel, variants, defaultSl
 
   const select = useCallback(
     (next: ViewVariant) => {
-      setSlug(next.designSlug);
-      const url = new URL(window.location.href);
-      url.searchParams.set('color', next.designSlug);
-      window.history.replaceState(null, '', url.toString());
+      setPicked(next.designSlug);
+      setUrlParams({ color: next.designSlug });
       track('variant_select', { model: modelSlug, variant: next.designSlug, kaspiCode: next.kaspiCode });
     },
     [modelSlug],
@@ -122,8 +120,8 @@ export function ModelView({ modelSlug, modelName, lineLabel, variants, defaultSl
                         active ? 'border-ink' : 'border-transparent hover:border-line'
                       } ${x.inStock ? '' : 'opacity-50 grayscale'}`}
                     >
-                      {x.images[0] && (
-                        <img src={x.images[0].small} alt="" width={44} height={56} loading="lazy" className="h-full w-full object-cover" />
+                      {swatchImages && x.images[0] && (
+                        <img src={x.images[0].small} alt="" width={44} height={56} decoding="async" className="h-full w-full object-cover" />
                       )}
                       {!x.inStock && <span aria-hidden="true" className="absolute inset-0 bg-[linear-gradient(135deg,transparent_47%,var(--color-ink-3)_48%,var(--color-ink-3)_52%,transparent_53%)]" />}
                     </button>

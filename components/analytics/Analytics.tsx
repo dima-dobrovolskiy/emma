@@ -11,12 +11,11 @@ export function Analytics() {
   const tiktok = process.env.NEXT_PUBLIC_TIKTOK_PIXEL_ID;
   return (
     <>
-      <Script id="datalayer" strategy="beforeInteractive">{`window.dataLayer=window.dataLayer||[];`}</Script>
       {ga && (
         <>
           <Script src={`https://www.googletagmanager.com/gtag/js?id=${ga}`} strategy="afterInteractive" />
           <Script id="ga4" strategy="afterInteractive">
-            {`function gtag(){dataLayer.push(arguments)}window.gtag=gtag;gtag('js',new Date());gtag('config','${ga}');`}
+            {`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}window.gtag=gtag;gtag('js',new Date());gtag('config','${ga}');`}
           </Script>
         </>
       )}

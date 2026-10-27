@@ -10,7 +10,7 @@ export function Header() {
         {t('nav.skip')}
       </a>
       <div className="container-page flex h-16 items-center justify-between gap-4">
-        <Link href="/" className="font-display text-[1.45rem] font-semibold tracking-tight text-ink" aria-label={t('nav.home')}>
+        <Link href="/" className="font-display text-[1.45rem] font-semibold tracking-tight text-ink">
           {t('meta.siteName')}
         </Link>
         <nav aria-label={t('nav.mainNav')} className="hidden lg:block">

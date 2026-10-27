@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from 'next';
-import { Golos_Text, Lora } from 'next/font/google';
+import { Golos_Text } from 'next/font/google';
 import './globals.css';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
@@ -9,9 +9,9 @@ import { t } from '@/lib/i18n';
 import { KASPI_SHOP_URL, SITE_URL, absUrl } from '@/lib/site';
 import { KASPI_CDN } from '@/lib/images';
 
-// Оба шрифта проверены на казахские буквы ә ғ қ ң ө ұ ү һ і (docs/DECISIONS.md).
-const body = Golos_Text({ subsets: ['latin', 'cyrillic'], variable: '--font-body', display: 'swap' });
-const heading = Lora({ subsets: ['latin', 'cyrillic'], variable: '--font-heading', display: 'swap', weight: ['500', '600'] });
+// Golos Text проверен на казахские буквы ә ғ қ ң ө ұ ү һ і (docs/DECISIONS.md). Один шрифт на всё - ради скорости первого экрана.
+// subsets = что предзагружать; латиница подгрузится по unicode-range, когда понадобится.
+const body = Golos_Text({ subsets: ['cyrillic'], variable: '--font-body', display: 'swap' });
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -35,7 +35,7 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="ru" className={`${body.variable} ${heading.variable}`}>
+    <html lang="ru" className={body.variable}>
       <head>
         <link rel="preconnect" href={KASPI_CDN} />
         <link rel="dns-prefetch" href={KASPI_CDN} />

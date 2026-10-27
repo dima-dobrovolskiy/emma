@@ -33,7 +33,9 @@ export function WhatToBuy({ models, guide }: { models: Model[]; guide: string })
                   </GuideModelLink>
                 </p>
                 <p className="mt-1 text-sm text-ink-2">{p.reason}</p>
-                <p className="mt-2 font-semibold">{formatPrice(p.model.minPrice)}</p>
+                <p className="mt-2 font-semibold">
+                  {p.model.minPrice === p.model.maxPrice ? formatPrice(p.model.minPrice) : `${t('common.from')} ${formatPrice(p.model.minPrice)}`}
+                </p>
               </div>
             </li>
           );

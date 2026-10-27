@@ -46,12 +46,12 @@ export default function HomePage() {
 
   return (
     <>
-      <section className="container-page grid items-center gap-8 pb-10 pt-6 md:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] md:gap-12 md:pt-12">
+      <section className="container-page grid items-center gap-8 pb-10 pt-6 md:grid-cols-[minmax(0,1.3fr)_minmax(0,1fr)] md:gap-10 md:pt-12 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:gap-12">
         <div>
           <p className="eyebrow">{t('home.eyebrow')}</p>
           <h1 className="mt-3 text-[2.4rem] leading-[1.05] md:text-[3.6rem]">{t('home.h1')}</h1>
           <p className="mt-4 max-w-xl text-lg text-ink-2">{t('home.lead')}</p>
-          <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+          <div className="mt-6 flex flex-col gap-3 sm:flex-row md:flex-col lg:flex-row">
             <Link href="/podbor" className="btn btn-primary">
               {t('home.ctaPodbor')}
             </Link>
@@ -59,7 +59,7 @@ export default function HomePage() {
               {t('home.ctaCatalog')}
             </Link>
           </div>
-          <dl className="mt-8 grid grid-cols-2 gap-x-6 gap-y-4 border-t border-line pt-6 sm:grid-cols-4">
+          <dl className="mt-8 grid grid-cols-2 gap-x-6 gap-y-4 border-t border-line pt-6 sm:grid-cols-4 md:grid-cols-2 xl:grid-cols-4">
             {trustItems.map((i) => (
               <div key={i.label}>
                 <dt className="sr-only">{i.label}</dt>
@@ -73,16 +73,19 @@ export default function HomePage() {
           <p className="mt-3 text-xs text-ink-3">{t('trust.sourceNote')}</p>
         </div>
         {heroImg && (
-          <Link href={`/p/${hero.slug}`} className="relative block overflow-hidden rounded-[2rem] bg-sand">
-            <img
-              {...gallerySrcSet(heroImg)}
-              sizes="(min-width: 768px) 45vw, 100vw"
-              alt={t('model.variantName', { line: hero.lineLabel, design: hero.defaultVariant.designName })}
-              width={750}
-              height={1000}
-              fetchPriority="high"
-              className="aspect-[4/5] w-full object-cover md:aspect-[3/4]"
-            />
+          <Link href={`/p/${hero.slug}`} prefetch={false} className="relative block overflow-hidden rounded-[2rem] bg-sand">
+            <span className="block aspect-[4/5] md:aspect-[3/4]">
+              <img
+                {...gallerySrcSet(heroImg)}
+                sizes="(min-width: 768px) 45vw, 100vw"
+                alt={t('model.variantName', { line: hero.lineLabel, design: hero.defaultVariant.designName })}
+                width={750}
+                height={1000}
+                fetchPriority="high"
+                decoding="async"
+                className="h-full w-full object-cover"
+              />
+            </span>
             <span className="absolute bottom-4 left-4 right-4 flex items-center justify-between gap-3 rounded-2xl bg-surface/95 px-4 py-3 shadow">
               <span className="font-semibold">{hero.name}</span>
               <Stars rating={hero.ratingAvg} />
@@ -206,7 +209,7 @@ export default function HomePage() {
                   <p className="text-sm text-star">{'★'.repeat(r.rating)}</p>
                   <p className="mt-1 line-clamp-4 text-[0.95rem]">{r.text}</p>
                   <p className="mt-2 text-xs text-ink-3">
-                    {r.author} · <Link href={`/p/${r.modelSlug}`} className="underline underline-offset-2">{r.modelName}</Link>
+                    {r.author} · <Link href={`/p/${r.modelSlug}`} prefetch={false} className="underline underline-offset-2">{r.modelName}</Link>
                   </p>
                 </div>
               </li>

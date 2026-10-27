@@ -1,6 +1,7 @@
 'use client';
 
 import { useRef, useState } from 'react';
+import { usePageLoaded } from '@/lib/hooks';
 import type { KaspiImage } from '@/lib/kaspi/schema';
 import { gallerySrcSet, thumbSrc } from '@/lib/images';
 import { t } from '@/lib/i18n';
@@ -8,19 +9,27 @@ import { t } from '@/lib/i18n';
 /** Галерея на scroll-snap: свайп на мобильном, миниатюры на десктопе. Без внешних библиотек. */
 export function Gallery({ images, alt, badge }: { images: KaspiImage[]; alt: string; badge: string | null }) {
   const [index, setIndex] = useState(0);
+  // Фото грузим по мере листания: текущее и соседнее. Остальные 10-20 фото по 200+ КБ не тянем заранее.
+  const [scrolledTo, setLoadedUpTo] = useState(0);
   const track = useRef<HTMLDivElement>(null);
+  // Соседнее фото подгружаем, когда страница загрузилась, чтобы не делить канал с первым.
+  const pageLoaded = usePageLoaded();
+  const loadedUpTo = Math.max(scrolledTo, pageLoaded ? 1 : 0);
 
   const go = (i: number) => {
     const el = track.current;
     if (!el) return;
     const next = Math.max(0, Math.min(images.length - 1, i));
+    setLoadedUpTo((x) => Math.max(x, next + 1));
     el.scrollTo({ left: next * el.clientWidth, behavior: 'smooth' });
   };
 
   const onScroll = () => {
     const el = track.current;
     if (!el) return;
-    setIndex(Math.round(el.scrollLeft / el.clientWidth));
+    const i = Math.round(el.scrollLeft / el.clientWidth);
+    setIndex(i);
+    setLoadedUpTo((x) => Math.max(x, i + 1));
   };
 
   if (!images.length) return <div className="aspect-[3/4] rounded-[var(--radius-card)] bg-sand" />;
@@ -37,18 +46,36 @@ export function Gallery({ images, alt, badge }: { images: KaspiImage[]; alt: str
           tabIndex={0}
         >
           {images.map((img, i) => (
-            <div key={img.medium} className="relative h-full w-full shrink-0 snap-center" aria-label={t('model.photoOf', { index: i + 1, total: images.length })}>
-              <img
+            <div
+              key={img.medium}
+              className="relative h-full w-full shrink-0 snap-center"
+              role="group"
+              aria-roledescription="slide"
+              aria-label={t('model.photoOf', { index: i + 1, total: images.length })}
+            >
+              {i === 0 && (
+                <img
+                  {...gallerySrcSet(img)}
+                  sizes="(min-width: 1200px) 600px, (min-width: 768px) 52vw, 100vw"
+                  alt={alt}
+                  width={750}
+                  height={1000}
+                  loading="eager"
+                  fetchPriority="high"
+                  decoding="async"
+                  className="h-full w-full object-cover"
+                />
+              )}
+              {i > 0 && i <= loadedUpTo && <img
                 {...gallerySrcSet(img)}
                 sizes="(min-width: 1200px) 600px, (min-width: 768px) 52vw, 100vw"
-                alt={i === 0 ? alt : `${alt} - ${t('model.photoOf', { index: i + 1, total: images.length })}`}
+                alt={`${alt} - ${t('model.photoOf', { index: i + 1, total: images.length })}`}
                 width={750}
                 height={1000}
-                loading={i === 0 ? 'eager' : 'lazy'}
-                fetchPriority={i === 0 ? 'high' : 'low'}
-                decoding={i === 0 ? 'sync' : 'async'}
+                loading="lazy"
+                decoding="async"
                 className="h-full w-full object-cover"
-              />
+              />}
             </div>
           ))}
         </div>

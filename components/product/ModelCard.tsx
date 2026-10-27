@@ -5,7 +5,7 @@ import { cardSrcSet, thumbSrc } from '@/lib/images';
 import { maxWeightKg } from '@/lib/summary';
 import { Stars } from '@/components/ui/Stars';
 
-const MAX_SWATCHES = 5;
+const MAX_SWATCHES = 4;
 
 export function ModelCard({ model, priority = false, headingLevel = 3 }: { model: Model; priority?: boolean; headingLevel?: 2 | 3 }) {
   const v = model.defaultVariant;
@@ -38,12 +38,13 @@ export function ModelCard({ model, priority = false, headingLevel = 3 }: { model
       </div>
       <div className="flex flex-1 flex-col gap-2 p-3 md:p-4">
         <H className="font-sans text-[0.98rem] font-semibold leading-snug md:text-[1.05rem]">
-          <Link href={`/p/${model.slug}`} className="after:absolute after:inset-0">
+          {/* Без префетча: иначе React заранее тянет главное фото карточки модели (160+ КБ) для каждой карточки в списке. */}
+          <Link href={`/p/${model.slug}`} prefetch={false} className="after:absolute after:inset-0">
             {model.name}
           </Link>
         </H>
         {maxW !== null && <p className="text-xs text-ink-3">{t('category.weightUpTo', { value: maxW })}</p>}
-        <Stars rating={model.ratingAvg} count={model.ratingCount ? model.reviewsCount : undefined} />
+        <Stars rating={model.ratingAvg} count={model.ratingCount ? model.reviewsCount : undefined} compact />
         <div className="mt-auto pt-1">
           <p className="text-lg font-semibold leading-tight">
             {model.minPrice === model.maxPrice ? formatPrice(model.minPrice) : `${t('common.from')} ${formatPrice(model.minPrice)}`}
@@ -55,7 +56,7 @@ export function ModelCard({ model, priority = false, headingLevel = 3 }: { model
           )}
         </div>
         {model.variants.length > 1 && (
-          <div className="flex items-center gap-1.5 pt-1">
+          <div className="flex flex-wrap items-center gap-x-1.5 gap-y-1 pt-1">
             <span className="flex -space-x-1.5" aria-hidden="true">
               {model.variants.slice(0, MAX_SWATCHES).map((x) => (
                 <span key={x.kaspiCode} className={`block h-6 w-6 overflow-hidden rounded-full border-2 border-surface bg-sand ${x.inStock ? '' : 'opacity-40 grayscale'}`}>

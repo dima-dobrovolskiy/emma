@@ -35,3 +35,8 @@ export function thumbSrc(img: KaspiImage): string {
 }
 
 export const KASPI_CDN = 'https://resources.cdn-kaspi.kz';
+
+/** Лёгкая версия для первого показа главного фото. */
+export function lowSrc(img: KaspiImage): string {
+  return withFormat(img.medium, 'preview-large');
+}

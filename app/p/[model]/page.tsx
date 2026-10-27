@@ -183,7 +183,7 @@ export default async function ModelPage({ params }: Params) {
                 <ul className="mt-3 space-y-1 text-sm">
                   {model.variants.map((v) => (
                     <li key={v.kaspiCode}>
-                      <Link href={`/p/${model.slug}?color=${v.designSlug}`} className="flex min-h-[44px] items-center justify-between gap-3 hover:text-accent">
+                      <Link href={`/p/${model.slug}?color=${v.designSlug}`} prefetch={false} className="flex min-h-[44px] items-center justify-between gap-3 hover:text-accent">
                         <span>{v.designName}</span>
                         <span className={v.inStock ? 'text-ink-2' : 'text-ink-3'}>{v.inStock ? formatPrice(v.price) : t('common.outOfStock')}</span>
                       </Link>

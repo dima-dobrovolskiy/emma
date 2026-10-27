@@ -1,7 +1,8 @@
 'use client';
 
 import Link from 'next/link';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
+import { useUrlParam } from '@/lib/hooks';
 import { formatPrice, t } from '@/lib/i18n';
 import { fmtRatingClient } from '@/lib/format';
 import { track } from '@/lib/analytics/events';
@@ -20,22 +21,18 @@ type Props = {
 };
 
 export function Quiz({ ages, weights, where, models, addons, maxResults, ageLabels, ageRangeLabels, images }: Props) {
-  const [step, setStep] = useState(0);
-  const [age, setAge] = useState<AgeOption | null>(null);
-  const [weight, setWeight] = useState<WeightOption | null>(null);
+  // ?age= с главной: первый ответ уже дан. После «Пройти заново» адрес не учитываем.
+  const urlAgeId = useUrlParam('age');
+  const [useUrl, setUseUrl] = useState(true);
+  const [ageId, setAgeId] = useState<string | null>(null);
+  const [weightId, setWeightId] = useState<string | null>(null);
   const [place, setPlace] = useState<Where | null>(null);
   const [started, setStarted] = useState(false);
 
-  useEffect(() => {
-    const id = new URLSearchParams(window.location.search).get('age');
-    const a = ages.find((x) => x.id === id);
-    if (a) {
-      setAge(a);
-      setStep(1);
-      setStarted(true);
-      track('quiz_start', {});
-    }
-  }, [ages]);
+  const age = ages.find((x) => x.id === (ageId ?? (useUrl ? urlAgeId : null))) ?? null;
+  const weight = weights.find((x) => x.id === weightId) ?? null;
+  const step = !age ? 0 : !weight ? 1 : 2;
+  const result = age && weight && place ? podbor(models, addons, { age, weight, where: place }, maxResults) : null;
 
   const start = () => {
     if (!started) {
@@ -44,18 +41,28 @@ export function Quiz({ ages, weights, where, models, addons, maxResults, ageLabe
     }
   };
 
-  const result = age && weight && place ? podbor(models, addons, { age, weight, where: place }, maxResults) : null;
+  const finish = (p: Where) => {
+    start();
+    setPlace(p);
+    if (age && weight) {
+      const r = podbor(models, addons, { age, weight, where: p }, maxResults);
+      track('quiz_complete', { result: r.main.map((m) => m.slug).join(',') || 'none' });
+    }
+  };
 
-  useEffect(() => {
-    if (result) track('quiz_complete', { result: result.main.map((m) => m.slug).join(',') || 'none' });
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [age?.id, weight?.id, place]);
+  const back = () => {
+    if (step === 2) setWeightId(null);
+    else if (step === 1) {
+      setAgeId(null);
+      setUseUrl(false);
+    }
+  };
 
   const restart = () => {
-    setAge(null);
-    setWeight(null);
+    setAgeId(null);
+    setWeightId(null);
     setPlace(null);
-    setStep(0);
+    setUseUrl(false);
   };
 
   if (result) {
@@ -83,7 +90,7 @@ export function Quiz({ ages, weights, where, models, addons, maxResults, ageLabe
                   <div className="min-w-0">
                     {isAddon && <p className="eyebrow">{t('podbor.winterAddon')}</p>}
                     <p className="text-lg font-semibold">
-                      <Link href={`/p/${m.slug}`} className="after:absolute after:inset-0 hover:text-accent">
+                      <Link href={`/p/${m.slug}`} prefetch={false} className="after:absolute after:inset-0 hover:text-accent">
                         {m.name}
                       </Link>
                     </p>
@@ -116,15 +123,15 @@ export function Quiz({ ages, weights, where, models, addons, maxResults, ageLabe
   const steps = [
     {
       q: t('podbor.qAge'),
-      options: ages.map((a) => ({ id: a.id, label: ageLabels[a.id] ?? a.id, active: age?.id === a.id, pick: () => (start(), setAge(a), setStep(1)) })),
+      options: ages.map((a) => ({ id: a.id, label: ageLabels[a.id] ?? a.id, active: age?.id === a.id, pick: () => (start(), setAgeId(a.id)) })),
     },
     {
       q: t('podbor.qWeight'),
-      options: weights.map((w) => ({ id: w.id, label: t(`podbor.weight-${w.id}` as 'podbor.weight-0-7'), active: weight?.id === w.id, pick: () => (setWeight(w), setStep(2)) })),
+      options: weights.map((w) => ({ id: w.id, label: t(`podbor.weight-${w.id}` as 'podbor.weight-0-7'), active: weight?.id === w.id, pick: () => (start(), setWeightId(w.id)) })),
     },
     {
       q: t('podbor.qWhere'),
-      options: where.map((w) => ({ id: w, label: t(`podbor.where-${w}`), active: place === w, pick: () => setPlace(w) })),
+      options: where.map((w) => ({ id: w, label: t(`podbor.where-${w}`), active: place === w, pick: () => finish(w) })),
     },
   ];
   const s = steps[step]!;
@@ -145,7 +152,7 @@ export function Quiz({ ages, weights, where, models, addons, maxResults, ageLabe
         </div>
       </fieldset>
       {step > 0 && (
-        <button type="button" onClick={() => setStep(step - 1)} className="mt-6 inline-flex min-h-[44px] items-center text-ink-2 underline underline-offset-4">
+        <button type="button" onClick={back} className="mt-6 inline-flex min-h-[44px] items-center text-ink-2 underline underline-offset-4">
           {t('podbor.back')}
         </button>
       )}
