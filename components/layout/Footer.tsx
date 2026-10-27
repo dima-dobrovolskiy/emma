@@ -22,13 +22,13 @@ export function Footer() {
 
   return (
     <footer className="mt-16 bg-sand md:mt-24">
-      <div className="container-page grid gap-7 pb-6 pt-10 md:grid-cols-12 md:gap-10 md:pb-8 md:pt-14">
-        <div className="md:col-span-4">
+      <div className="container-page grid gap-7 pb-6 pt-10 md:grid-cols-2 md:gap-10 md:pb-8 md:pt-14 lg:grid-cols-12">
+        <div className="lg:col-span-4">
           <div className="flex items-center justify-between gap-4 md:block">
             <Link href="/" className="inline-flex min-h-11 items-center font-display text-2xl tracking-tight">
               {t('meta.siteName')}
             </Link>
-            <a href={KASPI_SHOP_URL} target="_blank" rel="noopener" className="inline-flex min-h-[44px] items-center gap-1 text-sm font-semibold text-accent md:min-h-0">
+            <a href={KASPI_SHOP_URL} target="_blank" rel="noopener" className="inline-flex min-h-[44px] items-center gap-1 text-sm font-semibold text-accent md:mt-1 md:flex md:min-h-0 md:w-fit">
               {t('footer.kaspiShop')}
               <span aria-hidden="true">↗</span>
             </a>
@@ -50,7 +50,7 @@ export function Footer() {
           )}
         </div>
 
-        <div className="grid gap-5 sm:grid-cols-2 md:col-span-5 md:gap-8">
+        <div className="grid gap-5 sm:grid-cols-2 md:gap-8 lg:col-span-5">
           {groups.map((g) => (
             <nav key={g.label} aria-label={g.label}>
               <p className="text-sm text-ink-3">{g.label}</p>
@@ -67,7 +67,7 @@ export function Footer() {
           ))}
         </div>
 
-        <div className="text-[0.9375rem] md:col-span-3">
+        <div className="text-[0.9375rem] md:col-span-2 md:max-w-xl lg:col-span-3 lg:max-w-none">
           <p className="font-semibold">{t('footer.fraudTitle')}</p>
           <p className="mt-1 text-ink-2">{t('footer.fraudText')}</p>
         </div>

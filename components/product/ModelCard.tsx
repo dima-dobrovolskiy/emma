@@ -38,7 +38,7 @@ export function ModelCard({ model, priority = false, headingLevel = 3 }: { model
         </div>
       </div>
       <div className="flex flex-1 flex-col pt-3">
-        <H className="text-[0.98rem] font-semibold leading-snug md:text-[1.05rem]">
+        <H className="font-sans text-[0.98rem] font-semibold leading-snug tracking-normal md:text-[1.05rem]">
           {/* Без префетча по появлению: иначе React заранее тянет главное фото каждой карточки. Префетч - по наведению (components/ui/Motion.tsx). */}
           <Link href={`/p/${model.slug}`} prefetch={false} className="after:absolute after:inset-0 group-hover:underline group-hover:underline-offset-4">
             {model.name}
