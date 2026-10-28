@@ -16,20 +16,21 @@
 - [x] Репозиторий на GitHub: https://github.com/dima-dobrovolskiy/emma (приватный), `main` запушен.
 - [x] Синхронизация с раннеров GitHub проверена 2026-10-27: проба и полный срез с коммитом данных прошли.
 Cloudflare Pages (решено, Р1), аккаунт Cloudflare на Эмме (Д2):
-- [ ] Workers & Pages → Create → Pages → Connect to Git → репозиторий Димы (дать приложению Cloudflare доступ к нему на GitHub).
-- [ ] Framework preset: None. Build command: `pnpm build`. Output directory: `out`. Root: пусто.
-- [ ] Переменная окружения `NODE_VERSION=22`. pnpm подхватится из поля `packageManager` в package.json [непроверено - если сборка не найдёт pnpm, build command: `npm i -g pnpm@11 && pnpm install && pnpm build`].
-- [ ] `out/_redirects` и `out/_headers` (из `public/`) подхватятся сами: 301 со старых адресов и кэш статики.
+- [x] Workers & Pages → Create → Pages → Connect to Git → репозиторий Димы. Проект создан 2026-10-28, превью: https://emma-98q.pages.dev. Внимание: экран Create по умолчанию предлагает Workers (поля «Deploy command: npx wrangler deploy») - нужен именно Pages.
+- [x] Framework preset: None. Build command: `pnpm build`. Output directory: `out`. Root: пусто.
+- [x] Переменная окружения `NODE_VERSION=22`. Сборка на Cloudflare прошла, pnpm подхватился.
+- [x] `out/_redirects` и `out/_headers` подхватились: 301 со старых адресов, кэш фото 30 дней, `X-Robots-Tag: noindex` на *.pages.dev (проверено 2026-10-28).
 
 Переменные окружения (Production и Preview):
 - [ ] `NEXT_PUBLIC_SITE_URL=https://slingoemma.kz`
 - [ ] `NEXT_PUBLIC_GA4_ID`, `NEXT_PUBLIC_YM_ID`, `NEXT_PUBLIC_META_PIXEL_ID`, `NEXT_PUBLIC_TIKTOK_PIXEL_ID` (Д5)
 - [ ] `NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION`, `NEXT_PUBLIC_YANDEX_VERIFICATION` (шаг 4)
-- [ ] Зеркало главных фото (Р2) включено по умолчанию: `pnpm build` сам скачивает и сжимает 48 фото (~30 с). В логе сборки - строка «Зеркало фото: ...». Выключить - `MIRROR_MEDIA=0`.
+- [x] Зеркало главных фото (Р2) работает на Cloudflare: фото отдаются с /media/. Выключить - `MIRROR_MEDIA=0`.
 - [ ] Флаги `FEATURE_*` не включать.
 
 - [ ] Открыть превью `https://<проект>.pages.dev`: главная, категория, карточка, подбор, гайд - на телефоне и десктопе. Эту ссылку можно отдать Эмме.
-- [ ] `pnpm tsx scripts/check-redirects.ts --base=https://<проект>.pages.dev` - 36 из 36.
+- [x] `pnpm tsx scripts/check-redirects.ts --base=https://emma-98q.pages.dev` - 36 из 36 (2026-10-28).
+- [x] Lighthouse mobile на превью (2026-10-28): производительность 99-100, LCP 1,1-1,9 с, доступность и практики 100. SEO 69 только из-за noindex превью-домена - на slingoemma.kz его не будет; перепроверить после переключения DNS.
 
 ## 2. DNS и переключение домена
 
