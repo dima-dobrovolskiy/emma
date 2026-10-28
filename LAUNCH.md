@@ -49,13 +49,15 @@ Cloudflare Pages (решено, Р1), аккаунт Cloudflare на Эмме (�
 - [x] Проверено снаружи (2026-10-29): реестр .kz, Google, Cloudflare, Quad9 и Яндекс DNS отдают NS Cloudflare; `A` - 213.130.74.107; slingoemma.kz и www открываются на Тильде (200). Шаг А пройден.
 
 Шаг Б. Переключение на новый сайт - только по команде «запускаем»:
-- [ ] Pages → проект emma → Custom domains: добавить `slingoemma.kz` и `www.slingoemma.kz`. Cloudflare сам заменит записи Тильды на записи Pages (подтвердить замену).
-- [ ] Основной адрес - без www; для www - правило редиректа 301 на основной (Rules → Redirect Rules).
-- [ ] Дождаться выпуска SSL, открыть https://slingoemma.kz и https://www.slingoemma.kz.
+- [x] Pages → проект emma → Custom domains: `slingoemma.kz` - Active (2026-10-29). `www` в Pages не добавляется: запись `www` проксирована и уходит правилом на основной адрес. Если Pages просит «Complete DNS setup», запись для домена: CNAME `@` → `emma-98q.pages.dev`, Proxied.
+- [x] www → основной: Rules → Redirect Rules, шаблон «Redirect from WWW to root», 301, с сохранением параметров. SSL/TLS → Edge Certificates → «Always Use HTTPS» включён - без него http://www отдавал 522.
+- [x] SSL Cloudflare для slingoemma.kz выпущен (до 26.01.2027, продлевается сам). Проверено через Cloudflare напрямую (2026-10-29): новый сайт, http → https, www → основной с параметрами, robots.txt без добавок Cloudflare, без X-Robots-Tag, 36 из 36 старых адресов - 301.
 - [ ] Откат, если что-то не так: в Cloudflare вернуть `A slingoemma.kz 213.130.74.107` и `www` → `slingoemma.kz` (серое облако) - сайт снова на Тильде.
 - [ ] Тильду не удалять минимум месяц: снять с публикации домен, оставить проект.
 
 ## 3. Проверка редиректов на проде
+
+Проверено 2026-10-29 через Cloudflare напрямую (у части провайдеров DNS ещё держал Тильду в кэше): 36 из 36 - 301, со слешем и через http://www - тоже доходят до нужной страницы; несуществующий адрес - 404.
 
 - [ ] `pnpm tsx scripts/check-redirects.ts --base=https://slingoemma.kz` - 36 из 36, коды 301.
 - [ ] Вручную 3-4 старых адреса со слешем на конце (`/classic-black/`) - тоже 301.
