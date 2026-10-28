@@ -475,6 +475,37 @@
   .burger[data-open='true'] > span:nth-child(2) { opacity: 0; transform: scaleX(0.4); }
   .burger[data-open='true'] > span:nth-child(3) { top: 5px; transform: rotate(-45deg); }
 
+  /* Панель снизу экрана (фильтры на телефоне): нативный dialog, выезжает снизу. */
+  .sheet {
+    position: fixed;
+    inset: auto 0 0 0;
+    margin: 0;
+    width: 100%;
+    max-width: none;
+    max-height: 88dvh;
+    padding: 0;
+    border: 0;
+    border-radius: 1rem 1rem 0 0;
+    background: var(--color-surface);
+    color: inherit;
+    flex-direction: column;
+    transform: translateY(100%);
+    transition: transform var(--dur-slow) var(--ease-out);
+  }
+  .sheet[open] {
+    display: flex;
+  }
+  .sheet[data-state='open'] {
+    transform: none;
+  }
+  .sheet::backdrop {
+    background: rgb(28 27 25 / 0);
+    transition: background-color var(--dur-slow) var(--ease-out);
+  }
+  .sheet[data-state='open']::backdrop {
+    background: rgb(28 27 25 / 0.35);
+  }
+
   /* Полоска загрузки при переходе между страницами. */
   .nav-progress {
     position: fixed;

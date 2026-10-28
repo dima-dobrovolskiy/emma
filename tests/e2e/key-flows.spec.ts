@@ -48,7 +48,8 @@ test('подбор: 18-22 кг - только Classic; зимой добавля
 
 test('категория: фильтр по весу и сортировка', async ({ page }) => {
   await page.goto('/c/ergoryukzaki');
-  await page.getByText('Фильтры и сортировка').click();
+  // На телефоне фильтры открываются панелью снизу, на десктопе - раскрывающимся блоком.
+  await page.locator('[data-filters-toggle]:visible').click();
   await page.getByRole('button', { name: '18-22 кг' }).click();
   await expect(page).toHaveURL(/weight=18-22/);
   await expect(page.locator('main h2 a')).toHaveText(['Эргорюкзак Classic']);
