@@ -67,7 +67,7 @@ Cloudflare Pages (решено, Р1), аккаунт Cloudflare на Эмме (�
 
 - [ ] Google Search Console: ресурс «Домен» (через DNS TXT) или «Префикс URL» (через `NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION` + пересборка).
 - [ ] Яндекс Вебмастер: добавить сайт, подтвердить мета-тегом `NEXT_PUBLIC_YANDEX_VERIFICATION`.
-- [ ] Отправить `https://slingoemma.kz/sitemap.xml` в обе панели.
+- [ ] Отправить `https://slingoemma.kz/sitemap.xml` в обе панели. Яндекс 2026-10-29: инструмент «Файлы Sitemap» был в режиме только для чтения (сбой Яндекса) - добавить, когда починят; до этого Яндекс берёт sitemap из robots.txt.
 - [ ] В Search Console: «Проверка URL» для главной, категории, карточки Classic и гайда → «Запросить индексирование».
 - [ ] Rich Results Test (search.google.com/test/rich-results) на карточке Classic: Product (цены и наличие), хлебные крошки, FAQ без ошибок. Звёзд отзывов в разметке нет - так решено (Р7), это не ошибка.
 - [ ] Яндекс Вебмастер → «Переезд сайта» не нужен (домен тот же), но проверить «Страницы в поиске» через неделю.
