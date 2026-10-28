@@ -82,10 +82,27 @@ Cloudflare Pages (решено, Р1), аккаунт Cloudflare на Эмме (�
 
 ## 6. Синхронизация на проде
 
-- [ ] Actions → «Синхронизация с Kaspi» → Run workflow (mode: full). Зелёный, коммит с данными появился (или «Изменений нет»).
-- [ ] Хостинг пересобрал сайт по коммиту, на карточке обновилась дата «Цены и наличие на ...».
-- [ ] Через 2-3 часа: почасовые запуски проходят, лишних коммитов нет (только при изменениях данных).
-- [ ] Включить уведомления о падении workflow (GitHub → Settings → Notifications → Actions).
+Расписание GitHub Actions ненадёжно: 2026-10-28 почасовая синхронизация не запускалась почти сутки, и на сайте висела ошибочная цена «Зайчат» (2 990 ₸ вместо 24 990 ₸). Поэтому запуск по расписанию делает Cloudflare Worker (`workers/sync-trigger`), а GitHub только выполняет синхронизацию.
+
+Токен GitHub (один раз):
+- [ ] github.com → Settings → Developer settings → Personal access tokens → Fine-grained tokens → «Generate new token».
+- [ ] Token name: `slingoemma sync trigger`. Expiration: 1 год (и поставить себе напоминание продлить) или без срока, если GitHub даст.
+- [ ] Repository access: «Only select repositories» → `emma`.
+- [ ] Permissions → Repository permissions → Actions: «Read and write». Больше ничего не нужно.
+- [ ] «Generate token», скопировать. Токен показывается один раз; в репозиторий и в чаты его не класть.
+
+Worker в Cloudflare (через панель, без терминала):
+- [ ] Workers & Pages → Create → Worker → «Start with Hello World» (Create Worker). Имя: `slingoemma-sync-trigger` → Deploy.
+- [ ] «Edit code» → заменить весь код содержимым `workers/sync-trigger/index.js` → Deploy.
+- [ ] Settings → Variables and Secrets → Add: тип Secret, имя `GITHUB_TOKEN`, значение - токен → Deploy.
+- [ ] Settings → Trigger Events (Triggers) → Cron Triggers → добавить два: `7 * * * *` и `23 21 * * *` (время UTC).
+- [ ] Settings → Domains & Routes → workers.dev → выключить: у Worker нет страниц, публичный адрес не нужен.
+- [ ] Проверка: в редакторе кода Worker есть вкладка для запуска scheduled-события (или подождать до 7-й минуты часа). Затем GitHub → Actions → «Синхронизация с Kaspi»: появился запуск с событием workflow_dispatch, зелёный.
+
+Дальше:
+- [ ] После первого успешного часа от Worker - убрать из `sync.yml` почасовое расписание GitHub (`7 * * * *`), оставить только ночное как запасное: иначе лишние запуски тратят минуты Actions.
+- [ ] Синхронизация без изменений данных не запускает тесты и сборку (~1 мин); коммит и пересборка сайта - только когда на Kaspi что-то поменялось.
+- [ ] Хостинг пересобирает сайт по коммиту синхронизации, на карточке обновляется дата «Цены и наличие на ...».
 
 ## 7. После запуска (первая неделя)
 

@@ -22,6 +22,8 @@ pnpm sync           # полный срез: цены, карточки, фот�
 pnpm sync:prices    # только цены и наличие (каждый час)
 ```
 
+По расписанию синхронизация идёт на GitHub Actions (`.github/workflows/sync.yml`), а запускает её Cloudflare Worker `workers/sync-trigger` - расписание самого GitHub ненадёжно. Настройка - LAUNCH.md, раздел 6.
+
 ## Проверки
 
 ```bash

@@ -1,6 +1,8 @@
 name: Синхронизация с Kaspi
 
 # Цены и наличие - каждый час, полный срез (карточки, фото, отзывы, новые SKU) - раз в сутки ночью по Алматы.
+# Запускает Cloudflare Worker по расписанию (workers/sync-trigger) через workflow_dispatch: расписание самого GitHub
+# ненадёжно - в часы нагрузки он пропускает запуски. Своё расписание GitHub оставлено как запасное.
 # Коммит в data/kaspi/ - только если данные изменились. Хостинг пересобирает сайт по коммиту.
 # При сбое (цена 0, пропало >30% SKU, сломался формат) скрипт падает, данные не трогаются, GitHub присылает уведомление.
 on:
@@ -43,9 +45,16 @@ jobs:
       - name: Отпечатки новых фото (скрытие рекламных слайдов Kaspi)
         if: steps.mode.outputs.mode == 'full'
         run: pnpm tsx scripts/media-hashes.ts --soft
+      - name: Изменились ли данные
+        id: changed
+        run: |
+          if [ -n "$(git status --porcelain data/kaspi data/media-hashes.json OPEN-QUESTIONS.md)" ]; then echo "changed=true" >> "$GITHUB_OUTPUT"; else echo "Изменений нет"; fi
+      # Тесты и сборка - только если данные изменились: так почасовой запуск укладывается в бесплатные минуты GitHub Actions.
       - name: Проверка сборки с новыми данными
+        if: steps.changed.outputs.changed == 'true'
         run: pnpm test && pnpm build
       - name: Коммит, если данные изменились
+        if: steps.changed.outputs.changed == 'true'
         run: |
           git config user.name "kaspi-sync"
           git config user.email "kaspi-sync@users.noreply.github.com"

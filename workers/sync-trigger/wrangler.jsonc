@@ -1,0 +1,9 @@
+// Для деплоя из терминала: cd workers/sync-trigger && npx wrangler deploy, затем npx wrangler secret put GITHUB_TOKEN.
+// Можно и без терминала - через панель Cloudflare (LAUNCH.md, раздел 6).
+{
+  "name": "slingoemma-sync-trigger",
+  "main": "index.js",
+  "compatibility_date": "2026-10-01",
+  "workers_dev": false,
+  "triggers": { "crons": ["7 * * * *", "23 21 * * *"] }
+}
