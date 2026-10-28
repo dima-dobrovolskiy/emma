@@ -44,9 +44,9 @@ Cloudflare Pages (решено, Р1), аккаунт Cloudflare на Эмме (�
 - [x] Cloudflare → Add a domain (Onboard a domain) → `slingoemma.kz` → быстрый поиск DNS-записей → тариф Free.
 - [x] Проверить импорт: `A slingoemma.kz 213.130.74.107` и `www` (CNAME на `slingoemma.kz` или A на тот же IP). Если чего-то нет - добавить вручную.
 - [x] У обеих записей прокси выключить - серое облако, «DNS only»: трафик идёт напрямую на Тильду, её SSL-сертификат продолжает обновляться.
-- [x] Зона добавлена в Cloudflare (2026-10-29), NS: `coco.ns.cloudflare.com`, `terry.ns.cloudflare.com`. В панели hoster.kz сохранены, заявка в обработке у регистратора. DNS-записи в панели hoster.kz не трогать - они не используются.
-- [ ] Дождаться статуса зоны Active в Cloudflare (от минут до суток). Пока NS расходятся по интернету, и DNS Тильды, и Cloudflare указывают на Тильду - простоя нет.
-- [ ] Проверить снаружи: `dig NS slingoemma.kz` - серверы Cloudflare, `dig A slingoemma.kz` - 213.130.74.107, сайт на Тильде открывается.
+- [x] Зона добавлена в Cloudflare (2026-10-29), NS: `coco.ns.cloudflare.com`, `terry.ns.cloudflare.com`, сохранены в панели hoster.kz. DNS-записи в панели hoster.kz не трогать - они не используются.
+- [x] NS дошли до реестра .kz (2026-10-29). Пока NS расходятся по интернету, и DNS Тильды, и Cloudflare указывают на Тильду - простоя нет.
+- [x] Проверено снаружи (2026-10-29): реестр .kz, Google, Cloudflare, Quad9 и Яндекс DNS отдают NS Cloudflare; `A` - 213.130.74.107; slingoemma.kz и www открываются на Тильде (200). Шаг А пройден.
 
 Шаг Б. Переключение на новый сайт - только по команде «запускаем»:
 - [ ] Pages → проект emma → Custom domains: добавить `slingoemma.kz` и `www.slingoemma.kz`. Cloudflare сам заменит записи Тильды на записи Pages (подтвердить замену).
