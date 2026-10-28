@@ -1,18 +1,36 @@
 {
  "kaspiCode": "179229608",
  "kaspiModelName": "хлопок:сатин",
- "ratingCount": 7,
- "commentCount": 7,
- "pictureCount": 6,
+ "ratingCount": 8,
+ "commentCount": 8,
+ "pictureCount": 7,
  "ratingAvg": 5,
  "distribution": {
   "1": 0,
   "2": 0,
   "3": 0,
   "4": 0,
-  "5": 7
+  "5": 8
  },
  "reviews": [
+  {
+   "id": "d6c13a8861b3eab1",
+   "kaspiCode": "179229608",
+   "author": "Даяна",
+   "date": "2026-10-29",
+   "rating": 5,
+   "text": "Качество супер, в кроватке стало больше пространства, до этого были подушки-бортики, которые занимали очень много места, а эти бортики отличные.",
+   "plus": "",
+   "minus": "",
+   "photos": [
+    {
+     "small": "https://resources.cdn-kaspi.kz/img/p/r/1123012726-179229608/d818a94c-3de2-4255-933a-3eb73a03d086.jpeg?format=review_small",
+     "medium": "https://resources.cdn-kaspi.kz/img/p/r/1123012726-179229608/d818a94c-3de2-4255-933a-3eb73a03d086.jpeg?format=review_medium",
+     "large": "https://resources.cdn-kaspi.kz/img/p/r/1123012726-179229608/d818a94c-3de2-4255-933a-3eb73a03d086.jpeg?format=review_large"
+    }
+   ],
+   "helpfulCount": 0
+  },
   {
    "id": "832790e0dff47ba6",
    "kaspiCode": "179229608",
