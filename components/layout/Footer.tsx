@@ -1,19 +1,16 @@
 import Link from 'next/link';
 import { t } from '@/lib/i18n';
 import { BUYER_PAGES, mainNav } from '@/lib/nav';
-import { KASPI_SHOP_URL, siteContent } from '@/lib/site';
+import { KASPI_SHOP_URL, contactLinks, siteContent } from '@/lib/site';
 
 const linkClass = 'inline-flex min-h-[44px] items-center text-ink-2 hover:text-ink md:min-h-[32px]';
 
 export function Footer() {
   const nav = mainNav();
   const { contacts, legal } = siteContent;
-  // TODO(Эмма): контакты и юр. данные - content/ru/site.json (OPEN-QUESTIONS Э6)
-  const contactLinks = [
-    contacts.whatsapp && { href: `https://wa.me/${contacts.whatsapp.replace(/\D/g, '')}`, label: t('footer.whatsapp') },
-    contacts.instagram && { href: `https://instagram.com/${contacts.instagram.replace(/^@/, '')}`, label: t('footer.instagram') },
-    contacts.phone && { href: `tel:${contacts.phone.replace(/[^\d+]/g, '')}`, label: contacts.phone },
-  ].filter((x): x is { href: string; label: string } => Boolean(x));
+  // WhatsApp и телефон - один номер: в подвале показываем WhatsApp, Instagram и почту.
+  const links = contactLinks().filter((c) => c.kind !== 'phone');
+  const contactLabel = { whatsapp: t('contacts.whatsapp'), instagram: t('contacts.instagram'), phone: t('contacts.phone'), email: t('contacts.email') };
 
   const groups = [
     { label: t('footer.catalog'), links: [...nav.categories, ...nav.extra] },
@@ -34,18 +31,22 @@ export function Footer() {
             </a>
           </div>
           <p className="mt-1 max-w-sm text-[0.9375rem] text-ink-2 md:mt-3">{t('footer.about')}</p>
-          {contactLinks.length > 0 ? (
-            <ul className="mt-3 flex flex-wrap gap-x-5 text-sm">
-              {contactLinks.map((c) => (
-                <li key={c.href}>
-                  <a href={c.href} target={c.href.startsWith('tel:') ? undefined : '_blank'} rel="noopener" className={linkClass}>
-                    {c.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
+          {links.length > 0 ? (
+            <>
+              <ul className="mt-3 flex flex-wrap gap-x-5 text-[0.9375rem]">
+                {links.map((c) => (
+                  <li key={c.href}>
+                    <a href={c.href} target={c.kind === 'email' ? undefined : '_blank'} rel="noopener" className={linkClass}>
+                      <span className="sr-only">{contactLabel[c.kind]}: </span>
+                      {c.kind === 'whatsapp' ? `${t('contacts.whatsapp')} ${c.label}` : c.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+              {contacts.hours && <p className="text-sm text-ink-3">{t('footer.hours', { hours: contacts.hours })}</p>}
+            </>
           ) : (
-            // TODO(Эмма): пока контактов нет, заглушку «появятся здесь» не показываем - только куда писать по заказу.
+            // Без контактов заглушку «появятся здесь» не показываем - только куда писать по заказу.
             <p className="mt-2 max-w-sm text-[0.9375rem] text-ink-2">{t('footer.orderQuestions')}</p>
           )}
         </div>
@@ -76,8 +77,8 @@ export function Footer() {
       <div className="container-page">
         <p className="border-t border-ink/10 py-5 text-[0.8125rem] text-ink-3">
           {t('footer.copyright', { year: new Date().getFullYear() })}
-          {/* TODO(Эмма): юр. данные (ИП/ТОО, БИН) - content/ru/site.json, OPEN-QUESTIONS Э6. До этого строку не показываем. */}
           {legal.entity && ` · ${t('footer.legalLine', { entity: legal.entity, bin: legal.bin ?? '' })}`}
+          {legal.address && ` · ${t('footer.address', { address: legal.address })}`}
         </p>
       </div>
     </footer>

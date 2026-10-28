@@ -276,12 +276,12 @@
     "kaspiShop": "Магазин на Kaspi",
     "legal": "Юридические данные",
     "copyright": "© {year} SlingoEmma",
-    "legalPending": "Юридические данные продавца будут указаны здесь.",
-    "contactsPending": "Контакты для связи появятся здесь. Вопросы по заказу - в чате приложения Kaspi.",
     "orderQuestions": "Вопросы по заказу - в чате приложения Kaspi: там виден номер и статус заказа.",
     "legalLine": "{entity}, БИН {bin}",
     "whatsapp": "WhatsApp",
-    "instagram": "Instagram"
+    "instagram": "Instagram",
+    "hours": "Режим работы: {hours}",
+    "address": "Юридический адрес: {address}"
   },
   "pages": {
     "dostavka": "Доставка и оплата",
@@ -349,5 +349,16 @@
     "models": "Модели",
     "buyers": "Покупателям",
     "faq": "Вопросы и ответы"
+  },
+  "contacts": {
+    "whatsapp": "WhatsApp",
+    "instagram": "Instagram",
+    "phone": "Телефон",
+    "email": "Почта",
+    "hours": "Режим работы",
+    "city": "Город",
+    "legalEntity": "Продавец",
+    "bin": "БИН",
+    "address": "Юридический адрес"
   }
 }

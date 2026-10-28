@@ -1,23 +1,19 @@
 {
-  "_about": "Контакты и юридические данные. Всё с TODO - ждём от Эммы (OPEN-QUESTIONS Э6, Э12).",
+  "_about": "Контакты и юридические данные - от Эммы, 2026-10-28.",
   "brand": "SlingoEmma",
   "kaspiShopUrl": "https://kaspi.kz/shop/m/8851015/products",
   "contacts": {
-    "whatsapp": null,
-    "instagram": null,
-    "phone": null,
-    "email": null,
-    "hours": null,
+    "whatsapp": "+77080996171",
+    "instagram": "slingoemma",
+    "phone": "+7 708 099-61-71",
+    "email": "slingoemma@mail.ru",
+    "hours": "пн-сб 9:00-19:00, вс - выходной",
     "city": "Алматы"
   },
   "legal": {
-    "entity": null,
-    "bin": null,
-    "address": null
-  },
-  "todo": {
-    "contacts": "TODO(Эмма): WhatsApp, Instagram, режим работы",
-    "legal": "TODO(Эмма): ИП или ТОО, БИН, юридический адрес"
+    "entity": "ИП SlingoEmma",
+    "bin": "840901499018",
+    "address": "Астана, ул. Майлина, 19"
   },
   "alternateNames": [
     "Слинго Эмма",

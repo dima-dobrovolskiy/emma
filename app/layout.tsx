@@ -7,7 +7,7 @@ import { Analytics } from '@/components/analytics/Analytics';
 import { JsonLd } from '@/components/ui/JsonLd';
 import { Motion, PageTransition } from '@/components/ui/Motion';
 import { t } from '@/lib/i18n';
-import { KASPI_SHOP_URL, SITE_URL, absUrl, siteContent } from '@/lib/site';
+import { KASPI_SHOP_URL, SITE_URL, absUrl, contactLinks, siteContent } from '@/lib/site';
 import { KASPI_CDN } from '@/lib/images';
 
 // Оба шрифта проверены на казахские буквы ә ғ қ ң ө ұ ү һ і (docs/DECISIONS.md).
@@ -60,7 +60,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               name: t('meta.siteName'),
               alternateName: siteContent.alternateNames,
               url: SITE_URL,
-              sameAs: [KASPI_SHOP_URL],
+              ...(siteContent.legal.entity ? { legalName: siteContent.legal.entity } : {}),
+              ...(siteContent.legal.bin ? { taxID: siteContent.legal.bin } : {}),
+              ...(siteContent.contacts.email ? { email: siteContent.contacts.email } : {}),
+              ...(siteContent.contacts.phone
+                ? { contactPoint: [{ '@type': 'ContactPoint', telephone: siteContent.contacts.phone.replace(/[^\d+]/g, ''), contactType: 'customer service', availableLanguage: ['ru'] }] }
+                : {}),
+              ...(siteContent.legal.address ? { address: { '@type': 'PostalAddress', streetAddress: siteContent.legal.address, addressCountry: 'KZ' } } : {}),
+              sameAs: [KASPI_SHOP_URL, ...contactLinks().filter((c) => c.kind === 'instagram').map((c) => c.href)],
             },
             {
               '@context': 'https://schema.org',

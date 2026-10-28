@@ -12,6 +12,20 @@ type SiteContent = {
 // Пока Эмма не прислала контакты, в JSON стоят null - тип задаём явно, чтобы код был готов к строкам.
 export const siteContent: SiteContent = site;
 
+export type ContactLink = { kind: 'whatsapp' | 'instagram' | 'phone' | 'email'; href: string; label: string };
+
+/** Ссылки на контакты из content/ru/site.json; пустые поля пропускаются. */
+export function contactLinks(): ContactLink[] {
+  const c = siteContent.contacts;
+  const links: Array<ContactLink | null> = [
+    c.whatsapp ? { kind: 'whatsapp', href: `https://wa.me/${c.whatsapp.replace(/\D/g, '')}`, label: c.phone ?? c.whatsapp } : null,
+    c.instagram ? { kind: 'instagram', href: `https://instagram.com/${c.instagram.replace(/^@/, '')}`, label: `@${c.instagram.replace(/^@/, '')}` } : null,
+    c.phone ? { kind: 'phone', href: `tel:${c.phone.replace(/[^\d+]/g, '')}`, label: c.phone } : null,
+    c.email ? { kind: 'email', href: `mailto:${c.email}`, label: c.email } : null,
+  ];
+  return links.filter((x): x is ContactLink => x !== null);
+}
+
 export function absUrl(path: string): string {
   return `${SITE_URL}${path.startsWith('/') ? path : `/${path}`}`;
 }
