@@ -51,7 +51,7 @@ Cloudflare Pages (решено, Р1), аккаунт Cloudflare на Эмме (�
 - [ ] Яндекс Вебмастер: добавить сайт, подтвердить мета-тегом `NEXT_PUBLIC_YANDEX_VERIFICATION`.
 - [ ] Отправить `https://slingoemma.kz/sitemap.xml` в обе панели.
 - [ ] В Search Console: «Проверка URL» для главной, категории, карточки Classic и гайда → «Запросить индексирование».
-- [ ] Rich Results Test (search.google.com/test/rich-results) на карточке Classic: Product, отзывы, хлебные крошки, FAQ без ошибок.
+- [ ] Rich Results Test (search.google.com/test/rich-results) на карточке Classic: Product (цены и наличие), хлебные крошки, FAQ без ошибок. Звёзд отзывов в разметке нет - так решено (Р7), это не ошибка.
 - [ ] Яндекс Вебмастер → «Переезд сайта» не нужен (домен тот же), но проверить «Страницы в поиске» через неделю.
 
 ## 5. Пиксели и события

@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { getCatalog, getModel, getTrustNumbers, hasReviewBody, isQuotable, modelDistribution, type Model } from '@/lib/catalog';
+import { getCatalog, getModel, getTrustNumbers, hasReviewBody, modelDistribution, type Model } from '@/lib/catalog';
 import { getCheckoutProvider } from '@/lib/commerce';
 import { flags } from '@/lib/flags';
 import { formatDate, formatNumber, formatPrice, t } from '@/lib/i18n';
@@ -248,12 +248,16 @@ export default async function ModelPage({ params }: Params) {
           </section>
         )}
       </div>
-      <JsonLd data={productJsonLd(model, summary, reviews.filter(isQuotable).slice(0, 5))} />
+      <JsonLd data={productJsonLd(model, summary)} />
     </>
   );
 }
 
-function productJsonLd(model: Model, description: string, reviews: ReturnType<typeof modelReviewsDTO>) {
+/**
+ * Product с ценами и наличием. AggregateRating и Review сюда не входят (решение Р7): отзывы собраны на Kaspi,
+ * а правила Google запрещают размечать отзывы с других сайтов. Сами отзывы на странице остаются.
+ */
+function productJsonLd(model: Model, description: string) {
   const inStock = model.variants.filter((v) => v.inStock);
   const maxW = maxWeightKg(model);
   return {
@@ -278,26 +282,5 @@ function productJsonLd(model: Model, description: string, reviews: ReturnType<ty
       url: absUrl(`/p/${model.slug}`),
       seller: { '@type': 'Organization', name: t('jsonld.brand') },
     },
-    ...(model.ratingCount > 0 && model.ratingAvg !== null
-      ? {
-          aggregateRating: {
-            '@type': 'AggregateRating',
-            ratingValue: model.ratingAvg,
-            bestRating: 5,
-            worstRating: 1,
-            ratingCount: model.ratingCount,
-            reviewCount: model.reviewsCount,
-          },
-          review: reviews
-            .filter((r) => r.text)
-            .map((r) => ({
-              '@type': 'Review',
-              author: { '@type': 'Person', name: r.author || t('jsonld.anonymous') },
-              datePublished: r.date,
-              reviewBody: r.text,
-              reviewRating: { '@type': 'Rating', ratingValue: r.rating, bestRating: 5, worstRating: 1 },
-            })),
-        }
-      : {}),
   };
 }

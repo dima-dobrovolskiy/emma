@@ -342,7 +342,6 @@
   },
   "jsonld": {
     "maxWeight": "Максимальный вес ребёнка",
-    "anonymous": "Покупатель Kaspi",
     "brand": "SlingoEmma"
   },
   "llms": {

@@ -1,7 +1,7 @@
 /*
  * Проверка JSON-LD во всей статической сборке:
  * - каждый блок - валидный JSON с @context schema.org и @type;
- * - обязательные поля для расширенных результатов Google: Product, AggregateOffer, AggregateRating, Review,
+ * - обязательные поля для расширенных результатов Google: Product, AggregateOffer (AggregateRating и Review запрещены - Р7),
  *   BreadcrumbList, FAQPage, ItemList, Article, Organization, WebSite;
  * - на ключевых страницах есть нужные типы.
  */
@@ -34,20 +34,8 @@ function check(page: string, node: Node) {
       num(page, o.lowPrice, 'lowPrice', 1);
       num(page, o.highPrice, 'highPrice', 1);
       if ((o.lowPrice as number) > (o.highPrice as number)) errors.push(`${page}: lowPrice > highPrice`);
-      if (node.aggregateRating) {
-        const r = node.aggregateRating as Node;
-        num(page, r.ratingValue, 'ratingValue', 1, 5);
-        num(page, r.ratingCount, 'ratingCount', 1);
-        num(page, r.reviewCount, 'reviewCount', 0);
-        if ((r.reviewCount as number) > (r.ratingCount as number)) errors.push(`${page}: reviewCount > ratingCount`);
-        const reviews = (node.review as Node[]) ?? [];
-        if (reviews.length > 5) errors.push(`${page}: больше 5 Review в разметке`);
-        for (const rv of reviews) {
-          req(page, rv, 'Review', ['author', 'reviewRating', 'reviewBody', 'datePublished']);
-          num(page, (rv.reviewRating as Node).ratingValue, 'Review.ratingValue', 1, 5);
-          if (!/^\d{4}-\d{2}-\d{2}$/.test(String(rv.datePublished))) errors.push(`${page}: Review.datePublished не ISO`);
-        }
-      }
+      // Решение Р7: отзывы с Kaspi в разметку не выносим - правила Google запрещают размечать чужие отзывы.
+      if (node.aggregateRating || node.review) errors.push(`${page}: AggregateRating/Review в разметке Product (решение Р7 - не размечаем)`);
       break;
     }
     case 'BreadcrumbList': {
