@@ -1,18 +1,36 @@
 {
  "kaspiCode": "104765674",
  "kaspiModelName": "+Слинг Nesty 1+1 набор к лету",
- "ratingCount": 60,
- "commentCount": 55,
- "pictureCount": 49,
+ "ratingCount": 61,
+ "commentCount": 56,
+ "pictureCount": 50,
  "ratingAvg": 5,
  "distribution": {
   "1": 0,
   "2": 0,
   "3": 0,
   "4": 2,
-  "5": 58
+  "5": 59
  },
  "reviews": [
+  {
+   "id": "75396b99f2965173",
+   "kaspiCode": "104765674",
+   "author": "Гайни",
+   "date": "2026-10-29",
+   "rating": 5,
+   "text": "Малышка 5 мес хорошо села сразу, спокойно сидела, прямо и комфортно. Сшит качественно, легко надевается, материал приятный, ремни и замки хорошие. Переноску-карман не стала использовать, буду ждать, когда ребёнок сядет.",
+   "plus": "",
+   "minus": "",
+   "photos": [
+    {
+     "small": "https://resources.cdn-kaspi.kz/img/p/r/1117076478-104765674/623711ce-c667-4e33-9dc6-13996f0d926a.jpeg?format=review_small",
+     "medium": "https://resources.cdn-kaspi.kz/img/p/r/1117076478-104765674/623711ce-c667-4e33-9dc6-13996f0d926a.jpeg?format=review_medium",
+     "large": "https://resources.cdn-kaspi.kz/img/p/r/1117076478-104765674/623711ce-c667-4e33-9dc6-13996f0d926a.jpeg?format=review_large"
+    }
+   ],
+   "helpfulCount": 0
+  },
   {
    "id": "fdd519c14bc16024",
    "kaspiCode": "104765674",

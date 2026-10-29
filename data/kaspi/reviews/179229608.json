@@ -1,18 +1,41 @@
 {
  "kaspiCode": "179229608",
  "kaspiModelName": "хлопок:сатин",
- "ratingCount": 8,
- "commentCount": 8,
- "pictureCount": 7,
+ "ratingCount": 9,
+ "commentCount": 9,
+ "pictureCount": 8,
  "ratingAvg": 5,
  "distribution": {
   "1": 0,
   "2": 0,
   "3": 0,
   "4": 0,
-  "5": 8
+  "5": 9
  },
  "reviews": [
+  {
+   "id": "8868eebe8c070203",
+   "kaspiCode": "179229608",
+   "author": "Аружан",
+   "date": "2026-10-29",
+   "rating": 5,
+   "text": "Отличный бортик, качество супер, нам понравилось.",
+   "plus": "",
+   "minus": "",
+   "photos": [
+    {
+     "small": "https://resources.cdn-kaspi.kz/img/p/r/1119874042-179229608/4752a8ac-9e53-4327-9901-a3a4945d268e.jpeg?format=review_small",
+     "medium": "https://resources.cdn-kaspi.kz/img/p/r/1119874042-179229608/4752a8ac-9e53-4327-9901-a3a4945d268e.jpeg?format=review_medium",
+     "large": "https://resources.cdn-kaspi.kz/img/p/r/1119874042-179229608/4752a8ac-9e53-4327-9901-a3a4945d268e.jpeg?format=review_large"
+    },
+    {
+     "small": "https://resources.cdn-kaspi.kz/img/p/r/1119874042-179229608/d8b40191-c0b1-4903-bf5a-9e9cddbb35ef.jpeg?format=review_small",
+     "medium": "https://resources.cdn-kaspi.kz/img/p/r/1119874042-179229608/d8b40191-c0b1-4903-bf5a-9e9cddbb35ef.jpeg?format=review_medium",
+     "large": "https://resources.cdn-kaspi.kz/img/p/r/1119874042-179229608/d8b40191-c0b1-4903-bf5a-9e9cddbb35ef.jpeg?format=review_large"
+    }
+   ],
+   "helpfulCount": 0
+  },
   {
    "id": "d6c13a8861b3eab1",
    "kaspiCode": "179229608",
