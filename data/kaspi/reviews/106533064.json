@@ -1,16 +1,16 @@
 {
  "kaspiCode": "106533064",
  "kaspiModelName": "Слинг 2+ Tiddly Черный",
- "ratingCount": 183,
- "commentCount": 140,
- "pictureCount": 78,
+ "ratingCount": 184,
+ "commentCount": 141,
+ "pictureCount": 79,
  "ratingAvg": 4.9,
  "distribution": {
   "1": 3,
   "2": 0,
   "3": 1,
   "4": 6,
-  "5": 173
+  "5": 174
  },
  "reviews": [
   {
@@ -847,6 +847,34 @@
    "minus": "",
    "photos": [],
    "helpfulCount": 1
+  },
+  {
+   "id": "d051820c3fc24970",
+   "kaspiCode": "106533064",
+   "author": "Назерке",
+   "date": "2026-10-31",
+   "rating": 5,
+   "text": "Әдемі, ұнады, тез жеткізіп берді.",
+   "plus": "",
+   "minus": "",
+   "photos": [
+    {
+     "small": "https://resources.cdn-kaspi.kz/img/p/r/1128583692-106533064/b6c4c616-65a0-4624-af56-d81fcbb3aff4.jpeg?format=review_small",
+     "medium": "https://resources.cdn-kaspi.kz/img/p/r/1128583692-106533064/b6c4c616-65a0-4624-af56-d81fcbb3aff4.jpeg?format=review_medium",
+     "large": "https://resources.cdn-kaspi.kz/img/p/r/1128583692-106533064/b6c4c616-65a0-4624-af56-d81fcbb3aff4.jpeg?format=review_large"
+    },
+    {
+     "small": "https://resources.cdn-kaspi.kz/img/p/r/1128583692-106533064/1ecac358-6c31-4d94-bf3f-70cd7fdd5b82.jpeg?format=review_small",
+     "medium": "https://resources.cdn-kaspi.kz/img/p/r/1128583692-106533064/1ecac358-6c31-4d94-bf3f-70cd7fdd5b82.jpeg?format=review_medium",
+     "large": "https://resources.cdn-kaspi.kz/img/p/r/1128583692-106533064/1ecac358-6c31-4d94-bf3f-70cd7fdd5b82.jpeg?format=review_large"
+    },
+    {
+     "small": "https://resources.cdn-kaspi.kz/img/p/r/1128583692-106533064/9d365439-68b1-43f5-9490-4b754110f6e8.jpeg?format=review_small",
+     "medium": "https://resources.cdn-kaspi.kz/img/p/r/1128583692-106533064/9d365439-68b1-43f5-9490-4b754110f6e8.jpeg?format=review_medium",
+     "large": "https://resources.cdn-kaspi.kz/img/p/r/1128583692-106533064/9d365439-68b1-43f5-9490-4b754110f6e8.jpeg?format=review_large"
+    }
+   ],
+   "helpfulCount": 0
   },
   {
    "id": "c8a42f6d5570d9ca",
