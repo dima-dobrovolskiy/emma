@@ -1,18 +1,36 @@
 {
  "kaspiCode": "179229608",
  "kaspiModelName": "хлопок:сатин",
- "ratingCount": 9,
- "commentCount": 9,
- "pictureCount": 8,
+ "ratingCount": 10,
+ "commentCount": 10,
+ "pictureCount": 9,
  "ratingAvg": 5,
  "distribution": {
   "1": 0,
   "2": 0,
   "3": 0,
   "4": 0,
-  "5": 9
+  "5": 10
  },
  "reviews": [
+  {
+   "id": "096baabdfd7c72c2",
+   "kaspiCode": "179229608",
+   "author": "Гулнара",
+   "date": "2026-11-01",
+   "rating": 5,
+   "text": "Все отлично.",
+   "plus": "",
+   "minus": "",
+   "photos": [
+    {
+     "small": "https://resources.cdn-kaspi.kz/img/p/r/1123541367-179229608/c2b9771e-b6f8-44a1-9691-dfb9a0a543aa.jpeg?format=review_small",
+     "medium": "https://resources.cdn-kaspi.kz/img/p/r/1123541367-179229608/c2b9771e-b6f8-44a1-9691-dfb9a0a543aa.jpeg?format=review_medium",
+     "large": "https://resources.cdn-kaspi.kz/img/p/r/1123541367-179229608/c2b9771e-b6f8-44a1-9691-dfb9a0a543aa.jpeg?format=review_large"
+    }
+   ],
+   "helpfulCount": 0
+  },
   {
    "id": "8868eebe8c070203",
    "kaspiCode": "179229608",

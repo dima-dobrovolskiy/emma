@@ -1,16 +1,16 @@
 {
  "kaspiCode": "115956460",
  "kaspiModelName": "Слинг Nesty 3+ Тенгри",
- "ratingCount": 318,
- "commentCount": 297,
- "pictureCount": 261,
+ "ratingCount": 319,
+ "commentCount": 298,
+ "pictureCount": 262,
  "ratingAvg": 5,
  "distribution": {
   "1": 0,
   "2": 0,
   "3": 0,
   "4": 14,
-  "5": 304
+  "5": 305
  },
  "reviews": [
   {
@@ -258,6 +258,24 @@
    "minus": "",
    "photos": [],
    "helpfulCount": 1
+  },
+  {
+   "id": "7c69c7242d53a542",
+   "kaspiCode": "115956460",
+   "author": "Валерия",
+   "date": "2026-11-01",
+   "rating": 5,
+   "text": "Товар соответствует описанию, цвета не было как на картинке, продавец сразу вышел на связь и предложил другие цвета. Покупкой довольна, спасибо продавцу.",
+   "plus": "",
+   "minus": "",
+   "photos": [
+    {
+     "small": "https://resources.cdn-kaspi.kz/img/p/r/1127645524-115956460/6475f51a-0e9c-4abf-ac2c-d6e01762bcd5.jpeg?format=review_small",
+     "medium": "https://resources.cdn-kaspi.kz/img/p/r/1127645524-115956460/6475f51a-0e9c-4abf-ac2c-d6e01762bcd5.jpeg?format=review_medium",
+     "large": "https://resources.cdn-kaspi.kz/img/p/r/1127645524-115956460/6475f51a-0e9c-4abf-ac2c-d6e01762bcd5.jpeg?format=review_large"
+    }
+   ],
+   "helpfulCount": 0
   },
   {
    "id": "be55a2394db0f7f2",
