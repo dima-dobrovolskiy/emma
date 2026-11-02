@@ -1,18 +1,46 @@
 {
  "kaspiCode": "179229608",
  "kaspiModelName": "хлопок:сатин",
- "ratingCount": 10,
- "commentCount": 10,
- "pictureCount": 9,
+ "ratingCount": 11,
+ "commentCount": 11,
+ "pictureCount": 10,
  "ratingAvg": 5,
  "distribution": {
   "1": 0,
   "2": 0,
   "3": 0,
   "4": 0,
-  "5": 10
+  "5": 11
  },
  "reviews": [
+  {
+   "id": "bcb126b41252f091",
+   "kaspiCode": "179229608",
+   "author": "Нургуль",
+   "date": "2026-11-02",
+   "rating": 5,
+   "text": "Бортики супер! Качество отличное! Все как на фото. Рекомендую к приобретению.",
+   "plus": "",
+   "minus": "",
+   "photos": [
+    {
+     "small": "https://resources.cdn-kaspi.kz/img/p/r/1129563063-179229608/603b9071-5c1b-4daa-bc15-e90d05403972.jpeg?format=review_small",
+     "medium": "https://resources.cdn-kaspi.kz/img/p/r/1129563063-179229608/603b9071-5c1b-4daa-bc15-e90d05403972.jpeg?format=review_medium",
+     "large": "https://resources.cdn-kaspi.kz/img/p/r/1129563063-179229608/603b9071-5c1b-4daa-bc15-e90d05403972.jpeg?format=review_large"
+    },
+    {
+     "small": "https://resources.cdn-kaspi.kz/img/p/r/1129563063-179229608/d449f724-dea9-4356-bc2e-2da3126501d5.jpeg?format=review_small",
+     "medium": "https://resources.cdn-kaspi.kz/img/p/r/1129563063-179229608/d449f724-dea9-4356-bc2e-2da3126501d5.jpeg?format=review_medium",
+     "large": "https://resources.cdn-kaspi.kz/img/p/r/1129563063-179229608/d449f724-dea9-4356-bc2e-2da3126501d5.jpeg?format=review_large"
+    },
+    {
+     "small": "https://resources.cdn-kaspi.kz/img/p/r/1129563063-179229608/93d205d4-6438-4636-8a57-c14e8433429b.jpeg?format=review_small",
+     "medium": "https://resources.cdn-kaspi.kz/img/p/r/1129563063-179229608/93d205d4-6438-4636-8a57-c14e8433429b.jpeg?format=review_medium",
+     "large": "https://resources.cdn-kaspi.kz/img/p/r/1129563063-179229608/93d205d4-6438-4636-8a57-c14e8433429b.jpeg?format=review_large"
+    }
+   ],
+   "helpfulCount": 0
+  },
   {
    "id": "096baabdfd7c72c2",
    "kaspiCode": "179229608",

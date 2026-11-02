@@ -1,16 +1,16 @@
 {
  "kaspiCode": "104765677",
  "kaspiModelName": "Nesty 3+",
- "ratingCount": 44,
- "commentCount": 38,
- "pictureCount": 25,
+ "ratingCount": 45,
+ "commentCount": 39,
+ "pictureCount": 26,
  "ratingAvg": 4.9,
  "distribution": {
   "1": 0,
   "2": 0,
   "3": 0,
   "4": 3,
-  "5": 41
+  "5": 42
  },
  "reviews": [
   {
@@ -54,6 +54,24 @@
    "minus": "",
    "photos": [],
    "helpfulCount": 1
+  },
+  {
+   "id": "e71f5afc889d501a",
+   "kaspiCode": "104765677",
+   "author": "Гүлім",
+   "date": "2026-11-02",
+   "rating": 5,
+   "text": "Понравился материал изделия.",
+   "plus": "",
+   "minus": "",
+   "photos": [
+    {
+     "small": "https://resources.cdn-kaspi.kz/img/p/r/1124737516-104765677/d4c07b66-df26-4694-a99d-612ff0a6d311.jpeg?format=review_small",
+     "medium": "https://resources.cdn-kaspi.kz/img/p/r/1124737516-104765677/d4c07b66-df26-4694-a99d-612ff0a6d311.jpeg?format=review_medium",
+     "large": "https://resources.cdn-kaspi.kz/img/p/r/1124737516-104765677/d4c07b66-df26-4694-a99d-612ff0a6d311.jpeg?format=review_large"
+    }
+   ],
+   "helpfulCount": 0
   },
   {
    "id": "2ac4246c331f6abb",

@@ -1,8 +1,8 @@
 {
  "kaspiCode": "114174041",
  "kaspiModelName": "Слинг Nesty с 3 мес,",
- "ratingCount": 66,
- "commentCount": 54,
+ "ratingCount": 67,
+ "commentCount": 55,
  "pictureCount": 36,
  "ratingAvg": 4.9,
  "distribution": {
@@ -10,7 +10,7 @@
   "2": 0,
   "3": 0,
   "4": 4,
-  "5": 62
+  "5": 63
  },
  "reviews": [
   {
@@ -199,6 +199,18 @@
    "minus": "",
    "photos": [],
    "helpfulCount": 1
+  },
+  {
+   "id": "9d09b8148cee64be",
+   "kaspiCode": "114174041",
+   "author": "Лаура",
+   "date": "2026-11-02",
+   "rating": 5,
+   "text": "Удобная вещь, советую мамам.",
+   "plus": "",
+   "minus": "",
+   "photos": [],
+   "helpfulCount": 0
   },
   {
    "id": "0829cec36ee076c0",
