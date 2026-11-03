@@ -1,16 +1,16 @@
 {
  "kaspiCode": "113923758",
  "kaspiModelName": "Слинг 0+ BeBorn",
- "ratingCount": 235,
- "commentCount": 195,
- "pictureCount": 136,
+ "ratingCount": 236,
+ "commentCount": 196,
+ "pictureCount": 137,
  "ratingAvg": 5,
  "distribution": {
   "1": 0,
   "2": 0,
   "3": 1,
   "4": 6,
-  "5": 228
+  "5": 229
  },
  "reviews": [
   {
@@ -1314,6 +1314,24 @@
    "minus": "",
    "photos": [],
    "helpfulCount": 1
+  },
+  {
+   "id": "66a17b10d342f008",
+   "kaspiCode": "113923758",
+   "author": "Регина",
+   "date": "2026-11-03",
+   "rating": 5,
+   "text": "Покупала в подарок. Товар пришел в хорошем состоянии, покупкой довольна.",
+   "plus": "",
+   "minus": "",
+   "photos": [
+    {
+     "small": "https://resources.cdn-kaspi.kz/img/p/r/1127567277-113923758/0f0e2690-855c-4551-bd54-66c6291a6add.jpeg?format=review_small",
+     "medium": "https://resources.cdn-kaspi.kz/img/p/r/1127567277-113923758/0f0e2690-855c-4551-bd54-66c6291a6add.jpeg?format=review_medium",
+     "large": "https://resources.cdn-kaspi.kz/img/p/r/1127567277-113923758/0f0e2690-855c-4551-bd54-66c6291a6add.jpeg?format=review_large"
+    }
+   ],
+   "helpfulCount": 0
   },
   {
    "id": "07835a5a556defed",

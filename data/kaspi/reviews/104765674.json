@@ -1,18 +1,56 @@
 {
  "kaspiCode": "104765674",
  "kaspiModelName": "+Слинг Nesty 1+1 набор к лету",
- "ratingCount": 64,
- "commentCount": 59,
- "pictureCount": 51,
+ "ratingCount": 65,
+ "commentCount": 60,
+ "pictureCount": 52,
  "ratingAvg": 5,
  "distribution": {
   "1": 0,
   "2": 0,
   "3": 0,
   "4": 2,
-  "5": 62
+  "5": 63
  },
  "reviews": [
+  {
+   "id": "2fd2558a13c6acf4",
+   "kaspiCode": "104765674",
+   "author": "Назгүл",
+   "date": "2026-11-03",
+   "rating": 5,
+   "text": "Очень удобный, продавец барлыгын тусиндирип, цветин тандатып комектести, очень приятно, бизге унады.",
+   "plus": "",
+   "minus": "",
+   "photos": [
+    {
+     "small": "https://resources.cdn-kaspi.kz/img/p/r/1124458004-104765674/da0610fc-0f6a-45bb-aa64-48e36acc42e4.jpeg?format=review_small",
+     "medium": "https://resources.cdn-kaspi.kz/img/p/r/1124458004-104765674/da0610fc-0f6a-45bb-aa64-48e36acc42e4.jpeg?format=review_medium",
+     "large": "https://resources.cdn-kaspi.kz/img/p/r/1124458004-104765674/da0610fc-0f6a-45bb-aa64-48e36acc42e4.jpeg?format=review_large"
+    },
+    {
+     "small": "https://resources.cdn-kaspi.kz/img/p/r/1124458004-104765674/88cba14d-f37d-4905-8ff3-ec6aa132cf79.jpeg?format=review_small",
+     "medium": "https://resources.cdn-kaspi.kz/img/p/r/1124458004-104765674/88cba14d-f37d-4905-8ff3-ec6aa132cf79.jpeg?format=review_medium",
+     "large": "https://resources.cdn-kaspi.kz/img/p/r/1124458004-104765674/88cba14d-f37d-4905-8ff3-ec6aa132cf79.jpeg?format=review_large"
+    },
+    {
+     "small": "https://resources.cdn-kaspi.kz/img/p/r/1124458004-104765674/24227890-c5d9-48aa-b4cd-cad478bf9211.jpeg?format=review_small",
+     "medium": "https://resources.cdn-kaspi.kz/img/p/r/1124458004-104765674/24227890-c5d9-48aa-b4cd-cad478bf9211.jpeg?format=review_medium",
+     "large": "https://resources.cdn-kaspi.kz/img/p/r/1124458004-104765674/24227890-c5d9-48aa-b4cd-cad478bf9211.jpeg?format=review_large"
+    },
+    {
+     "small": "https://resources.cdn-kaspi.kz/img/p/r/1124458004-104765674/6d8a627c-8349-45bf-8b53-881f73a0b4cc.jpeg?format=review_small",
+     "medium": "https://resources.cdn-kaspi.kz/img/p/r/1124458004-104765674/6d8a627c-8349-45bf-8b53-881f73a0b4cc.jpeg?format=review_medium",
+     "large": "https://resources.cdn-kaspi.kz/img/p/r/1124458004-104765674/6d8a627c-8349-45bf-8b53-881f73a0b4cc.jpeg?format=review_large"
+    },
+    {
+     "small": "https://resources.cdn-kaspi.kz/img/p/r/1124458004-104765674/0e955475-4ee6-48a7-9252-fdd0a3219a84.jpeg?format=review_small",
+     "medium": "https://resources.cdn-kaspi.kz/img/p/r/1124458004-104765674/0e955475-4ee6-48a7-9252-fdd0a3219a84.jpeg?format=review_medium",
+     "large": "https://resources.cdn-kaspi.kz/img/p/r/1124458004-104765674/0e955475-4ee6-48a7-9252-fdd0a3219a84.jpeg?format=review_large"
+    }
+   ],
+   "helpfulCount": 0
+  },
   {
    "id": "1cd0df0ba3b9ed38",
    "kaspiCode": "104765674",

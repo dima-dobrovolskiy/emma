@@ -1,16 +1,16 @@
 {
  "kaspiCode": "135829077",
  "kaspiModelName": "Слинг 0+ с рождения Дарк",
- "ratingCount": 119,
- "commentCount": 101,
- "pictureCount": 79,
+ "ratingCount": 120,
+ "commentCount": 102,
+ "pictureCount": 80,
  "ratingAvg": 5,
  "distribution": {
   "1": 0,
   "2": 0,
   "3": 0,
   "4": 3,
-  "5": 116
+  "5": 117
  },
  "reviews": [
   {
@@ -156,6 +156,44 @@
    "minus": "",
    "photos": [],
    "helpfulCount": 1
+  },
+  {
+   "id": "107fd04fd50af373",
+   "kaspiCode": "135829077",
+   "author": "Салим",
+   "date": "2026-11-03",
+   "rating": 5,
+   "text": "Товар хорошего качества, довольны",
+   "plus": "",
+   "minus": "",
+   "photos": [
+    {
+     "small": "https://resources.cdn-kaspi.kz/img/p/r/1127235783-135829077/f8fa0eda-d3b5-49bf-914d-ab85ed1df389.jpeg?format=review_small",
+     "medium": "https://resources.cdn-kaspi.kz/img/p/r/1127235783-135829077/f8fa0eda-d3b5-49bf-914d-ab85ed1df389.jpeg?format=review_medium",
+     "large": "https://resources.cdn-kaspi.kz/img/p/r/1127235783-135829077/f8fa0eda-d3b5-49bf-914d-ab85ed1df389.jpeg?format=review_large"
+    },
+    {
+     "small": "https://resources.cdn-kaspi.kz/img/p/r/1127235783-135829077/69fbb832-4a9e-445f-8e33-fe4212b87fc8.jpeg?format=review_small",
+     "medium": "https://resources.cdn-kaspi.kz/img/p/r/1127235783-135829077/69fbb832-4a9e-445f-8e33-fe4212b87fc8.jpeg?format=review_medium",
+     "large": "https://resources.cdn-kaspi.kz/img/p/r/1127235783-135829077/69fbb832-4a9e-445f-8e33-fe4212b87fc8.jpeg?format=review_large"
+    },
+    {
+     "small": "https://resources.cdn-kaspi.kz/img/p/r/1127235783-135829077/a7cdba89-5ec6-491e-b719-f34662064223.jpeg?format=review_small",
+     "medium": "https://resources.cdn-kaspi.kz/img/p/r/1127235783-135829077/a7cdba89-5ec6-491e-b719-f34662064223.jpeg?format=review_medium",
+     "large": "https://resources.cdn-kaspi.kz/img/p/r/1127235783-135829077/a7cdba89-5ec6-491e-b719-f34662064223.jpeg?format=review_large"
+    },
+    {
+     "small": "https://resources.cdn-kaspi.kz/img/p/r/1127235783-135829077/900e065d-4ef6-447e-ad93-a5261479a0e9.jpeg?format=review_small",
+     "medium": "https://resources.cdn-kaspi.kz/img/p/r/1127235783-135829077/900e065d-4ef6-447e-ad93-a5261479a0e9.jpeg?format=review_medium",
+     "large": "https://resources.cdn-kaspi.kz/img/p/r/1127235783-135829077/900e065d-4ef6-447e-ad93-a5261479a0e9.jpeg?format=review_large"
+    },
+    {
+     "small": "https://resources.cdn-kaspi.kz/img/p/r/1127235783-135829077/e54041e7-b99c-4543-8a50-bec2441cc380.jpeg?format=review_small",
+     "medium": "https://resources.cdn-kaspi.kz/img/p/r/1127235783-135829077/e54041e7-b99c-4543-8a50-bec2441cc380.jpeg?format=review_medium",
+     "large": "https://resources.cdn-kaspi.kz/img/p/r/1127235783-135829077/e54041e7-b99c-4543-8a50-bec2441cc380.jpeg?format=review_large"
+    }
+   ],
+   "helpfulCount": 0
   },
   {
    "id": "55e4a1bd5438be01",

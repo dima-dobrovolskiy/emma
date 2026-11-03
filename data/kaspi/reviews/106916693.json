@@ -1,16 +1,16 @@
 {
  "kaspiCode": "106916693",
  "kaspiModelName": "Слинг 4+ Classic Черный",
- "ratingCount": 124,
- "commentCount": 95,
- "pictureCount": 39,
+ "ratingCount": 125,
+ "commentCount": 96,
+ "pictureCount": 40,
  "ratingAvg": 4.9,
  "distribution": {
   "1": 1,
   "2": 1,
   "3": 0,
   "4": 8,
-  "5": 114
+  "5": 115
  },
  "reviews": [
   {
@@ -556,6 +556,24 @@
    "minus": "",
    "photos": [],
    "helpfulCount": 1
+  },
+  {
+   "id": "9440fe4f34cd29e4",
+   "kaspiCode": "106916693",
+   "author": "Айман",
+   "date": "2026-11-03",
+   "rating": 5,
+   "text": "Доставили вовремя. Заранее созвонились и проконсультировали, спасибо. Товаром еще в полной мере не пользовались, поэтому пока рекомендовать не могу, но один раз примерили и убедились, что ребенок сидит в М позиции.",
+   "plus": "",
+   "minus": "",
+   "photos": [
+    {
+     "small": "https://resources.cdn-kaspi.kz/img/p/r/1131817598-106916693/2a99abd5-92a8-451e-a50a-952573c819e7.jpeg?format=review_small",
+     "medium": "https://resources.cdn-kaspi.kz/img/p/r/1131817598-106916693/2a99abd5-92a8-451e-a50a-952573c819e7.jpeg?format=review_medium",
+     "large": "https://resources.cdn-kaspi.kz/img/p/r/1131817598-106916693/2a99abd5-92a8-451e-a50a-952573c819e7.jpeg?format=review_large"
+    }
+   ],
+   "helpfulCount": 0
   },
   {
    "id": "3b7dbd65feacabb3",
