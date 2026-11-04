@@ -1,16 +1,16 @@
 {
  "kaspiCode": "106132340",
  "kaspiModelName": "Слинг 4+ Classic Серебро Звезды",
- "ratingCount": 120,
- "commentCount": 102,
- "pictureCount": 65,
+ "ratingCount": 121,
+ "commentCount": 103,
+ "pictureCount": 66,
  "ratingAvg": 4.9,
  "distribution": {
   "1": 1,
   "2": 0,
   "3": 2,
   "4": 4,
-  "5": 113
+  "5": 114
  },
  "reviews": [
   {
@@ -684,6 +684,24 @@
    "minus": "",
    "photos": [],
    "helpfulCount": 1
+  },
+  {
+   "id": "e402afc608af0c47",
+   "kaspiCode": "106132340",
+   "author": "Жансұлу",
+   "date": "2026-11-04",
+   "rating": 5,
+   "text": "У меня точно такая же, только в черном цвете. Очень классное.",
+   "plus": "",
+   "minus": "",
+   "photos": [
+    {
+     "small": "https://resources.cdn-kaspi.kz/img/p/r/1132256374-106132340/e99a168c-f623-458b-b9fd-f0bfad047020.jpeg?format=review_small",
+     "medium": "https://resources.cdn-kaspi.kz/img/p/r/1132256374-106132340/e99a168c-f623-458b-b9fd-f0bfad047020.jpeg?format=review_medium",
+     "large": "https://resources.cdn-kaspi.kz/img/p/r/1132256374-106132340/e99a168c-f623-458b-b9fd-f0bfad047020.jpeg?format=review_large"
+    }
+   ],
+   "helpfulCount": 0
   },
   {
    "id": "26072e0e0bd994b0",

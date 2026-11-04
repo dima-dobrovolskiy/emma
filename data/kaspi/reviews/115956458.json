@@ -1,8 +1,8 @@
 {
  "kaspiCode": "115956458",
  "kaspiModelName": "Слинг 4+ Classic Бежевый Мокко",
- "ratingCount": 269,
- "commentCount": 242,
+ "ratingCount": 270,
+ "commentCount": 243,
  "pictureCount": 177,
  "ratingAvg": 4.9,
  "distribution": {
@@ -10,7 +10,7 @@
   "2": 0,
   "3": 0,
   "4": 13,
-  "5": 255
+  "5": 256
  },
  "reviews": [
   {
@@ -1229,6 +1229,18 @@
    "minus": "",
    "photos": [],
    "helpfulCount": 1
+  },
+  {
+   "id": "f243c6b096a23895",
+   "kaspiCode": "115956458",
+   "author": "Мадина",
+   "date": "2026-11-04",
+   "rating": 5,
+   "text": "Классная находка! А главное, своя спина не болит, нет нагрузки, классно!!! Теперь смогу спокойно везде ездить и ходить, в автобусе сложно не будет.",
+   "plus": "",
+   "minus": "",
+   "photos": [],
+   "helpfulCount": 0
   },
   {
    "id": "81db946e11bbfa9b",
