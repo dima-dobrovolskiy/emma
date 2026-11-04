@@ -71,7 +71,7 @@ export default async function CategoryPage({ params }: Params) {
     <div className="container-page pt-4">
       <Breadcrumbs items={[{ name: c.nameShort, href: `/c/${c.slug}` }]} />
       <header className="mt-4 max-w-3xl">
-        <h1 className="text-[2rem] leading-tight md:text-[2.75rem]">{c.name}</h1>
+        <h1 className="h-page">{c.name}</h1>
         <p className="mt-2 text-ink-2">{c.intro}</p>
         <p className="mt-2 text-sm text-ink-3">{t('category.modelsInStock', { models: t('common.modelsCount', { count: inStock }) })}</p>
       </header>
@@ -107,7 +107,7 @@ export default async function CategoryPage({ params }: Params) {
             {guides.map((g) => (
               <li key={g.slug}>
                 <Link href={`/k/${g.slug}`} className="plate group">
-                  <span className="font-display text-xl leading-snug">{g.h1}</span>
+                  <span className="font-display text-[1.125rem] leading-snug">{g.h1}</span>
                   <span className="text-sm font-semibold text-accent">
                     {t('guides.read')} <span aria-hidden="true" className="inline-block transition-transform duration-200 group-hover:translate-x-1">→</span>
                   </span>

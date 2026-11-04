@@ -132,7 +132,7 @@ export function CategoryListing({ page, items, cards, ages, weights, ageLabels }
       </fieldset>
     </>
   );
-  const badge = activeCount > 0 && <span className="ml-2 rounded-full bg-accent px-2 py-0.5 text-[0.8125rem] text-accent-ink">{activeCount}</span>;
+  const badge = activeCount > 0 && <span className="ml-2 rounded-full bg-lilac px-2 py-0.5 text-[0.8125rem] text-lilac-ink">{activeCount}</span>;
   const hasFilters = items.length > 1 && (visibleGroups.length > 0 || items.length > 2);
 
   return (
@@ -261,7 +261,7 @@ function Sheet({ open, onClose, title, children, footer }: { open: boolean; onCl
       onClick={(e) => e.target === e.currentTarget && onClose()}
     >
       <div className="flex items-center justify-between gap-4 px-4 pb-2 pt-3">
-        <p className="font-display text-2xl">{title}</p>
+        <p className="font-display text-xl">{title}</p>
         <button type="button" onClick={onClose} aria-label={t('common.close')} className="press -mr-2 flex h-11 w-11 items-center justify-center rounded-full text-xl text-ink-2">
           ×
         </button>

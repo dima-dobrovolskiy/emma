@@ -8,7 +8,7 @@ export default function NotFound() {
   return (
     <div className="container-page max-w-2xl py-20 text-center">
       <p aria-hidden="true" className="font-display text-7xl font-semibold text-ink-3">404</p>
-      <h1 className="mt-4 text-3xl">{t('notFound.h1')}</h1>
+      <h1 className="h-page mt-4">{t('notFound.h1')}</h1>
       <p className="mt-3 text-ink-2">{t('notFound.text')}</p>
       <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
         <Link href="/" className="btn btn-secondary">

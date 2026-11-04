@@ -48,7 +48,7 @@ export default async function CityPage({ params }: Params) {
   return (
     <div className="container-page pt-4">
       <Breadcrumbs items={[{ name: c.nameShort, href: `/c/${c.slug}` }, { name: ct.name, href: `/c/${c.slug}/${ct.slug}` }]} />
-      <h1 className="mt-4 text-[2rem] md:text-[2.75rem]">{t('city.h1', { category: c.name, city: ct.in })}</h1>
+      <h1 className="mt-4 h-page">{t('city.h1', { category: c.name, city: ct.in })}</h1>
       <p className="mt-2 text-ink-2">{t('city.lead', { city: ct.in })}</p>
       <ul className="mt-8 grid grid-cols-2 gap-3 md:grid-cols-3 md:gap-5 lg:grid-cols-4">
         {c.models.map((m) => (

@@ -18,12 +18,12 @@ export default function GuidesIndex() {
     <div className="container-page pt-4">
       <Breadcrumbs items={[{ name: t('nav.guides'), href: '/k' }]} />
       <h1 className="h-page mt-4">{t('guides.h1')}</h1>
-      <p className="mt-2 max-w-2xl text-lg text-ink-2">{t('guides.lead')}</p>
+      <p className="mt-2 max-w-2xl text-ink-2">{t('guides.lead')}</p>
       <ul className="mt-10 grid gap-3 md:grid-cols-3 md:gap-5">
         {guides.map((g) => (
           <li key={g.slug}>
             <Link href={`/k/${g.slug}`} className="plate group">
-              <span className="font-display text-2xl leading-snug">{g.h1}</span>
+              <span className="font-display text-[1.125rem] leading-snug md:text-[1.25rem]">{g.h1}</span>
               <span className="text-ink-2">{g.description}</span>
               <span className="text-sm font-semibold text-accent">
                 {t('guides.read')} <span aria-hidden="true" className="inline-block transition-transform duration-200 group-hover:translate-x-1">→</span>

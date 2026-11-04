@@ -1,7 +1,8 @@
 /*
  * Проверка JSON-LD во всей статической сборке:
  * - каждый блок - валидный JSON с @context schema.org и @type;
- * - обязательные поля для расширенных результатов Google: Product, AggregateOffer (AggregateRating и Review запрещены - Р7),
+ * - обязательные поля для расширенных результатов Google: ProductGroup с вариантами или Product с Offer
+ *   (AggregateRating и Review запрещены - Р7),
  *   BreadcrumbList, FAQPage, ItemList, Article, Organization, WebSite;
  * - на ключевых страницах есть нужные типы.
  */
@@ -27,15 +28,24 @@ function check(page: string, node: Node) {
   const type = String(node['@type']);
   typesByPage.get(page)!.add(type);
   switch (type) {
-    case 'Product': {
-      req(page, node, type, ['name', 'image', 'description', 'offers', 'brand']);
-      const o = node.offers as Node;
-      req(page, o, 'AggregateOffer', ['lowPrice', 'highPrice', 'priceCurrency', 'offerCount', 'availability']);
-      num(page, o.lowPrice, 'lowPrice', 1);
-      num(page, o.highPrice, 'highPrice', 1);
-      if ((o.lowPrice as number) > (o.highPrice as number)) errors.push(`${page}: lowPrice > highPrice`);
+    case 'Product':
+    case 'ProductGroup': {
+      req(page, node, type, ['name', 'image', 'description', 'brand']);
       // Решение Р7: отзывы с Kaspi в разметку не выносим - правила Google запрещают размечать чужие отзывы.
-      if (node.aggregateRating || node.review) errors.push(`${page}: AggregateRating/Review в разметке Product (решение Р7 - не размечаем)`);
+      if (node.aggregateRating || node.review) errors.push(`${page}: AggregateRating/Review в разметке ${type} (решение Р7 - не размечаем)`);
+      const variants = type === 'ProductGroup' ? ((node.hasVariant as Node[]) ?? []) : [node];
+      if (type === 'ProductGroup') {
+        req(page, node, type, ['productGroupID', 'variesBy', 'hasVariant']);
+        // Варианты считаем как Product, а не отдельным типом на странице.
+        typesByPage.get(page)!.add('Product');
+      }
+      for (const v of variants) {
+        req(page, v, 'Product', ['name', 'image', 'offers', ...(type === 'ProductGroup' ? ['color', 'sku', 'url'] : [])]);
+        const o = (v.offers as Node) ?? {};
+        req(page, o, 'Offer', ['price', 'priceCurrency', 'availability', 'url']);
+        num(page, o.price, `price ${String(v.sku ?? v.name)}`, 1);
+        if (o.priceCurrency !== 'KZT') errors.push(`${page}: priceCurrency ${String(o.priceCurrency)} вместо KZT`);
+      }
       break;
     }
     case 'BreadcrumbList': {

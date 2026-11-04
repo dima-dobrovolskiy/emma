@@ -1,10 +1,11 @@
 import { expect, test } from '@playwright/test';
 
-test('главная: цифры доверия из Kaspi и вход в подбор', async ({ page }) => {
+test('главная: сноска с цифрами, 10 хитов и вход в подбор', async ({ page }) => {
   await page.goto('/');
   await expect(page.locator('h1')).toBeVisible();
-  await expect(page.getByText('средняя оценка').first()).toBeVisible();
-  await page.getByRole('link', { name: 'Подобрать переноску за минуту' }).first().click();
+  await expect(page.getByText('оценка магазина').first()).toBeVisible();
+  await expect(page.locator('section[aria-labelledby="hits"] li')).toHaveCount(10);
+  await page.getByRole('link', { name: 'Подобрать рюкзачок за минуту' }).first().click();
   await expect(page).toHaveURL(/\/podbor$/);
 });
 
@@ -40,7 +41,7 @@ test('подбор: 18-22 кг - только Classic; зимой добавля
   await page.getByRole('button', { name: '1-2 года' }).click();
   await page.getByRole('button', { name: '18-22 кг' }).click();
   await page.getByRole('button', { name: 'Зимой на улице' }).click();
-  const names = await page.locator('main li p.text-lg').allInnerTexts();
+  const names = await page.locator('main li [data-result-name]').allInnerTexts();
   expect(names[0]).toBe('Эргорюкзак Classic');
   expect(names.filter((n) => n.startsWith('Эргорюкзак'))).toHaveLength(1);
   expect(names.some((n) => /накидка/i.test(n))).toBe(true);

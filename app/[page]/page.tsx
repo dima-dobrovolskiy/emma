@@ -28,10 +28,12 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
   };
 }
 
-/** Цифры Kaspi для текстов страниц: {years} {orders} {reviews} {rating}. */
-function Trust({ k }: { k: 'years' | 'orders' | 'reviews' | 'rating' }) {
+/** Цифры для текстов страниц: лет на рынке (со слов Эммы) и цифры Kaspi. */
+function Trust({ k }: { k: 'marketYears' | 'years' | 'orders' | 'reviews' | 'rating' | 'shopRating' }) {
   const tr = getTrustNumbers();
   const v = {
+    marketYears: tr.marketYears !== null ? t('common.yearsCount', { count: tr.marketYears }) : '-',
+    shopRating: tr.merchantRating !== null ? fmtRating(tr.merchantRating) : '-',
     years: tr.years !== null ? t('common.yearsCount', { count: tr.years }) : '-',
     orders: tr.ordersSegment !== null ? t('trust.orders', { value: formatNumber(tr.ordersSegment) }) : '-',
     reviews: formatNumber(tr.reviews),
@@ -55,12 +57,6 @@ export default async function StaticPage({ params }: Params) {
       ),
       Contacts: () => <ContactsList />,
       Legal: () => <LegalData />,
-      Fraud: () => (
-        <div className="not-prose my-6 max-w-[44rem] rounded-[var(--radius-card)] bg-sand p-5">
-          <p className="font-semibold">{t('footer.fraudTitle')}</p>
-          <p className="mt-1 text-ink-2">{t('footer.fraudText')}</p>
-        </div>
-      ),
     },
   });
   return (

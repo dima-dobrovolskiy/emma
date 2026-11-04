@@ -13,7 +13,7 @@ export function Header() {
         {t('nav.skip')}
       </a>
       <div className="container-page flex h-14 items-center justify-between gap-4 md:h-16">
-        <Link href="/" className="inline-flex min-h-11 items-center font-display text-[1.5rem] tracking-tight text-ink">
+        <Link href="/" className="inline-flex min-h-11 items-center font-display text-[1.375rem] tracking-tight text-ink">
           {t('meta.siteName')}
         </Link>
         <DesktopNav links={[...nav.categories, ...nav.extra.filter((l) => l.href !== '/podbor')]} />

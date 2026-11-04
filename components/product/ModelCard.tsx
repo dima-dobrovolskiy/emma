@@ -33,12 +33,12 @@ export function ModelCard({ model, priority = false, headingLevel = 3 }: { model
         )}
         <div className="absolute left-2 top-2 flex flex-wrap gap-1.5 text-[0.8125rem] font-semibold">
           {model.isHit && <span className="rounded-full bg-surface px-2.5 py-1 text-ink">{t('common.hit')}</span>}
-          {model.hasDiscount && <span className="rounded-full bg-accent px-2.5 py-1 text-accent-ink">{t('common.sale')}</span>}
+          {model.hasDiscount && <span className="rounded-full bg-lilac px-2.5 py-1 text-lilac-ink">{t('common.sale')}</span>}
           {model.inStockCount === 0 && <span className="rounded-full bg-surface px-2.5 py-1 text-ink-2">{t('common.outOfStock')}</span>}
         </div>
       </div>
       <div className="flex flex-1 flex-col pt-3">
-        <H className="font-sans text-[0.98rem] font-semibold leading-snug tracking-normal md:text-[1.05rem]">
+        <H className="font-sans text-[0.9375rem] font-semibold leading-snug tracking-normal">
           {/* Без префетча по появлению: иначе React заранее тянет главное фото каждой карточки. Префетч - по наведению (components/ui/Motion.tsx). */}
           <Link href={`/p/${model.slug}`} prefetch={false} className="after:absolute after:inset-0 group-hover:underline group-hover:underline-offset-4">
             {model.name}
@@ -49,11 +49,11 @@ export function ModelCard({ model, priority = false, headingLevel = 3 }: { model
           <Stars rating={model.ratingAvg} count={model.ratingCount ? model.reviewsCount : undefined} compact />
         </div>
         <div className="mt-auto pt-2">
-          <p className="text-[1.15rem] font-semibold leading-tight tabular-nums md:text-[1.25rem]">
+          <p className="text-[1.0625rem] font-semibold leading-tight tabular-nums md:text-[1.125rem]">
             {model.minPrice === model.maxPrice ? formatPrice(model.minPrice) : `${t('common.from')} ${formatPrice(model.minPrice)}`}
           </p>
           {cheap.creditMonthlyPrice && (
-            <p className="mt-0.5 text-sm font-semibold text-accent">
+            <p className="mt-0.5 text-sm font-semibold text-kaspi-text">
               {cheap.creditMonths ? t('buy.creditShort', { amount: cheap.creditMonthlyPrice, months: cheap.creditMonths }) : cheap.creditMonthlyPrice}
             </p>
           )}

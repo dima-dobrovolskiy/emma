@@ -7,7 +7,8 @@ import { flags } from '@/lib/flags';
 import { formatDate, formatNumber, formatPrice, t } from '@/lib/i18n';
 import { alternatesFor, socialMeta } from '@/lib/seo';
 import { absUrl } from '@/lib/site';
-import { cheapestVariant, maxWeightKg, modelSummary, renderTemplate, fmtRating } from '@/lib/summary';
+import { cheapestVariant, maxWeightKg, modelFaq, modelSummary, renderTemplate, fmtRating } from '@/lib/summary';
+import { specSections } from '@/lib/specs';
 import { modelReviewsDTO } from '@/lib/reviews-data';
 import { getGuideMeta } from '@/lib/guides';
 import { galleryImage } from '@/lib/images';
@@ -98,15 +99,17 @@ export default async function ModelPage({ params }: Params) {
   const whoFor = model.whoFor.map((x) => renderTemplate(x, model));
   const howToWear = model.howToWear.map((x) => renderTemplate(x, model));
   const care = model.care.map((x) => renderTemplate(x, model));
-  const faq = model.faq.map((f) => ({ q: renderTemplate(f.q, model), a: renderTemplate(f.a, model) }));
+  const faq = modelFaq(model);
 
   const trust = getTrustNumbers();
+  // Рейтинг продавца с Kaspi - тот же, что в сноске на главной; средняя по товарам - запасной вариант.
+  const shopRating = trust.merchantRating ?? trust.rating;
   const trustLine =
-    trust.years !== null && trust.ordersSegment !== null && trust.rating !== null
+    trust.years !== null && trust.ordersSegment !== null && shopRating !== null
       ? t('buy.shopTrust', {
           years: t('common.yearsCount', { count: trust.years }),
           orders: t('trust.orders', { value: formatNumber(trust.ordersSegment) }),
-          rating: fmtRating(trust.rating),
+          rating: fmtRating(shopRating),
         })
       : undefined;
 
@@ -204,7 +207,7 @@ export default async function ModelPage({ params }: Params) {
             {guide && (
               <Link href={`/k/${guide.slug}`} className="group block rounded-[var(--radius-card)] bg-sand p-5">
                 <p className="eyebrow">{t('model.compare')}</p>
-                <p className="mt-1 font-display text-xl leading-snug group-hover:underline group-hover:underline-offset-4">{guide.title}</p>
+                <p className="mt-1 font-display text-[1.125rem] leading-snug group-hover:underline group-hover:underline-offset-4">{guide.title}</p>
                 <p className="mt-3 text-sm font-semibold text-accent">
                   {t('guides.read')} <span aria-hidden="true">→</span>
                 </p>
@@ -254,33 +257,61 @@ export default async function ModelPage({ params }: Params) {
 }
 
 /**
- * Product с ценами и наличием. AggregateRating и Review сюда не входят (решение Р7): отзывы собраны на Kaspi,
+ * Разметка товара. Модель с несколькими расцветками - ProductGroup: у каждой расцветки свой Product с ценой,
+ * наличием и адресом ?color=. Одна расцветка - обычный Product. Характеристики Kaspi - в additionalProperty,
+ * чтобы поиск и AI-ассистенты получали их без выполнения JavaScript.
+ * AggregateRating и Review сюда не входят (решение Р7): отзывы собраны на Kaspi,
  * а правила Google запрещают размечать отзывы с других сайтов. Сами отзывы на странице остаются.
  */
 function productJsonLd(model: Model, description: string) {
-  const inStock = model.variants.filter((v) => v.inStock);
+  const url = absUrl(`/p/${model.slug}`);
   const maxW = maxWeightKg(model);
-  return {
+  const org = { '@id': absUrl('/#org') };
+  const properties = [
+    ...(maxW !== null ? [{ '@type': 'PropertyValue', name: t('jsonld.maxWeight'), value: maxW, unitCode: 'KGM' }] : []),
+    ...specSections(model).flatMap((g) => g.rows.map((r) => ({ '@type': 'PropertyValue', name: r.name, value: r.value }))),
+  ];
+  const offer = (v: Model['variants'][number], href: string) => ({
+    '@type': 'Offer',
+    price: v.price,
+    priceCurrency: 'KZT',
+    availability: v.inStock ? 'https://schema.org/InStock' : 'https://schema.org/OutOfStock',
+    itemCondition: 'https://schema.org/NewCondition',
+    url: href,
+    seller: org,
+  });
+  const common = {
     '@context': 'https://schema.org',
-    '@type': 'Product',
-    '@id': absUrl(`/p/${model.slug}#product`),
+    '@id': `${url}#product`,
     name: model.name,
     description,
-    url: absUrl(`/p/${model.slug}`),
-    image: model.defaultVariant.images.slice(0, 5).map((i) => i.large),
+    url,
     brand: { '@type': 'Brand', name: t('jsonld.brand') },
-    sku: model.defaultVariant.kaspiCode,
+    manufacturer: org,
     ...(model.materials.length ? { material: model.materials.join(', ') } : {}),
-    ...(maxW !== null ? { additionalProperty: [{ '@type': 'PropertyValue', name: t('jsonld.maxWeight'), value: maxW, unitCode: 'KGM' }] } : {}),
-    offers: {
-      '@type': 'AggregateOffer',
-      priceCurrency: 'KZT',
-      lowPrice: model.minPrice,
-      highPrice: model.maxPrice,
-      offerCount: inStock.length || model.variants.length,
-      availability: inStock.length ? 'https://schema.org/InStock' : 'https://schema.org/OutOfStock',
-      url: absUrl(`/p/${model.slug}`),
-      seller: { '@type': 'Organization', name: t('jsonld.brand') },
-    },
+    ...(properties.length ? { additionalProperty: properties } : {}),
+  };
+  const v0 = model.defaultVariant;
+  if (model.variants.length === 1) {
+    return { ...common, '@type': 'Product', image: v0.images.slice(0, 5).map((i) => i.large), sku: v0.kaspiCode, offers: offer(v0, url) };
+  }
+  return {
+    ...common,
+    '@type': 'ProductGroup',
+    productGroupID: model.slug,
+    variesBy: ['https://schema.org/color'],
+    image: v0.images.slice(0, 5).map((i) => i.large),
+    hasVariant: model.variants.map((v) => {
+      const href = `${url}?color=${v.designSlug}`;
+      return {
+        '@type': 'Product',
+        name: t('model.variantName', { line: model.lineLabel, design: v.designName }),
+        color: v.designName,
+        sku: v.kaspiCode,
+        url: href,
+        image: v.images.slice(0, 3).map((i) => i.large),
+        offers: offer(v, href),
+      };
+    }),
   };
 }

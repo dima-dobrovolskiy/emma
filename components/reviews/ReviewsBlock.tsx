@@ -110,7 +110,7 @@ export function ReviewsBlock({
         <div>
           {ratingAvg !== null && (
             <p className="flex items-baseline gap-2">
-              <span className="font-display text-[3.5rem] leading-none tabular-nums">{fmtRatingClient(ratingAvg)}</span>
+              <span className="font-display text-[2.75rem] leading-none tabular-nums">{fmtRatingClient(ratingAvg)}</span>
               <span className="text-ink-3">/ 5</span>
             </p>
           )}

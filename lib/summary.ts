@@ -1,4 +1,4 @@
-import type { Category, Model, Variant } from './catalog';
+import type { Category, Faq, Model, Variant } from './catalog';
 import { specValues } from './catalog';
 import { formatNumber, formatPrice, t } from './i18n';
 import { parseWeightKg, prettyAge, uniq } from './text';
@@ -207,4 +207,24 @@ export function checkConsistency(text: string, models: Model[]): void {
     const n = Number(match[1]!.replace(/\D/g, ''));
     if (!allowedPrices.has(n)) throw new ConsistencyError(`В тексте цена ${n} ₸, которой нет в данных: «${text}»`);
   }
+}
+
+/**
+ * FAQ модели: вопросы из content/ плюс два вопроса из данных - расцветки и уход.
+ * Их чаще всего задают покупатели и AI-поиск; ответы берутся из тех же данных, что и страница.
+ */
+export function modelFaq(model: Model): Faq[] {
+  const own = model.faq.map((f) => ({ q: renderTemplate(f.q, model), a: renderTemplate(f.a, model) }));
+  const asked = (re: RegExp) => own.some((f) => re.test(f.q));
+  const extra: Faq[] = [];
+  if (model.variants.length > 1 && !asked(/какие расцветки/i)) {
+    extra.push({
+      q: t('faqAuto.colorsQ', { name: model.name }),
+      a: t('faqAuto.colorsA', { colors: t('common.colorsCount', { count: model.variants.length }), names: model.variants.map((v) => v.designName).join(', ') }),
+    });
+  }
+  if (model.care.length && !asked(/стира|уход/i)) {
+    extra.push({ q: t('faqAuto.careQ', { name: model.name }), a: model.care.map((x) => renderTemplate(x, model)).join(' ') });
+  }
+  return [...own, ...extra];
 }

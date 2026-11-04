@@ -86,7 +86,7 @@ export function CompareTable({ models, guide, date }: { models: Model[]; guide: 
                   </GuideModelLink>
                 </th>
                 <td className="px-4 py-3 whitespace-nowrap">{r.m.minPrice === r.m.maxPrice ? formatPrice(r.m.minPrice) : `${t('common.from')} ${formatPrice(r.m.minPrice)}`}</td>
-                <td className="px-4 py-3 whitespace-nowrap">{r.credit ?? t('guides.dash')}</td>
+                <td className="px-4 py-3 whitespace-nowrap font-semibold text-kaspi-text">{r.credit ?? t('guides.dash')}</td>
                 <td className="px-4 py-3 whitespace-nowrap">
                   {r.m.ratingAvg !== null ? `${fmtRatingClient(r.m.ratingAvg)} · ${t('common.reviewsCount', { count: r.m.reviewsCount })}` : t('guides.dash')}
                 </td>

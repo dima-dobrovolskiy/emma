@@ -27,7 +27,7 @@ export default function ReviewsPage() {
   return (
     <div className="container-page pt-4">
       <Breadcrumbs items={[{ name: t('pages.otzyvy'), href: '/otzyvy' }]} />
-      <h1 className="mb-8 mt-4 text-[2rem] md:text-[2.75rem]">{t('reviews.title')}</h1>
+      <h1 className="mb-6 mt-4 h-page">{t('reviews.title')}</h1>
       <ReviewsBlock
         initial={all.slice(0, 12)}
         totalWithText={tr.reviews}

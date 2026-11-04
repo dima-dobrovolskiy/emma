@@ -6,7 +6,8 @@
  */
 @theme {
   /* Белая страница, фото главные. Один «каменный» тон под студийный фон фото Kaspi - поля и подложки.
-     Один глубокий хвойный акцент - главная кнопка, «Купить на Kaspi», платёж в месяц. */
+     Фирменный сиреневый Эммы (2026-11-04) - кнопки сайта, плашки, полоски. Для текста и ссылок - тот же тон темнее (контраст AA).
+     Красный Kaspi - только «Купить на Kaspi» и рассрочка: зрительно совпадаем с Kaspi. */
   --color-bg: #ffffff;
   --color-surface: #ffffff;
   --color-sand: #f4f3f0;
@@ -16,12 +17,15 @@
   --color-ink: #1c1b19;
   --color-ink-2: #45433f;
   --color-ink-3: #64615c;
-  --color-accent: #1e5a55;
-  --color-accent-hover: #174843;
-  --color-accent-ink: #ffffff;
-  --color-accent-soft: #e8f0ee;
-  --color-sage: #1e5a55;
-  --color-sage-soft: #e8f0ee;
+  --color-lilac: #b298d9;
+  --color-lilac-hover: #a487cf;
+  --color-lilac-ink: #1c1b19;
+  --color-accent: #6d4d9e;
+  --color-accent-soft: #f3eefa;
+  --color-kaspi: #e52310;
+  --color-kaspi-hover: #c81f0e;
+  --color-kaspi-ink: #ffffff;
+  --color-kaspi-text: #d2200f;
   --color-star: #9a5f0a;
   --color-danger: #a52a2a;
   --color-muted-swatch: #d6d3ce;
@@ -92,8 +96,9 @@
     background: var(--color-bg);
     color: var(--color-ink);
     font-family: var(--font-sans);
-    font-size: 1rem;
-    line-height: 1.6;
+    /* Эмма (2026-11-04): шрифт тот же, но всё мельче и компактнее. */
+    font-size: 0.9375rem;
+    line-height: 1.55;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
   }
@@ -112,7 +117,7 @@
   }
   @media (min-width: 768px) {
     body {
-      font-size: 1.0625rem;
+      font-size: 1rem;
     }
   }
   p {
@@ -154,8 +159,8 @@
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
-    min-height: 48px;
-    padding: 0.75rem 1.4rem;
+    min-height: 46px;
+    padding: 0.7rem 1.3rem;
     border-radius: var(--radius-pill);
     font-weight: 600;
     line-height: 1.2;
@@ -184,9 +189,9 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    gap: 1.25rem;
+    gap: 1rem;
     height: 100%;
-    padding: 1.25rem;
+    padding: 1rem 1.125rem;
     border-radius: var(--radius-card);
     background: var(--color-sand);
     transition:
@@ -195,7 +200,7 @@
   }
   @media (min-width: 768px) {
     .plate {
-      padding: 1.5rem;
+      padding: 1.25rem;
     }
   }
   @media (hover: hover) {
@@ -211,12 +216,22 @@
     opacity: 0.7;
   }
   .btn-primary {
-    background: var(--color-accent);
-    color: var(--color-accent-ink);
+    background: var(--color-lilac);
+    color: var(--color-lilac-ink);
   }
   @media (hover: hover) {
     .btn-primary:hover {
-      background: var(--color-accent-hover);
+      background: var(--color-lilac-hover);
+    }
+  }
+  /* «Купить на Kaspi» - красная, как у самого Kaspi. */
+  .btn-kaspi {
+    background: var(--color-kaspi);
+    color: var(--color-kaspi-ink);
+  }
+  @media (hover: hover) {
+    .btn-kaspi:hover {
+      background: var(--color-kaspi-hover);
     }
   }
   .btn-secondary {
@@ -241,7 +256,7 @@
     border-radius: var(--radius-pill);
     border: 1px solid transparent;
     background: var(--color-sand);
-    font-size: 0.9375rem;
+    font-size: 0.875rem;
     font-weight: 500;
     line-height: 1.2;
     transition:
@@ -273,19 +288,19 @@
     color: var(--color-ink-3);
   }
   .h-page {
-    font-size: clamp(1.875rem, 1.45rem + 1.6vw, 2.75rem);
-    line-height: 1.08;
-  }
-  .h-section {
-    font-size: clamp(1.625rem, 1.35rem + 1.1vw, 2.25rem);
+    font-size: clamp(1.5rem, 1.3rem + 0.85vw, 2.125rem);
     line-height: 1.12;
   }
+  .h-section {
+    font-size: clamp(1.25rem, 1.12rem + 0.5vw, 1.625rem);
+    line-height: 1.18;
+  }
   .section {
-    padding-block: 3.5rem;
+    padding-block: 2.5rem;
   }
   @media (min-width: 768px) {
     .section {
-      padding-block: 5.5rem;
+      padding-block: 3.75rem;
     }
   }
   /* Текст ограничен по ширине для чтения, блоки внутри (таблицы, карточки) - на всю ширину контейнера. */
@@ -293,12 +308,12 @@
     max-width: 44rem;
   }
   .prose-se > h2 {
-    font-size: clamp(1.5rem, 1.3rem + 0.8vw, 2rem);
-    margin: 2.5rem 0 0.75rem;
+    font-size: clamp(1.25rem, 1.12rem + 0.5vw, 1.625rem);
+    margin: 2rem 0 0.625rem;
   }
   .prose-se > h3 {
-    font-size: 1.2rem;
-    margin: 1.5rem 0 0.5rem;
+    font-size: 1.0625rem;
+    margin: 1.25rem 0 0.5rem;
   }
   .prose-se > p,
   .prose-se > ul,
@@ -512,7 +527,7 @@
     inset: 0 0 auto;
     z-index: 60;
     height: 2px;
-    background: var(--color-accent);
+    background: var(--color-lilac);
     transform-origin: 0 50%;
     transform: scaleX(0);
     opacity: 0;

@@ -21,6 +21,7 @@ import {
 import { DEFAULT_LOCALE, type Locale } from './i18n';
 import { htmlToText } from './kaspi/parse';
 import { capitalize, parseAgeRange, parseWeightKg, uniq } from './text';
+import { siteContent } from './site';
 
 /*
  * Сборка каталога: наш слой (content/) поверх слоя Kaspi (data/kaspi/).
@@ -562,9 +563,14 @@ export function getTrustNumbers() {
     const [ty, tm, td] = pricesDate.split('-').map(Number);
     if (y && mo && d && ty && tm && td) years = ty - y - (tm < mo || (tm === mo && td < d) ? 1 : 0);
   }
+  const since = siteContent.brandSince;
   return {
     years,
+    /** Лет на рынке - со слов Эммы (content/ru/site.json, brandSince), не из Kaspi */
+    marketYears: since ? Number(pricesDate.slice(0, 4)) - since : null,
     ordersSegment: merchant?.ordersSegment ?? null,
+    /** Рейтинг продавца на Kaspi; средняя по товарам - rating */
+    merchantRating: merchant?.rating ?? null,
     reviews,
     ratingCount,
     rating: ratingCount ? Math.round((weighted / ratingCount) * 10) / 10 : null,

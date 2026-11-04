@@ -6,6 +6,7 @@ export const BRAND = site.brand;
 type Maybe = string | null;
 type SiteContent = {
   alternateNames: string[];
+  brandSince: number | null;
   contacts: { whatsapp: Maybe; instagram: Maybe; phone: Maybe; email: Maybe; hours: Maybe; city: Maybe };
   legal: { entity: Maybe; bin: Maybe; address: Maybe };
 };

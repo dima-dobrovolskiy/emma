@@ -65,7 +65,7 @@ export default async function GuidePage({ params }: Params) {
     <article className="container-page pt-4">
       <Breadcrumbs items={[{ name: t('nav.guides'), href: '/k' }, { name: meta.h1, href: `/k/${guide}` }]} />
       <header className="mt-4 max-w-3xl">
-        <h1 className="text-[2rem] leading-tight md:text-[2.75rem]">{meta.h1}</h1>
+        <h1 className="h-page">{meta.h1}</h1>
         <p className="mt-3 text-ink-2">
           {t('guides.summaryLine', {
             models: t('common.modelsCount', { count: models.length }),

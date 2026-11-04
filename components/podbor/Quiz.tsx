@@ -94,7 +94,7 @@ export function Quiz({ ages, weights, where, models, addons, maxResults, ageLabe
     };
     return (
       <div className="enter">
-        <h2 ref={focusTarget as React.RefObject<HTMLHeadingElement>} tabIndex={-1} className="text-2xl outline-none md:text-3xl">
+        <h2 ref={focusTarget as React.RefObject<HTMLHeadingElement>} tabIndex={-1} className="text-xl outline-none md:text-2xl">
           {t('podbor.resultTitle')}
         </h2>
         <p className="mt-2 text-sm text-ink-3">{t('podbor.resultLead')}</p>
@@ -122,14 +122,14 @@ export function Quiz({ ages, weights, where, models, addons, maxResults, ageLabe
                   <div className="min-w-0">
                     {isAddon && <p className="eyebrow">{t('podbor.winterAddon')}</p>}
                     {!isAddon && markText(m) && <p className="text-sm font-semibold text-accent">{markText(m)}</p>}
-                    <p className="text-lg font-semibold">
+                    <p data-result-name className="text-base font-semibold">
                       <Link href={`/p/${m.slug}`} prefetch={false} className="after:absolute after:inset-0 group-hover:underline group-hover:underline-offset-4">
                         {m.name}
                       </Link>
                     </p>
                     <p className="font-semibold tabular-nums">
                       {t('common.from')} {formatPrice(m.minPrice)}
-                      {m.credit && <span className="ml-2 text-sm text-accent">{m.credit}</span>}
+                      {m.credit && <span className="ml-2 text-sm font-semibold text-kaspi-text">{m.credit}</span>}
                     </p>
                     {!isAddon && (
                       <>
@@ -178,10 +178,10 @@ export function Quiz({ ages, weights, where, models, addons, maxResults, ageLabe
     <div>
       <p className="eyebrow">{t('podbor.step', { current: step + 1, total: steps.length })}</p>
       <div className="mt-2 h-1.5 overflow-hidden rounded-full bg-sand-2">
-        <div className="h-full rounded-full bg-accent transition-[width] duration-500 ease-out" style={{ width: `${((step + 1) / steps.length) * 100}%` }} />
+        <div className="h-full rounded-full bg-lilac transition-[width] duration-500 ease-out" style={{ width: `${((step + 1) / steps.length) * 100}%` }} />
       </div>
       <fieldset key={step} className={`mt-6 ${started || step > 0 ? 'step-in' : ''}`}>
-        <legend className="text-2xl font-semibold md:text-3xl">
+        <legend className="text-xl font-semibold md:text-2xl">
           <span ref={focusTarget as React.RefObject<HTMLSpanElement>} tabIndex={-1} className="outline-none">
             {s.q}
           </span>

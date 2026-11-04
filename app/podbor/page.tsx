@@ -56,7 +56,7 @@ export default function PodborPage() {
     <div className="container-page max-w-3xl pt-4">
       <Breadcrumbs items={[{ name: t('nav.podbor'), href: '/podbor' }]} />
       <h1 className="h-page mt-4">{t('podbor.h1')}</h1>
-      <p className="mt-2 text-lg text-ink-2">{t('podbor.lead')}</p>
+      <p className="mt-2 text-ink-2">{t('podbor.lead')}</p>
       <div className="mt-8 rounded-[var(--radius-card)] bg-sand p-5 md:p-8">
         <Quiz
           ages={lines.podbor.ages}

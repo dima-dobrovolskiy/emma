@@ -74,7 +74,7 @@
     "stickyLabel": "Цена выбранной расцветки",
     "newTab": "откроется в новой вкладке",
     "priceWasLabel": "Цена до скидки:",
-    "shopTrust": "Магазин SlingoEmma на Kaspi: {years}, {orders} заказов, оценка {rating}"
+    "shopTrust": "Магазин SlingoEmma на Kaspi: {years}, {orders} заказов, оценка магазина {rating}"
   },
   "trust": {
     "years": "{value} на Kaspi",
@@ -86,17 +86,16 @@
     "rating": "{value}",
     "ratingLabel": "средняя оценка",
     "sourceNote": "Данные магазина SlingoEmma на Kaspi",
-    "reviewsWord": "{count, plural, one {отзыв на Kaspi} few {отзыва на Kaspi} many {отзывов на Kaspi} other {отзыва на Kaspi}}"
+    "reviewsWord": "{count, plural, one {отзыв на Kaspi} few {отзыва на Kaspi} many {отзывов на Kaspi} other {отзыва на Kaspi}}",
+    "marketYears": "{count, plural, one {# год на рынке} few {# года на рынке} many {# лет на рынке} other {# года на рынке}}",
+    "kaspiYears": "{count, plural, one {# год на Kaspi} few {# года на Kaspi} many {# лет на Kaspi} other {# года на Kaspi}}",
+    "reviewsCount": "{count, plural, one {# отзыв} few {# отзыва} many {# отзывов} other {# отзыва}}",
+    "shopRating": "оценка магазина {value}"
   },
   "home": {
-    "eyebrow": "Переноски для детей · Алматы и весь Казахстан",
-    "h1": "Эргорюкзаки и слинги SlingoEmma",
-    "lead": "Переноски и зимние накидки для малышей. Выбирайте модель и расцветку здесь, оформляйте на Kaspi: рассрочка и доставка по Казахстану.",
+    "h1": "SlingoEmma - собственное производство эргорюкзаков, слингов и других товаров для мам",
+    "lead": "Собственное производство эргорюкзаков, слингов и товаров для мам. Модель и расцветку выбираете на сайте, заказ, рассрочка и доставка - на Kaspi.",
     "ctaPodbor": "Подобрать переноску за минуту",
-    "ctaCatalog": "Смотреть эргорюкзаки",
-    "ageTitle": "Сколько ребёнку?",
-    "ageLead": "Покажем модели, которые подходят по возрасту.",
-    "categoriesTitle": "Каталог",
     "hitsTitle": "Чаще всего выбирают",
     "hitsLead": "Модели с наибольшим числом отзывов на Kaspi",
     "howTitle": "Как купить",
@@ -113,7 +112,10 @@
     "allReviews": "Все отзывы",
     "guidesTitle": "Гайды по выбору",
     "faqTitle": "Частые вопросы",
-    "howNumber": "Шаг {n}"
+    "howNumber": "Шаг {n}",
+    "podborTitle": "Подбор за минуту",
+    "podborText": "Три вопроса: возраст, вес и где будете носить. Покажем 2-3 подходящие модели.",
+    "podborCta": "Подобрать рюкзачок за минуту"
   },
   "age": {
     "0-3": "0-3 мес",
@@ -267,21 +269,17 @@
     "colWeightSelf": "Вес изделия"
   },
   "footer": {
-    "about": "Витрина магазина SlingoEmma на Kaspi. Цены и наличие сверяются с Kaspi; заказ, оплата и доставка - на kaspi.kz.",
+    "about": "Собственное производство эргорюкзаков, слингов и товаров для мам. Заказ, оплата и доставка - на kaspi.kz.",
     "catalog": "Каталог",
     "buyers": "Покупателям",
     "contacts": "Контакты",
-    "fraudTitle": "Осторожно, мошенники",
-    "fraudText": "Мы никогда не просим перевести деньги на карту и не звоним с просьбой продиктовать код из СМС. Оплата - только на kaspi.kz.",
     "kaspiShop": "Магазин на Kaspi",
-    "legal": "Юридические данные",
     "copyright": "© {year} SlingoEmma",
-    "orderQuestions": "Вопросы по заказу - в чате приложения Kaspi: там виден номер и статус заказа.",
     "legalLine": "{entity}, БИН {bin}",
     "whatsapp": "WhatsApp",
     "instagram": "Instagram",
-    "hours": "Режим работы: {hours}",
-    "address": "Юридический адрес: {address}"
+    "address": "Юридический адрес: {address}",
+    "hoursLabel": "Режим работы"
   },
   "pages": {
     "dostavka": "Доставка и оплата",
@@ -342,13 +340,20 @@
   },
   "jsonld": {
     "maxWeight": "Максимальный вес ребёнка",
-    "brand": "SlingoEmma"
+    "brand": "SlingoEmma",
+    "orgDescription": "Собственное производство эргорюкзаков, слингов и товаров для мам. Магазин на Kaspi, доставка по Казахстану."
   },
   "llms": {
-    "lead": "{lead} Магазин SlingoEmma на Kaspi: {years}, {orders} заказов, {reviews}, средняя оценка {rating}.",
+    "lead": "{lead} Магазин SlingoEmma на Kaspi: {years}, {orders} заказов, {reviews}, средняя оценка товаров {rating}.",
     "models": "Модели",
     "buyers": "Покупателям",
-    "faq": "Вопросы и ответы"
+    "faq": "Вопросы и ответы",
+    "paymentNote": "Мы никогда не просим перевести деньги на карту и не звоним с просьбой продиктовать код из СМС. Оплата - только на kaspi.kz.",
+    "about": "О магазине",
+    "marketYears": "SlingoEmma на рынке {years}, производство собственное (со слов бренда).",
+    "shopRating": "Рейтинг продавца на Kaspi - {rating} из 5.",
+    "city": "Город: {city}. Доставка по Казахстану - через Kaspi: курьером или в постамат.",
+    "buy": "Как купить: выберите модель и расцветку на сайте, кнопка «Купить на Kaspi» откроет эту расцветку в магазине SlingoEmma на Kaspi. Оплата, рассрочка и бонусы - на kaspi.kz."
   },
   "contacts": {
     "whatsapp": "WhatsApp",
@@ -360,5 +365,10 @@
     "legalEntity": "Продавец",
     "bin": "БИН",
     "address": "Юридический адрес"
+  },
+  "faqAuto": {
+    "colorsQ": "Какие расцветки есть у «{name}»?",
+    "colorsA": "{colors}: {names}. Наличие каждой расцветки на странице модели обновляется по данным Kaspi.",
+    "careQ": "Как стирать «{name}»?"
   }
 }

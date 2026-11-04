@@ -91,13 +91,13 @@ export function ModelView({ modelSlug, modelName, lineLabel, variants, defaultSl
       <Gallery key={v.kaspiCode} images={v.images} alt={variantTitle} badge={badge} swapped={picked} />
 
       <div className="md:pt-2">
-        <h1 className="text-[2rem] leading-[1.08] md:text-[2.625rem]">{modelName}</h1>
+        <h1 className="h-page">{modelName}</h1>
         {variants.length > 1 && <p className="mt-2 text-ink-3">{t('model.colorSelected', { name: v.designName })}</p>}
         {ratingSlot && <div className="mt-2">{ratingSlot}</div>}
 
-        <div className="mt-6 border-t border-line pt-6">
+        <div className="mt-5 border-t border-line pt-5">
           <div className="flex flex-wrap items-baseline gap-x-4 gap-y-1">
-            <p key={v.kaspiCode} className={`text-[2.125rem] font-semibold leading-none tabular-nums ${picked ? 'swap-in' : ''}`}>
+            <p key={v.kaspiCode} className={`text-[1.75rem] font-semibold leading-none tabular-nums ${picked ? 'swap-in' : ''}`}>
               {formatPrice(v.price)}
             </p>
             {v.priceBeforeDiscount > v.price && (
@@ -109,7 +109,7 @@ export function ModelView({ modelSlug, modelName, lineLabel, variants, defaultSl
           </div>
           {credit && (
             <p className="mt-2 flex flex-wrap items-baseline gap-x-3">
-              <span className="text-xl font-semibold text-accent">{t('buy.credit', { amount: credit })}</span>
+              <span className="text-lg font-semibold text-kaspi-text">{t('buy.credit', { amount: credit })}</span>
               {v.creditMonths && <span className="text-[0.9375rem] text-ink-2">{t('buy.creditTerm', { amount: credit, months: v.creditMonths })}</span>}
             </p>
           )}
@@ -153,8 +153,8 @@ export function ModelView({ modelSlug, modelName, lineLabel, variants, defaultSl
             {picked ? t('model.announce', { name: v.designName, price: formatPrice(v.price) }) : ''}
           </p>
 
-          <div ref={buyRef} className="mt-7">
-            <BuyLink v={v} onClick={() => onBuy('main')} className="min-h-14 w-full text-lg" />
+          <div ref={buyRef} className="mt-6">
+            <BuyLink v={v} onClick={() => onBuy('main')} className="min-h-[52px] w-full text-base" />
             <p className="mt-2.5 text-center text-sm text-ink-3">{t('buy.note')}</p>
           </div>
           {trustLine && <p className="mt-5 border-t border-line pt-4 text-[0.9375rem] text-ink-2">{trustLine}</p>}
@@ -174,7 +174,7 @@ export function ModelView({ modelSlug, modelName, lineLabel, variants, defaultSl
           <div className="min-w-0 flex-1">
             <p className="truncate text-[0.8125rem] text-ink-3">{v.designName}</p>
             <p className="text-lg font-semibold leading-tight">{formatPrice(v.price)}</p>
-            {credit && <p className="text-sm font-semibold text-accent">{t('buy.credit', { amount: credit })}</p>}
+            {credit && <p className="text-sm font-semibold text-kaspi-text">{t('buy.credit', { amount: credit })}</p>}
           </div>
           <BuyLink v={v} onClick={() => onBuy('sticky')} className="shrink-0 px-5" tabIndex={buyVisible ? -1 : 0} />
         </div>
@@ -193,7 +193,7 @@ function BuyLink({ v, onClick, className = '', tabIndex }: { v: ViewVariant; onC
       rel="noopener"
       onClick={onClick}
       tabIndex={tabIndex}
-      className={`btn ${v.inStock ? 'btn-primary' : 'btn-secondary'} ${className}`}
+      className={`btn ${v.inStock ? 'btn-kaspi' : 'btn-secondary'} ${className}`}
       data-kaspi-code={v.kaspiCode}
     >
       {v.inStock ? t('buy.button') : t('buy.unavailableButton')}
