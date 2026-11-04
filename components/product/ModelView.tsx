@@ -6,6 +6,7 @@ import type { GalleryImage } from '@/lib/media-types';
 import { formatPrice, t } from '@/lib/i18n';
 import { track } from '@/lib/analytics/events';
 import { Gallery } from './Gallery';
+import { KaspiCreditPill, PriceBadges, PriceLine } from './Price';
 import { BonusPopup } from './BonusPopup';
 
 export type ViewVariant = {
@@ -84,11 +85,14 @@ export function ModelView({ modelSlug, modelName, lineLabel, variants, defaultSl
   };
 
   const variantTitle = t('model.variantName', { line: lineLabel, design: v.designName });
+  // «Ещё расцветки Classic:» - латинское имя линейки из названия модели; у накидок его нет.
+  const lineName = lineLabel.match(/[A-Za-z][A-Za-z0-9+]*/)?.[0];
+  const colorsTitle = lineName ? t('model.moreColorsOf', { line: lineName }) : t('model.moreColors');
   const credit = v.creditMonthlyPrice;
 
   return (
     <div id="model-view" className="grid gap-6 md:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)] md:gap-10">
-      <Gallery key={v.kaspiCode} images={v.images} alt={variantTitle} badge={badge} swapped={picked} />
+      <Gallery key={v.kaspiCode} images={v.images} alt={variantTitle} badge={badge} swapped={picked} pill={<KaspiCreditPill p={v} />} />
 
       <div className="md:pt-2">
         <h1 className="h-page">{modelName}</h1>
@@ -96,16 +100,9 @@ export function ModelView({ modelSlug, modelName, lineLabel, variants, defaultSl
         {ratingSlot && <div className="mt-2">{ratingSlot}</div>}
 
         <div className="mt-5 border-t border-line pt-5">
-          <div className="flex flex-wrap items-baseline gap-x-4 gap-y-1">
-            <p key={v.kaspiCode} className={`text-[1.75rem] font-semibold leading-none tabular-nums ${picked ? 'swap-in' : ''}`}>
-              {formatPrice(v.price)}
-            </p>
-            {v.priceBeforeDiscount > v.price && (
-              <p className="text-ink-3">
-                <span className="sr-only">{t('buy.priceWasLabel')} </span>
-                <del>{formatPrice(v.priceBeforeDiscount)}</del>
-              </p>
-            )}
+          <div key={v.kaspiCode} className={picked ? 'swap-in' : undefined}>
+            <PriceBadges p={v} className="mb-2" />
+            <PriceLine p={v} size="text-[1.75rem] leading-none" className="text-lg" />
           </div>
           {credit && (
             <p className="mt-2 flex flex-wrap items-baseline gap-x-3">
@@ -117,8 +114,9 @@ export function ModelView({ modelSlug, modelName, lineLabel, variants, defaultSl
 
           {variants.length > 1 && (
             <div className="mt-6">
-              <p id={`${modelSlug}-color`} className="mb-3 text-[0.9375rem] font-semibold">
-                {t('model.color')}: <span className="font-normal text-ink-2">{v.designName}</span>
+              {/* Название выбранной расцветки уже стоит под заголовком - здесь не повторяем (правка Эммы 2026-11-05). */}
+              <p id={`${modelSlug}-color`} className="mb-3 font-display text-[1.0625rem]">
+                {colorsTitle}
               </p>
               {/* Радиогруппа: в табуляции одна выбранная расцветка, стрелки переключают (как у нативных радиокнопок). */}
               <div className="flex flex-wrap gap-3 p-0.5" role="radiogroup" aria-labelledby={`${modelSlug}-color`} onKeyDown={onSwatchKey}>
@@ -173,7 +171,7 @@ export function ModelView({ modelSlug, modelName, lineLabel, variants, defaultSl
         <div className="flex items-center gap-3">
           <div className="min-w-0 flex-1">
             <p className="truncate text-[0.8125rem] text-ink-3">{v.designName}</p>
-            <p className="text-lg font-semibold leading-tight">{formatPrice(v.price)}</p>
+            <p className="text-lg font-semibold leading-tight tabular-nums text-kaspi-text">{formatPrice(v.price)}</p>
             {credit && <p className="text-sm font-semibold text-kaspi-text">{t('buy.credit', { amount: credit })}</p>}
           </div>
           <BuyLink v={v} onClick={() => onBuy('sticky')} className="shrink-0 px-5" tabIndex={buyVisible ? -1 : 0} />

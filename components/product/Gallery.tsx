@@ -5,8 +5,24 @@ import { usePageLoaded } from '@/lib/hooks';
 import type { GalleryImage } from '@/lib/media-types';
 import { t } from '@/lib/i18n';
 
-/** Галерея на scroll-snap: свайп на мобильном, миниатюры на десктопе. Без внешних библиотек. */
-export function Gallery({ images, alt, badge, swapped = false }: { images: GalleryImage[]; alt: string; badge: string | null; swapped?: boolean }) {
+/**
+ * Галерея на scroll-snap: свайп и точки на мобильном, миниатюры на десктопе. Без внешних библиотек.
+ * Фото целиком (3:4) в светлой рамке с полями - не во всю ширину экрана (правка Эммы 2026-11-05).
+ */
+export function Gallery({
+  images,
+  alt,
+  badge,
+  pill,
+  swapped = false,
+}: {
+  images: GalleryImage[];
+  alt: string;
+  badge: string | null;
+  /** Плашка рассрочки в углу рамки */
+  pill?: React.ReactNode;
+  swapped?: boolean;
+}) {
   const [index, setIndex] = useState(0);
   // Фото грузим по мере листания: текущее и соседнее. Остальные 10-20 фото по 200+ КБ не тянем заранее.
   const [scrolledTo, setLoadedUpTo] = useState(0);
@@ -43,15 +59,15 @@ export function Gallery({ images, alt, badge, swapped = false }: { images: Galle
     setLoadedUpTo((x) => Math.max(x, i + 1));
   };
 
-  if (!images.length) return <div className="aspect-[3/4] rounded-[var(--radius-card)] bg-sand" />;
+  if (!images.length) return <div className="aspect-[6/7] rounded-[var(--radius-card)] bg-sand md:aspect-square" />;
 
   return (
     <div className={`md:sticky md:top-20 md:self-start ${swapped ? 'swap-in' : ''}`}>
-      <div className="relative -mx-4 md:mx-0">
+      <div className="relative">
         <div
           ref={track}
           onScroll={onScroll}
-          className="no-scrollbar flex aspect-[3/4] snap-x snap-mandatory overflow-x-auto bg-sand md:rounded-[var(--radius-card)]"
+          className="no-scrollbar flex aspect-[6/7] snap-x snap-mandatory overflow-x-auto rounded-[var(--radius-card)] bg-sand md:aspect-square"
           aria-label={t('model.gallery', { name: alt })}
           role="region"
           tabIndex={0}
@@ -59,7 +75,7 @@ export function Gallery({ images, alt, badge, swapped = false }: { images: Galle
           {images.map((img, i) => (
             <div
               key={img.src}
-              className="skeleton relative h-full w-full shrink-0 snap-center"
+              className="relative flex h-full w-full shrink-0 snap-center items-center justify-center px-3 pb-3 pt-12 md:px-5 md:pb-5 md:pt-14"
               role="group"
               aria-roledescription={t('model.slide')}
               aria-label={t('model.photoOf', { index: i + 1, total: images.length })}
@@ -69,38 +85,36 @@ export function Gallery({ images, alt, badge, swapped = false }: { images: Galle
                 <img
                   src={img.src}
                   srcSet={img.srcSet}
-                  sizes="(min-width: 1200px) 600px, (min-width: 768px) 52vw, 100vw"
+                  sizes={SIZES}
                   alt={alt}
                   width={750}
                   height={1000}
                   loading="eager"
                   fetchPriority="high"
                   decoding="async"
-                  className="h-full w-full object-cover"
+                  className={IMG}
                 />
               )}
               {i > 0 && i <= loadedUpTo && <img
                 src={img.src}
                   srcSet={img.srcSet}
-                sizes="(min-width: 1200px) 600px, (min-width: 768px) 52vw, 100vw"
+                sizes={SIZES}
                 alt={`${alt} - ${t('model.photoOf', { index: i + 1, total: images.length })}`}
                 width={750}
                 height={1000}
                 loading="lazy"
                 decoding="async"
-                className="h-full w-full object-cover"
+                className={IMG}
               />}
             </div>
           ))}
         </div>
+        {pill && <div className="pointer-events-none absolute left-2.5 top-2.5 md:left-3 md:top-3">{pill}</div>}
         {badge && index === 0 && (
-          <span className="absolute left-3 top-3 rounded-full bg-surface px-3 py-1.5 text-sm font-semibold">{badge}</span>
+          <span className="absolute bottom-3 left-3 rounded-full bg-surface px-3 py-1.5 text-sm font-semibold">{badge}</span>
         )}
         {images.length > 1 && (
           <>
-            <span className="absolute bottom-3 right-3 rounded-full bg-ink/70 px-2.5 py-1 text-[0.8125rem] font-semibold tabular-nums text-bg">
-              {index + 1} / {images.length}
-            </span>
             <button
               type="button"
               onClick={() => go(index - 1)}
@@ -123,6 +137,14 @@ export function Gallery({ images, alt, badge, swapped = false }: { images: Galle
         )}
       </div>
       {images.length > 1 && (
+        // Точки - только подсказка, сколько фото и где мы: листают свайпом. Для чтения с экрана есть подписи слайдов.
+        <div aria-hidden="true" className="mt-3 flex flex-wrap justify-center gap-1.5 md:hidden">
+          {images.map((img, i) => (
+            <span key={img.src} className={`h-1.5 rounded-full transition-[width,background-color] duration-200 ${i === index ? 'w-4 bg-ink' : 'w-1.5 bg-line-strong/50'}`} />
+          ))}
+        </div>
+      )}
+      {images.length > 1 && (
         <div ref={thumbs} className="no-scrollbar mt-2 hidden gap-2 overflow-x-auto p-1 md:flex">
           {images.map((img, i) => (
             <button
@@ -141,6 +163,10 @@ export function Gallery({ images, alt, badge, swapped = false }: { images: Galle
     </div>
   );
 }
+
+// Фото 3:4 по высоте рамки, по бокам светлые поля; сверху место под плашку рассрочки, чтобы она не закрывала фото.
+const IMG = 'h-full w-auto max-w-full rounded-[0.25rem] object-contain';
+const SIZES = '(min-width: 1200px) 440px, (min-width: 768px) 36vw, 72vw';
 
 function Chevron({ dir }: { dir: 'left' | 'right' }) {
   return (

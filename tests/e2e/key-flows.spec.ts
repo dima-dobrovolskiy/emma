@@ -1,6 +1,6 @@
 import { expect, test } from '@playwright/test';
 
-test('главная: сноска с цифрами, 10 хитов и вход в подбор', async ({ page }) => {
+test('главная: цифры магазина, 10 хитов и вход в подбор', async ({ page }) => {
   await page.goto('/');
   await expect(page.locator('h1')).toBeVisible();
   await expect(page.getByText('оценка магазина').first()).toBeVisible();
@@ -45,6 +45,14 @@ test('подбор: 18-22 кг - только Classic; зимой добавля
   expect(names[0]).toBe('Эргорюкзак Classic');
   expect(names.filter((n) => n.startsWith('Эргорюкзак'))).toHaveLength(1);
   expect(names.some((n) => /накидка/i.test(n))).toBe(true);
+});
+
+test('категория из одной модели: карточки расцветок ведут на свою расцветку', async ({ page }) => {
+  await page.goto('/c/slingi');
+  const links = page.locator('main h2 a');
+  await expect(links).toHaveCount(5);
+  await links.nth(1).click();
+  await expect(page).toHaveURL(/\/p\/sling-nesty\?color=/);
 });
 
 test('категория: фильтр по весу и сортировка', async ({ page }) => {

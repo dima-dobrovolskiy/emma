@@ -5,13 +5,13 @@ import { getCatalog, getModel, getTrustNumbers, isQuotable } from '@/lib/catalog
 import { getGuides } from '@/lib/guides';
 import { formatNumber, t } from '@/lib/i18n';
 import { alternatesFor, socialMeta } from '@/lib/seo';
-import { gallerySrcSet } from '@/lib/images';
 import { fmtRating } from '@/lib/summary';
 import { allReviewsDTO } from '@/lib/reviews-data';
 import { ModelCard } from '@/components/product/ModelCard';
 import { LiteYouTube } from '@/components/product/LiteYouTube';
 import { Faq } from '@/components/ui/Faq';
 import { Stars } from '@/components/ui/Stars';
+import { AfterLoadImg } from '@/components/ui/AfterLoadImg';
 
 const HITS_COUNT = 10;
 
@@ -31,8 +31,6 @@ export function generateMetadata(): Metadata {
 export default function HomePage() {
   const { models } = getCatalog();
   const trust = getTrustNumbers();
-  const hero = getModel(homeContent.heroModel) ?? models[0]!;
-  const heroImg = hero.defaultVariant.images[0];
   // Эмма (2026-11-04): с хитов начинается главная, 10 моделей - по две в ряд на телефоне.
   const hits = [...models].sort((a, b) => b.reviewsCount - a.reviewsCount).slice(0, HITS_COUNT);
   const guides = getGuides();
@@ -44,71 +42,52 @@ export default function HomePage() {
     .filter((r) => r.photos.length > 0 && r.text.length >= 60 && r.text.length <= 280 && r.rating === 5 && isQuotable(r))
     .slice(0, 6);
 
-  // Сноска под заголовком вместо крупных цифр: лет на рынке - со слов Эммы, остальное - из Kaspi.
+  // Цифры первого экрана: лет на рынке - со слов Эммы, остальное - из Kaspi.
   const shopRating = trust.merchantRating ?? trust.rating;
-  const trustLine = [
-    trust.marketYears !== null && t('trust.marketYears', { count: trust.marketYears }),
-    trust.years !== null && t('trust.kaspiYears', { count: trust.years }),
-    trust.reviews > 0 && t('trust.reviewsCount', { count: trust.reviews }),
-    shopRating !== null && t('trust.shopRating', { value: fmtRating(shopRating) }),
-  ].filter((x): x is string => Boolean(x));
+  const stats = [
+    trust.marketYears !== null && { icon: 'calendar', value: t('common.yearsCount', { count: trust.marketYears }), label: t('home.statMarket') },
+    trust.years !== null && { icon: 'bag', value: t('common.yearsCount', { count: trust.years }), label: t('home.statKaspi') },
+    trust.ordersSegment && { icon: 'box', value: t('trust.orders', { value: formatNumber(trust.ordersSegment) }), label: t('home.statOrders') },
+    shopRating !== null && {
+      icon: 'star',
+      value: fmtRating(shopRating),
+      label: t('home.statRating', { reviews: t('common.reviewsCount', { count: trust.reviews }) }),
+    },
+  ].filter((x): x is { icon: StatIconName; value: string; label: string } => Boolean(x));
 
   return (
     <>
-      <section className="container-page grid gap-5 pb-10 pt-4 md:grid-cols-12 md:items-center md:gap-10 md:pb-14 md:pt-8">
-        <div className="md:col-span-6 lg:col-span-5">
-          <h1 className="text-[1.375rem] leading-snug tracking-[-0.01em] md:text-[1.75rem]">{t('home.h1')}</h1>
-          {trustLine.length > 0 && (
-            <p className="mt-3 flex flex-wrap gap-x-2 gap-y-0.5 text-sm text-ink-3" aria-label={t('trust.sourceNote')}>
-              {/* Разделитель после пункта: при переносе точка остаётся в конце строки, а не в начале следующей. */}
-              {trustLine.map((item, i) => (
-                <span key={item} className="whitespace-nowrap">
-                  {item}
-                  {i < trustLine.length - 1 && (
-                    <span aria-hidden="true" className="ml-2">
-                      ·
-                    </span>
-                  )}
-                </span>
+      {/* Первый экран - сиреневым блоком, цифры - отдельными плашками (Эмма, 2026-11-05: «шапка сливается в одно»). */}
+      <section className="container-page pb-8 pt-3 md:pb-12 md:pt-6">
+        <div className="rounded-[var(--radius-card)] bg-accent-soft px-4 py-6 md:px-10 md:py-10">
+          <p className="text-[0.75rem] font-semibold uppercase tracking-[0.14em] text-accent">{t('home.eyebrow')}</p>
+          <h1 className="mt-2 max-w-3xl text-[1.375rem] leading-snug tracking-[-0.01em] md:text-[2rem]">{t('home.h1')}</h1>
+          {stats.length > 0 && (
+            <ul aria-label={t('trust.sourceNote')} className="mt-5 grid grid-cols-2 gap-2 md:mt-7 md:grid-cols-4 md:gap-3">
+              {stats.map((x) => (
+                <li key={x.icon} className="flex flex-col gap-1 rounded-[var(--radius-card)] bg-surface px-3 py-3 md:px-4 md:py-4">
+                  <StatIcon name={x.icon} />
+                  <span className="mt-1 text-[1.25rem] font-semibold leading-tight tabular-nums md:text-[1.5rem]">{x.value}</span>
+                  <span className="text-[0.8125rem] leading-snug text-ink-2 md:text-sm">{x.label}</span>
+                </li>
               ))}
-            </p>
+            </ul>
           )}
+          <Link href="/podbor" className="btn btn-primary press mt-5 w-full md:mt-7 md:w-auto">
+            {t('home.podborCta')}
+          </Link>
         </div>
-        {heroImg && (
-          <figure className="md:col-span-6 lg:col-span-7">
-            <Link href={`/p/${hero.slug}`} prefetch={false} className="group block overflow-hidden rounded-[var(--radius-card)] bg-sand-2">
-              <span className="block aspect-[4/3] w-full md:aspect-[16/9]">
-                <img
-                  {...gallerySrcSet(heroImg)}
-                  sizes="(min-width: 1024px) 56vw, (min-width: 768px) 50vw, 100vw"
-                  alt={t('model.variantName', { line: hero.lineLabel, design: hero.defaultVariant.designName })}
-                  width={750}
-                  height={1000}
-                  fetchPriority="high"
-                  decoding="async"
-                  className="h-full w-full object-cover object-[50%_28%] transition-transform duration-700 ease-out group-hover:scale-[1.02]"
-                />
-              </span>
-            </Link>
-            <figcaption className="mt-2 flex flex-wrap items-center gap-x-3 text-sm text-ink-3">
-              <Link href={`/p/${hero.slug}`} prefetch={false} className="inline-flex min-h-11 items-center font-semibold text-ink hover:underline md:min-h-0">
-                {hero.name}
-              </Link>
-              <Stars rating={hero.ratingAvg} count={hero.reviewsCount} compact />
-            </figcaption>
-          </figure>
-        )}
       </section>
 
       <section aria-labelledby="hits" className="container-page pb-10 md:pb-14">
         <h2 id="hits" className="h-section">
           {t('home.hitsTitle')}
         </h2>
-        <p className="mt-1 text-sm text-ink-3">{t('home.hitsLead')}</p>
-        <ul className="mt-5 grid grid-cols-2 gap-x-3 gap-y-7 md:grid-cols-4 md:gap-x-4 lg:grid-cols-5">
-          {hits.map((m) => (
+        <ul className="mt-4 grid grid-cols-2 gap-x-3 gap-y-7 md:grid-cols-4 md:gap-x-4 lg:grid-cols-5">
+          {/* Фото первых двух карточек видно на первом экране телефона - это LCP, грузим сразу. */}
+          {hits.map((m, i) => (
             <li key={m.slug}>
-              <ModelCard model={m} />
+              <ModelCard model={m} priority={i < 2} />
             </li>
           ))}
         </ul>
@@ -131,12 +110,9 @@ export default function HomePage() {
       {photoReviews.length > 0 && (
         <section aria-labelledby="home-reviews" className="container-page pb-10 md:pb-14">
           <div className="flex flex-wrap items-end justify-between gap-x-3">
-            <div>
-              <h2 id="home-reviews" className="h-section">
-                {t('home.reviewsTitle')}
-              </h2>
-              <p className="mt-1 text-sm text-ink-3">{t('home.reviewsLead')}</p>
-            </div>
+            <h2 id="home-reviews" className="h-section">
+              {t('home.reviewsTitle')}
+            </h2>
             <Link href="/otzyvy" className="inline-flex min-h-11 items-center text-[0.9375rem] font-semibold underline decoration-line-strong underline-offset-[6px] hover:decoration-ink">
               {t('home.allReviews')}
             </Link>
@@ -146,7 +122,7 @@ export default function HomePage() {
               <li key={r.id} className="relative flex w-[86%] shrink-0 snap-start gap-3 rounded-[var(--radius-card)] bg-sand p-3 sm:w-[60%] md:w-auto">
                 {r.photos[0] && (
                   <span className="skeleton block aspect-[3/4] w-24 shrink-0 self-start overflow-hidden rounded md:w-28">
-                    <img src={r.photos[0].medium} alt={t('reviews.photoAlt', { name: r.author })} width={112} height={150} loading="lazy" className="h-full w-full object-cover" />
+                    <AfterLoadImg src={r.photos[0].medium} alt={t('reviews.photoAlt', { name: r.author })} width={112} height={150} className="h-full w-full object-cover" />
                   </span>
                 )}
                 <div className="min-w-0 flex-1 text-sm">
@@ -227,5 +203,22 @@ export default function HomePage() {
         <Faq items={homeContent.faq} title={t('home.faqTitle')} />
       </div>
     </>
+  );
+}
+
+type StatIconName = 'calendar' | 'bag' | 'box' | 'star';
+
+const STAT_PATHS: Record<StatIconName, string> = {
+  calendar: 'M4 6.5A1.5 1.5 0 0 1 5.5 5h13A1.5 1.5 0 0 1 20 6.5v12a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 4 18.5v-12ZM4 10h16M8.5 3v4M15.5 3v4',
+  bag: 'M5.5 8h13l-1 12h-11l-1-12ZM9 10V7a3 3 0 0 1 6 0v3',
+  box: 'M12 3l8 4.5v9L12 21l-8-4.5v-9L12 3ZM4 7.5l8 4.5 8-4.5M12 12v9',
+  star: 'M12 3.5l2.6 5.3 5.9.9-4.25 4.15 1 5.85L12 16.95 6.75 19.7l1-5.85L3.5 9.7l5.9-.9L12 3.5Z',
+};
+
+function StatIcon({ name }: { name: StatIconName }) {
+  return (
+    <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true" className="text-accent">
+      <path d={STAT_PATHS[name]} fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
   );
 }

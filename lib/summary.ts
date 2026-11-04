@@ -139,13 +139,23 @@ export function categorySummary(cat: Pick<Category, 'name' | 'models'>, kind: 'c
   const avg = ratings ? ms.reduce((s, m) => s + (m.ratingAvg ?? 0) * m.ratingCount, 0) / ratings : null;
   const inStock = ms.filter((m) => m.inStockCount > 0).length;
   const top = [...ms].sort((a, b) => b.reviewsCount - a.reviewsCount)[0];
+  const prices = min === max ? t('summary.priceOne', { price: formatPrice(min) }) : t('summary.pricesRange', { min: formatPrice(min), max: formatPrice(max) });
+  const one = ms.length === 1 && kind === 'category' ? ms[0]! : null;
   const parts = [
-    t(kind === 'guide' ? 'summary.guide' : 'summary.category', {
-      name: cat.name,
-      models: t('common.modelsCount', { count: ms.length }),
-      inStock,
-      prices: min === max ? t('summary.priceOne', { price: formatPrice(min) }) : t('summary.pricesRange', { min: formatPrice(min), max: formatPrice(max) }),
-    }),
+    one
+      ? t('summary.categoryOne', {
+          name: cat.name,
+          model: one.name,
+          colors: t('common.colorsCount', { count: one.variants.length }),
+          inStock: one.inStockCount,
+          prices,
+        })
+      : t(kind === 'guide' ? 'summary.guide' : 'summary.category', {
+          name: cat.name,
+          models: t('common.modelsCount', { count: ms.length }),
+          inStock,
+          prices,
+        }),
   ];
   if (ratings && avg !== null) {
     parts.push(t('summary.categoryReviews', { reviews: t('common.reviewsCount', { count: reviews }), rating: fmtRating(avg) }));

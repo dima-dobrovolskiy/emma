@@ -61,6 +61,8 @@ export default async function CategoryPage({ params }: Params) {
   const { lines, pricesDate, categories, collections } = getCatalog();
   const models = c.models;
   const inStock = models.filter((m) => m.inStockCount > 0).length;
+  // Раздел из одной модели («Слинги» - только Nesty): вместо одной карточки показываем все её расцветки (Эмма, 2026-11-05).
+  const single = models.length === 1 && models[0]!.variants.length > 1 ? models[0]! : null;
   const credit = models[0] ? creditText(models[0]) : null;
   const faq = c.faq.map((f) => ({ q: f.q, a: f.a.replace('{credit}', credit ?? '-') }));
   const guides = c.guides.map((g) => getGuideMeta(g)).filter((g): g is NonNullable<typeof g> => Boolean(g));
@@ -73,13 +75,26 @@ export default async function CategoryPage({ params }: Params) {
       <header className="mt-4 max-w-3xl">
         <h1 className="h-page">{c.name}</h1>
         <p className="mt-2 text-ink-2">{c.intro}</p>
-        <p className="mt-2 text-sm text-ink-3">{t('category.modelsInStock', { models: t('common.modelsCount', { count: inStock }) })}</p>
+        <p className="mt-2 text-sm text-ink-3">
+          {t('category.modelsInStock', {
+            models: single ? t('common.colorsCount', { count: single.inStockCount }) : t('common.modelsCount', { count: inStock }),
+          })}
+        </p>
       </header>
       <div className="mt-6 max-w-3xl">
         <Short text={categorySummary(c)} date={t('common.pricesActual', { date: formatDate(pricesDate) })} />
       </div>
 
       <div className="mt-8">
+        {single ? (
+          <ul className="grid grid-cols-2 gap-x-3 gap-y-7 md:grid-cols-3 md:gap-x-4 lg:grid-cols-4">
+            {single.variants.map((v, i) => (
+              <li key={v.kaspiCode}>
+                <ModelCard model={single} variant={v} priority={i < 2} headingLevel={2} />
+              </li>
+            ))}
+          </ul>
+        ) : (
         <CategoryListing
           page={`category:${c.slug}`}
           items={models.map(listingFacets)}
@@ -88,6 +103,7 @@ export default async function CategoryPage({ params }: Params) {
           weights={lines.podbor.weights}
           ageLabels={ageLabels}
         />
+        )}
       </div>
 
       <section className="prose-se mt-12">

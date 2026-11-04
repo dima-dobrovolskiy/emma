@@ -7,6 +7,7 @@ type Maybe = string | null;
 type SiteContent = {
   alternateNames: string[];
   brandSince: number | null;
+  tagline: Maybe;
   contacts: { whatsapp: Maybe; instagram: Maybe; phone: Maybe; email: Maybe; hours: Maybe; city: Maybe };
   legal: { entity: Maybe; bin: Maybe; address: Maybe };
 };
