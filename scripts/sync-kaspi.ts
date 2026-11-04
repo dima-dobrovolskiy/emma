@@ -267,12 +267,14 @@ async function fetchMerchant(today: string): Promise<MerchantFile> {
   const raw = rawMerchantSchema.safeParse(extractBackendComponent(text, 'merchant'));
   if (!raw.success) throw new SyncError(`Сломался формат данных магазина Kaspi: ${raw.error.message}`);
   const seg = raw.data.merchantMetrics?.orderStatistics?.ordersTotalSegment;
+  const rating = raw.data.merchantMetrics?.rating;
   return {
     syncedAt: today,
     merchantId: raw.data.uid,
     name: raw.data.name,
     createdAt: raw.data.created.slice(0, 10),
     ordersSegment: seg && /^\d+$/.test(seg) ? Number(seg) : null,
+    rating: rating && !rating.notEnoughData && typeof rating.percentage === 'number' ? rating.percentage : null,
   };
 }
 
@@ -360,7 +362,7 @@ async function main() {
   const reviewsFiles: ReviewsFile[] = [];
   if (MODE === 'full') {
     merchantFile = merchantFileSchema.parse(await fetchMerchant(today));
-    log(`магазин: на Kaspi с ${merchantFile.createdAt}, сегмент заказов ${merchantFile.ordersSegment}`);
+    log(`магазин: на Kaspi с ${merchantFile.createdAt}, сегмент заказов ${merchantFile.ordersSegment}, рейтинг ${merchantFile.rating ?? '-'}`);
 
     const codes = [...new Set([...mapping.codes, ...unmapped.map((u) => u.kaspiCode)])].filter((c) => !ONLY || ONLY.includes(c));
     const products: Record<string, KaspiProduct> = { ...(prevProducts?.items ?? {}) };

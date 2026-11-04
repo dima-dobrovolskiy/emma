@@ -92,6 +92,8 @@ export const merchantFileSchema = z.object({
   createdAt: z.string(),
   /** Сегмент заказов как отдаёт Kaspi: «10000» значит «больше 10 000» */
   ordersSegment: z.number().int().nonnegative().nullable(),
+  /** Рейтинг продавца на странице магазина Kaspi (merchantMetrics.rating), 0-5 */
+  rating: z.number().min(0).max(5).nullable().optional(),
 });
 export type MerchantFile = z.infer<typeof merchantFileSchema>;
 

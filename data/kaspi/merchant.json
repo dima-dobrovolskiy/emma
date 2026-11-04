@@ -3,5 +3,6 @@
  "merchantId": "8851015",
  "name": "SlingoEmma",
  "createdAt": "2022-02-06",
- "ordersSegment": 10000
+ "ordersSegment": 10000,
+ "rating": 5
 }

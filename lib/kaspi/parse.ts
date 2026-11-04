@@ -73,7 +73,10 @@ export const rawMerchantSchema = z.object({
   name: z.string(),
   created: z.string(),
   merchantMetrics: z
-    .object({ orderStatistics: z.object({ ordersTotalSegment: z.string().nullish() }).nullish() })
+    .object({
+      orderStatistics: z.object({ ordersTotalSegment: z.string().nullish() }).nullish(),
+      rating: z.object({ percentage: z.number().nullish(), notEnoughData: z.boolean().nullish() }).nullish(),
+    })
     .nullish(),
 });
 
