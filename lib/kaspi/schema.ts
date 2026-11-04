@@ -50,6 +50,9 @@ export const productSchema = z.object({
   specs: z.array(specGroupSchema),
   description: z.string(),
   createdAt: z.string().nullable(),
+  /** Цена на карточке Kaspi в момент среза и зачёркнутая цена «до скидки», если она есть. В листинге её нет. */
+  price: z.number().positive().nullable().optional(),
+  priceBeforeDiscount: z.number().positive().nullable().optional(),
 });
 export type KaspiProduct = z.infer<typeof productSchema>;
 

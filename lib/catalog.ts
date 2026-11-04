@@ -313,7 +313,9 @@ export function getCatalog(locale: Locale = DEFAULT_LOCALE): Catalog {
       designName,
       colorFamily: colorFromTitle(title),
       price,
-      priceBeforeDiscount: l?.priceBeforeDiscount ?? price,
+      // Зачёркнутую цену Kaspi отдаёт только на карточке (суточный срез). Берём её, пока цена в листинге та же,
+      // что была на карточке: если цена с тех пор сменилась, старая скидка могла закончиться.
+      priceBeforeDiscount: Math.max(l?.priceBeforeDiscount ?? price, p?.priceBeforeDiscount && p.price === price ? p.priceBeforeDiscount : 0),
       creditMonthlyPrice: l?.creditMonthlyPrice?.replace(/ /g, '\u00a0') ?? null,
       creditMonths: l?.creditMonths ?? null,
       bonus: l?.bonus ?? 0,

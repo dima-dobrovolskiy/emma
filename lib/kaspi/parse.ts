@@ -215,6 +215,8 @@ export function parseProduct(raw: RawItem, finalUrl: string): KaspiProduct {
     specs: parseSpecs(raw.specifications),
     description: htmlToText(raw.description ?? ''),
     createdAt: raw.card.createdTime ?? null,
+    price: raw.card.price,
+    priceBeforeDiscount: raw.card.unitPriceBeforeDiscount && raw.card.unitPriceBeforeDiscount > raw.card.price ? raw.card.unitPriceBeforeDiscount : null,
   };
 }
 
