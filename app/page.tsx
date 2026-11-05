@@ -1,8 +1,10 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { preload } from 'react-dom';
 import homeContent from '@/content/ru/home.json';
 import { getCatalog, getModel, getTrustNumbers, isQuotable } from '@/lib/catalog';
 import { getGuides } from '@/lib/guides';
+import { cardSrcSet } from '@/lib/images';
 import { formatNumber, t } from '@/lib/i18n';
 import { alternatesFor, socialMeta } from '@/lib/seo';
 import { fmtRating } from '@/lib/summary';
@@ -33,6 +35,12 @@ export default function HomePage() {
   const trust = getTrustNumbers();
   // Эмма (2026-11-04): с хитов начинается главная, 10 моделей - по две в ряд на телефоне.
   const hits = [...models].sort((a, b) => b.reviewsCount - a.reviewsCount).slice(0, HITS_COUNT);
+  // Первое фото первой карточки - LCP. Грузим его в <head>, не дожидаясь разметки карточки (тот же набор, что у ModelCard).
+  const lcpImg = hits[0]?.defaultVariant.images[0];
+  if (lcpImg) {
+    const s = cardSrcSet(lcpImg);
+    preload(s.src, { as: 'image', imageSrcSet: s.srcSet, imageSizes: '(min-width: 1024px) 280px, (min-width: 768px) 33vw, 50vw', fetchPriority: 'high' });
+  }
   const guides = getGuides();
   const videos = homeContent.videos
     .map((s) => getModel(s))

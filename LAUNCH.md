@@ -23,7 +23,7 @@ Cloudflare Pages (решено, Р1), аккаунт Cloudflare на Эмме (�
 
 Переменные окружения (Production и Preview):
 - [ ] `NEXT_PUBLIC_SITE_URL=https://slingoemma.kz`
-- [ ] `NEXT_PUBLIC_GA4_ID`, `NEXT_PUBLIC_YM_ID`, `NEXT_PUBLIC_META_PIXEL_ID`, `NEXT_PUBLIC_TIKTOK_PIXEL_ID` (Д5)
+- [ ] `NEXT_PUBLIC_GA4_ID`, `NEXT_PUBLIC_YM_ID`, `NEXT_PUBLIC_META_PIXEL_ID` (Д5)
 - [ ] `NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION`, `NEXT_PUBLIC_YANDEX_VERIFICATION` (шаг 4)
 - [x] Зеркало главных фото (Р2) работает на Cloudflare: фото отдаются с /media/. Выключить - `MIRROR_MEDIA=0`.
 - [ ] Флаги `FEATURE_*` не включать.
@@ -74,9 +74,9 @@ Cloudflare Pages (решено, Р1), аккаунт Cloudflare на Эмме (�
 
 ## 5. Пиксели и события
 
-- [ ] Открыть сайт с расширением Tag Assistant / Яндекс Метрика debug (`?_ym_debug=1`), Meta Pixel Helper, TikTok Pixel Helper.
+- [ ] Открыть сайт с расширением Tag Assistant / Яндекс Метрика debug (`?_ym_debug=1`), Meta Pixel Helper.
 - [ ] Просмотр страницы фиксируется во всех счётчиках.
-- [ ] Клик «Купить на Kaspi» на карточке → событие `kaspi_click` (model, variant, kaspiCode, price, placement) в dataLayer, GA4 DebugView, Метрике (цель), Meta/TikTok (InitiateCheckout).
+- [ ] Клик «Купить на Kaspi» на карточке → событие `kaspi_click` (model, variant, kaspiCode, price, placement) в dataLayer, GA4 DebugView, Метрике (цель), Meta (InitiateCheckout).
 - [ ] Выбор расцветки → `variant_select`; подбор → `quiz_start`, `quiz_complete`; переход из гайда → `guide_to_product`; фильтр → `filter_use`.
 - [ ] В Метрике создать цели по JavaScript-событиям с этими именами.
 

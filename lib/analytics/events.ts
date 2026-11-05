@@ -18,7 +18,6 @@ type W = Window & {
   gtag?: (...a: unknown[]) => void;
   ym?: (...a: unknown[]) => void;
   fbq?: (...a: unknown[]) => void;
-  ttq?: { track: (...a: unknown[]) => void };
 };
 
 export function track<E extends AnalyticsEvent>(name: E['name'], params: E['params']): void {
@@ -33,7 +32,6 @@ export function track<E extends AnalyticsEvent>(name: E['name'], params: E['para
     if (name === 'kaspi_click') {
       const p = params as { price: number; kaspiCode: string };
       w.fbq?.('track', 'InitiateCheckout', { value: p.price, currency: 'KZT', content_ids: [p.kaspiCode] });
-      w.ttq?.track('InitiateCheckout', { value: p.price, currency: 'KZT', content_id: p.kaspiCode });
     } else {
       w.fbq?.('trackCustom', name, params);
     }
