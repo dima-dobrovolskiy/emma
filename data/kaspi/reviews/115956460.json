@@ -1,8 +1,8 @@
 {
  "kaspiCode": "115956460",
  "kaspiModelName": "Слинг Nesty 3+ Тенгри",
- "ratingCount": 320,
- "commentCount": 299,
+ "ratingCount": 321,
+ "commentCount": 300,
  "pictureCount": 263,
  "ratingAvg": 5,
  "distribution": {
@@ -10,7 +10,7 @@
   "2": 0,
   "3": 0,
   "4": 14,
-  "5": 306
+  "5": 307
  },
  "reviews": [
   {
@@ -258,6 +258,18 @@
    "minus": "",
    "photos": [],
    "helpfulCount": 1
+  },
+  {
+   "id": "d4863161c4a7d73d",
+   "kaspiCode": "115956460",
+   "author": "Архат",
+   "date": "2026-11-05",
+   "rating": 5,
+   "text": "Очень удобная вещь.",
+   "plus": "",
+   "minus": "",
+   "photos": [],
+   "helpfulCount": 0
   },
   {
    "id": "8c414a9eb468fa9c",

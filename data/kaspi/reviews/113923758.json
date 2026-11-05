@@ -1,16 +1,16 @@
 {
  "kaspiCode": "113923758",
  "kaspiModelName": "Слинг 0+ BeBorn",
- "ratingCount": 236,
- "commentCount": 196,
- "pictureCount": 137,
+ "ratingCount": 237,
+ "commentCount": 197,
+ "pictureCount": 138,
  "ratingAvg": 5,
  "distribution": {
   "1": 0,
   "2": 0,
   "3": 1,
   "4": 6,
-  "5": 229
+  "5": 230
  },
  "reviews": [
   {
@@ -1314,6 +1314,29 @@
    "minus": "",
    "photos": [],
    "helpfulCount": 1
+  },
+  {
+   "id": "76e4ff79dc285aac",
+   "kaspiCode": "113923758",
+   "author": "Арина",
+   "date": "2026-11-05",
+   "rating": 5,
+   "text": "В носке пока не использовали, но по качеству и внешнему виду все отлично.",
+   "plus": "",
+   "minus": "",
+   "photos": [
+    {
+     "small": "https://resources.cdn-kaspi.kz/img/p/r/1132136646-113923758/2f641669-1362-4b39-9850-f36481fea149.jpeg?format=review_small",
+     "medium": "https://resources.cdn-kaspi.kz/img/p/r/1132136646-113923758/2f641669-1362-4b39-9850-f36481fea149.jpeg?format=review_medium",
+     "large": "https://resources.cdn-kaspi.kz/img/p/r/1132136646-113923758/2f641669-1362-4b39-9850-f36481fea149.jpeg?format=review_large"
+    },
+    {
+     "small": "https://resources.cdn-kaspi.kz/img/p/r/1132136646-113923758/b5ba9919-05a9-4b20-aefd-31ba947b8692.jpeg?format=review_small",
+     "medium": "https://resources.cdn-kaspi.kz/img/p/r/1132136646-113923758/b5ba9919-05a9-4b20-aefd-31ba947b8692.jpeg?format=review_medium",
+     "large": "https://resources.cdn-kaspi.kz/img/p/r/1132136646-113923758/b5ba9919-05a9-4b20-aefd-31ba947b8692.jpeg?format=review_large"
+    }
+   ],
+   "helpfulCount": 0
   },
   {
    "id": "66a17b10d342f008",

@@ -1,18 +1,56 @@
 {
  "kaspiCode": "179226468",
  "kaspiModelName": "Пеленальный матрас SlingoEmma 501891707, 75x70 см, белый",
- "ratingCount": 9,
- "commentCount": 8,
- "pictureCount": 6,
+ "ratingCount": 10,
+ "commentCount": 9,
+ "pictureCount": 7,
  "ratingAvg": 5,
  "distribution": {
   "1": 0,
   "2": 0,
   "3": 0,
   "4": 0,
-  "5": 9
+  "5": 10
  },
  "reviews": [
+  {
+   "id": "f91b2465a766137d",
+   "kaspiCode": "179226468",
+   "author": "Жадыра",
+   "date": "2026-11-05",
+   "rating": 5,
+   "text": "Мягкая и непромокаемая. Нам понравилась.",
+   "plus": "",
+   "minus": "",
+   "photos": [
+    {
+     "small": "https://resources.cdn-kaspi.kz/img/p/r/1133471632-179226468/ee0e776d-3e8c-4b86-8e5b-9c57705e540b.jpeg?format=review_small",
+     "medium": "https://resources.cdn-kaspi.kz/img/p/r/1133471632-179226468/ee0e776d-3e8c-4b86-8e5b-9c57705e540b.jpeg?format=review_medium",
+     "large": "https://resources.cdn-kaspi.kz/img/p/r/1133471632-179226468/ee0e776d-3e8c-4b86-8e5b-9c57705e540b.jpeg?format=review_large"
+    },
+    {
+     "small": "https://resources.cdn-kaspi.kz/img/p/r/1133471632-179226468/5e9b1a8d-3747-4344-84f3-023feb3fa55a.jpeg?format=review_small",
+     "medium": "https://resources.cdn-kaspi.kz/img/p/r/1133471632-179226468/5e9b1a8d-3747-4344-84f3-023feb3fa55a.jpeg?format=review_medium",
+     "large": "https://resources.cdn-kaspi.kz/img/p/r/1133471632-179226468/5e9b1a8d-3747-4344-84f3-023feb3fa55a.jpeg?format=review_large"
+    },
+    {
+     "small": "https://resources.cdn-kaspi.kz/img/p/r/1133471632-179226468/c75b66df-4e60-4fd8-9857-0dd99fce3847.jpeg?format=review_small",
+     "medium": "https://resources.cdn-kaspi.kz/img/p/r/1133471632-179226468/c75b66df-4e60-4fd8-9857-0dd99fce3847.jpeg?format=review_medium",
+     "large": "https://resources.cdn-kaspi.kz/img/p/r/1133471632-179226468/c75b66df-4e60-4fd8-9857-0dd99fce3847.jpeg?format=review_large"
+    },
+    {
+     "small": "https://resources.cdn-kaspi.kz/img/p/r/1133471632-179226468/dd3b73fe-0adc-41e9-947d-e048503620a3.jpeg?format=review_small",
+     "medium": "https://resources.cdn-kaspi.kz/img/p/r/1133471632-179226468/dd3b73fe-0adc-41e9-947d-e048503620a3.jpeg?format=review_medium",
+     "large": "https://resources.cdn-kaspi.kz/img/p/r/1133471632-179226468/dd3b73fe-0adc-41e9-947d-e048503620a3.jpeg?format=review_large"
+    },
+    {
+     "small": "https://resources.cdn-kaspi.kz/img/p/r/1133471632-179226468/f6a80cce-f258-47f1-b00d-80abbe108d91.jpeg?format=review_small",
+     "medium": "https://resources.cdn-kaspi.kz/img/p/r/1133471632-179226468/f6a80cce-f258-47f1-b00d-80abbe108d91.jpeg?format=review_medium",
+     "large": "https://resources.cdn-kaspi.kz/img/p/r/1133471632-179226468/f6a80cce-f258-47f1-b00d-80abbe108d91.jpeg?format=review_large"
+    }
+   ],
+   "helpfulCount": 0
+  },
   {
    "id": "d8be8c131f463a53",
    "kaspiCode": "179226468",

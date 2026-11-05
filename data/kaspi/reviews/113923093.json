@@ -1,16 +1,16 @@
 {
  "kaspiCode": "113923093",
  "kaspiModelName": "Слинг BeBorn 0+ для новорожденных серый",
- "ratingCount": 311,
- "commentCount": 276,
- "pictureCount": 199,
+ "ratingCount": 312,
+ "commentCount": 277,
+ "pictureCount": 200,
  "ratingAvg": 5,
  "distribution": {
   "1": 0,
   "2": 0,
   "3": 0,
   "4": 13,
-  "5": 298
+  "5": 299
  },
  "reviews": [
   {
@@ -1771,6 +1771,24 @@
    "minus": "",
    "photos": [],
    "helpfulCount": 1
+  },
+  {
+   "id": "bc45ab7d3cb8b945",
+   "kaspiCode": "113923093",
+   "author": "Әділет",
+   "date": "2026-11-05",
+   "rating": 5,
+   "text": "Быстрая доставка, продавец консультировал и советовал, какой лучше всего. Спасибо.",
+   "plus": "",
+   "minus": "",
+   "photos": [
+    {
+     "small": "https://resources.cdn-kaspi.kz/img/p/r/1133594684-113923093/4b381dc4-c0f7-4dab-996e-25bcf5ab3a8d.jpeg?format=review_small",
+     "medium": "https://resources.cdn-kaspi.kz/img/p/r/1133594684-113923093/4b381dc4-c0f7-4dab-996e-25bcf5ab3a8d.jpeg?format=review_medium",
+     "large": "https://resources.cdn-kaspi.kz/img/p/r/1133594684-113923093/4b381dc4-c0f7-4dab-996e-25bcf5ab3a8d.jpeg?format=review_large"
+    }
+   ],
+   "helpfulCount": 0
   },
   {
    "id": "04a8303f0e0e5bff",
