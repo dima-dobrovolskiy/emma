@@ -1,16 +1,16 @@
 {
  "kaspiCode": "115956460",
  "kaspiModelName": "Слинг Nesty 3+ Тенгри",
- "ratingCount": 321,
- "commentCount": 300,
- "pictureCount": 263,
+ "ratingCount": 322,
+ "commentCount": 301,
+ "pictureCount": 264,
  "ratingAvg": 5,
  "distribution": {
   "1": 0,
   "2": 0,
   "3": 0,
   "4": 14,
-  "5": 307
+  "5": 308
  },
  "reviews": [
   {
@@ -258,6 +258,29 @@
    "minus": "",
    "photos": [],
    "helpfulCount": 1
+  },
+  {
+   "id": "bedb413f44f225b3",
+   "kaspiCode": "115956460",
+   "author": "Сария",
+   "date": "2026-11-06",
+   "rating": 5,
+   "text": "Качество прекрасное!!! Мы в восторге. Дышащая и плотная ткань, такие переноски стоят намного дороже… Удобная и нужная вещь.",
+   "plus": "",
+   "minus": "",
+   "photos": [
+    {
+     "small": "https://resources.cdn-kaspi.kz/img/p/r/1138146755-115956460/aa49c051-2935-4ca3-b64f-7a0da5ec3ea1.jpeg?format=review_small",
+     "medium": "https://resources.cdn-kaspi.kz/img/p/r/1138146755-115956460/aa49c051-2935-4ca3-b64f-7a0da5ec3ea1.jpeg?format=review_medium",
+     "large": "https://resources.cdn-kaspi.kz/img/p/r/1138146755-115956460/aa49c051-2935-4ca3-b64f-7a0da5ec3ea1.jpeg?format=review_large"
+    },
+    {
+     "small": "https://resources.cdn-kaspi.kz/img/p/r/1138146755-115956460/53c1979b-78af-438c-a0e7-a53f7c6d5fb4.jpeg?format=review_small",
+     "medium": "https://resources.cdn-kaspi.kz/img/p/r/1138146755-115956460/53c1979b-78af-438c-a0e7-a53f7c6d5fb4.jpeg?format=review_medium",
+     "large": "https://resources.cdn-kaspi.kz/img/p/r/1138146755-115956460/53c1979b-78af-438c-a0e7-a53f7c6d5fb4.jpeg?format=review_large"
+    }
+   ],
+   "helpfulCount": 0
   },
   {
    "id": "d4863161c4a7d73d",

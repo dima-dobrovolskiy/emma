@@ -1,16 +1,16 @@
 {
  "kaspiCode": "113923296",
  "kaspiModelName": "Слинг Nesty с 3 мес",
- "ratingCount": 126,
- "commentCount": 117,
- "pictureCount": 93,
+ "ratingCount": 127,
+ "commentCount": 118,
+ "pictureCount": 94,
  "ratingAvg": 5,
  "distribution": {
   "1": 0,
   "2": 0,
   "3": 0,
   "4": 4,
-  "5": 122
+  "5": 123
  },
  "reviews": [
   {
@@ -312,6 +312,24 @@
     }
    ],
    "helpfulCount": 1
+  },
+  {
+   "id": "9ef21a855886d72a",
+   "kaspiCode": "113923296",
+   "author": "Дамира",
+   "date": "2026-11-06",
+   "rating": 5,
+   "text": "Все понравилось. Я довольна покупкой. Спасибо за быструю доставку.",
+   "plus": "",
+   "minus": "",
+   "photos": [
+    {
+     "small": "https://resources.cdn-kaspi.kz/img/p/r/1136292908-113923296/b513c781-d187-49c9-af1a-ef838082de25.jpeg?format=review_small",
+     "medium": "https://resources.cdn-kaspi.kz/img/p/r/1136292908-113923296/b513c781-d187-49c9-af1a-ef838082de25.jpeg?format=review_medium",
+     "large": "https://resources.cdn-kaspi.kz/img/p/r/1136292908-113923296/b513c781-d187-49c9-af1a-ef838082de25.jpeg?format=review_large"
+    }
+   ],
+   "helpfulCount": 0
   },
   {
    "id": "c6c212b1ddabef4c",

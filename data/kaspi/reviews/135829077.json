@@ -1,16 +1,16 @@
 {
  "kaspiCode": "135829077",
  "kaspiModelName": "Слинг 0+ с рождения Дарк",
- "ratingCount": 120,
- "commentCount": 102,
- "pictureCount": 80,
+ "ratingCount": 121,
+ "commentCount": 103,
+ "pictureCount": 81,
  "ratingAvg": 5,
  "distribution": {
   "1": 0,
   "2": 0,
   "3": 0,
   "4": 3,
-  "5": 117
+  "5": 118
  },
  "reviews": [
   {
@@ -156,6 +156,24 @@
    "minus": "",
    "photos": [],
    "helpfulCount": 1
+  },
+  {
+   "id": "211142ea93ea90a6",
+   "kaspiCode": "135829077",
+   "author": "Айсұлу",
+   "date": "2026-11-06",
+   "rating": 5,
+   "text": "Купила для подруги, которая недавно стала мамой. Ребенок спит только на руках, как только я узнала об этом, сразу же купила и подарила. Потому что я сама пользовалась этим эргорюкзаком ровно год, он спас нас не раз, мы с ним ездили везде и брали с собой каждый день. Так я еще за границей одолжила одной молодой маме, которая стояла и долго укачивала малыша своего. Ну и конечно по моей рекомендации пользовались этим эргорюкзаком много мамочек. Спасибо Эмма за вашу работу.",
+   "plus": "",
+   "minus": "",
+   "photos": [
+    {
+     "small": "https://resources.cdn-kaspi.kz/img/p/r/1128374671-135829077/9c845d79-b4c5-46e3-8f1d-67ff8d17f1f4.jpeg?format=review_small",
+     "medium": "https://resources.cdn-kaspi.kz/img/p/r/1128374671-135829077/9c845d79-b4c5-46e3-8f1d-67ff8d17f1f4.jpeg?format=review_medium",
+     "large": "https://resources.cdn-kaspi.kz/img/p/r/1128374671-135829077/9c845d79-b4c5-46e3-8f1d-67ff8d17f1f4.jpeg?format=review_large"
+    }
+   ],
+   "helpfulCount": 0
   },
   {
    "id": "107fd04fd50af373",
