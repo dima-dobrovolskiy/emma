@@ -1,16 +1,16 @@
 {
  "kaspiCode": "115956460",
  "kaspiModelName": "Слинг Nesty 3+ Тенгри",
- "ratingCount": 322,
- "commentCount": 301,
- "pictureCount": 264,
+ "ratingCount": 323,
+ "commentCount": 302,
+ "pictureCount": 265,
  "ratingAvg": 5,
  "distribution": {
   "1": 0,
   "2": 0,
   "3": 0,
   "4": 14,
-  "5": 308
+  "5": 309
  },
  "reviews": [
   {
@@ -258,6 +258,29 @@
    "minus": "",
    "photos": [],
    "helpfulCount": 1
+  },
+  {
+   "id": "6cff9f25394d5830",
+   "kaspiCode": "115956460",
+   "author": "Айдана",
+   "date": "2026-11-07",
+   "rating": 5,
+   "text": "В наличии не было белого, заказала этот.",
+   "plus": "",
+   "minus": "",
+   "photos": [
+    {
+     "small": "https://resources.cdn-kaspi.kz/img/p/r/1135658766-115956460/b5dffd97-edaf-4be4-bc5a-76681c48e5d1.jpeg?format=review_small",
+     "medium": "https://resources.cdn-kaspi.kz/img/p/r/1135658766-115956460/b5dffd97-edaf-4be4-bc5a-76681c48e5d1.jpeg?format=review_medium",
+     "large": "https://resources.cdn-kaspi.kz/img/p/r/1135658766-115956460/b5dffd97-edaf-4be4-bc5a-76681c48e5d1.jpeg?format=review_large"
+    },
+    {
+     "small": "https://resources.cdn-kaspi.kz/img/p/r/1135658766-115956460/0719ce70-86ac-4036-a468-9ffb1cbae3f4.jpeg?format=review_small",
+     "medium": "https://resources.cdn-kaspi.kz/img/p/r/1135658766-115956460/0719ce70-86ac-4036-a468-9ffb1cbae3f4.jpeg?format=review_medium",
+     "large": "https://resources.cdn-kaspi.kz/img/p/r/1135658766-115956460/0719ce70-86ac-4036-a468-9ffb1cbae3f4.jpeg?format=review_large"
+    }
+   ],
+   "helpfulCount": 0
   },
   {
    "id": "bedb413f44f225b3",

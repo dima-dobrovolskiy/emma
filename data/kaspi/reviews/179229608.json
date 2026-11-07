@@ -1,18 +1,41 @@
 {
  "kaspiCode": "179229608",
  "kaspiModelName": "хлопок:сатин",
- "ratingCount": 11,
- "commentCount": 11,
- "pictureCount": 10,
+ "ratingCount": 12,
+ "commentCount": 12,
+ "pictureCount": 11,
  "ratingAvg": 5,
  "distribution": {
   "1": 0,
   "2": 0,
   "3": 0,
   "4": 0,
-  "5": 11
+  "5": 12
  },
  "reviews": [
+  {
+   "id": "65c1e77f86cacbb9",
+   "kaspiCode": "179229608",
+   "author": "Гулчехра",
+   "date": "2026-11-07",
+   "rating": 5,
+   "text": "Нам очень понравился, ребенок спит отлично, качество супер, прочные.",
+   "plus": "",
+   "minus": "",
+   "photos": [
+    {
+     "small": "https://resources.cdn-kaspi.kz/img/p/r/1132617733-179229608/60d81ffe-9e51-40c7-86e5-d7feb82c103c.jpeg?format=review_small",
+     "medium": "https://resources.cdn-kaspi.kz/img/p/r/1132617733-179229608/60d81ffe-9e51-40c7-86e5-d7feb82c103c.jpeg?format=review_medium",
+     "large": "https://resources.cdn-kaspi.kz/img/p/r/1132617733-179229608/60d81ffe-9e51-40c7-86e5-d7feb82c103c.jpeg?format=review_large"
+    },
+    {
+     "small": "https://resources.cdn-kaspi.kz/img/p/r/1132617733-179229608/c9c8d508-ad91-4071-a47c-2a96cbdae757.jpeg?format=review_small",
+     "medium": "https://resources.cdn-kaspi.kz/img/p/r/1132617733-179229608/c9c8d508-ad91-4071-a47c-2a96cbdae757.jpeg?format=review_medium",
+     "large": "https://resources.cdn-kaspi.kz/img/p/r/1132617733-179229608/c9c8d508-ad91-4071-a47c-2a96cbdae757.jpeg?format=review_large"
+    }
+   ],
+   "helpfulCount": 0
+  },
   {
    "id": "bcb126b41252f091",
    "kaspiCode": "179229608",

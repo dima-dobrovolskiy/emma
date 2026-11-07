@@ -1,15 +1,15 @@
 {
  "kaspiCode": "113923758",
  "kaspiModelName": "Слинг 0+ BeBorn",
- "ratingCount": 237,
- "commentCount": 197,
- "pictureCount": 138,
+ "ratingCount": 238,
+ "commentCount": 198,
+ "pictureCount": 139,
  "ratingAvg": 5,
  "distribution": {
   "1": 0,
   "2": 0,
   "3": 1,
-  "4": 6,
+  "4": 7,
   "5": 230
  },
  "reviews": [
@@ -1314,6 +1314,29 @@
    "minus": "",
    "photos": [],
    "helpfulCount": 1
+  },
+  {
+   "id": "580aaf4ce86a8fa1",
+   "kaspiCode": "113923758",
+   "author": "Асел",
+   "date": "2026-11-07",
+   "rating": 4,
+   "text": "Новорожденным не подходит оказывается, она плакала, ей месяц, так качество нормально.",
+   "plus": "",
+   "minus": "",
+   "photos": [
+    {
+     "small": "https://resources.cdn-kaspi.kz/img/p/r/1134787601-113923758/138f2a91-0458-4faf-815f-77b8d45b87fb.jpeg?format=review_small",
+     "medium": "https://resources.cdn-kaspi.kz/img/p/r/1134787601-113923758/138f2a91-0458-4faf-815f-77b8d45b87fb.jpeg?format=review_medium",
+     "large": "https://resources.cdn-kaspi.kz/img/p/r/1134787601-113923758/138f2a91-0458-4faf-815f-77b8d45b87fb.jpeg?format=review_large"
+    },
+    {
+     "small": "https://resources.cdn-kaspi.kz/img/p/r/1134787601-113923758/b2a93480-0beb-447f-9256-aef250ca3fa3.jpeg?format=review_small",
+     "medium": "https://resources.cdn-kaspi.kz/img/p/r/1134787601-113923758/b2a93480-0beb-447f-9256-aef250ca3fa3.jpeg?format=review_medium",
+     "large": "https://resources.cdn-kaspi.kz/img/p/r/1134787601-113923758/b2a93480-0beb-447f-9256-aef250ca3fa3.jpeg?format=review_large"
+    }
+   ],
+   "helpfulCount": 0
   },
   {
    "id": "76e4ff79dc285aac",

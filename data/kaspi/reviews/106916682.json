@@ -1,16 +1,16 @@
 {
  "kaspiCode": "106916682",
  "kaspiModelName": "Слинг 4+ Classic Dark Mokko",
- "ratingCount": 465,
- "commentCount": 398,
- "pictureCount": 255,
+ "ratingCount": 466,
+ "commentCount": 399,
+ "pictureCount": 256,
  "ratingAvg": 4.9,
  "distribution": {
   "1": 2,
   "2": 0,
   "3": 2,
   "4": 12,
-  "5": 449
+  "5": 450
  },
  "reviews": [
   {
@@ -2930,6 +2930,34 @@
    "minus": "Пока привыкаем, мне не совсем удобно в области плечевых лямок, хоть и пробовала по-разному их прикрепить. И по видео от автора в точности, надеюсь приноровлюсь.",
    "photos": [],
    "helpfulCount": 1
+  },
+  {
+   "id": "aa45c956ab8162a3",
+   "kaspiCode": "106916682",
+   "author": "Аружан",
+   "date": "2026-11-07",
+   "rating": 5,
+   "text": "Качество просто топ топ, очень удобный, еще понравилось то, что есть видеоинструкция.",
+   "plus": "",
+   "minus": "",
+   "photos": [
+    {
+     "small": "https://resources.cdn-kaspi.kz/img/p/r/1136473905-106916682/ef0d7ac4-d478-4aef-98a5-598f80fb793f.jpeg?format=review_small",
+     "medium": "https://resources.cdn-kaspi.kz/img/p/r/1136473905-106916682/ef0d7ac4-d478-4aef-98a5-598f80fb793f.jpeg?format=review_medium",
+     "large": "https://resources.cdn-kaspi.kz/img/p/r/1136473905-106916682/ef0d7ac4-d478-4aef-98a5-598f80fb793f.jpeg?format=review_large"
+    },
+    {
+     "small": "https://resources.cdn-kaspi.kz/img/p/r/1136473905-106916682/6c7ed418-9335-44c8-a3d9-ff5a9fc7cd38.jpeg?format=review_small",
+     "medium": "https://resources.cdn-kaspi.kz/img/p/r/1136473905-106916682/6c7ed418-9335-44c8-a3d9-ff5a9fc7cd38.jpeg?format=review_medium",
+     "large": "https://resources.cdn-kaspi.kz/img/p/r/1136473905-106916682/6c7ed418-9335-44c8-a3d9-ff5a9fc7cd38.jpeg?format=review_large"
+    },
+    {
+     "small": "https://resources.cdn-kaspi.kz/img/p/r/1136473905-106916682/f9ae043f-7fe9-4e7b-9663-eff97f1b93a3.jpeg?format=review_small",
+     "medium": "https://resources.cdn-kaspi.kz/img/p/r/1136473905-106916682/f9ae043f-7fe9-4e7b-9663-eff97f1b93a3.jpeg?format=review_medium",
+     "large": "https://resources.cdn-kaspi.kz/img/p/r/1136473905-106916682/f9ae043f-7fe9-4e7b-9663-eff97f1b93a3.jpeg?format=review_large"
+    }
+   ],
+   "helpfulCount": 0
   },
   {
    "id": "68fe5ed1274592f6",

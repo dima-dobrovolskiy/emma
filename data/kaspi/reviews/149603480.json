@@ -1,16 +1,16 @@
 {
  "kaspiCode": "149603480",
  "kaspiModelName": "Слингонакидка в куртку SlingoEmma 0-2 лет",
- "ratingCount": 3,
- "commentCount": 3,
- "pictureCount": 0,
+ "ratingCount": 4,
+ "commentCount": 4,
+ "pictureCount": 1,
  "ratingAvg": 5,
  "distribution": {
   "1": 0,
   "2": 0,
   "3": 0,
   "4": 0,
-  "5": 3
+  "5": 4
  },
  "reviews": [
   {
@@ -36,6 +36,34 @@
    "minus": "",
    "photos": [],
    "helpfulCount": 1
+  },
+  {
+   "id": "0336169354334abd",
+   "kaspiCode": "149603480",
+   "author": "Аружан",
+   "date": "2026-11-07",
+   "rating": 5,
+   "text": "Качество просто супер, очень удобная, еще понравилось то, что есть видеоинструкция.",
+   "plus": "",
+   "minus": "",
+   "photos": [
+    {
+     "small": "https://resources.cdn-kaspi.kz/img/p/r/1136473905-149603480/40e6c8f2-ac51-4f9e-904c-ee02bb4934d8.jpeg?format=review_small",
+     "medium": "https://resources.cdn-kaspi.kz/img/p/r/1136473905-149603480/40e6c8f2-ac51-4f9e-904c-ee02bb4934d8.jpeg?format=review_medium",
+     "large": "https://resources.cdn-kaspi.kz/img/p/r/1136473905-149603480/40e6c8f2-ac51-4f9e-904c-ee02bb4934d8.jpeg?format=review_large"
+    },
+    {
+     "small": "https://resources.cdn-kaspi.kz/img/p/r/1136473905-149603480/6ed40f94-5c93-4cea-a55c-49742543616f.jpeg?format=review_small",
+     "medium": "https://resources.cdn-kaspi.kz/img/p/r/1136473905-149603480/6ed40f94-5c93-4cea-a55c-49742543616f.jpeg?format=review_medium",
+     "large": "https://resources.cdn-kaspi.kz/img/p/r/1136473905-149603480/6ed40f94-5c93-4cea-a55c-49742543616f.jpeg?format=review_large"
+    },
+    {
+     "small": "https://resources.cdn-kaspi.kz/img/p/r/1136473905-149603480/95c94b9d-b419-46bd-8ffc-9f9e0370fb6f.jpeg?format=review_small",
+     "medium": "https://resources.cdn-kaspi.kz/img/p/r/1136473905-149603480/95c94b9d-b419-46bd-8ffc-9f9e0370fb6f.jpeg?format=review_medium",
+     "large": "https://resources.cdn-kaspi.kz/img/p/r/1136473905-149603480/95c94b9d-b419-46bd-8ffc-9f9e0370fb6f.jpeg?format=review_large"
+    }
+   ],
+   "helpfulCount": 0
   },
   {
    "id": "2760545dc178cd44",
