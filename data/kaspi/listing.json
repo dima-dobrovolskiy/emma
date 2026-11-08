@@ -627,8 +627,8 @@
    "creditMonthlyPrice": "3 664 ₸",
    "creditMonths": 3,
    "inStock": true,
-   "rating": 5,
-   "reviewsCount": 12,
+   "rating": 4.9,
+   "reviewsCount": 13,
    "kaspiCategory": "Постельное белье для малышей"
   },
   "179623125": {
@@ -670,7 +670,7 @@
    "creditMonths": 12,
    "inStock": true,
    "rating": 5,
-   "reviewsCount": 2,
+   "reviewsCount": 3,
    "kaspiCategory": "Эргорюкзаки и кенгуру для малышей"
   }
  }
