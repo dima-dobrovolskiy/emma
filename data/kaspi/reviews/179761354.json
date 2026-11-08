@@ -1,18 +1,41 @@
 {
  "kaspiCode": "179761354",
  "kaspiModelName": "Classic +Накидка в куртку 1+1 сэкономь к зиме",
- "ratingCount": 2,
- "commentCount": 2,
- "pictureCount": 2,
+ "ratingCount": 3,
+ "commentCount": 3,
+ "pictureCount": 3,
  "ratingAvg": 5,
  "distribution": {
   "1": 0,
   "2": 0,
   "3": 0,
   "4": 0,
-  "5": 2
+  "5": 3
  },
  "reviews": [
+  {
+   "id": "b6ed2dd5a149ce28",
+   "kaspiCode": "179761354",
+   "author": "Тимур",
+   "date": "2026-11-08",
+   "rating": 5,
+   "text": "Учимся одевать и носить, качество отличное, ребенку удобно, как и родителям.",
+   "plus": "",
+   "minus": "",
+   "photos": [
+    {
+     "small": "https://resources.cdn-kaspi.kz/img/p/r/1135835913-179761354/41e897bb-77c3-4597-9e14-034264628672.jpeg?format=review_small",
+     "medium": "https://resources.cdn-kaspi.kz/img/p/r/1135835913-179761354/41e897bb-77c3-4597-9e14-034264628672.jpeg?format=review_medium",
+     "large": "https://resources.cdn-kaspi.kz/img/p/r/1135835913-179761354/41e897bb-77c3-4597-9e14-034264628672.jpeg?format=review_large"
+    },
+    {
+     "small": "https://resources.cdn-kaspi.kz/img/p/r/1135835913-179761354/03e3ebad-df70-4bd4-a562-955159cf8c44.jpeg?format=review_small",
+     "medium": "https://resources.cdn-kaspi.kz/img/p/r/1135835913-179761354/03e3ebad-df70-4bd4-a562-955159cf8c44.jpeg?format=review_medium",
+     "large": "https://resources.cdn-kaspi.kz/img/p/r/1135835913-179761354/03e3ebad-df70-4bd4-a562-955159cf8c44.jpeg?format=review_large"
+    }
+   ],
+   "helpfulCount": 0
+  },
   {
    "id": "9899c7b1f2fa429d",
    "kaspiCode": "179761354",

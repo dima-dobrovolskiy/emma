@@ -1,18 +1,36 @@
 {
  "kaspiCode": "179226468",
  "kaspiModelName": "Пеленальный матрас SlingoEmma 501891707, 75x70 см, белый",
- "ratingCount": 11,
- "commentCount": 10,
- "pictureCount": 8,
+ "ratingCount": 12,
+ "commentCount": 11,
+ "pictureCount": 9,
  "ratingAvg": 5,
  "distribution": {
   "1": 0,
   "2": 0,
   "3": 0,
   "4": 0,
-  "5": 11
+  "5": 12
  },
  "reviews": [
+  {
+   "id": "fca690c8cb1f645a",
+   "kaspiCode": "179226468",
+   "author": "Улболсын",
+   "date": "2026-11-08",
+   "rating": 5,
+   "text": "Жұп-жұмсақ, су өткізбейді, қолданғанға қолайлы екен. Качествосы ұнады.",
+   "plus": "",
+   "minus": "",
+   "photos": [
+    {
+     "small": "https://resources.cdn-kaspi.kz/img/p/r/1138404457-179226468/31366a8e-d60d-4a62-891a-3ee582c0ec6e.jpeg?format=review_small",
+     "medium": "https://resources.cdn-kaspi.kz/img/p/r/1138404457-179226468/31366a8e-d60d-4a62-891a-3ee582c0ec6e.jpeg?format=review_medium",
+     "large": "https://resources.cdn-kaspi.kz/img/p/r/1138404457-179226468/31366a8e-d60d-4a62-891a-3ee582c0ec6e.jpeg?format=review_large"
+    }
+   ],
+   "helpfulCount": 0
+  },
   {
    "id": "ca045ab00dad1941",
    "kaspiCode": "179226468",

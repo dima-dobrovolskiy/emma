@@ -1,18 +1,64 @@
 {
  "kaspiCode": "179229608",
  "kaspiModelName": "хлопок:сатин",
- "ratingCount": 12,
- "commentCount": 12,
- "pictureCount": 11,
- "ratingAvg": 5,
+ "ratingCount": 14,
+ "commentCount": 14,
+ "pictureCount": 13,
+ "ratingAvg": 4.9,
  "distribution": {
   "1": 0,
   "2": 0,
   "3": 0,
-  "4": 0,
-  "5": 12
+  "4": 1,
+  "5": 13
  },
  "reviews": [
+  {
+   "id": "4ecdc1567a6bffba",
+   "kaspiCode": "179229608",
+   "author": "Светлана",
+   "date": "2026-11-08",
+   "rating": 5,
+   "text": "Классные бортики! Материал приятный, чистый. Прошиты хорошо. Завязки держатся крепко. Жду кроватку, чтобы закрепить. Рекомендую!",
+   "plus": "",
+   "minus": "",
+   "photos": [
+    {
+     "small": "https://resources.cdn-kaspi.kz/img/p/r/1139007732-179229608/382ca0e1-e2f4-4895-bb38-873abc2c0724.jpeg?format=review_small",
+     "medium": "https://resources.cdn-kaspi.kz/img/p/r/1139007732-179229608/382ca0e1-e2f4-4895-bb38-873abc2c0724.jpeg?format=review_medium",
+     "large": "https://resources.cdn-kaspi.kz/img/p/r/1139007732-179229608/382ca0e1-e2f4-4895-bb38-873abc2c0724.jpeg?format=review_large"
+    }
+   ],
+   "helpfulCount": 0
+  },
+  {
+   "id": "ab67e766770d0c29",
+   "kaspiCode": "179229608",
+   "author": "Айгуль",
+   "date": "2026-11-08",
+   "rating": 4,
+   "text": "Базовые тонкие бортики, легко стираются и сушатся быстро. Шуршат, если потрогаешь. Завязываются атласными ленточками, ребенок разорвал одну так, что из нее нитки полезли. Для нашей кроватки завязки расположены не очень равномерно.",
+   "plus": "",
+   "minus": "",
+   "photos": [
+    {
+     "small": "https://resources.cdn-kaspi.kz/img/p/r/1133291780-179229608/7362772c-f2c5-4d5a-bd8e-3647361fb4a3.jpeg?format=review_small",
+     "medium": "https://resources.cdn-kaspi.kz/img/p/r/1133291780-179229608/7362772c-f2c5-4d5a-bd8e-3647361fb4a3.jpeg?format=review_medium",
+     "large": "https://resources.cdn-kaspi.kz/img/p/r/1133291780-179229608/7362772c-f2c5-4d5a-bd8e-3647361fb4a3.jpeg?format=review_large"
+    },
+    {
+     "small": "https://resources.cdn-kaspi.kz/img/p/r/1133291780-179229608/fb628856-2a0a-41bf-8617-ff64df57e77e.jpeg?format=review_small",
+     "medium": "https://resources.cdn-kaspi.kz/img/p/r/1133291780-179229608/fb628856-2a0a-41bf-8617-ff64df57e77e.jpeg?format=review_medium",
+     "large": "https://resources.cdn-kaspi.kz/img/p/r/1133291780-179229608/fb628856-2a0a-41bf-8617-ff64df57e77e.jpeg?format=review_large"
+    },
+    {
+     "small": "https://resources.cdn-kaspi.kz/img/p/r/1133291780-179229608/aba9f00b-313a-4517-ae23-8cb8077d6890.jpeg?format=review_small",
+     "medium": "https://resources.cdn-kaspi.kz/img/p/r/1133291780-179229608/aba9f00b-313a-4517-ae23-8cb8077d6890.jpeg?format=review_medium",
+     "large": "https://resources.cdn-kaspi.kz/img/p/r/1133291780-179229608/aba9f00b-313a-4517-ae23-8cb8077d6890.jpeg?format=review_large"
+    }
+   ],
+   "helpfulCount": 0
+  },
   {
    "id": "65c1e77f86cacbb9",
    "kaspiCode": "179229608",

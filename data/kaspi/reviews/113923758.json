@@ -1,16 +1,16 @@
 {
  "kaspiCode": "113923758",
  "kaspiModelName": "Слинг 0+ BeBorn",
- "ratingCount": 238,
- "commentCount": 198,
- "pictureCount": 139,
+ "ratingCount": 240,
+ "commentCount": 200,
+ "pictureCount": 140,
  "ratingAvg": 5,
  "distribution": {
   "1": 0,
   "2": 0,
   "3": 1,
-  "4": 7,
-  "5": 230
+  "4": 8,
+  "5": 231
  },
  "reviews": [
   {
@@ -1314,6 +1314,36 @@
    "minus": "",
    "photos": [],
    "helpfulCount": 1
+  },
+  {
+   "id": "47cde26afc0f7e42",
+   "kaspiCode": "113923758",
+   "author": "Айша",
+   "date": "2026-11-08",
+   "rating": 5,
+   "text": "Хороший слинг. Будем тестировать.",
+   "plus": "",
+   "minus": "",
+   "photos": [
+    {
+     "small": "https://resources.cdn-kaspi.kz/img/p/r/1133460413-113923758/c8363a5d-31a7-4c69-82de-77efc2261bcd.jpeg?format=review_small",
+     "medium": "https://resources.cdn-kaspi.kz/img/p/r/1133460413-113923758/c8363a5d-31a7-4c69-82de-77efc2261bcd.jpeg?format=review_medium",
+     "large": "https://resources.cdn-kaspi.kz/img/p/r/1133460413-113923758/c8363a5d-31a7-4c69-82de-77efc2261bcd.jpeg?format=review_large"
+    }
+   ],
+   "helpfulCount": 0
+  },
+  {
+   "id": "800ea94a9b3d755f",
+   "kaspiCode": "113923758",
+   "author": "Гульмира",
+   "date": "2026-11-08",
+   "rating": 4,
+   "text": "Качество хорошее, ткань плотная, понравилась!",
+   "plus": "",
+   "minus": "",
+   "photos": [],
+   "helpfulCount": 0
   },
   {
    "id": "580aaf4ce86a8fa1",

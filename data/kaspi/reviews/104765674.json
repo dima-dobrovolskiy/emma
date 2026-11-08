@@ -1,18 +1,36 @@
 {
  "kaspiCode": "104765674",
  "kaspiModelName": "+Слинг Nesty 1+1 набор к лету",
- "ratingCount": 66,
- "commentCount": 61,
- "pictureCount": 52,
+ "ratingCount": 67,
+ "commentCount": 62,
+ "pictureCount": 53,
  "ratingAvg": 5,
  "distribution": {
   "1": 0,
   "2": 0,
   "3": 0,
   "4": 2,
-  "5": 64
+  "5": 65
  },
  "reviews": [
+  {
+   "id": "ce9f073c4da5f2b9",
+   "kaspiCode": "104765674",
+   "author": "Назерке",
+   "date": "2026-11-08",
+   "rating": 5,
+   "text": "Довольна покупкой! Малышу удобно.",
+   "plus": "",
+   "minus": "",
+   "photos": [
+    {
+     "small": "https://resources.cdn-kaspi.kz/img/p/r/1131484237-104765674/7e348aa8-78cf-4de4-9e7b-e07946be64db.jpeg?format=review_small",
+     "medium": "https://resources.cdn-kaspi.kz/img/p/r/1131484237-104765674/7e348aa8-78cf-4de4-9e7b-e07946be64db.jpeg?format=review_medium",
+     "large": "https://resources.cdn-kaspi.kz/img/p/r/1131484237-104765674/7e348aa8-78cf-4de4-9e7b-e07946be64db.jpeg?format=review_large"
+    }
+   ],
+   "helpfulCount": 0
+  },
   {
    "id": "f26a8492554a375c",
    "kaspiCode": "104765674",

@@ -1,16 +1,16 @@
 {
  "kaspiCode": "115071158",
  "kaspiModelName": "Слинг Tiddly 2+ Арман Дарк",
- "ratingCount": 55,
- "commentCount": 38,
- "pictureCount": 10,
+ "ratingCount": 56,
+ "commentCount": 39,
+ "pictureCount": 11,
  "ratingAvg": 4.9,
  "distribution": {
   "1": 0,
   "2": 1,
   "3": 1,
   "4": 1,
-  "5": 52
+  "5": 53
  },
  "reviews": [
   {
@@ -473,6 +473,29 @@
    "minus": "",
    "photos": [],
    "helpfulCount": 1
+  },
+  {
+   "id": "bc262593664960c8",
+   "kaspiCode": "115071158",
+   "author": "Назгуль",
+   "date": "2026-11-08",
+   "rating": 5,
+   "text": "Эргорюкзак получила. Качественно сшит. Заранее консультант связался и помог подобрать правильный размер. Спасибо. Надеюсь, прослужит долго.",
+   "plus": "",
+   "minus": "",
+   "photos": [
+    {
+     "small": "https://resources.cdn-kaspi.kz/img/p/r/1138131178-115071158/2d943c45-0dd7-4b4e-b60f-a83c6739c925.jpeg?format=review_small",
+     "medium": "https://resources.cdn-kaspi.kz/img/p/r/1138131178-115071158/2d943c45-0dd7-4b4e-b60f-a83c6739c925.jpeg?format=review_medium",
+     "large": "https://resources.cdn-kaspi.kz/img/p/r/1138131178-115071158/2d943c45-0dd7-4b4e-b60f-a83c6739c925.jpeg?format=review_large"
+    },
+    {
+     "small": "https://resources.cdn-kaspi.kz/img/p/r/1138131178-115071158/98cfc08e-44cd-4784-a2a4-fe0dc0a5f2fa.jpeg?format=review_small",
+     "medium": "https://resources.cdn-kaspi.kz/img/p/r/1138131178-115071158/98cfc08e-44cd-4784-a2a4-fe0dc0a5f2fa.jpeg?format=review_medium",
+     "large": "https://resources.cdn-kaspi.kz/img/p/r/1138131178-115071158/98cfc08e-44cd-4784-a2a4-fe0dc0a5f2fa.jpeg?format=review_large"
+    }
+   ],
+   "helpfulCount": 0
   },
   {
    "id": "2bf485dfb3f5c1f7",
