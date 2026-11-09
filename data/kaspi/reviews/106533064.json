@@ -2,15 +2,15 @@
  "kaspiCode": "106533064",
  "kaspiModelName": "Слинг 2+ Tiddly Черный",
  "ratingCount": 186,
- "commentCount": 143,
+ "commentCount": 142,
  "pictureCount": 80,
  "ratingAvg": 4.9,
  "distribution": {
   "1": 3,
   "2": 0,
-  "3": 2,
+  "3": 1,
   "4": 6,
-  "5": 175
+  "5": 176
  },
  "reviews": [
   {
@@ -847,18 +847,6 @@
    "minus": "",
    "photos": [],
    "helpfulCount": 1
-  },
-  {
-   "id": "d6e251f4abb0a6ac",
-   "kaspiCode": "106533064",
-   "author": "Аружан",
-   "date": "2026-11-07",
-   "rating": 3,
-   "text": "Неудобный, этот огромный капюшон вообще мешает.",
-   "plus": "",
-   "minus": "",
-   "photos": [],
-   "helpfulCount": 0
   },
   {
    "id": "579c2192126b5e4c",

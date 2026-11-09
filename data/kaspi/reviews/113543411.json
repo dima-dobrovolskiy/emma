@@ -1,16 +1,16 @@
 {
  "kaspiCode": "113543411",
  "kaspiModelName": "Tiddly 2+ Беж Звезды",
- "ratingCount": 101,
- "commentCount": 97,
- "pictureCount": 79,
+ "ratingCount": 102,
+ "commentCount": 98,
+ "pictureCount": 80,
  "ratingAvg": 5,
  "distribution": {
   "1": 0,
   "2": 0,
   "3": 0,
   "4": 5,
-  "5": 96
+  "5": 97
  },
  "reviews": [
   {
@@ -83,6 +83,24 @@
    "minus": "",
    "photos": [],
    "helpfulCount": 1
+  },
+  {
+   "id": "08d534300cb4f731",
+   "kaspiCode": "113543411",
+   "author": "Данабек",
+   "date": "2026-11-09",
+   "rating": 5,
+   "text": "Пришел товар вовремя. Описанию соответствует. Качество хорошее. Осталось только разобраться, как правильно надевать.",
+   "plus": "",
+   "minus": "",
+   "photos": [
+    {
+     "small": "https://resources.cdn-kaspi.kz/img/p/r/1139266434-113543411/acebf777-41b7-4122-8172-e2ad0915e5ac.jpeg?format=review_small",
+     "medium": "https://resources.cdn-kaspi.kz/img/p/r/1139266434-113543411/acebf777-41b7-4122-8172-e2ad0915e5ac.jpeg?format=review_medium",
+     "large": "https://resources.cdn-kaspi.kz/img/p/r/1139266434-113543411/acebf777-41b7-4122-8172-e2ad0915e5ac.jpeg?format=review_large"
+    }
+   ],
+   "helpfulCount": 0
   },
   {
    "id": "bdd2b5f8b070b1b6",

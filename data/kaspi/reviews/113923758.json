@@ -1,16 +1,16 @@
 {
  "kaspiCode": "113923758",
  "kaspiModelName": "Слинг 0+ BeBorn",
- "ratingCount": 240,
- "commentCount": 200,
- "pictureCount": 140,
+ "ratingCount": 241,
+ "commentCount": 201,
+ "pictureCount": 141,
  "ratingAvg": 5,
  "distribution": {
   "1": 0,
   "2": 0,
   "3": 1,
   "4": 8,
-  "5": 231
+  "5": 232
  },
  "reviews": [
   {
@@ -1314,6 +1314,24 @@
    "minus": "",
    "photos": [],
    "helpfulCount": 1
+  },
+  {
+   "id": "72b9607cf18e2711",
+   "kaspiCode": "113923758",
+   "author": "Жанна",
+   "date": "2026-11-09",
+   "rating": 5,
+   "text": "Очень качественный эрго рюкзак. Малышка сразу уснула там. Спина сказала спасибо!",
+   "plus": "",
+   "minus": "",
+   "photos": [
+    {
+     "small": "https://resources.cdn-kaspi.kz/img/p/r/1131068723-113923758/46dceb32-3ebe-4719-8772-33b16f4b8c90.jpeg?format=review_small",
+     "medium": "https://resources.cdn-kaspi.kz/img/p/r/1131068723-113923758/46dceb32-3ebe-4719-8772-33b16f4b8c90.jpeg?format=review_medium",
+     "large": "https://resources.cdn-kaspi.kz/img/p/r/1131068723-113923758/46dceb32-3ebe-4719-8772-33b16f4b8c90.jpeg?format=review_large"
+    }
+   ],
+   "helpfulCount": 0
   },
   {
    "id": "47cde26afc0f7e42",
