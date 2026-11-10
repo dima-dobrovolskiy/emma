@@ -1,16 +1,16 @@
 {
  "kaspiCode": "115071158",
  "kaspiModelName": "Слинг Tiddly 2+ Арман Дарк",
- "ratingCount": 57,
- "commentCount": 40,
- "pictureCount": 12,
+ "ratingCount": 58,
+ "commentCount": 41,
+ "pictureCount": 13,
  "ratingAvg": 4.9,
  "distribution": {
   "1": 0,
   "2": 1,
   "3": 1,
   "4": 1,
-  "5": 54
+  "5": 55
  },
  "reviews": [
   {
@@ -473,6 +473,24 @@
    "minus": "",
    "photos": [],
    "helpfulCount": 1
+  },
+  {
+   "id": "4e11b1ab7df10713",
+   "kaspiCode": "115071158",
+   "author": "Нұрила",
+   "date": "2026-11-10",
+   "rating": 5,
+   "text": "Очень удобный товар, привезли вовремя, купила на подарок.",
+   "plus": "",
+   "minus": "",
+   "photos": [
+    {
+     "small": "https://resources.cdn-kaspi.kz/img/p/r/1134546974-115071158/9cc78393-f952-420e-9684-78fe2fdb2cd5.jpeg?format=review_small",
+     "medium": "https://resources.cdn-kaspi.kz/img/p/r/1134546974-115071158/9cc78393-f952-420e-9684-78fe2fdb2cd5.jpeg?format=review_medium",
+     "large": "https://resources.cdn-kaspi.kz/img/p/r/1134546974-115071158/9cc78393-f952-420e-9684-78fe2fdb2cd5.jpeg?format=review_large"
+    }
+   ],
+   "helpfulCount": 0
   },
   {
    "id": "a9088762eb71245a",
