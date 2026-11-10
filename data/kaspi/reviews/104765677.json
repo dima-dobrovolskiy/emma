@@ -1,16 +1,16 @@
 {
  "kaspiCode": "104765677",
  "kaspiModelName": "Nesty 3+",
- "ratingCount": 46,
- "commentCount": 40,
- "pictureCount": 27,
+ "ratingCount": 47,
+ "commentCount": 41,
+ "pictureCount": 28,
  "ratingAvg": 4.9,
  "distribution": {
   "1": 0,
   "2": 0,
   "3": 0,
   "4": 3,
-  "5": 43
+  "5": 44
  },
  "reviews": [
   {
@@ -54,6 +54,29 @@
    "minus": "",
    "photos": [],
    "helpfulCount": 1
+  },
+  {
+   "id": "3a06a74b94373a8a",
+   "kaspiCode": "104765677",
+   "author": "Ирина",
+   "date": "2026-11-10",
+   "rating": 5,
+   "text": "Качественно сшит, крепление надежное.",
+   "plus": "",
+   "minus": "",
+   "photos": [
+    {
+     "small": "https://resources.cdn-kaspi.kz/img/p/r/1140256320-104765677/7a97be4e-e649-4190-8c47-ac99821aa6d1.jpeg?format=review_small",
+     "medium": "https://resources.cdn-kaspi.kz/img/p/r/1140256320-104765677/7a97be4e-e649-4190-8c47-ac99821aa6d1.jpeg?format=review_medium",
+     "large": "https://resources.cdn-kaspi.kz/img/p/r/1140256320-104765677/7a97be4e-e649-4190-8c47-ac99821aa6d1.jpeg?format=review_large"
+    },
+    {
+     "small": "https://resources.cdn-kaspi.kz/img/p/r/1140256320-104765677/caa86ffb-0d79-4e2d-af1e-e98a74b7c941.jpeg?format=review_small",
+     "medium": "https://resources.cdn-kaspi.kz/img/p/r/1140256320-104765677/caa86ffb-0d79-4e2d-af1e-e98a74b7c941.jpeg?format=review_medium",
+     "large": "https://resources.cdn-kaspi.kz/img/p/r/1140256320-104765677/caa86ffb-0d79-4e2d-af1e-e98a74b7c941.jpeg?format=review_large"
+    }
+   ],
+   "helpfulCount": 0
   },
   {
    "id": "f9f67b5e43f8ecf0",
