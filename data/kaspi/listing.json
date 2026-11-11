@@ -388,7 +388,7 @@
    "bonus": 839,
    "creditMonthlyPrice": "2 333 ₸",
    "creditMonths": 12,
-   "inStock": true,
+   "inStock": false,
    "rating": 5,
    "reviewsCount": 126,
    "kaspiCategory": "Эргорюкзаки и кенгуру для малышей"

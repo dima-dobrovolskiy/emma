@@ -2,5 +2,7 @@
  "pricesSyncedAt": "2026-11-11",
  "fullSyncedAt": "2026-11-11",
  "skuCount": 48,
- "missingSkus": []
+ "missingSkus": [
+  "113973706"
+ ]
 }
