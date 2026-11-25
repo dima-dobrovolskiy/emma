@@ -22,7 +22,7 @@
     "mirror": "tsx scripts/mirror-media.ts --scope=first"
   },
   "dependencies": {
-    "next": "16.4.3",
+    "next": "16.4.6",
     "next-mdx-remote": "6.0.0",
     "react": "19.3.1",
     "react-dom": "19.3.1",
@@ -36,7 +36,7 @@
     "@types/react-dom": "^19.3.0",
     "chrome-launcher": "^1.2.2",
     "eslint": "^10.13.0",
-    "eslint-config-next": "16.4.3",
+    "eslint-config-next": "16.4.6",
     "lighthouse": "13.5.0",
     "postcss": "^8.5.31",
     "serve": "^14.2.6",
