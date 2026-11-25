@@ -367,6 +367,8 @@ async function main() {
 
     const codes = [...new Set([...mapping.codes, ...unmapped.map((u) => u.kaspiCode)])].filter((c) => !ONLY || ONLY.includes(c));
     const products: Record<string, KaspiProduct> = { ...(prevProducts?.items ?? {}) };
+    // Сняты с Kaspi (нет в листинге и нет продавцов): страница товара отдаётся без цены, это не поломка формата.
+    const removed = new Set(missing.filter((c) => !items[c]?.inStock));
     let failed = 0;
     for (const [n, code] of codes.entries()) {
       const url = items[code]?.url ?? prevProducts?.items[code]?.url ?? seeds.get(code);
@@ -376,9 +378,13 @@ async function main() {
         products[code] = p;
         log(`карточка ${n + 1}/${codes.length} ${code}: ${p.images.length} фото, ${p.kaspiModelName ?? 'без имени модели'}`);
       } catch (e) {
-        if (e instanceof SyncError && !String(e.message).startsWith('404')) throw e;
-        failed++;
-        log(`карточка ${code} не получена (${String(e)}), оставляем прошлый срез`);
+        if (removed.has(code)) {
+          log(`карточка ${code} снята с Kaspi, оставляем прошлый срез`);
+        } else {
+          if (e instanceof SyncError && !String(e.message).startsWith('404')) throw e;
+          failed++;
+          log(`карточка ${code} не получена (${String(e)}), оставляем прошлый срез`);
+        }
       }
       try {
         const prevRev = readJson(`reviews/${code}.json`, reviewsFileSchema);
