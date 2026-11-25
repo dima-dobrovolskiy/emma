@@ -317,10 +317,78 @@
       ]
     },
     {
-      "slug": "komplekt-bezhevyi",
+      "slug": "nabor-beborn-nesty-k-zime",
       "category": "nabory",
       "line": null,
       "order": 10,
+      "hidden": false,
+      "variants": [
+        {
+          "kaspiCode": "186981408",
+          "designSlug": "multicolor"
+        }
+      ],
+      "imageOrder": {},
+      "seasons": [
+        "зима"
+      ]
+    },
+    {
+      "slug": "nabor-tiddly-nesty-k-zime",
+      "category": "nabory",
+      "line": null,
+      "order": 11,
+      "hidden": false,
+      "variants": [
+        {
+          "kaspiCode": "186981461",
+          "designSlug": "multicolor"
+        }
+      ],
+      "imageOrder": {},
+      "seasons": [
+        "зима"
+      ]
+    },
+    {
+      "slug": "nabor-beborn-nakidka-k-zime",
+      "category": "nabory",
+      "line": null,
+      "order": 12,
+      "hidden": false,
+      "variants": [
+        {
+          "kaspiCode": "186534621",
+          "designSlug": "multicolor"
+        }
+      ],
+      "imageOrder": {},
+      "seasons": [
+        "зима"
+      ]
+    },
+    {
+      "slug": "nabor-tiddly-nakidka-k-zime",
+      "category": "nabory",
+      "line": null,
+      "order": 13,
+      "hidden": false,
+      "variants": [
+        {
+          "kaspiCode": "186533662",
+          "designSlug": "black"
+        }
+      ],
+      "imageOrder": {},
+      "seasons": [
+        "зима"
+      ]
+    },
+    {
+      "slug": "komplekt-bezhevyi",
+      "category": "nabory",
+      "line": null,
+      "order": 14,
       "hidden": false,
       "variants": [
         {
@@ -337,7 +405,7 @@
       "slug": "bortiki",
       "category": "dlya-doma",
       "line": null,
-      "order": 11,
+      "order": 15,
       "hidden": false,
       "variants": [
         {
@@ -352,7 +420,7 @@
       "slug": "pelenalnyi-matras",
       "category": "dlya-doma",
       "line": null,
-      "order": 12,
+      "order": 16,
       "hidden": false,
       "variants": [
         {
@@ -367,7 +435,7 @@
       "slug": "zapasnoi-komplekt",
       "category": "dlya-doma",
       "line": null,
-      "order": 13,
+      "order": 17,
       "hidden": false,
       "variants": [
         {
@@ -384,6 +452,7 @@
       "slug": "dlya-novorozhdennyh",
       "models": [
         "ergoryukzak-beborn",
+        "nabor-beborn-nakidka-k-zime",
         "nakidka-v-kurtku-do-18-kg",
         "slingonakidka-do-22-kg",
         "komplekt-bezhevyi",
@@ -399,7 +468,11 @@
         "slingonakidka-do-22-kg",
         "nabor-classic-nakidka-k-zime",
         "nabor-sling-k-zime",
-        "komplekt-bezhevyi"
+        "komplekt-bezhevyi",
+        "nabor-beborn-nesty-k-zime",
+        "nabor-tiddly-nesty-k-zime",
+        "nabor-beborn-nakidka-k-zime",
+        "nabor-tiddly-nakidka-k-zime"
       ],
       "order": 2
     }

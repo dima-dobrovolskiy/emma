@@ -359,5 +359,89 @@
         "a": "{minPrice}, в рассрочку на Kaspi {credit}."
       }
     ]
+  },
+  "nabor-beborn-nesty-k-zime": {
+    "name": "Набор 1+1 к зиме: BeBorn + Nesty",
+    "lineLabel": "Набор 1+1 к зиме",
+    "whoFor": [
+      "Эргорюкзак BeBorn и слинг Nesty одним набором.",
+      "Максимальный вес {maxWeight}."
+    ],
+    "howToWear": [],
+    "care": [],
+    "faq": [
+      {
+        "q": "Что входит в набор?",
+        "a": "Эргорюкзак BeBorn и слинг Nesty."
+      },
+      {
+        "q": "Сколько стоит?",
+        "a": "{minPrice}, в рассрочку на Kaspi {credit}."
+      }
+    ],
+    "guide": "ergoryukzak-ili-sling"
+  },
+  "nabor-tiddly-nesty-k-zime": {
+    "name": "Набор 1+1 к зиме: Tiddly + Nesty",
+    "lineLabel": "Набор 1+1 к зиме",
+    "whoFor": [
+      "Эргорюкзак Tiddly и слинг Nesty одним набором.",
+      "Возраст с 2 месяцев, максимальный вес {maxWeight}."
+    ],
+    "howToWear": [],
+    "care": [],
+    "faq": [
+      {
+        "q": "Что входит в набор?",
+        "a": "Эргорюкзак Tiddly и слинг Nesty."
+      },
+      {
+        "q": "Сколько стоит?",
+        "a": "{minPrice}, в рассрочку на Kaspi {credit}."
+      }
+    ],
+    "guide": "ergoryukzak-ili-sling"
+  },
+  "nabor-beborn-nakidka-k-zime": {
+    "name": "Набор к зиме: BeBorn + накидка",
+    "lineLabel": "Набор к зиме",
+    "whoFor": [
+      "Эргорюкзак BeBorn для новорождённых и накидка в куртку одним набором.",
+      "С рождения, максимальный вес {maxWeight}, накидка рассчитана до -15 °C."
+    ],
+    "howToWear": [],
+    "care": [],
+    "faq": [
+      {
+        "q": "Что входит в набор?",
+        "a": "Эргорюкзак BeBorn для новорождённых и накидка в куртку до -15 °C."
+      },
+      {
+        "q": "Сколько стоит?",
+        "a": "{minPrice}, в рассрочку на Kaspi {credit}."
+      }
+    ],
+    "guide": "s-kakogo-vozrasta-ergoryukzak"
+  },
+  "nabor-tiddly-nakidka-k-zime": {
+    "name": "Набор к зиме: Tiddly + накидка",
+    "lineLabel": "Набор к зиме",
+    "whoFor": [
+      "Эргорюкзак Tiddly и накидка в куртку одним набором.",
+      "Возраст с 2 месяцев, максимальный вес {maxWeight}, накидка рассчитана до -15 °C."
+    ],
+    "howToWear": [],
+    "care": [],
+    "faq": [
+      {
+        "q": "Что входит в набор?",
+        "a": "Эргорюкзак Tiddly с регулировкой по ширине и высоте и накидка в куртку до -15 °C."
+      },
+      {
+        "q": "Сколько стоит?",
+        "a": "{minPrice}, в рассрочку на Kaspi {credit}."
+      }
+    ],
+    "guide": "kak-vybrat-ergoryukzak"
   }
 }

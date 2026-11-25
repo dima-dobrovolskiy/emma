@@ -18,15 +18,17 @@ const LINE_MARKERS: Record<string, RegExp> = {
 };
 
 describe('маппинг SKU → модель → расцветка', () => {
-  it('все 48 SKU из seed есть в маппинге, ровно по одному разу', () => {
+  // Seed - стартовые 48 SKU. Новые SKU Kaspi раскладываются в content/catalog.json и перечислены здесь.
+  const ADDED_AFTER_SEED = ['186981408', '186981461', '186534621', '186533662'];
+
+  it('все SKU из seed и добавленные позже есть в маппинге, ровно по одному разу', () => {
     const codes = catalog.models.flatMap((m) => m.variants.map((v) => v.kaspiCode));
-    expect(codes).toHaveLength(48);
-    expect(new Set(codes).size).toBe(48);
-    expect(new Set(codes)).toEqual(new Set(seed.variants.map((v) => v.kaspiCode)));
+    expect(new Set(codes).size).toBe(codes.length);
+    expect(new Set(codes)).toEqual(new Set([...seed.variants.map((v) => v.kaspiCode), ...ADDED_AFTER_SEED]));
   });
 
-  it('13 моделей, у каждой модели уникальные designSlug', () => {
-    expect(catalog.models).toHaveLength(13);
+  it('17 моделей, у каждой модели уникальные designSlug', () => {
+    expect(catalog.models).toHaveLength(17);
     for (const m of catalog.models) {
       const slugs = m.variants.map((v) => v.designSlug);
       expect(new Set(slugs).size, m.slug).toBe(slugs.length);
@@ -37,6 +39,7 @@ describe('маппинг SKU → модель → расцветка', () => {
     const bySeed = new Map(seed.variants.map((v) => [v.kaspiCode, v]));
     for (const m of catalog.models) {
       for (const v of m.variants) {
+        if (!bySeed.has(v.kaspiCode)) continue;
         expect(bySeed.get(v.kaspiCode)?.model, v.kaspiCode).toBe(m.slug);
         expect(bySeed.get(v.kaspiCode)?.designSlug, v.kaspiCode).toBe(v.designSlug);
       }

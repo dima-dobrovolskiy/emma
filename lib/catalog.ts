@@ -294,7 +294,9 @@ export function getCatalog(locale: Locale = DEFAULT_LOCALE): Catalog {
   const products: ProductsFile | null = readJsonFile('data/kaspi/products.json', productsFileSchema);
   const merchant = readJsonFile('data/kaspi/merchant.json', merchantFileSchema);
   const meta = readJsonFile('data/kaspi/meta.json', metaFileSchema);
-  const unmapped = readJsonFile('data/kaspi/unmapped.json', unmappedFileSchema) ?? [];
+  // Уже разложенные в content/catalog.json пропускаем: unmapped.json обновится только на следующей синхронизации.
+  const mappedCodes = new Set(catalog.models.flatMap((m) => m.variants.map((v) => v.kaspiCode)));
+  const unmapped = (readJsonFile('data/kaspi/unmapped.json', unmappedFileSchema) ?? []).filter((u) => !mappedCodes.has(u.kaspiCode));
 
   const reviewSummary = (code: string) => readReviewsFile(code);
 
