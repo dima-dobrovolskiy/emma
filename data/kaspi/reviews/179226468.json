@@ -1,18 +1,46 @@
 {
  "kaspiCode": "179226468",
  "kaspiModelName": "Пеленальный матрас SlingoEmma 501891707, 75x70 см, белый",
- "ratingCount": 17,
- "commentCount": 16,
- "pictureCount": 12,
+ "ratingCount": 18,
+ "commentCount": 17,
+ "pictureCount": 13,
  "ratingAvg": 5,
  "distribution": {
   "1": 0,
   "2": 0,
   "3": 0,
   "4": 0,
-  "5": 17
+  "5": 18
  },
  "reviews": [
+  {
+   "id": "69c1faada4acafd8",
+   "kaspiCode": "179226468",
+   "author": "Марина",
+   "date": "2026-11-25",
+   "rating": 5,
+   "text": "Хороший пеленальный матрасик, мягкий, удобный, с непромокаемой поверхностью. Легко протирать, приятный материал. Покупкой довольна!",
+   "plus": "",
+   "minus": "",
+   "photos": [
+    {
+     "small": "https://resources.cdn-kaspi.kz/img/p/r/1158780790-179226468/58271150-9f76-4f8c-9647-15232686e2a8.jpeg?format=review_small",
+     "medium": "https://resources.cdn-kaspi.kz/img/p/r/1158780790-179226468/58271150-9f76-4f8c-9647-15232686e2a8.jpeg?format=review_medium",
+     "large": "https://resources.cdn-kaspi.kz/img/p/r/1158780790-179226468/58271150-9f76-4f8c-9647-15232686e2a8.jpeg?format=review_large"
+    },
+    {
+     "small": "https://resources.cdn-kaspi.kz/img/p/r/1158780790-179226468/df59d4ee-9bf7-40f2-92cd-c7b2cd95ff09.jpeg?format=review_small",
+     "medium": "https://resources.cdn-kaspi.kz/img/p/r/1158780790-179226468/df59d4ee-9bf7-40f2-92cd-c7b2cd95ff09.jpeg?format=review_medium",
+     "large": "https://resources.cdn-kaspi.kz/img/p/r/1158780790-179226468/df59d4ee-9bf7-40f2-92cd-c7b2cd95ff09.jpeg?format=review_large"
+    },
+    {
+     "small": "https://resources.cdn-kaspi.kz/img/p/r/1158780790-179226468/bf4246d0-9170-403f-ab63-bf28b012e299.jpeg?format=review_small",
+     "medium": "https://resources.cdn-kaspi.kz/img/p/r/1158780790-179226468/bf4246d0-9170-403f-ab63-bf28b012e299.jpeg?format=review_medium",
+     "large": "https://resources.cdn-kaspi.kz/img/p/r/1158780790-179226468/bf4246d0-9170-403f-ab63-bf28b012e299.jpeg?format=review_large"
+    }
+   ],
+   "helpfulCount": 0
+  },
   {
    "id": "185fdc795e8d4946",
    "kaspiCode": "179226468",
