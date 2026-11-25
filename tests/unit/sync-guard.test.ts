@@ -30,4 +30,12 @@ describe('защита синхронизации', () => {
     const r = checkListing([...mapped].slice(0, 7).map((c) => item(c)), mapped);
     expect(r).toEqual({ ok: true, missing: ['7', '8', '9'] });
   });
+  it('пропавшие раньше SKU не считаются новым сбоем', () => {
+    const r = checkListing([...mapped].slice(0, 6).map((c) => item(c)), mapped, { prevMissing: ['6', '7', '8', '9'] });
+    expect(r).toEqual({ ok: true, missing: ['6', '7', '8', '9'] });
+  });
+  it('acceptMissing принимает разовое снятие больше 30%', () => {
+    const r = checkListing([...mapped].slice(0, 5).map((c) => item(c)), mapped, { acceptMissing: true });
+    expect(r.ok).toBe(true);
+  });
 });

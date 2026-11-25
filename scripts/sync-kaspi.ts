@@ -4,7 +4,7 @@
  *   pnpm sync              - полный срез: цены, карточки, фото, отзывы, новые SKU (раз в сутки)
  *   pnpm sync:prices       - только цены и наличие (каждый час)
  *
- * Флаги: --only=106533064,106916682  --cache  --dry-run
+ * Флаги: --only=106533064,106916682  --cache  --dry-run  --accept-missing (принять разовое снятие >30% SKU)
  *
  * Правила: запросы последовательно с паузой 1-2 с, таймауты, ретраи с backoff.
  * При сбое (цена 0, пропало больше 30% SKU, сломался формат) ничего не пишем
@@ -65,6 +65,7 @@ const MODE = args.get('mode') === 'prices' ? 'prices' : 'full';
 const ONLY = args.get('only')?.split(',').filter(Boolean) ?? null;
 const USE_CACHE = args.has('cache');
 const DRY = args.has('dry-run');
+const ACCEPT_MISSING = args.get('accept-missing') === 'true';
 
 class SyncError extends Error {}
 
@@ -310,7 +311,7 @@ async function main() {
   // 1. Листинг: цены, рассрочка, бонусы, наличие.
   const listing = await fetchListing();
   log(`листинг: ${listing.length} SKU`);
-  const guard = checkListing(listing, mapping.codes);
+  const guard = checkListing(listing, mapping.codes, { prevMissing: prevMeta?.missingSkus, acceptMissing: ACCEPT_MISSING });
   if (!guard.ok) throw new SyncError(guard.reason);
   const missing = guard.missing;
 
