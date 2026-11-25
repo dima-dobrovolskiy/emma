@@ -1,32 +1,32 @@
 {
  "kaspiCode": "179229608",
  "kaspiModelName": "хлопок:сатин",
- "ratingCount": 14,
- "commentCount": 14,
- "pictureCount": 13,
+ "ratingCount": 15,
+ "commentCount": 15,
+ "pictureCount": 14,
  "ratingAvg": 4.9,
  "distribution": {
   "1": 0,
   "2": 0,
-  "3": 0,
-  "4": 1,
-  "5": 13
+  "3": 1,
+  "4": 0,
+  "5": 14
  },
  "reviews": [
   {
-   "id": "4ecdc1567a6bffba",
+   "id": "12ae53ad4cbd68ca",
    "kaspiCode": "179229608",
-   "author": "Светлана",
-   "date": "2026-11-08",
+   "author": "Имана",
+   "date": "2026-11-23",
    "rating": 5,
-   "text": "Классные бортики! Материал приятный, чистый. Прошиты хорошо. Завязки держатся крепко. Жду кроватку, чтобы закрепить. Рекомендую!",
+   "text": "Очень хорошего качества! После стирки ничего с ними не случилось! Всем советую.",
    "plus": "",
    "minus": "",
    "photos": [
     {
-     "small": "https://resources.cdn-kaspi.kz/img/p/r/1139007732-179229608/382ca0e1-e2f4-4895-bb38-873abc2c0724.jpeg?format=review_small",
-     "medium": "https://resources.cdn-kaspi.kz/img/p/r/1139007732-179229608/382ca0e1-e2f4-4895-bb38-873abc2c0724.jpeg?format=review_medium",
-     "large": "https://resources.cdn-kaspi.kz/img/p/r/1139007732-179229608/382ca0e1-e2f4-4895-bb38-873abc2c0724.jpeg?format=review_large"
+     "small": "https://resources.cdn-kaspi.kz/img/p/r/1159993608-179229608/f7cb6fad-e758-4890-a26c-09eebc762817.jpeg?format=review_small",
+     "medium": "https://resources.cdn-kaspi.kz/img/p/r/1159993608-179229608/f7cb6fad-e758-4890-a26c-09eebc762817.jpeg?format=review_medium",
+     "large": "https://resources.cdn-kaspi.kz/img/p/r/1159993608-179229608/f7cb6fad-e758-4890-a26c-09eebc762817.jpeg?format=review_large"
     }
    ],
    "helpfulCount": 0
@@ -35,9 +35,9 @@
    "id": "ab67e766770d0c29",
    "kaspiCode": "179229608",
    "author": "Айгуль",
-   "date": "2026-11-08",
-   "rating": 4,
-   "text": "Базовые тонкие бортики, легко стираются и сушатся быстро. Шуршат, если потрогаешь. Завязываются атласными ленточками, ребенок разорвал одну так, что из нее нитки полезли. Для нашей кроватки завязки расположены не очень равномерно.",
+   "date": "2026-11-19",
+   "rating": 3,
+   "text": "Базовые тонкие бортики, легко стираются и сушатся быстро. Шуршат, если потрогаешь. Завязываются атласными ленточками, ребенок разорвал одну так, что из нее нитки полезли. Для нашей кроватки завязки расположены не очень равномерно.\nUpd: если у ребенка режутся зубки, завязки не выдержат, в итоге бортики становятся больше морокой, чем полезным предметом.",
    "plus": "",
    "minus": "",
    "photos": [
@@ -55,6 +55,24 @@
      "small": "https://resources.cdn-kaspi.kz/img/p/r/1133291780-179229608/aba9f00b-313a-4517-ae23-8cb8077d6890.jpeg?format=review_small",
      "medium": "https://resources.cdn-kaspi.kz/img/p/r/1133291780-179229608/aba9f00b-313a-4517-ae23-8cb8077d6890.jpeg?format=review_medium",
      "large": "https://resources.cdn-kaspi.kz/img/p/r/1133291780-179229608/aba9f00b-313a-4517-ae23-8cb8077d6890.jpeg?format=review_large"
+    }
+   ],
+   "helpfulCount": 0
+  },
+  {
+   "id": "4ecdc1567a6bffba",
+   "kaspiCode": "179229608",
+   "author": "Светлана",
+   "date": "2026-11-08",
+   "rating": 5,
+   "text": "Классные бортики! Материал приятный, чистый. Прошиты хорошо. Завязки держатся крепко. Жду кроватку, чтобы закрепить. Рекомендую!",
+   "plus": "",
+   "minus": "",
+   "photos": [
+    {
+     "small": "https://resources.cdn-kaspi.kz/img/p/r/1139007732-179229608/382ca0e1-e2f4-4895-bb38-873abc2c0724.jpeg?format=review_small",
+     "medium": "https://resources.cdn-kaspi.kz/img/p/r/1139007732-179229608/382ca0e1-e2f4-4895-bb38-873abc2c0724.jpeg?format=review_medium",
+     "large": "https://resources.cdn-kaspi.kz/img/p/r/1139007732-179229608/382ca0e1-e2f4-4895-bb38-873abc2c0724.jpeg?format=review_large"
     }
    ],
    "helpfulCount": 0

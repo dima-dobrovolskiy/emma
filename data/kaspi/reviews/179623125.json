@@ -1,16 +1,29 @@
 {
  "kaspiCode": "179623125",
- "kaspiModelName": null,
- "ratingCount": 0,
- "commentCount": 0,
+ "kaspiModelName": "Комплект SlingoEmma 436593951 бежевый 38, 62",
+ "ratingCount": 1,
+ "commentCount": 1,
  "pictureCount": 0,
- "ratingAvg": null,
+ "ratingAvg": 5,
  "distribution": {
   "1": 0,
   "2": 0,
   "3": 0,
   "4": 0,
-  "5": 0
+  "5": 1
  },
- "reviews": []
+ "reviews": [
+  {
+   "id": "041d7612a24e4fba",
+   "kaspiCode": "179623125",
+   "author": "Роза",
+   "date": "2026-11-24",
+   "rating": 5,
+   "text": "Мне очень понравилось, аккуратно сшито, ткань мягкая, всем советую.",
+   "plus": "",
+   "minus": "",
+   "photos": [],
+   "helpfulCount": 0
+  }
+ ]
 }

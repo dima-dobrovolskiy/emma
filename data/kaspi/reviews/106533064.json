@@ -1,16 +1,16 @@
 {
  "kaspiCode": "106533064",
  "kaspiModelName": "Слинг 2+ Tiddly Черный",
- "ratingCount": 186,
- "commentCount": 142,
- "pictureCount": 80,
+ "ratingCount": 188,
+ "commentCount": 145,
+ "pictureCount": 82,
  "ratingAvg": 4.9,
  "distribution": {
   "1": 3,
   "2": 0,
   "3": 1,
   "4": 6,
-  "5": 176
+  "5": 178
  },
  "reviews": [
   {
@@ -847,6 +847,59 @@
    "minus": "",
    "photos": [],
    "helpfulCount": 1
+  },
+  {
+   "id": "37733fce0bba1306",
+   "kaspiCode": "106533064",
+   "author": "Жадыра",
+   "date": "2026-11-23",
+   "rating": 5,
+   "text": "Это так удобно и для малыша, и для мамы, прям супер, не жалею, что купила! Поясница говорит спасибо, а ребенку так комфортно, и прям нагрузки на ребенка совсем нет, сидит, фиксируется везде, чтобы тазу не было тяжело.",
+   "plus": "",
+   "minus": "",
+   "photos": [
+    {
+     "small": "https://resources.cdn-kaspi.kz/img/p/r/1158880241-106533064/412c9908-fee6-4412-a656-054ca5df2b3b.jpeg?format=review_small",
+     "medium": "https://resources.cdn-kaspi.kz/img/p/r/1158880241-106533064/412c9908-fee6-4412-a656-054ca5df2b3b.jpeg?format=review_medium",
+     "large": "https://resources.cdn-kaspi.kz/img/p/r/1158880241-106533064/412c9908-fee6-4412-a656-054ca5df2b3b.jpeg?format=review_large"
+    },
+    {
+     "small": "https://resources.cdn-kaspi.kz/img/p/r/1158880241-106533064/27a27191-76d5-475e-8cbe-d67f91466e01.jpeg?format=review_small",
+     "medium": "https://resources.cdn-kaspi.kz/img/p/r/1158880241-106533064/27a27191-76d5-475e-8cbe-d67f91466e01.jpeg?format=review_medium",
+     "large": "https://resources.cdn-kaspi.kz/img/p/r/1158880241-106533064/27a27191-76d5-475e-8cbe-d67f91466e01.jpeg?format=review_large"
+    }
+   ],
+   "helpfulCount": 0
+  },
+  {
+   "id": "37d8816c7042ac5e",
+   "kaspiCode": "106533064",
+   "author": "Дана",
+   "date": "2026-11-18",
+   "rating": 5,
+   "text": "Өте ыңғайлы екен, рақмет көп көп.",
+   "plus": "",
+   "minus": "",
+   "photos": [],
+   "helpfulCount": 0
+  },
+  {
+   "id": "46b7812f8493bab3",
+   "kaspiCode": "106533064",
+   "author": "Виктория",
+   "date": "2026-11-11",
+   "rating": 5,
+   "text": "Взяла данный эргорюкзак по советам, но все не знала какой именно, продавец все подсказал. Малыш сидит и засыпает, это спасение у кого ручные дети.",
+   "plus": "",
+   "minus": "",
+   "photos": [
+    {
+     "small": "https://resources.cdn-kaspi.kz/img/p/r/1136204862-106533064/73272caa-e6d2-4dcd-8128-f28ad6883a94.jpeg?format=review_small",
+     "medium": "https://resources.cdn-kaspi.kz/img/p/r/1136204862-106533064/73272caa-e6d2-4dcd-8128-f28ad6883a94.jpeg?format=review_medium",
+     "large": "https://resources.cdn-kaspi.kz/img/p/r/1136204862-106533064/73272caa-e6d2-4dcd-8128-f28ad6883a94.jpeg?format=review_large"
+    }
+   ],
+   "helpfulCount": 0
   },
   {
    "id": "579c2192126b5e4c",

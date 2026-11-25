@@ -1,16 +1,16 @@
 {
  "kaspiCode": "115956458",
  "kaspiModelName": "Слинг 4+ Classic Бежевый Мокко",
- "ratingCount": 271,
- "commentCount": 244,
- "pictureCount": 178,
+ "ratingCount": 274,
+ "commentCount": 247,
+ "pictureCount": 181,
  "ratingAvg": 4.9,
  "distribution": {
   "1": 1,
   "2": 0,
   "3": 0,
   "4": 14,
-  "5": 256
+  "5": 259
  },
  "reviews": [
   {
@@ -1229,6 +1229,60 @@
    "minus": "",
    "photos": [],
    "helpfulCount": 1
+  },
+  {
+   "id": "3faac4693295d4c3",
+   "kaspiCode": "115956458",
+   "author": "Ануар",
+   "date": "2026-11-12",
+   "rating": 5,
+   "text": "Все подошло, как на фото.",
+   "plus": "",
+   "minus": "",
+   "photos": [
+    {
+     "small": "https://resources.cdn-kaspi.kz/img/p/r/1138038378-115956458/915426f8-865c-41b1-8753-c5289a0eb9ab.jpeg?format=review_small",
+     "medium": "https://resources.cdn-kaspi.kz/img/p/r/1138038378-115956458/915426f8-865c-41b1-8753-c5289a0eb9ab.jpeg?format=review_medium",
+     "large": "https://resources.cdn-kaspi.kz/img/p/r/1138038378-115956458/915426f8-865c-41b1-8753-c5289a0eb9ab.jpeg?format=review_large"
+    }
+   ],
+   "helpfulCount": 0
+  },
+  {
+   "id": "844e49c41dbae742",
+   "kaspiCode": "115956458",
+   "author": "Ажаргуль",
+   "date": "2026-11-12",
+   "rating": 5,
+   "text": "Материал хороший, немного жарко в нем дома, ребенку пока не нравится, возможно, надо время.",
+   "plus": "",
+   "minus": "",
+   "photos": [
+    {
+     "small": "https://resources.cdn-kaspi.kz/img/p/r/1145690840-115956458/e7600327-7571-4fcd-b130-7f3dae702b2f.jpeg?format=review_small",
+     "medium": "https://resources.cdn-kaspi.kz/img/p/r/1145690840-115956458/e7600327-7571-4fcd-b130-7f3dae702b2f.jpeg?format=review_medium",
+     "large": "https://resources.cdn-kaspi.kz/img/p/r/1145690840-115956458/e7600327-7571-4fcd-b130-7f3dae702b2f.jpeg?format=review_large"
+    }
+   ],
+   "helpfulCount": 0
+  },
+  {
+   "id": "8a1219a4e54d4fff",
+   "kaspiCode": "115956458",
+   "author": "Алуа",
+   "date": "2026-11-11",
+   "rating": 5,
+   "text": "Спасибо, очень понравилось, очень качественный материал, удобный.",
+   "plus": "",
+   "minus": "",
+   "photos": [
+    {
+     "small": "https://resources.cdn-kaspi.kz/img/p/r/1135636464-115956458/9b654aab-c3ef-40f1-bc64-29a10817beb6.jpeg?format=review_small",
+     "medium": "https://resources.cdn-kaspi.kz/img/p/r/1135636464-115956458/9b654aab-c3ef-40f1-bc64-29a10817beb6.jpeg?format=review_medium",
+     "large": "https://resources.cdn-kaspi.kz/img/p/r/1135636464-115956458/9b654aab-c3ef-40f1-bc64-29a10817beb6.jpeg?format=review_large"
+    }
+   ],
+   "helpfulCount": 0
   },
   {
    "id": "d894037e807ba4c7",

@@ -1,8 +1,8 @@
 {
  "kaspiCode": "106132340",
  "kaspiModelName": "Слинг 4+ Classic Серебро Звезды",
- "ratingCount": 121,
- "commentCount": 103,
+ "ratingCount": 122,
+ "commentCount": 104,
  "pictureCount": 66,
  "ratingAvg": 4.9,
  "distribution": {
@@ -10,7 +10,7 @@
   "2": 0,
   "3": 2,
   "4": 4,
-  "5": 114
+  "5": 115
  },
  "reviews": [
   {
@@ -106,7 +106,7 @@
   {
    "id": "1090fe08b9b67c03",
    "kaspiCode": "106132340",
-   "author": "Дана",
+   "author": "Рашид",
    "date": "2024-04-02",
    "rating": 5,
    "text": "С таким рюкзаком в город на выход коляски не надо, руки свободны, очень удобно.",
@@ -646,7 +646,7 @@
   {
    "id": "1456a1cdb4c3cc8b",
    "kaspiCode": "106132340",
-   "author": "Әсія",
+   "author": "Асия",
    "date": "2024-03-04",
    "rating": 5,
    "text": "Очень понравился слинг, жаль что не взяла раньше. Сначала малышка отталкивалась, после вышли гулять и в течение 30 мин, малышка привыкла, удобно и тепло. В итоге малышка сама уснула плюс брала накидку, так как мы не любим носить комбез, вообще просто бомба советую!",
@@ -684,6 +684,18 @@
    "minus": "",
    "photos": [],
    "helpfulCount": 1
+  },
+  {
+   "id": "150b6246c7294be2",
+   "kaspiCode": "106132340",
+   "author": "Дилляра",
+   "date": "2026-11-18",
+   "rating": 5,
+   "text": "Отличный эргорюкзак, все продумано до мелочей, особенно тряпочки с обеих сторон можно снять и постирать, если грязные. И для меня очень важно, сам эргорюкзак сделан из дышащего материала. Когда я искала, смотрела по этим категориям: дышащий материал, с м-позицией, удобная спинка, доступная цена.",
+   "plus": "",
+   "minus": "",
+   "photos": [],
+   "helpfulCount": 0
   },
   {
    "id": "e402afc608af0c47",
@@ -1024,14 +1036,14 @@
      "large": "https://resources.cdn-kaspi.kz/img/p/r/850837971-106132340/1aefdf48-1040-461f-a1d8-ca1cab1ad947.jpeg?format=review_large"
     },
     {
-     "small": "https://resources.cdn-kaspi.kz/img/p/r/850837971-106132340/76a9b09b-6453-42bb-ab1d-550d0c270f20.jpeg?format=review_small",
-     "medium": "https://resources.cdn-kaspi.kz/img/p/r/850837971-106132340/76a9b09b-6453-42bb-ab1d-550d0c270f20.jpeg?format=review_medium",
-     "large": "https://resources.cdn-kaspi.kz/img/p/r/850837971-106132340/76a9b09b-6453-42bb-ab1d-550d0c270f20.jpeg?format=review_large"
-    },
-    {
      "small": "https://resources.cdn-kaspi.kz/img/p/r/850837971-106132340/08ecc9dd-4654-4540-9127-0224e7aa056b.jpeg?format=review_small",
      "medium": "https://resources.cdn-kaspi.kz/img/p/r/850837971-106132340/08ecc9dd-4654-4540-9127-0224e7aa056b.jpeg?format=review_medium",
      "large": "https://resources.cdn-kaspi.kz/img/p/r/850837971-106132340/08ecc9dd-4654-4540-9127-0224e7aa056b.jpeg?format=review_large"
+    },
+    {
+     "small": "https://resources.cdn-kaspi.kz/img/p/r/850837971-106132340/76a9b09b-6453-42bb-ab1d-550d0c270f20.jpeg?format=review_small",
+     "medium": "https://resources.cdn-kaspi.kz/img/p/r/850837971-106132340/76a9b09b-6453-42bb-ab1d-550d0c270f20.jpeg?format=review_medium",
+     "large": "https://resources.cdn-kaspi.kz/img/p/r/850837971-106132340/76a9b09b-6453-42bb-ab1d-550d0c270f20.jpeg?format=review_large"
     }
    ],
    "helpfulCount": 0

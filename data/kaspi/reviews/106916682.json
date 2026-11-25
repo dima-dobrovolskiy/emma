@@ -1,16 +1,16 @@
 {
  "kaspiCode": "106916682",
  "kaspiModelName": "Слинг 4+ Classic Dark Mokko",
- "ratingCount": 466,
- "commentCount": 399,
- "pictureCount": 256,
+ "ratingCount": 469,
+ "commentCount": 402,
+ "pictureCount": 257,
  "ratingAvg": 4.9,
  "distribution": {
   "1": 2,
   "2": 0,
   "3": 2,
   "4": 12,
-  "5": 450
+  "5": 453
  },
  "reviews": [
   {
@@ -2932,6 +2932,58 @@
    "helpfulCount": 1
   },
   {
+   "id": "5037a6386ca67d79",
+   "kaspiCode": "106916682",
+   "author": "Альбина",
+   "date": "2026-11-17",
+   "rating": 5,
+   "text": "Эргорюкзак самый удобный.",
+   "plus": "",
+   "minus": "",
+   "photos": [],
+   "helpfulCount": 0
+  },
+  {
+   "id": "2812d57337e50cd8",
+   "kaspiCode": "106916682",
+   "author": "Виктория",
+   "date": "2026-11-15",
+   "rating": 5,
+   "text": "Рюкзак классный, удобный в использовании, разобралась без видеоинструкции. Написали, уточнили рост и возраст малыша.",
+   "plus": "",
+   "minus": "",
+   "photos": [
+    {
+     "small": "https://resources.cdn-kaspi.kz/img/p/r/1145458750-106916682/07dea5cc-589c-4fb8-9168-a4843fea49d7.jpeg?format=review_small",
+     "medium": "https://resources.cdn-kaspi.kz/img/p/r/1145458750-106916682/07dea5cc-589c-4fb8-9168-a4843fea49d7.jpeg?format=review_medium",
+     "large": "https://resources.cdn-kaspi.kz/img/p/r/1145458750-106916682/07dea5cc-589c-4fb8-9168-a4843fea49d7.jpeg?format=review_large"
+    },
+    {
+     "small": "https://resources.cdn-kaspi.kz/img/p/r/1145458750-106916682/83353da6-ad1a-4ade-accb-77cdd04c7a2f.jpeg?format=review_small",
+     "medium": "https://resources.cdn-kaspi.kz/img/p/r/1145458750-106916682/83353da6-ad1a-4ade-accb-77cdd04c7a2f.jpeg?format=review_medium",
+     "large": "https://resources.cdn-kaspi.kz/img/p/r/1145458750-106916682/83353da6-ad1a-4ade-accb-77cdd04c7a2f.jpeg?format=review_large"
+    },
+    {
+     "small": "https://resources.cdn-kaspi.kz/img/p/r/1145458750-106916682/314e3b6c-bf11-4fc5-ae47-da119f12d5c5.jpeg?format=review_small",
+     "medium": "https://resources.cdn-kaspi.kz/img/p/r/1145458750-106916682/314e3b6c-bf11-4fc5-ae47-da119f12d5c5.jpeg?format=review_medium",
+     "large": "https://resources.cdn-kaspi.kz/img/p/r/1145458750-106916682/314e3b6c-bf11-4fc5-ae47-da119f12d5c5.jpeg?format=review_large"
+    }
+   ],
+   "helpfulCount": 0
+  },
+  {
+   "id": "e4aea47a3d0e26b1",
+   "kaspiCode": "106916682",
+   "author": "Армангуль",
+   "date": "2026-11-11",
+   "rating": 5,
+   "text": "Очень классная вещь, надо было раньше купить. Но что-то сомневалась. Ребенку комфортно, а маме удобно, даже когда носишь ребенка не тяжело. Спина и поясница не болят. Рекомендую.",
+   "plus": "",
+   "minus": "",
+   "photos": [],
+   "helpfulCount": 0
+  },
+  {
    "id": "aa45c956ab8162a3",
    "kaspiCode": "106916682",
    "author": "Аружан",
@@ -3034,14 +3086,14 @@
    "minus": "",
    "photos": [
     {
-     "small": "https://resources.cdn-kaspi.kz/img/p/r/1111611837-106916682/e36e13af-ae5b-42d0-a479-1af971968033.jpeg?format=review_small",
-     "medium": "https://resources.cdn-kaspi.kz/img/p/r/1111611837-106916682/e36e13af-ae5b-42d0-a479-1af971968033.jpeg?format=review_medium",
-     "large": "https://resources.cdn-kaspi.kz/img/p/r/1111611837-106916682/e36e13af-ae5b-42d0-a479-1af971968033.jpeg?format=review_large"
-    },
-    {
      "small": "https://resources.cdn-kaspi.kz/img/p/r/1111611837-106916682/a50caa41-9802-47a1-a1d4-f1ea426e0116.jpeg?format=review_small",
      "medium": "https://resources.cdn-kaspi.kz/img/p/r/1111611837-106916682/a50caa41-9802-47a1-a1d4-f1ea426e0116.jpeg?format=review_medium",
      "large": "https://resources.cdn-kaspi.kz/img/p/r/1111611837-106916682/a50caa41-9802-47a1-a1d4-f1ea426e0116.jpeg?format=review_large"
+    },
+    {
+     "small": "https://resources.cdn-kaspi.kz/img/p/r/1111611837-106916682/e36e13af-ae5b-42d0-a479-1af971968033.jpeg?format=review_small",
+     "medium": "https://resources.cdn-kaspi.kz/img/p/r/1111611837-106916682/e36e13af-ae5b-42d0-a479-1af971968033.jpeg?format=review_medium",
+     "large": "https://resources.cdn-kaspi.kz/img/p/r/1111611837-106916682/e36e13af-ae5b-42d0-a479-1af971968033.jpeg?format=review_large"
     }
    ],
    "helpfulCount": 0
@@ -4521,14 +4573,14 @@
    "minus": "",
    "photos": [
     {
-     "small": "https://resources.cdn-kaspi.kz/img/p/r/896967864-106916682/ab5382b4-57d0-418a-9303-98e9ed23da10.jpeg?format=review_small",
-     "medium": "https://resources.cdn-kaspi.kz/img/p/r/896967864-106916682/ab5382b4-57d0-418a-9303-98e9ed23da10.jpeg?format=review_medium",
-     "large": "https://resources.cdn-kaspi.kz/img/p/r/896967864-106916682/ab5382b4-57d0-418a-9303-98e9ed23da10.jpeg?format=review_large"
-    },
-    {
      "small": "https://resources.cdn-kaspi.kz/img/p/r/896967864-106916682/1b777553-3857-4e3b-a8ae-bc0e93bc920d.jpeg?format=review_small",
      "medium": "https://resources.cdn-kaspi.kz/img/p/r/896967864-106916682/1b777553-3857-4e3b-a8ae-bc0e93bc920d.jpeg?format=review_medium",
      "large": "https://resources.cdn-kaspi.kz/img/p/r/896967864-106916682/1b777553-3857-4e3b-a8ae-bc0e93bc920d.jpeg?format=review_large"
+    },
+    {
+     "small": "https://resources.cdn-kaspi.kz/img/p/r/896967864-106916682/ab5382b4-57d0-418a-9303-98e9ed23da10.jpeg?format=review_small",
+     "medium": "https://resources.cdn-kaspi.kz/img/p/r/896967864-106916682/ab5382b4-57d0-418a-9303-98e9ed23da10.jpeg?format=review_medium",
+     "large": "https://resources.cdn-kaspi.kz/img/p/r/896967864-106916682/ab5382b4-57d0-418a-9303-98e9ed23da10.jpeg?format=review_large"
     },
     {
      "small": "https://resources.cdn-kaspi.kz/img/p/r/896967864-106916682/1ba5d4be-ba6d-4d30-9a9a-c3be6d27e226.jpeg?format=review_small",

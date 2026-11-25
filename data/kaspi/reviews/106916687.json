@@ -1,16 +1,16 @@
 {
  "kaspiCode": "106916687",
  "kaspiModelName": "Слинг 4мес Classic Серый Мокко",
- "ratingCount": 41,
- "commentCount": 32,
- "pictureCount": 18,
+ "ratingCount": 43,
+ "commentCount": 34,
+ "pictureCount": 20,
  "ratingAvg": 4.9,
  "distribution": {
   "1": 1,
   "2": 0,
   "3": 0,
   "4": 1,
-  "5": 39
+  "5": 41
  },
  "reviews": [
   {
@@ -114,6 +114,42 @@
    "minus": "",
    "photos": [],
    "helpfulCount": 1
+  },
+  {
+   "id": "7bd88b2aefa46fa9",
+   "kaspiCode": "106916687",
+   "author": "Асель",
+   "date": "2026-11-20",
+   "rating": 5,
+   "text": "Товар качественный. Покупкой довольна. Не сразу разобралась с креплением, но потом поняла.",
+   "plus": "",
+   "minus": "",
+   "photos": [
+    {
+     "small": "https://resources.cdn-kaspi.kz/img/p/r/1153219206-106916687/3e07390e-968b-458e-a443-3ed9ee5a57f4.jpeg?format=review_small",
+     "medium": "https://resources.cdn-kaspi.kz/img/p/r/1153219206-106916687/3e07390e-968b-458e-a443-3ed9ee5a57f4.jpeg?format=review_medium",
+     "large": "https://resources.cdn-kaspi.kz/img/p/r/1153219206-106916687/3e07390e-968b-458e-a443-3ed9ee5a57f4.jpeg?format=review_large"
+    }
+   ],
+   "helpfulCount": 0
+  },
+  {
+   "id": "bb6d350ce469567a",
+   "kaspiCode": "106916687",
+   "author": "Сәттілік",
+   "date": "2026-11-18",
+   "rating": 5,
+   "text": "Рақмет, маған қатты ұнады, алуға кеңес беремін.",
+   "plus": "",
+   "minus": "",
+   "photos": [
+    {
+     "small": "https://resources.cdn-kaspi.kz/img/p/r/1148093935-106916687/12b2cecd-ed11-4380-b32e-6edda1fd7c04.jpeg?format=review_small",
+     "medium": "https://resources.cdn-kaspi.kz/img/p/r/1148093935-106916687/12b2cecd-ed11-4380-b32e-6edda1fd7c04.jpeg?format=review_medium",
+     "large": "https://resources.cdn-kaspi.kz/img/p/r/1148093935-106916687/12b2cecd-ed11-4380-b32e-6edda1fd7c04.jpeg?format=review_large"
+    }
+   ],
+   "helpfulCount": 0
   },
   {
    "id": "38b83e65901a4806",

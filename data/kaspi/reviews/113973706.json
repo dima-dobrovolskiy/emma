@@ -1,8 +1,8 @@
 {
  "kaspiCode": "113973706",
  "kaspiModelName": "зайчата",
- "ratingCount": 153,
- "commentCount": 127,
+ "ratingCount": 154,
+ "commentCount": 128,
  "pictureCount": 71,
  "ratingAvg": 5,
  "distribution": {
@@ -10,7 +10,7 @@
   "2": 0,
   "3": 0,
   "4": 1,
-  "5": 152
+  "5": 153
  },
  "reviews": [
   {
@@ -703,6 +703,18 @@
    "minus": "",
    "photos": [],
    "helpfulCount": 1
+  },
+  {
+   "id": "569f60146c6b3a80",
+   "kaspiCode": "113973706",
+   "author": "Жазира",
+   "date": "2026-11-23",
+   "rating": 5,
+   "text": "Классный.",
+   "plus": "",
+   "minus": "",
+   "photos": [],
+   "helpfulCount": 0
   },
   {
    "id": "9b34c85a4224bfce",

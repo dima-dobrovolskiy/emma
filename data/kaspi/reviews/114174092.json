@@ -1,16 +1,16 @@
 {
  "kaspiCode": "114174092",
  "kaspiModelName": "Слинг 2+ Tiddly DARK Елочки",
- "ratingCount": 69,
- "commentCount": 53,
- "pictureCount": 32,
+ "ratingCount": 71,
+ "commentCount": 55,
+ "pictureCount": 34,
  "ratingAvg": 4.9,
  "distribution": {
   "1": 0,
   "2": 0,
   "3": 1,
   "4": 2,
-  "5": 66
+  "5": 68
  },
  "reviews": [
   {
@@ -299,6 +299,47 @@
    "minus": "",
    "photos": [],
    "helpfulCount": 1
+  },
+  {
+   "id": "8a4a6ef3502508ac",
+   "kaspiCode": "114174092",
+   "author": "Юлия",
+   "date": "2026-11-17",
+   "rating": 5,
+   "text": "Хороший.",
+   "plus": "",
+   "minus": "",
+   "photos": [
+    {
+     "small": "https://resources.cdn-kaspi.kz/img/p/r/1144171911-114174092/b9988522-3dd6-498e-b3d8-ead3a446ce91.jpeg?format=review_small",
+     "medium": "https://resources.cdn-kaspi.kz/img/p/r/1144171911-114174092/b9988522-3dd6-498e-b3d8-ead3a446ce91.jpeg?format=review_medium",
+     "large": "https://resources.cdn-kaspi.kz/img/p/r/1144171911-114174092/b9988522-3dd6-498e-b3d8-ead3a446ce91.jpeg?format=review_large"
+    },
+    {
+     "small": "https://resources.cdn-kaspi.kz/img/p/r/1144171911-114174092/9ed5c2ae-cad7-4b2e-9946-731a56ba0659.jpeg?format=review_small",
+     "medium": "https://resources.cdn-kaspi.kz/img/p/r/1144171911-114174092/9ed5c2ae-cad7-4b2e-9946-731a56ba0659.jpeg?format=review_medium",
+     "large": "https://resources.cdn-kaspi.kz/img/p/r/1144171911-114174092/9ed5c2ae-cad7-4b2e-9946-731a56ba0659.jpeg?format=review_large"
+    }
+   ],
+   "helpfulCount": 0
+  },
+  {
+   "id": "d28722634dc9dc65",
+   "kaspiCode": "114174092",
+   "author": "Ляззат",
+   "date": "2026-11-13",
+   "rating": 5,
+   "text": "Довольна покупкой.",
+   "plus": "",
+   "minus": "",
+   "photos": [
+    {
+     "small": "https://resources.cdn-kaspi.kz/img/p/r/1145471718-114174092/2b487c02-bc51-44f3-b448-92f77df41a26.jpeg?format=review_small",
+     "medium": "https://resources.cdn-kaspi.kz/img/p/r/1145471718-114174092/2b487c02-bc51-44f3-b448-92f77df41a26.jpeg?format=review_medium",
+     "large": "https://resources.cdn-kaspi.kz/img/p/r/1145471718-114174092/2b487c02-bc51-44f3-b448-92f77df41a26.jpeg?format=review_large"
+    }
+   ],
+   "helpfulCount": 0
   },
   {
    "id": "568836c87d4a47ab",

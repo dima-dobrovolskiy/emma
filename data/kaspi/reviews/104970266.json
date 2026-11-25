@@ -1,16 +1,16 @@
 {
  "kaspiCode": "104970266",
  "kaspiModelName": "Слинг с 2 мес; Tiddly Серый Звезды",
- "ratingCount": 37,
- "commentCount": 27,
- "pictureCount": 16,
+ "ratingCount": 38,
+ "commentCount": 28,
+ "pictureCount": 17,
  "ratingAvg": 4.9,
  "distribution": {
   "1": 0,
   "2": 0,
   "3": 0,
   "4": 3,
-  "5": 34
+  "5": 35
  },
  "reviews": [
   {
@@ -24,6 +24,29 @@
    "minus": "",
    "photos": [],
    "helpfulCount": 1
+  },
+  {
+   "id": "e06deb7fdebeb8d6",
+   "kaspiCode": "104970266",
+   "author": "Шынар",
+   "date": "2026-11-19",
+   "rating": 5,
+   "text": "Эргорюкзак отличного качества, материал приятный и мягкий. Альтернатива коляске для непродолжительных прогулок",
+   "plus": "",
+   "minus": "",
+   "photos": [
+    {
+     "small": "https://resources.cdn-kaspi.kz/img/p/r/1150275412-104970266/d30af847-5f91-4b69-b980-c88f05889002.jpeg?format=review_small",
+     "medium": "https://resources.cdn-kaspi.kz/img/p/r/1150275412-104970266/d30af847-5f91-4b69-b980-c88f05889002.jpeg?format=review_medium",
+     "large": "https://resources.cdn-kaspi.kz/img/p/r/1150275412-104970266/d30af847-5f91-4b69-b980-c88f05889002.jpeg?format=review_large"
+    },
+    {
+     "small": "https://resources.cdn-kaspi.kz/img/p/r/1150275412-104970266/bd0a31db-ff4a-4f6f-a120-7524dfae7d5b.jpeg?format=review_small",
+     "medium": "https://resources.cdn-kaspi.kz/img/p/r/1150275412-104970266/bd0a31db-ff4a-4f6f-a120-7524dfae7d5b.jpeg?format=review_medium",
+     "large": "https://resources.cdn-kaspi.kz/img/p/r/1150275412-104970266/bd0a31db-ff4a-4f6f-a120-7524dfae7d5b.jpeg?format=review_large"
+    }
+   ],
+   "helpfulCount": 0
   },
   {
    "id": "e1e82efeca500b48",

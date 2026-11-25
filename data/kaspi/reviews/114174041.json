@@ -1,16 +1,16 @@
 {
  "kaspiCode": "114174041",
  "kaspiModelName": "Слинг Nesty с 3 мес,",
- "ratingCount": 67,
- "commentCount": 55,
- "pictureCount": 36,
+ "ratingCount": 70,
+ "commentCount": 58,
+ "pictureCount": 39,
  "ratingAvg": 4.9,
  "distribution": {
   "1": 0,
   "2": 0,
   "3": 0,
   "4": 4,
-  "5": 63
+  "5": 66
  },
  "reviews": [
   {
@@ -199,6 +199,65 @@
    "minus": "",
    "photos": [],
    "helpfulCount": 1
+  },
+  {
+   "id": "6fdd1e4b9f3b65ff",
+   "kaspiCode": "114174041",
+   "author": "Ақбота",
+   "date": "2026-11-19",
+   "rating": 5,
+   "text": "Очень хорошее качество, крепкое крепление, приятная расцветка.",
+   "plus": "",
+   "minus": "",
+   "photos": [
+    {
+     "small": "https://resources.cdn-kaspi.kz/img/p/r/1156896492-114174041/ab680ed5-c944-41b5-bcee-0b2b1b9890a1.jpeg?format=review_small",
+     "medium": "https://resources.cdn-kaspi.kz/img/p/r/1156896492-114174041/ab680ed5-c944-41b5-bcee-0b2b1b9890a1.jpeg?format=review_medium",
+     "large": "https://resources.cdn-kaspi.kz/img/p/r/1156896492-114174041/ab680ed5-c944-41b5-bcee-0b2b1b9890a1.jpeg?format=review_large"
+    }
+   ],
+   "helpfulCount": 0
+  },
+  {
+   "id": "6994a31ea1d84fc0",
+   "kaspiCode": "114174041",
+   "author": "Азамат",
+   "date": "2026-11-19",
+   "rating": 5,
+   "text": "Хорошая вещь, удобно, уже не так тяжело ребенка толкать.",
+   "plus": "",
+   "minus": "",
+   "photos": [
+    {
+     "small": "https://resources.cdn-kaspi.kz/img/p/r/1149709941-114174041/88603939-176c-4d82-9c4d-aea452eea193.jpeg?format=review_small",
+     "medium": "https://resources.cdn-kaspi.kz/img/p/r/1149709941-114174041/88603939-176c-4d82-9c4d-aea452eea193.jpeg?format=review_medium",
+     "large": "https://resources.cdn-kaspi.kz/img/p/r/1149709941-114174041/88603939-176c-4d82-9c4d-aea452eea193.jpeg?format=review_large"
+    }
+   ],
+   "helpfulCount": 0
+  },
+  {
+   "id": "52d98deb092ed874",
+   "kaspiCode": "114174041",
+   "author": "Салтанат",
+   "date": "2026-11-15",
+   "rating": 5,
+   "text": "Заказала для 2-месячного ребенка, невнимательно прочла карточку, нам большеват, сам товар пришел как заявлено продавцом.",
+   "plus": "",
+   "minus": "",
+   "photos": [
+    {
+     "small": "https://resources.cdn-kaspi.kz/img/p/r/1150963318-114174041/85425fc6-eaac-40c5-8e48-2785813ce1da.jpeg?format=review_small",
+     "medium": "https://resources.cdn-kaspi.kz/img/p/r/1150963318-114174041/85425fc6-eaac-40c5-8e48-2785813ce1da.jpeg?format=review_medium",
+     "large": "https://resources.cdn-kaspi.kz/img/p/r/1150963318-114174041/85425fc6-eaac-40c5-8e48-2785813ce1da.jpeg?format=review_large"
+    },
+    {
+     "small": "https://resources.cdn-kaspi.kz/img/p/r/1150963318-114174041/4ee3206e-c4f3-476d-9893-1ca58ca7b62d.jpeg?format=review_small",
+     "medium": "https://resources.cdn-kaspi.kz/img/p/r/1150963318-114174041/4ee3206e-c4f3-476d-9893-1ca58ca7b62d.jpeg?format=review_medium",
+     "large": "https://resources.cdn-kaspi.kz/img/p/r/1150963318-114174041/4ee3206e-c4f3-476d-9893-1ca58ca7b62d.jpeg?format=review_large"
+    }
+   ],
+   "helpfulCount": 0
   },
   {
    "id": "9d09b8148cee64be",

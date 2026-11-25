@@ -1,16 +1,16 @@
 {
  "kaspiCode": "114174150",
  "kaspiModelName": "Накидка в куртку 0-2г черная",
- "ratingCount": 41,
- "commentCount": 27,
- "pictureCount": 8,
+ "ratingCount": 42,
+ "commentCount": 28,
+ "pictureCount": 9,
  "ratingAvg": 5,
  "distribution": {
   "1": 0,
   "2": 0,
   "3": 1,
   "4": 0,
-  "5": 40
+  "5": 41
  },
  "reviews": [
   {
@@ -254,6 +254,34 @@
    "minus": "",
    "photos": [],
    "helpfulCount": 1
+  },
+  {
+   "id": "9121f0ada4e7b15f",
+   "kaspiCode": "114174150",
+   "author": "Әділет",
+   "date": "2026-11-12",
+   "rating": 5,
+   "text": "Хороший материал, удобно носить.",
+   "plus": "",
+   "minus": "",
+   "photos": [
+    {
+     "small": "https://resources.cdn-kaspi.kz/img/p/r/1143547639-114174150/f5dadb82-537f-485a-af20-aff00d436ceb.jpeg?format=review_small",
+     "medium": "https://resources.cdn-kaspi.kz/img/p/r/1143547639-114174150/f5dadb82-537f-485a-af20-aff00d436ceb.jpeg?format=review_medium",
+     "large": "https://resources.cdn-kaspi.kz/img/p/r/1143547639-114174150/f5dadb82-537f-485a-af20-aff00d436ceb.jpeg?format=review_large"
+    },
+    {
+     "small": "https://resources.cdn-kaspi.kz/img/p/r/1143547639-114174150/5a5b1ab7-0a20-472e-9296-6173febc8e77.jpeg?format=review_small",
+     "medium": "https://resources.cdn-kaspi.kz/img/p/r/1143547639-114174150/5a5b1ab7-0a20-472e-9296-6173febc8e77.jpeg?format=review_medium",
+     "large": "https://resources.cdn-kaspi.kz/img/p/r/1143547639-114174150/5a5b1ab7-0a20-472e-9296-6173febc8e77.jpeg?format=review_large"
+    },
+    {
+     "small": "https://resources.cdn-kaspi.kz/img/p/r/1143547639-114174150/a84118c7-b6fa-44ec-af4b-8797a9741eb4.jpeg?format=review_small",
+     "medium": "https://resources.cdn-kaspi.kz/img/p/r/1143547639-114174150/a84118c7-b6fa-44ec-af4b-8797a9741eb4.jpeg?format=review_medium",
+     "large": "https://resources.cdn-kaspi.kz/img/p/r/1143547639-114174150/a84118c7-b6fa-44ec-af4b-8797a9741eb4.jpeg?format=review_large"
+    }
+   ],
+   "helpfulCount": 0
   },
   {
    "id": "879c50163ed7fe85",

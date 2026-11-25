@@ -1,16 +1,16 @@
 {
  "kaspiCode": "135829077",
  "kaspiModelName": "Слинг 0+ с рождения Дарк",
- "ratingCount": 121,
- "commentCount": 103,
- "pictureCount": 81,
+ "ratingCount": 125,
+ "commentCount": 107,
+ "pictureCount": 85,
  "ratingAvg": 5,
  "distribution": {
   "1": 0,
   "2": 0,
   "3": 0,
   "4": 3,
-  "5": 118
+  "5": 122
  },
  "reviews": [
   {
@@ -156,6 +156,88 @@
    "minus": "",
    "photos": [],
    "helpfulCount": 1
+  },
+  {
+   "id": "233ae5daf8e80beb",
+   "kaspiCode": "135829077",
+   "author": "Вероника",
+   "date": "2026-11-17",
+   "rating": 5,
+   "text": "Очень довольна покупкой! Рюкзак оказался удобным, качественно сшитым и приятным на ощупь. Материал мягкий, хлопковый, ничего не натирает. Лямки хорошо распределяют нагрузку, спинка не устает даже при длительном ношении. Отдельно порадовало качество пошива и красивый цвет. Выглядит очень достойно!",
+   "plus": "",
+   "minus": "",
+   "photos": [
+    {
+     "small": "https://resources.cdn-kaspi.kz/img/p/r/1154730724-135829077/58856cc6-9562-48d6-ba61-c057f44b87f7.jpeg?format=review_small",
+     "medium": "https://resources.cdn-kaspi.kz/img/p/r/1154730724-135829077/58856cc6-9562-48d6-ba61-c057f44b87f7.jpeg?format=review_medium",
+     "large": "https://resources.cdn-kaspi.kz/img/p/r/1154730724-135829077/58856cc6-9562-48d6-ba61-c057f44b87f7.jpeg?format=review_large"
+    }
+   ],
+   "helpfulCount": 0
+  },
+  {
+   "id": "df8618f43bbdb4a2",
+   "kaspiCode": "135829077",
+   "author": "Фараби",
+   "date": "2026-11-16",
+   "rating": 5,
+   "text": "Товар соответствует описанию.",
+   "plus": "",
+   "minus": "",
+   "photos": [
+    {
+     "small": "https://resources.cdn-kaspi.kz/img/p/r/1148066739-135829077/87891c56-19af-4ff3-840e-a2f4c8b76dfc.jpeg?format=review_small",
+     "medium": "https://resources.cdn-kaspi.kz/img/p/r/1148066739-135829077/87891c56-19af-4ff3-840e-a2f4c8b76dfc.jpeg?format=review_medium",
+     "large": "https://resources.cdn-kaspi.kz/img/p/r/1148066739-135829077/87891c56-19af-4ff3-840e-a2f4c8b76dfc.jpeg?format=review_large"
+    },
+    {
+     "small": "https://resources.cdn-kaspi.kz/img/p/r/1148066739-135829077/54cb2d0a-0994-4300-88b6-5fc533035cda.jpeg?format=review_small",
+     "medium": "https://resources.cdn-kaspi.kz/img/p/r/1148066739-135829077/54cb2d0a-0994-4300-88b6-5fc533035cda.jpeg?format=review_medium",
+     "large": "https://resources.cdn-kaspi.kz/img/p/r/1148066739-135829077/54cb2d0a-0994-4300-88b6-5fc533035cda.jpeg?format=review_large"
+    }
+   ],
+   "helpfulCount": 0
+  },
+  {
+   "id": "683b51f100278918",
+   "kaspiCode": "135829077",
+   "author": "Әділет",
+   "date": "2026-11-12",
+   "rating": 5,
+   "text": "Удобный компактный.",
+   "plus": "",
+   "minus": "",
+   "photos": [
+    {
+     "small": "https://resources.cdn-kaspi.kz/img/p/r/1143547639-135829077/950b0ca2-b69d-4892-ba55-48703ee60df7.jpeg?format=review_small",
+     "medium": "https://resources.cdn-kaspi.kz/img/p/r/1143547639-135829077/950b0ca2-b69d-4892-ba55-48703ee60df7.jpeg?format=review_medium",
+     "large": "https://resources.cdn-kaspi.kz/img/p/r/1143547639-135829077/950b0ca2-b69d-4892-ba55-48703ee60df7.jpeg?format=review_large"
+    },
+    {
+     "small": "https://resources.cdn-kaspi.kz/img/p/r/1143547639-135829077/f025b885-5f37-46b2-8594-edd80bccba77.jpeg?format=review_small",
+     "medium": "https://resources.cdn-kaspi.kz/img/p/r/1143547639-135829077/f025b885-5f37-46b2-8594-edd80bccba77.jpeg?format=review_medium",
+     "large": "https://resources.cdn-kaspi.kz/img/p/r/1143547639-135829077/f025b885-5f37-46b2-8594-edd80bccba77.jpeg?format=review_large"
+    }
+   ],
+   "helpfulCount": 0
+  },
+  {
+   "id": "5b911a74237e3736",
+   "kaspiCode": "135829077",
+   "author": "Назерке",
+   "date": "2026-11-11",
+   "rating": 5,
+   "text": "Шикарно, спасибо, удобно, приятно, ребенок засыпает за секунду, какое-то чудо.",
+   "plus": "",
+   "minus": "",
+   "photos": [
+    {
+     "small": "https://resources.cdn-kaspi.kz/img/p/r/1141193916-135829077/8ebe7b09-b5fe-4ad0-bcb9-f406588d0277.jpeg?format=review_small",
+     "medium": "https://resources.cdn-kaspi.kz/img/p/r/1141193916-135829077/8ebe7b09-b5fe-4ad0-bcb9-f406588d0277.jpeg?format=review_medium",
+     "large": "https://resources.cdn-kaspi.kz/img/p/r/1141193916-135829077/8ebe7b09-b5fe-4ad0-bcb9-f406588d0277.jpeg?format=review_large"
+    }
+   ],
+   "helpfulCount": 0
   },
   {
    "id": "211142ea93ea90a6",
