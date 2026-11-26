@@ -1,18 +1,51 @@
 {
  "kaspiCode": "104765674",
  "kaspiModelName": "+Слинг Nesty 1+1 набор к лету",
- "ratingCount": 70,
- "commentCount": 65,
- "pictureCount": 55,
- "ratingAvg": 5,
+ "ratingCount": 71,
+ "commentCount": 66,
+ "pictureCount": 56,
+ "ratingAvg": 4.9,
  "distribution": {
   "1": 0,
   "2": 0,
-  "3": 0,
+  "3": 1,
   "4": 2,
   "5": 68
  },
  "reviews": [
+  {
+   "id": "6521e48fa4469360",
+   "kaspiCode": "104765674",
+   "author": "Эльмира",
+   "date": "2026-11-26",
+   "rating": 3,
+   "text": "Эргорюкзак хороший, качественный. Но нам не подошел. Малыш отказывается в нем сидеть.",
+   "plus": "",
+   "minus": "",
+   "photos": [
+    {
+     "small": "https://resources.cdn-kaspi.kz/img/p/r/1159923973-104765674/adc0c689-92a7-44fa-a438-3ad223835217.jpeg?format=review_small",
+     "medium": "https://resources.cdn-kaspi.kz/img/p/r/1159923973-104765674/adc0c689-92a7-44fa-a438-3ad223835217.jpeg?format=review_medium",
+     "large": "https://resources.cdn-kaspi.kz/img/p/r/1159923973-104765674/adc0c689-92a7-44fa-a438-3ad223835217.jpeg?format=review_large"
+    },
+    {
+     "small": "https://resources.cdn-kaspi.kz/img/p/r/1159923973-104765674/22f2189e-1bf0-4c52-9428-1f02ed4e0972.jpeg?format=review_small",
+     "medium": "https://resources.cdn-kaspi.kz/img/p/r/1159923973-104765674/22f2189e-1bf0-4c52-9428-1f02ed4e0972.jpeg?format=review_medium",
+     "large": "https://resources.cdn-kaspi.kz/img/p/r/1159923973-104765674/22f2189e-1bf0-4c52-9428-1f02ed4e0972.jpeg?format=review_large"
+    },
+    {
+     "small": "https://resources.cdn-kaspi.kz/img/p/r/1159923973-104765674/e3226f92-7ad8-4872-8310-72fe9136b7d3.jpeg?format=review_small",
+     "medium": "https://resources.cdn-kaspi.kz/img/p/r/1159923973-104765674/e3226f92-7ad8-4872-8310-72fe9136b7d3.jpeg?format=review_medium",
+     "large": "https://resources.cdn-kaspi.kz/img/p/r/1159923973-104765674/e3226f92-7ad8-4872-8310-72fe9136b7d3.jpeg?format=review_large"
+    },
+    {
+     "small": "https://resources.cdn-kaspi.kz/img/p/r/1159923973-104765674/962187c8-5eed-43be-8eb4-f2b656d77456.jpeg?format=review_small",
+     "medium": "https://resources.cdn-kaspi.kz/img/p/r/1159923973-104765674/962187c8-5eed-43be-8eb4-f2b656d77456.jpeg?format=review_medium",
+     "large": "https://resources.cdn-kaspi.kz/img/p/r/1159923973-104765674/962187c8-5eed-43be-8eb4-f2b656d77456.jpeg?format=review_large"
+    }
+   ],
+   "helpfulCount": 0
+  },
   {
    "id": "02f42bc88b6350f6",
    "kaspiCode": "104765674",
