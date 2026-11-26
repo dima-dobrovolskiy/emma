@@ -4,6 +4,7 @@ import { mainNav } from '@/lib/nav';
 import { flags } from '@/lib/flags';
 import { siteContent } from '@/lib/site';
 import { LangSwitch } from './LangSwitch';
+import { LogoMark } from './LogoMark';
 import { DesktopNav, MobileMenu } from './MobileMenu';
 
 export function Header() {
@@ -14,9 +15,12 @@ export function Header() {
         {t('nav.skip')}
       </a>
       <div className="container-page flex h-14 items-center justify-between gap-4 md:h-16">
-        <Link href="/" className="inline-flex min-h-11 flex-col justify-center text-ink">
-          <span className="font-display text-[1.375rem] leading-none tracking-tight">{t('meta.siteName')}</span>
-          {siteContent.tagline && <span className="mt-1 text-[0.75rem] leading-none text-ink-3">{siteContent.tagline}</span>}
+        <Link href="/" className="inline-flex min-h-11 items-center gap-2.5 text-ink">
+          <LogoMark className="h-9 w-auto shrink-0 md:h-10" />
+          <span className="inline-flex flex-col justify-center">
+            <span className="font-display text-[1.375rem] leading-none tracking-tight">{t('meta.siteName')}</span>
+            {siteContent.tagline && <span className="mt-1 text-[0.75rem] leading-none text-ink-3">{siteContent.tagline}</span>}
+          </span>
         </Link>
         <DesktopNav links={[...nav.categories, ...nav.extra.filter((l) => l.href !== '/podbor')]} />
         <div className="flex items-center gap-2">

@@ -61,6 +61,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               alternateName: siteContent.alternateNames,
               description: t('jsonld.orgDescription'),
               url: SITE_URL,
+              logo: absUrl('/brand/logo-mark.svg'),
               areaServed: { '@type': 'Country', name: 'Kazakhstan' },
               ...(siteContent.legal.entity ? { legalName: siteContent.legal.entity } : {}),
               ...(siteContent.legal.bin ? { taxID: siteContent.legal.bin } : {}),
