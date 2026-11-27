@@ -1,16 +1,16 @@
 {
  "kaspiCode": "113923093",
  "kaspiModelName": "Слинг BeBorn 0+ для новорожденных серый",
- "ratingCount": 318,
- "commentCount": 282,
- "pictureCount": 205,
+ "ratingCount": 319,
+ "commentCount": 283,
+ "pictureCount": 206,
  "ratingAvg": 5,
  "distribution": {
   "1": 0,
   "2": 0,
   "3": 0,
   "4": 13,
-  "5": 305
+  "5": 306
  },
  "reviews": [
   {
@@ -1771,6 +1771,34 @@
    "minus": "",
    "photos": [],
    "helpfulCount": 1
+  },
+  {
+   "id": "e207a111d3c5eb34",
+   "kaspiCode": "113923093",
+   "author": "Арыстан",
+   "date": "2026-11-27",
+   "rating": 5,
+   "text": "Товаром довольны! Все отлично, продавец написал сам до отправки.",
+   "plus": "",
+   "minus": "",
+   "photos": [
+    {
+     "small": "https://resources.cdn-kaspi.kz/img/p/r/1161399649-113923093/34839d38-ec24-45ce-a991-d6017d462954.jpeg?format=review_small",
+     "medium": "https://resources.cdn-kaspi.kz/img/p/r/1161399649-113923093/34839d38-ec24-45ce-a991-d6017d462954.jpeg?format=review_medium",
+     "large": "https://resources.cdn-kaspi.kz/img/p/r/1161399649-113923093/34839d38-ec24-45ce-a991-d6017d462954.jpeg?format=review_large"
+    },
+    {
+     "small": "https://resources.cdn-kaspi.kz/img/p/r/1161399649-113923093/e42778f5-d72f-43e6-9bf5-49d3f2a9b030.jpeg?format=review_small",
+     "medium": "https://resources.cdn-kaspi.kz/img/p/r/1161399649-113923093/e42778f5-d72f-43e6-9bf5-49d3f2a9b030.jpeg?format=review_medium",
+     "large": "https://resources.cdn-kaspi.kz/img/p/r/1161399649-113923093/e42778f5-d72f-43e6-9bf5-49d3f2a9b030.jpeg?format=review_large"
+    },
+    {
+     "small": "https://resources.cdn-kaspi.kz/img/p/r/1161399649-113923093/070886bf-e0a8-444a-a240-fbb0946f22d2.jpeg?format=review_small",
+     "medium": "https://resources.cdn-kaspi.kz/img/p/r/1161399649-113923093/070886bf-e0a8-444a-a240-fbb0946f22d2.jpeg?format=review_medium",
+     "large": "https://resources.cdn-kaspi.kz/img/p/r/1161399649-113923093/070886bf-e0a8-444a-a240-fbb0946f22d2.jpeg?format=review_large"
+    }
+   ],
+   "helpfulCount": 0
   },
   {
    "id": "d08d54976c86411a",

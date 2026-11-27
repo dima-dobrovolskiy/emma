@@ -1,18 +1,36 @@
 {
  "kaspiCode": "179229608",
  "kaspiModelName": "хлопок:сатин",
- "ratingCount": 14,
- "commentCount": 14,
- "pictureCount": 13,
+ "ratingCount": 15,
+ "commentCount": 15,
+ "pictureCount": 14,
  "ratingAvg": 5,
  "distribution": {
   "1": 0,
   "2": 0,
   "3": 0,
   "4": 0,
-  "5": 14
+  "5": 15
  },
  "reviews": [
+  {
+   "id": "a54acd27dfab761f",
+   "kaspiCode": "179229608",
+   "author": "Луиза",
+   "date": "2026-11-27",
+   "rating": 5,
+   "text": "Сапасы жақсы.",
+   "plus": "",
+   "minus": "",
+   "photos": [
+    {
+     "small": "https://resources.cdn-kaspi.kz/img/p/r/1161414634-179229608/f7878abf-0202-4da9-a5b4-425ba725c269.jpeg?format=review_small",
+     "medium": "https://resources.cdn-kaspi.kz/img/p/r/1161414634-179229608/f7878abf-0202-4da9-a5b4-425ba725c269.jpeg?format=review_medium",
+     "large": "https://resources.cdn-kaspi.kz/img/p/r/1161414634-179229608/f7878abf-0202-4da9-a5b4-425ba725c269.jpeg?format=review_large"
+    }
+   ],
+   "helpfulCount": 0
+  },
   {
    "id": "12ae53ad4cbd68ca",
    "kaspiCode": "179229608",
