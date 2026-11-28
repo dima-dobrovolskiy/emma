@@ -640,7 +640,7 @@
    "bonus": 2799,
    "creditMonthlyPrice": "2 333 ₸",
    "creditMonths": 12,
-   "inStock": false,
+   "inStock": true,
    "rating": 5,
    "reviewsCount": 1,
    "kaspiCategory": "Конверты для малышей"
